@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <record id="view_maintenance_equipment_form_inherit" model="ir.ui.view">
+            <field name="name">maintenance.equipment.form.thomas</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[1]/sheet[1]/div[not(@name)][1]" position="replace">
+                    <div class="oe_title oe_left">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" string="Name" placeholder="Equipment Name"/></h1>
+                    </div>
+                    <div>
+                         <label for="internal_code" string="Internal Code" style="float:left;"/>
+                        <field name="internal_code" style="float:left;width: 30%;" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                        <field style="float:right;" name="image" options="{&quot;size&quot;: [0, 900]}" widget="image" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                    </div>
+                </xpath>
+                <xpath expr="//notebook[1]/page[2]/group[1]/group[1]" position="attributes">
+                    <attribute name="string">Technical Information</attribute>
+                </xpath>
+                <xpath expr="//field[@name='model']" position="before">
+                    <field name="velocity" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                    <field name="capacity" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                    <field name="maker" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                    <field name="origin" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                    <field name="fabrication_date" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                    <field name="machine_type" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                </xpath>
+                <xpath expr="//field[@name='warranty_date']" position="after">
+                <xpath expr="//field[@name='partner_id']" position="move"/>
+                    <field name="phone" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                <xpath expr="//field[@name='partner_ref']" position="move"/>
+                </xpath>
+                <xpath expr="//notebook[1]/page[2]/group[1]" position="after">
+                    <group groups="maintenance_thomas.group_maintenance_thomas_production_user">
+                        <div>
+                            <div class="o_row"><h2>Connection</h2><span></span><field name="connection"/></div>
+                            <group >
+                                <field name="voltage_connection"  attrs="{'invisible': [('connection','=',False)]}"/>
+                                <field name="intake" attrs="{'invisible': [('connection','=',False)]}"/>
+                                <field name="power" attrs="{'invisible': [('connection','=',False)]}"/>
+                            </group>
+                        </div>
+                        <div>
+                            <div class="o_row"><h2>Requirements</h2><span></span><field name="requirement"/></div>
+                            <group >
+                                <field name="compressed_air" attrs="{'invisible': [('requirement','=',False)]}"/>
+                                <field name="water" attrs="{'invisible': [('requirement','=',False)]}"/>
+                                <field name="conditioning_air" attrs="{'invisible': [('requirement','=',False)]}"/>
+                            </group>
+                        </div>
+                        <h4>Observations</h4>
+                        <field name="observation" widget="note"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+manager_model_account_account_replace,user_model_account_account_replace,model_account_account_replace,account.group_account_manager,1,1,1,1
+manager_model_account_account_replace_line,user_model_account_account_replace_line,model_account_account_replace_line,account.group_account_manager,1,1,1,1
+
+
+
+
+
+
+
+
+

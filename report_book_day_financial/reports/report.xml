@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <report
+                id="report_custom_xlsx"
+                string="Libro Día"
+                model="account.move.line"
+                report_type="xlsx"
+                name="report_book_day_financial.report_custom_template"
+        />
+    </data>
+</odoo>    
+        

@@ -1,0 +1,156 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* maintenance_thomas
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-16 02:48+0000\n"
+"PO-Revision-Date: 2020-06-16 02:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_equipment__actual_location
+msgid "Actual machine location"
+msgstr "Ubicación actual de la maquina"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields.selection,name:maintenance_thomas.selection__maintenance_request__maintenance_type__alistamiento
+msgid "Alistamiento"
+msgstr ""
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_equipment__brand
+msgid "Brand"
+msgstr "Marca"
+
+#. module: maintenance_thomas
+#: model:maintenance.stage,name:maintenance_thomas.stage_9
+msgid "CANCELED WITH NOVELTY"
+msgstr "CANCELADO SIN NOVEDAD"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__client_city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_equipment__partner_client_id
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__partner_client_id
+msgid "Client"
+msgstr "Cliente"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__contract_code
+msgid "Contract code"
+msgstr "Codigo del contrato"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__equipment_location
+msgid "Current location"
+msgstr "Ubicacion actual"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__contract_end
+msgid "End date of the contract"
+msgstr "Fecha final del contrato"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__equipment_brand
+msgid "Equipment brand"
+msgstr "Marca del equipo"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__equipment_serie
+msgid "Equipment serie"
+msgstr "Serie del equipo"
+
+#. module: maintenance_thomas
+#: model:maintenance.stage,name:maintenance_thomas.stage_8
+msgid "FINALIZED"
+msgstr "FINALIZADO"
+
+#. module: maintenance_thomas
+#: model:maintenance.stage,name:maintenance_thomas.stage_6
+msgid "IN PLANNING"
+msgstr "EN PLANEACION"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields.selection,name:maintenance_thomas.selection__maintenance_request__maintenance_type__instalacion_de_maquina
+msgid "Instalacion de maquina"
+msgstr ""
+
+#. module: maintenance_thomas
+#: model:ir.model.fields.selection,name:maintenance_thomas.selection__maintenance_request__maintenance_type__instalacion_de_respuesto
+msgid "Instalacion de repuesto"
+msgstr ""
+
+#. module: maintenance_thomas
+#: model:ir.model,name:maintenance_thomas.model_maintenance_equipment
+msgid "Maintenance Equipment"
+msgstr "Equipo de mantenimiento"
+
+#. module: maintenance_thomas
+#: model:ir.model,name:maintenance_thomas.model_maintenance_request
+msgid "Maintenance Request"
+msgstr "Petición de mantenimiento"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__maintenance_type
+msgid "Maintenance Type"
+msgstr "Tipos de mantenimiento"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_equipment__model
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__equipment_model
+msgid "Model"
+msgstr "Modelo"
+
+#. module: maintenance_thomas
+#: code:addons/maintenance_thomas/models/maintenance.py:0
+#: code:addons/maintenance_thomas/models/maintenance.py:0
+#: code:addons/maintenance_thomas/models/maintenance.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: maintenance_thomas
+#: model:maintenance.stage,name:maintenance_thomas.stage_5
+msgid "New request"
+msgstr "Nueva solicitud"
+
+#. module: maintenance_thomas
+#: model:maintenance.stage,name:maintenance_thomas.stage_7
+msgid "PROGRAMMED"
+msgstr "PROGRAMADO"
+
+#. module: maintenance_thomas
+#: model:maintenance.stage,name:maintenance_thomas.stage_10
+msgid "QUALITY"
+msgstr "CALIDAD"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__service_order
+msgid "Service Order"
+msgstr "Orden de Servicio"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__aprobation_type
+msgid "Spare parts approval type"
+msgstr "Tipo de aprobación repuestos"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_equipment__is_tst
+msgid "is TST"
+msgstr "Es TST"
+
+#. module: maintenance_thomas
+#: model:ir.model.fields,field_description:maintenance_thomas.field_maintenance_request__is_tst
+msgid "¿Es TST?"
+msgstr "Es TST"

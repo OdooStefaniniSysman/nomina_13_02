@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <report
+        id="report_purchase_requisition_thomas"
+        model="material.purchase.requisition" 
+        string="Documento de requisición" 
+        report_type="qweb-pdf"
+        name="material_purchase_requisitions_report.purchase_requisition" 
+        file="material_purchase_requisitions_report.purchase_requisition"
+    />
+</odoo>
+        

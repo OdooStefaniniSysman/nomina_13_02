@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sale_order_tst_inherit" model="ir.ui.view">
+        <field name="name">sale.order.line.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml"> 
+             <xpath expr="/form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='name']" position="after">
+                <field name="time_of_so"/>
+             </xpath>  
+        </field>
+    </record>
+</odoo>     

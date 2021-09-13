@@ -1,0 +1,729 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* expense_thomas
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-17 19:34+0000\n"
+"PO-Revision-Date: 2020-09-17 19:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_1k
+msgid "1.000"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_10k
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_10k
+msgid "10.000"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_100
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__oc_100
+msgid "100"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_100k
+msgid "100.000"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_1000
+msgid "1000"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_2k
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_2k
+msgid "2.000"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_20k
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_20k
+msgid "20.000"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_200
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__oc_200
+msgid "200"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_5k
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_5k
+msgid "5.000"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_50
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__oc_50
+msgid "50"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_50k
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_50k
+msgid "50.000"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_500
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__oc_500
+msgid "500"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__address
+msgid "Address"
+msgstr "Direccion"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_assignment_form
+msgid "Advance"
+msgstr "Anticipo"
+
+#. module: expense_thomas
+#: model:ir.actions.act_window,name:expense_thomas.asignment_action_window
+msgid "Advance asignment"
+msgstr "Asignación de anticipo"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__advance_date
+msgid "Advance date"
+msgstr "Fecha de anticipo"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__advance
+msgid "Advance value"
+msgstr "Valor del anticipo"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__approved_by
+msgid "Approved by"
+msgstr "Aprobado por"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__managment_sign
+msgid "Approved by financial management"
+msgstr "Aprobado Gerencia Financiera"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Asignación:"
+msgstr "Asignación: "
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__bank_id
+msgid "Bank"
+msgstr "Banco"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__bank_account_id
+msgid "Bank Account Number"
+msgstr "Cuenta bancaria"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__city
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.hr_expense_thomas_inherited
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__consumption_tax
+msgid "Consumption Tax (value charged on invoice)"
+msgstr "IMPUESTO AL CONSUMO (valor cobrado en factura)"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__create_uid
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__create_date
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__hotel_days
+msgid "Days in hotel"
+msgstr "Dias de hotel"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__discount
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__display_name
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__document
+msgid "Document type"
+msgstr "Tipo de documento"
+
+#. module: expense_thomas
+#: model:ir.model.fields,help:expense_thomas.field_expense_thomas_assignment__bank_account_id
+msgid "Employee bank salary account"
+msgstr "Cuenta bancaria para salario"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.hr_expense_thomas_inherited
+msgid "Employee:"
+msgstr "Empleado:"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__end_date
+msgid "End date"
+msgstr "Fecha de regreso"
+
+#. module: expense_thomas
+#: model:ir.model,name:expense_thomas.model_hr_expense
+msgid "Expense"
+msgstr "Gasto"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__hr_expense_ids
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_assignment_form
+msgid "Expenses"
+msgstr "Gastos"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_assignment_form
+msgid "Feeding"
+msgstr "ALIMENTACION"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__feeding_days
+msgid "Feeding days"
+msgstr "Dias de alimentacion"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__gross_value
+msgid "Gross value"
+msgstr "Valor Bruto"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_assignment_form
+msgid "Hotel"
+msgstr "HOTEL"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__unitary_hotel
+msgid "Hotel unit value"
+msgstr "Valor unitario del hotel"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__id
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__id
+msgid "ID"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__iva_tax
+msgid "IVA (value charged on invoice)"
+msgstr "IVA (valor cobrado en factura)"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__identification_id
+msgid "Identification"
+msgstr "Cedula"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas____last_update
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__write_uid
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__write_date
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__made_by
+msgid "Made by"
+msgstr "Elaborado por"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__maintenance_request_ids
+msgid "Maintenance request"
+msgstr "Servicios asociados"
+
+#. module: expense_thomas
+#: model:ir.actions.act_window,name:expense_thomas.action_window
+#: model:ir.ui.menu,name:expense_thomas.thomas_expenses
+msgid "Money test"
+msgstr "Dinero pruebas"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__identification_id
+msgid "N.I.T or C.C."
+msgstr "N.I.T o C.C."
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__name
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__name
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_assignment_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "New bills:"
+msgstr "Billetes nuevos"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "New coins:"
+msgstr "Monedas nuevas"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Old bills:"
+msgstr "Billetes antiguos"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Old coins:"
+msgstr "Monedas antiguas"
+
+#. module: expense_thomas
+#: model:ir.model.fields.selection,name:expense_thomas.selection__expense_thomas__refund_state__pending_to_return
+msgid "Pending to return"
+msgstr "Pendiente por devolucion"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__phone
+msgid "Phone"
+msgstr "Telefono"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__partner_id
+msgid "Proveedor"
+msgstr ""
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__rtefte_rate
+msgid "RETEFUENTE rate"
+msgstr "RETEFUENTE tarifa"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__rtefte_value
+msgid "RETEFUENTE value"
+msgstr "RETEFUENTE valor"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__rteica_rate
+msgid "RETEICA rate"
+msgstr "RETEICA tarifa"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__rteica_value
+msgid "RETEICA value"
+msgstr "RETEICA valor"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__rteiva_rate
+msgid "RETEIVA rate"
+msgstr "RETEIVA tarifa"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__rteiva_value
+msgid "RETEIVA value"
+msgstr "RETEIVA valor"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__request_date
+msgid "Request date"
+msgstr "Fecha de solicitud"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__refund_state
+msgid "Return state"
+msgstr "Estado de devolución"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Return:"
+msgstr "Devolución:"
+
+#. module: expense_thomas
+#: model:ir.model.fields.selection,name:expense_thomas.selection__expense_thomas__refund_state__returned
+msgid "Returned"
+msgstr "Devuelto"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__reviewed_by
+msgid "Reviewed by"
+msgstr "Revisado por"
+
+#. module: expense_thomas
+#: model:ir.actions.server,name:expense_thomas.action_sign_approved_by
+msgid "Sign: approved by"
+msgstr "Firma: Aprovado por"
+
+#. module: expense_thomas
+#: model:ir.actions.server,name:expense_thomas.action_made_by
+msgid "Sign: made by"
+msgstr "Firma: Hecho por"
+
+#. module: expense_thomas
+#: model:ir.actions.server,name:expense_thomas.action_sign_managment_by
+msgid "Sign: managment by"
+msgstr "Firma: Gerencia Financiera"
+
+#. module: expense_thomas
+#: model:ir.actions.server,name:expense_thomas.action_sign_reviewed_by
+msgid "Sign: reviewed by"
+msgstr "Firma: Revisado por"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__initial_date
+msgid "Start date"
+msgstr "Fecha de salida"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__state
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__employee_state
+msgid "State"
+msgstr "Estado"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__employee_id
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__employee_id
+msgid "Technician"
+msgstr "Técnico"
+
+#. module: expense_thomas
+#: model:ir.model,name:expense_thomas.model_expense_thomas
+msgid "Thomas expenses"
+msgstr "Gástos Tomas"
+
+#. module: expense_thomas
+#: model:ir.model,name:expense_thomas.model_expense_thomas_assignment
+msgid "Thomas expenses assignment"
+msgstr "Asignacion de gastos"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__total_residual
+msgid "Total Residual"
+msgstr "Saldo + ó -"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Total amount new bills:"
+msgstr "Valor total billetes nuevos"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Total amount new coins:"
+msgstr "Valor total monedas nuevas"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Total amount old bills:"
+msgstr "Valor total billetes antiguos"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Total amount old coins:"
+msgstr "Valor total monevas antiguas"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__total_by_payroll
+msgid "Total by payroll"
+msgstr "Total por nomina"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__total_feeding_value
+msgid "Total feeding value"
+msgstr "Valor total de alimentacion"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__total_hotel
+msgid "Total hotel value"
+msgstr "Valor total hotel"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__total_feeding
+msgid "Total paid and unpaid feeding days"
+msgstr "TOTAL ALIMENTACION + ALIMENTACION NO PAGA"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__total_hotel_days
+msgid "Total pay and unpaid"
+msgstr "TOTAL HOTEL + HOTEL NO PAGO"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__total_discount
+msgid "Total payroll with discount"
+msgstr "Total nomina con descuento"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__total_required
+msgid "Total required"
+msgstr "Total solicitado"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__total_pay
+msgid "Total to pay"
+msgstr "Total a pagar"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__total_transport
+msgid "Total transport"
+msgstr "Total transpote"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__unpaid_total_feeding
+msgid "Total unpaid feeding days"
+msgstr "Valor total de alimentacion no paga"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Total:"
+msgstr ""
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_assignment_form
+msgid "Totals"
+msgstr "TOTALES"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_form
+msgid "Totals:"
+msgstr "Totales:"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__unit_value_feeding
+msgid "Unitary value of feeding days"
+msgstr "Valor unitario de alimentacion"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__unpaid_unit_value_feeding
+msgid "Unitary value of unpaid feeding days"
+msgstr "Valor de alimentacion no paga"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_assignment_form
+msgid "Unpaid Feeding"
+msgstr "ALIMENTACION NO PAGA"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.expense_thomas_assignment_form
+msgid "Unpaid Hotel"
+msgstr "HOTEL NO PAGO"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__unpaid_feeding_days
+msgid "Unpaid feeding days"
+msgstr "Dias de alimentacion no paga"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__unpaid_hotel_days
+msgid "Unpaid hotel days"
+msgstr "Dias de hotel no pagos"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__unpaid_unitary_hotel
+msgid "Unpaid hotel unitary value"
+msgstr "Valor unitario del hotel no pago"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas_assignment__unpaid_total_hotel
+msgid "Unpaid total hotel value"
+msgstr "Valor total hotel no pago"
+
+#. module: expense_thomas
+#: model_terms:ir.ui.view,arch_db:expense_thomas.hr_expense_thomas_inherited
+msgid "Values:"
+msgstr "Valores:"
+
+#. module: expense_thomas
+#: model:ir.ui.menu,name:expense_thomas.thomas_expenses_asignment
+msgid "Viatics and advances asignment"
+msgstr "Asignación de viaticos y anticipos"
+
+#. module: expense_thomas
+#: model:ir.model.fields.selection,name:expense_thomas.selection__expense_thomas_assignment__state__approve
+msgid "approve"
+msgstr "APROBADO"
+
+#. module: expense_thomas
+#: model:ir.model.fields.selection,name:expense_thomas.selection__expense_thomas_assignment__state__assign
+msgid "assign"
+msgstr "ASIGNADO"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__bills
+msgid "bills"
+msgstr "Billetes"
+
+#. module: expense_thomas
+#: model:ir.model.fields.selection,name:expense_thomas.selection__expense_thomas_assignment__state__close
+msgid "close"
+msgstr "CERRADO"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__coin
+msgid "coins"
+msgstr "Monedas"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_hr_expense__assigment_thomas_id
+msgid "expenses assigment thomas"
+msgstr "asignacion de gastos thomas"
+
+#. module: expense_thomas
+#: model:ir.model.fields.selection,name:expense_thomas.selection__expense_thomas__document__money_delivery
+msgid "money delivery"
+msgstr "Entrega de dinero"
+
+#. module: expense_thomas
+#: model:ir.model.fields.selection,name:expense_thomas.selection__expense_thomas__document__money_reception
+msgid "money reception"
+msgstr "Recepción de dinero"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__refund_date
+msgid "refund_date"
+msgstr "Fecha de devolución"
+
+#. module: expense_thomas
+#: model:ir.model.fields.selection,name:expense_thomas.selection__expense_thomas_assignment__state__rejected
+msgid "rejected"
+msgstr "RECHAZADO"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__total
+msgid "total amount"
+msgstr "Valor Total"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__total_bills
+msgid "total amount bills"
+msgstr "Valor total billetes"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__total_coins
+msgid "total amount coins"
+msgstr "Valor total monedas"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_total
+msgid "total amount new coins"
+msgstr "Valor total monedas nuevas"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_total
+msgid "total amount old bills"
+msgstr "Valor total bileltes antiguos"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__oc_total
+msgid "total amount old coins"
+msgstr "Valor total monedas antiguas"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_1k_total
+msgid "total of 1.000"
+msgstr "Total de 1.000"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_10k_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_10k_total
+msgid "total of 10.000"
+msgstr "Total de 10.000"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_100_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__oc_100_total
+msgid "total of 100"
+msgstr "Total de 100"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_100k_total
+msgid "total of 100.000"
+msgstr "Total de 100.000"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_1000_total
+msgid "total of 1000"
+msgstr "Total de 1.000"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_2k_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_2k_total
+msgid "total of 2.000"
+msgstr "Total de 2.000"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_20k_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_20k_total
+msgid "total of 20.000"
+msgstr "Total de 20.000"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_200_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__oc_200_total
+msgid "total of 200"
+msgstr "Total de 200"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_5k_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_5k_total
+msgid "total of 5.000"
+msgstr "Total de 5.000"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_50_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__oc_50_total
+msgid "total of 50"
+msgstr "Total de 50"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nb_50k_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__ob_50k_total
+msgid "total of 50.000"
+msgstr "Total de 50.000"
+
+#. module: expense_thomas
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__nc_500_total
+#: model:ir.model.fields,field_description:expense_thomas.field_expense_thomas__oc_500_total
+msgid "total of 500"
+msgstr "Total de 500"

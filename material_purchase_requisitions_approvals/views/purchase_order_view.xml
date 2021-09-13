@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="purchase_order_inherit_form_view" model="ir.ui.view">
+            <field name="name">purchase.order.inherit.form.view</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/button[@name='button_cancel']" position="before">
+                    <button name="button_approve1" string="Aceptar aprobación 1" type="object" class="oe_highlight" attrs="{'invisible': ['|',('is_approver', '=', False),('state', '!=', 'to approve')]}" />
+                    <button name="button_approve2" string="Aceptar aprobación 2" type="object" class="oe_highlight" attrs="{'invisible': ['|',('is_approver2', '=', False),('state', '!=', 'approval2')]}" />
+                    <button name="button_approve3" string="Aceptar aprobación 3" type="object" class="oe_highlight" attrs="{'invisible': ['|',('is_approver3', '=', False),('state', '!=', 'approval3')]}" />
+                    <button name="button_approve4" string="Aceptar aprobación 4" type="object" class="oe_highlight" attrs="{'invisible': ['|',('is_approver4', '=', False),('state', '!=', 'approval4')]}" />
+                    <button name="button_approve5" string="Aceptar aprobación 5" type="object" class="oe_highlight" attrs="{'invisible': ['|',('is_approver5', '=', False),('state', '!=', 'approval5')]}" />
+                    <button name="button_approve6" string="Aceptar aprobación 6" type="object" class="oe_highlight" attrs="{'invisible': ['|',('is_approver6', '=', False),('state', '!=', 'approval6')]}" />
+                    <button name="button_approve7" string="Aceptar aprobación 7" type="object" class="oe_highlight" attrs="{'invisible': ['|',('is_approver7', '=', False),('state', '!=', 'approval7')]}" />
+
+                </xpath>
+
+                <xpath expr="//form/header/button[@name='button_approve']" position="attributes">
+                    <attribute name="states">approval_final</attribute>
+                    <!--  <attribute name="attrs">{'invisible':[('check_final_approval', '!=', True)]}</attribute>-->
+                </xpath>
+                <xpath expr="//form/header/button[@name='button_cancel']" position="attributes">
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'invisible':[('state', '=', 'cancel')]}</attribute>
+                </xpath>
+                <xpath expr="//form/header/button[@name='button_cancel']" position="after">
+                    <field name="is_approver" invisible="True" />
+                    <field name="is_approver2" invisible="True" />
+                    <field name="is_approver3" invisible="True" />
+                    <field name="is_approver4" invisible="True" />
+                    <field name="is_approver5" invisible="True" />
+                    <field name="is_approver6" invisible="True" />
+                    <field name="is_approver7" invisible="True" />
+                </xpath>
+                <xpath expr="//form/sheet/group/group[2]/field[@name='company_id']" position="after">
+                    <field name="code_access_groups" string="Código grupo de proceso" required="True" attrs="{'readonly': ['|',('state','!=','draft'),('origin','!=',False)]}" />
+                    <field name="check_final_approval" invisible="True" />
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="attributes">
+                    <attribute name="force_save">True</attribute>
+                </xpath>
+                <xpath expr="//sheet/notebook//field[@name='order_line']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('purchase', 'to approve','done', 'cancel','approved',
+                                        'approval2','approval3','approval4','approval5','approval6','approval7','approval_final'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': ['|',('invoice_status','=','invoiced'),('state', 'in', ('purchase', 'to approve','done', 'cancel','approved',
+                                        'approval2','approval3','approval4','approval5','approval6','approval7','approval_final'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': ['|',('origin','!=',False),('state', 'in', ('purchase', 'to approve','done', 'cancel','approved',
+                                        'approval2','approval3','approval4','approval5','approval6','approval7','approval_final'))]}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

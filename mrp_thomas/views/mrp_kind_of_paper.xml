@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record id="view_mrp_kind_of_paper_form" model="ir.ui.view">
+      <field name="name">mrp.kind.paper.form</field>
+      <field name="model">mrp.kind.paper</field>
+      <field name="arch" type="xml">
+        <form string="Tipos de Papel">
+           <group>
+             <group>
+                 <field name="name" string="Tipo de Papel " required="True"/>
+                 <field name="paper_category" string="Categoría"/>
+                 <field name="grammage"/>
+             </group>
+           </group>   
+        </form>
+      </field>
+    </record> 
+
+    <record id="view_mrp_kind_of_paper_tree" model="ir.ui.view">
+      <field name="name">mrp.kind.paper.tree</field>
+      <field name="model">mrp.kind.paper</field>
+        <field name="arch" type="xml">
+            <tree string="Tipos de Papel">
+              <field name="name" string="Tipo de Papel"/>
+              <field name="paper_category" string="Categoría"/>
+              <field name="grammage"/> 
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_tipo_papel" model="ir.actions.act_window">
+        <field name="name">Tipos de Papel</field>
+        <field name="res_model">mrp.kind.paper</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Tipos de Papel Thomas Producción
+          </p>
+        </field>
+    </record>
+
+    <menuitem name='Tipos de Papel'
+            action='action_tipo_papel'
+            id='kind_paper_menu'
+            parent='sale.menu_sale_config'
+            sequence='80'/> 
+
+    </data>   
+
+</odoo>
+

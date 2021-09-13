@@ -1,0 +1,102 @@
+<odoo>
+  <data>
+      <record id="view_mrp_production_inherit_form" model="ir.ui.view">
+              <field name="name">mrp.production.form</field>
+              <field name="model">mrp.production</field>
+              <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+              <field name="arch" type="xml">  
+                <xpath expr="//field[@name='state']" position="after">
+                  <field name="state_block" widget="statusbar" attrs="{'invisible':[('bool_state','!=',True)]}"/>
+                  <field name="bool_state" invisible="1" class="bool_state_checkbox"/>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('bool_state','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_mark_done']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|',('bool_state','=',True),('state', '!=', 'to_close')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|',('bool_state','=',True),('state', '!=', 'draft'), ('is_locked', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_assign']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|','|','|',('bool_state','=',True),('is_locked', '=', False), ('state', 'in', ('draft', 'done', 'cancel')), ('reservation_state', '=', 'assigned')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_plan']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|','|',('bool_state','=',True),('state', '!=', 'confirmed'), ('routing_id', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_unplan']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|','|','|',('bool_state','=',True),('state', '!=', 'planned'), ('date_planned_start', '=', False), ('date_planned_finished', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='open_produce_product'][hasclass('oe_highlight')]" position="attributes">
+                    <attribute name="attrs">{'invisible':['|','|','|','|',('bool_state','=',True),('state', '=', 'to_close'), ('is_locked', '=', False), ('reservation_state', '!=', 'assigned'), ('routing_id', '!=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='open_produce_product']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|','|','|','|',('bool_state','=',True),('state', '=', 'to_close'), ('is_locked', '=', False), ('reservation_state', 'not in', ('confirmed', 'waiting')), ('routing_id', '!=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='post_inventory']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|',('bool_state','=',True),('post_visible', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_scrap']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|','|',('bool_state','=',True),('state', 'in', ('cancel', 'draft')), ('is_locked', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_unreserve']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|',('bool_state','=',True),('unreserve_visible', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_toggle_is_locked'][hasclass('oe_highlight')]" position="attributes">
+                    <attribute name="attrs">{'invisible':['|',('bool_state','=',True),('is_locked', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_toggle_is_locked']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|','|','|',('bool_state','=',True),('state', 'in', ('cancel', 'draft')), ('id', '=', False), ('is_locked', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_cancel']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('bool_state','=',True)]}</attribute>
+                </xpath>
+                <xpath expr="//div[@class='oe_chatter']" position="after">
+                    <script>
+                         if ($("div .bool_state_checkbox input[type='checkbox']").is(":checked")){
+                            $(document).ready(function(){
+                            $(".btn-primary").hide();
+                            $(".btn-primary").hide();
+                                        });
+  						            }else{
+                            $(document).ready(function(){
+                            $(".btn-primary").show();
+                            $(".btn-primary").show();
+                            });
+                          };
+                    </script>
+                </xpath>
+              </field>
+      </record>
+      <record id="view_mrp_production_inherit_tree" model="ir.ui.view">
+              <field name="name">mrp.production.tree</field>
+              <field name="model">mrp.production</field>
+              <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+              <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                  <field name="state_block" attrs="{'invisible':[('bool_state','!=',True)]}"/>
+                  <field name="bool_state" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('bool_state','=',True)]}</attribute>
+                </xpath>
+              </field>
+      </record>
+      <record id="action_server_blocked" model="ir.actions.server">
+          <field name="name">Blocked</field>
+          <field name="model_id" ref="model_mrp_production"/>
+          <!--<field name="binding_model_id" ref="manufacture_masive_block.model_mrp_production"/>-->
+          <field name="binding_view_types">list</field>
+          <field name="state">code</field>
+          <field name="code">action = records.blocked()</field>
+      </record>
+      <record id="action_server_unblocked" model="ir.actions.server">
+          <field name="name">Unblocked</field>
+          <field name="model_id" ref="model_mrp_production"/>
+          <!--<field name="binding_model_id" ref="manufacture_masive_block.model_mrp_production"/>-->
+          <field name="binding_view_types">list</field>
+          <field name="state">code</field>
+          <field name="code">action = records.unblocked()</field>
+      </record>
+  </data>
+</odoo>

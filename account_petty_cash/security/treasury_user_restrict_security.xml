@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <data noupdate="1">
+
+        <record id="account_petty_cash_rule_user_config" model="ir.rule">
+            <field name="name">Muestra solo las cajas menores disponibles para el Usuario</field>
+            <field name="model_id" ref="model_treasury_config"/>
+            <field name="domain_force">[('id','in',user.treasury_config_ids.ids)]</field>
+            <field name="groups" eval="[(4,ref('account_petty_cash.group_treasury_user'))]"/>
+        </record>
+
+        <record id="account_petty_cash_rule_manager_config" model="ir.rule">
+            <field name="name">Muestra todas las cajas menores al administrador.</field>
+            <field name="model_id" ref="model_treasury_config"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('account_petty_cash.group_treasury_manager'))]"/>
+        </record>
+
+        <record id="account_petty_cash_rule_user_session" model="ir.rule">
+            <field name="name">Muestra solo sesiones de cajas menores disponibles para el Usuario</field>
+            <field name="model_id" ref="model_treasury_session"/>
+            <field name="domain_force">[('config_id','in',user.treasury_config_ids.ids)]</field>
+            <field name="groups" eval="[(4,ref('account_petty_cash.group_treasury_user'))]"/>
+        </record>
+
+        <record id="account_petty_cash_rule_manager_session" model="ir.rule">
+            <field name="name">Muestra todas las sesiones de puntos de venta al administrador.</field>
+            <field name="model_id" ref="model_treasury_session"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('account_petty_cash.group_treasury_manager'))]"/>
+        </record>
+        <!--
+        <record id="sale_session_app_rule_user_order" model="ir.rule">
+            <field name="name">Muestra las Ordenes de Venta únicamente de los puntos de venta disponibles para el usuario.</field>
+            <field name="model_id" ref="model_sale_order"/>
+            <field name="domain_force">[('config_id','in',user.treasury_config_ids.ids)]</field>
+            <field name="groups" eval="[(4,ref('sale_session_app.group_treasury_user'))]"/>
+        </record>
+
+        <record id="sale_session_app_rule_manager_order" model="ir.rule">
+            <field name="name">Muestra todas las ordenes para el administrador.</field>
+            <field name="model_id" ref="model_sale_order"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('sale_session_app.group_treasury_manager'))]"/>
+        </record>
+
+        <record id="sale_session_app_rule_user_payment" model="ir.rule">
+            <field name="name">Muestra los ingresos únicamente de los puntos de venta disponibles para el usuario.</field>
+            <field name="model_id" ref="model_account_payment"/>
+            <field name="domain_force">[('config_id','in',user.treasury_config_ids.ids)]</field>
+            <field name="groups" eval="[(4,ref('sale_session_app.group_treasury_user'))]"/>
+        </record>
+
+        <record id="sale_session_app_rule_manager_payment" model="ir.rule">
+            <field name="name">Muestra todos los ingresos para el administrador.</field>
+            <field name="model_id" ref="model_account_payment"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('sale_session_app.group_treasury_manager'))]"/>
+        </record>
+
+        <record id="sale_session_app_rule_user_hr_expense" model="ir.rule">
+            <field name="name">Muestra los gastos únicamente de los puntos de venta disponibles para el usuario.</field>
+            <field name="model_id" ref="model_hr_expense"/>
+            <field name="domain_force">[('config_id','in',user.treasury_config_ids.ids)]</field>
+            <field name="groups" eval="[(4,ref('sale_session_app.group_treasury_user'))]"/>
+        </record>
+
+        <record id="sale_session_app_rule_manager_hr_expense" model="ir.rule">
+            <field name="name">Muestra todos los gastos para el administrador.</field>
+            <field name="model_id" ref="model_hr_expense"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4,ref('sale_session_app.group_treasury_manager'))]"/>
+        </record>-->
+
+    </data>
+
+</odoo>

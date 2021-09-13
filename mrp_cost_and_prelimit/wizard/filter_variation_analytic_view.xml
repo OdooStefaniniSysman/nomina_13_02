@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+       <record id="filter_variation_analytic_view" model="ir.ui.view">
+            <field name="name">filter.variation.form</field>
+            <field name="model">filter.variation</field>
+            <field name="arch" type="xml">
+            <form string="Centro Beneficios">
+                    <group>
+                        <group>
+                            <label for="start_time" string="Rango de Fechas"/>
+                            <div class="o_row">
+                                <field name="start_time" class="oe_inline"/>
+                                <strong> a </strong>
+                                <field name="end_time" />
+                            </div>
+                        </group>
+                        <group></group>
+                    </group>
+                    <notebook>
+                        <page string="Ordenes de Fabricación" name="om">
+                            <field name="mrp_production"/>
+                        </page>
+                        <page string="Resultado" name="res">
+                            <field name="val"/>
+                            <field name="html_res" readonly="1"/>
+                        </page>
+                    </notebook>
+                    
+                    
+                    <footer>
+                        <button string="Bloquear OTs" name="block_workorders" type="object" class="oe_highlight"/>
+                        <button string="Generar Reporte" name="generate_report" type="object" class="oe_highlight"/>
+                        <button string="Cancel" special="cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="filter_variantion_action_wizard"
+            name="Analisis de Variacion"
+            res_model="filter.variation"
+            view_mode="form"
+            target="new"/>
+    </data>
+</odoo>

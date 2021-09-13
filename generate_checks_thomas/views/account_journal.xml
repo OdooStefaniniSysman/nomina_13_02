@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <record id="view_account_journal_custom_thomas" model="ir.ui.view">
+     <field name="name">account.journal.inherit</field>
+     <field name="model">account.journal</field>
+     <field name="inherit_id" ref="account.view_account_journal_form"/>
+     <field name="arch" type="xml">
+        <field name="check_next_number" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </field>
+        <xpath expr="//field[(@name='check_next_number')]" position="after">
+            <div class="o_row o_td_label">
+                <label for="concatenation" string="Secuencia de Cheques " attrs="{'invisible':[('check_manual_sequencing', '!=', True)]}"/>
+            </div>
+            <div class="o_row">
+                <field name="concatenation" attrs="{'invisible':[('check_manual_sequencing', '!=', True)]}"/>
+                <label for="concatenation" string="Hasta" attrs="{'invisible':[('check_manual_sequencing', '!=', True)]}"/>
+                <field name="sequence_until" attrs="{'invisible':[('check_manual_sequencing', '!=', True)]}"/>
+            </div>
+            <field name="check_sequence_id_thomas" attrs="{'invisible':[('check_manual_sequencing', '!=', True)]}"/>
+            <field name="prefix" invisible="True"/> 
+            <field name="sequence_concatenation" attrs="{'invisible':[('check_manual_sequencing', '!=', True)]}" readonly="True"/>      
+        </xpath>
+     </field>
+  </record>
+</odoo>
+
+              
+       
+

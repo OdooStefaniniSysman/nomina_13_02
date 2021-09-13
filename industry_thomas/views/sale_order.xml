@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml"> 
+             <xpath expr="//field[(@name='partner_id')]" position="after">
+                <field name="order_class" invisible="True" groups="industry_thomas.group_access_tst"/>
+                <field name="org_vtg" invisible="True"/>
+                <field name="channel" invisible="True"/>
+                <field name="sector" invisible="True"/>
+                <field name="cebe" invisible="True"/>
+                <field name="currency_tst" invisible="True"/>
+             </xpath>
+              <xpath expr="//field[(@name='sale_order_template_id')]" position="after">
+                 <field name="machine_tsts" readonly="True" groups="industry_thomas.group_access_tst"/>
+                 <field name="machine_catg" readonly="True" groups="industry_thomas.group_access_tst"/>
+                 <field name="serial" readonly="True" groups="industry_thomas.group_access_tst"/>
+                 <field name="brand" readonly="True" groups="industry_thomas.group_access_tst"/>
+                 <field name="model_tst" readonly="True" groups="industry_thomas.group_access_tst"/>
+                 <field name="charge_service" attrs="{'invisible': [('type_of_servicetst', '=', 'garantia')]}" groups="industry_thomas.group_access_tst"/>
+                 <field name="charge_spare" attrs="{'invisible': [('type_of_servicetst', '=', 'garantia')]}" groups="industry_thomas.group_access_tst"/>
+                 <field name="charge_service_gar" attrs="{'invisible': [('type_of_guarantee_sale', '!=', 'mantenimiento')]}" groups="industry_thomas.group_access_tst"/>
+                 <field name="charge_spare_gar" attrs="{'invisible': [('type_of_guarantee_sale', '!=', 'mantenimiento')]}" groups="industry_thomas.group_access_tst"/>
+                 <field name="charge_service_garv" attrs="{'invisible': [('type_of_guarantee_sale', '!=', 'venta')]}" groups="industry_thomas.group_access_tst"/>
+                 <field name="charge_spare_garv" attrs="{'invisible': [('type_of_guarantee_sale', '!=', 'venta')]}" groups="industry_thomas.group_access_tst"/>
+                 <field name="service_total" readonly="True" groups="industry_thomas.group_access_tst"/>
+                 <field name="spare_total" readonly="True" groups="industry_thomas.group_access_tst"/>
+             </xpath>
+             <xpath expr="//field[(@name='payment_term_id')]" position="after">
+                <field name="date_of_attention" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="stage_maintenance" readonly="True" attrs="{'invisible': [('check_tag_ids', '=', True)]}" groups="industry_thomas.group_access_tst"/>
+                <field name="stageid" readonly="True" attrs="{'invisible': [('check_tag_ids', '!=', True)]}" groups="industry_thomas.group_access_tst"/>
+                <field name="check_tag_ids" invisible="True"/>
+                <field name="sequence_maintenance" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="type_of_servicetst" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="type_of_guarantee_sale" readonly="True" attrs="{'invisible': [('type_of_servicetst', '!=', 'garantia')]}" groups="industry_thomas.group_access_tst"/>
+                <field name="technical_tst" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="technical_code" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="city_of_machine" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="state_machine" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="branch_machine" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="branch_tst" invisible="True"/>
+                <field name="address_branch_tst" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="office_code" readonly="True" groups="industry_thomas.group_access_tst"/>
+                <field name="description_maintenance" readonly="True" groups="industry_thomas.group_access_tst"/>
+             </xpath>
+                
+        </field>
+    </record>
+
+    <record id="view_sale_order_tree_tst_inherit" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="arch" type="xml"> 
+             <xpath expr="//field[(@name='name')]" position="after">
+                <field name="sequence_maintenance" groups="industry_thomas.group_access_tst"/>
+             </xpath>               
+        </field>
+    </record>
+</odoo>     

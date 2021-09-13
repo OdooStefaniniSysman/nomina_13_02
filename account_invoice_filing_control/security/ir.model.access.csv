@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_invoice_filed_customer,account.invoice filed_customer,account.invoice_filed_customer,account_invoice_filing_control.group_invoice_field_customer,1,1,1,0
+access_invoice_filed_internally,account.invoice filed_internally,account.invoice_filed_internally, account_invoice_filing_control.group_invoice_field_internally,1,1,1,0
+access_invoice_filed_supplier,account.invoice filed_supplier,account.invoice_filed_supplier,account_invoice_filing_control.group_invoice_field_supplier,1,1,1,0
+access_invoice_filed_treasury,account.invoice filed_treasury,account.invoice_filed_treasury,account_invoice_filing_control.group_invoice_field_treasury,1,1,1,0

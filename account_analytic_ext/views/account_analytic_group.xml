@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="account_move_inherit_tree" model="ir.ui.view">
+            <field name="name">account.analytic.group.inherit.tree</field>
+            <field name="model">account.analytic.group</field>
+            <field name="inherit_id" ref="analytic.account_analytic_group_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="description"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="managament_helpdesk" model="res.groups">
+            <field name="name">Gestor de Tickets</field>
+        </record>
+        <record id="managament_info_helpdesk" model="res.groups">
+            <field name="name">Usuario Segurinfo</field>
+        </record>
+        <record id="managament_final_user_helpdesk" model="res.groups">
+            <field name="name">Usuario final</field>
+        </record>
+        
+    </data>
+</odoo>

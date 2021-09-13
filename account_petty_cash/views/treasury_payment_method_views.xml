@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="treasury_payment_method_view_form" model="ir.ui.view">
+        <field name="name">treasury.payment.method.form</field>
+        <field name="model">treasury.payment.method</field>
+        <field name="arch" type="xml">
+            <form string="Métodos de Pago">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" class="oe_inline"/></h1>
+                    </div>
+                    <group name="Métodos de Pago">
+                        <group>
+                            <field name="hide_use_payment_terminal" invisible="1"/>
+                            <!--<field name="receivable_account_id" groups="account.group_account_user" />-->
+                            <field name="is_cash_count" />
+                            <field name="cash_journal_id" attrs="{'invisible': [('is_cash_count', '=', False)], 'required': [('is_cash_count', '=', True)]}" />
+                            <field name="split_transactions" groups="base.group_no_one" />
+                            <field name="company_id" readonly="1" groups="base.group_multi_company" />
+                        </group>
+                        <group>
+                            <field name="use_payment_terminal" attrs="{'invisible': [('hide_use_payment_terminal', '=', True)]}" />
+                        </group>
+                    </group>
+                    
+                    <div class="row mt16 o_settings_container">
+                        <div id="company" class="col-12 col-lg-12 o_setting_box" groups="base.group_multi_company">
+                            <group name="Contabilidad" attrs="{'invisible': [('is_cash_count', '=', False)]}" class="col-12 col-lg-12 o_setting_box">
+                                <group>
+                                    <group string="Apertura de Caja">
+                                        <field name="inbound_open_account_id" attrs="{'invisible': [('is_cash_count', '=', False)], 'required': [('is_cash_count', '=', True)]}" />
+                                        <field name="outbound_open_account_id" attrs="{'invisible': [('is_cash_count', '=', False)], 'required': [('is_cash_count', '=', True)]}" />
+                                    </group>
+                                    <group string="Cierre de Caja">
+                                        <field name="inbound_close_account_id" attrs="{'invisible': [('is_cash_count', '=', False)], 'required': [('is_cash_count', '=', True)]}" />
+                                        <field name="outbound_close_account_id" attrs="{'invisible': [('is_cash_count', '=', False)], 'required': [('is_cash_count', '=', True)]}" />
+                                    </group>
+                                    <group string="Aumento de Fondo">
+                                        <field name="inbound_increase_account_id" attrs="{'invisible': [('is_cash_count', '=', False)], 'required': [('is_cash_count', '=', True)]}" />
+                                        <field name="outbound_increase_account_id" attrs="{'invisible': [('is_cash_count', '=', False)], 'required': [('is_cash_count', '=', True)]}" />
+                                    </group>
+                                    <group string="Disminución de Fondo">
+                                        <field name="inbound_decrease_account_id" attrs="{'invisible': [('is_cash_count', '=', False)], 'required': [('is_cash_count', '=', True)]}" />
+                                        <field name="outbound_decrease_account_id" attrs="{'invisible': [('is_cash_count', '=', False)], 'required': [('is_cash_count', '=', True)]}" />
+                                    </group>
+                                </group>
+                            </group>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="treasury_payment_method_view_tree" model="ir.ui.view">
+        <field name="name">treasury.payment.method.tree</field>
+        <field name="model">treasury.payment.method</field>
+        <field name="arch" type="xml">
+            <tree string="Métodos de Pago">
+                <field name="hide_use_payment_terminal" invisible="1"/>
+                <field name="name" />
+                <!--<field name="receivable_account_id" groups="account.group_account_user"/>-->
+                <field name="is_cash_count" />
+                <field name="split_transactions" groups="base.group_no_one" />
+                <field name="use_payment_terminal" attrs="{'invisible': [('hide_use_payment_terminal', '=', True)]}" />
+                <field name="company_id" groups="base.group_multi_company" />
+            </tree>
+        </field>
+    </record>
+    
+    <!--<record id="treasury_payment_method_view_search" model="ir.ui.view">
+        <field name="name">treasury.payment.search.view</field>
+        <field name="model">treasury.payment.method</field>
+        <field name="arch" type="xml">
+            <search string="Métodos de Pago">
+                <field name="name"/>
+                <field name="receivable_account_id" groups="account.group_account_user" />
+                <group expand="1" string="Group By">
+                    <filter name="group_by_receivable_account" string="Account" domain="[]"  context="{'group_by':'receivable_account_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>-->
+
+    <record id="action_treasury_payment_method_form" model="ir.actions.act_window">
+        <field name="name">Métodos de Pago</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">treasury.payment.method</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_id" eval="False"/>
+        <field name="domain">[]</field>
+        <field name="context">{'search_default_group_by_account': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add a new payment method
+            </p>
+            <p>
+                Installing chart of accounts from the General Settings of
+                Invocing/Accounting app will create Bank and Cash payment
+                methods automatically.
+            </p>
+        </field>
+    </record>
+<!--
+    <menuitem id="menu_treasury_payment_method" parent="menu_treasury_config" action="action_treasury_payment_method_form" sequence="3" groups="group_treasury_manager,group_treasury_user"/>
+-->
+    <record id="action_payment_methods_tree" model="ir.actions.act_window">
+        <field name="context">{}</field>
+        <field name="name">Métodos de Pago</field>
+        <field name="res_model">treasury.payment.method</field>
+        <field name="view_id" ref="treasury_payment_method_view_tree"/>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+</odoo>

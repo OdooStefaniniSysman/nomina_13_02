@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <!-- This Menu Item must have a parent and an action -->
+        
+     <!--   <menuitem id="helpdesk_sub_servicio_menu" parent="helpdesk.helpdesk_menu_config" name="Sub-servicio"  sequence="110"/>
+        <menuitem id="helpdesk_grupo_usuarios_menu" parent="helpdesk.helpdesk_menu_config" name="Grupos de Usuarios"   sequence="120"/>
+        <menuitem id="helpdesk_tipo_ticket_menu" parent="helpdesk.helpdesk_menu_config" name="Tipo de Ticket"   sequence="130"/>
+        <menuitem id="helpdesk_actividad_menu" parent="helpdesk.helpdesk_menu_config" name="Actividad"  sequence="140"/>
+        <menuitem id="helpdesk_tipo_material_menu" parent="helpdesk.helpdesk_menu_config" name="Tipo de Material"  sequence="150"/>-->
+        
+    </data>
+</odoo>
+
+
+

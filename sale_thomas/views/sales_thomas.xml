@@ -1,0 +1,45 @@
+<odoo>
+  <data>
+    <record id="sale_order_thomas_tree" model="ir.ui.view">
+        <field name="name">sale.order.thomas.tree</field>
+        <field name="model">sale.order</field>
+        <field name="groups_id" eval="[(4,ref('contacs_thomas.group_tst'))]"/>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding" />
+        <field name="arch" type="xml">
+            <xpath expr="field[@name='partner_id']" position="after">
+                <field name="billing_cut" readonly="True"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="sale_order_thomas_tree_order" model="ir.ui.view">
+        <field name="name">sale.order.thomas.tree.order</field>
+        <field name="model">sale.order</field>
+        <field name="groups_id" eval="[(4,ref('contacs_thomas.group_tst'))]"/>
+        <field name="inherit_id" ref="sale.view_order_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="field[@name='partner_id']" position="after">
+                <field name="billing_cut" readonly="True"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="sale_order_thomas_form" model="ir.ui.view">
+        <field name="name">sale.order.thomas.form</field>
+        <field name="model">sale.order</field>
+        <field name="groups_id" eval="[(4,ref('contacs_thomas.group_tst'))]"/>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="payment_term_id" position="after">
+                <field name="billing_cut" readonly="True"/>
+            </field>
+            <xpath expr="//field[@name='client_order_ref']" position="after">
+                <field name="request_number"/>
+            </xpath>
+        </field>
+    </record>
+    
+  </data>
+</odoo>

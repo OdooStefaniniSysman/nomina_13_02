@@ -1,0 +1,110 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="approvals_requisition_form">
+                <field name="name">approvals.requisition.form</field>
+                <field name="model">approvals.requisition</field>
+                <field name="arch" type="xml">
+                    <form>
+                        <sheet>
+                            <div class="oe_title">
+                                        <h1>
+                                            <field string="Código" name="name" required="1"/>
+                                        </h1>
+                                    </div>
+                            
+                            <group  colspan="2">
+                                <group>
+                                    <field name="company_id" string="Compañía"/>
+                                    <field name="model_selection" string="Módulo" invisible="True"/>
+                                </group>
+                            </group>
+
+                            <group colspan="2">
+
+                                <group colspan="2" col="2" string='Aprobaciones Requisiciones'>
+                                    <group>
+                                        <field name="approval_requisition_user_id"/> 
+                                        <field name="approval_requisition_amount"/>
+                                    </group>
+                                    <group>
+                                        <field name="approval2_requisition_user_id"/> 
+                                        <field name="approval2_requisition_amount"/>
+                                    </group>
+                                </group>
+                                
+
+
+                                <group colspan="2" col="2" string='Aprobaciones Compras'>
+                                    <group>
+                                        <field name="is_conditional" />
+                                        <field name="approval_purchase_user_id" string="Aprobación 1"/> 
+                                        <field name="approval_purchase_amount" attrs="{'invisible': [('is_conditional','=',False)], 'required': [('is_conditional','=',True)]}"/>
+                                        <field name="second_approval_purchase_user_id"  attrs="{'invisible': [('is_conditional','=',False)], 'required': [('is_conditional','=',True)]}"/> 
+                                    </group>
+                                    <group>
+                                        <field name="is_conditional_2" />
+                                        <field name="approval2_purchase_user_id" string="Aprobación 2"/> 
+                                        <field name="approval2_purchase_amount" attrs="{'invisible': [('is_conditional_2','=',False)], 'required': [('is_conditional_2','=',True)]}"/>
+                                        <field name="second_approval2_purchase_user_id"  attrs="{'invisible': [('is_conditional_2','=',False)], 'required': [('is_conditional_2','=',True)]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="is_conditional_3" />
+                                        <field name="approval3_purchase_user_id" string="Aprobación 3"/>  
+                                        <field name="approval3_purchase_amount" attrs="{'invisible': [('is_conditional_3','=',False)], 'required': [('is_conditional_3','=',True)]}"/>
+                                        <field name="second_approval3_purchase_user_id"  attrs="{'invisible': [('is_conditional_3','=',False)], 'required': [('is_conditional_3','=',True)]}"/> 
+                                    </group>
+                                    <group>
+                                        <field name="is_conditional_4" />
+                                        <field name="approval4_purchase_user_id" string="Aprobación 4"/> 
+                                        <field name="approval4_purchase_amount" attrs="{'invisible': [('is_conditional_4','=',False)], 'required': [('is_conditional_4','=',True)]}"/>
+                                        <field name="second_approval4_purchase_user_id"  attrs="{'invisible': [('is_conditional_4','=',False)], 'required': [('is_conditional_4','=',True)]}"/> 
+                                    </group>
+                                    <group>
+                                        <field name="is_conditional_5" />
+                                        <field name="approval5_purchase_user_id" string="Aprobación 5"/> 
+                                        <field name="approval5_purchase_amount" attrs="{'invisible': [('is_conditional_5','=',False)], 'required': [('is_conditional_5','=',True)]}"/>
+                                        <field name="second_approval5_purchase_user_id"  attrs="{'invisible': [('is_conditional_5','=',False)], 'required': [('is_conditional_5','=',True)]}"/> 
+                                    </group>
+                                    <group>
+                                        <field name="is_conditional_6" />
+                                        <field name="approval6_purchase_user_id" string="Aprobación 6"/> 
+                                        <field name="approval6_purchase_amount" attrs="{'invisible': [('is_conditional_6','=',False)], 'required': [('is_conditional_6','=',True)]}"/>
+                                        <field name="second_approval6_purchase_user_id"  attrs="{'invisible': [('is_conditional_6','=',False)], 'required': [('is_conditional_6','=',True)]}"/> 
+                                    </group>
+                                    <group>
+                                        <field name="is_conditional_7" />
+                                        <field name="approval7_purchase_user_id" string="Aprobación 7"/> 
+                                        <field name="approval7_purchase_amount" attrs="{'invisible': [('is_conditional_7','=',False)], 'required': [('is_conditional_7','=',True)]}"/>
+                                        <field name="second_approval7_purchase_user_id"  attrs="{'invisible': [('is_conditional_7','=',False)], 'required': [('is_conditional_7','=',True)]}"/> 
+                                    </group>    
+                                </group>
+                                <group>
+                                    <field name="final_approval" string="Aprobación Final" invisible="True"/>  
+                                </group>    
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="approvals_requisition_tree">
+            <field name="name">approvals.requisition.tree</field>
+            <field name="model">approvals.requisition</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo de Ticket">
+                    <field name="name"/>
+                    <field name="company_id" string="Compañía"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="approvals_requisition_action">
+            <field name="name">Aprobación de requisiciones</field>
+            <field name="res_model">approvals.requisition</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem id="approvals_requisition_actividad_menu" parent="purchase.menu_purchase_config" action="material_purchase_requisitions_approvals.approvals_requisition_action" name="Código aprobaciones Requisiciones - Compras"  sequence="60"/>
+
+    </data>
+</odoo>

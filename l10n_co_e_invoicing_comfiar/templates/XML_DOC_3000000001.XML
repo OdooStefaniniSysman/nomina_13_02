@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Comprobantes>
+    <Comprobante>
+        <informacionOrganismo>
+            <CreditNote xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:clm66411="urn:un:unece:uncefact:codelist:specification:66411:2001"
+                xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+                xmlns:clmIANAMIMEMediaType="urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003"
+                xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2"
+                xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+                xmlns:sts="dian:gov:co:facturaelectronica:Structures-2-1"
+                xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+                xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+                xmlns:clm54217="urn:un:unece:uncefact:codelist:specification:54217:2001"
+                xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+                xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2">
+                <ext:UBLExtensions>
+                    <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                            <sts:DianExtensions>
+                                <sts:InvoiceControl>
+                                    <sts:InvoiceAuthorization>18760000001</sts:InvoiceAuthorization>
+                                    <sts:AuthorizationPeriod>
+                                        <cbc:StartDate>2019-01-19</cbc:StartDate>
+                                        <cbc:EndDate>2030-01-19</cbc:EndDate>
+                                    </sts:AuthorizationPeriod>
+                                    <sts:AuthorizedInvoices>
+                                        <sts:Prefix>NCVP</sts:Prefix>
+                                        <sts:From>1</sts:From>
+                                        <sts:To>5000000</sts:To>
+                                    </sts:AuthorizedInvoices>
+                                </sts:InvoiceControl>
+                                <sts:InvoiceSource>
+                                    <cbc:IdentificationCode listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.1">CO</cbc:IdentificationCode>
+                                </sts:InvoiceSource>
+                                <sts:SoftwareSecurityCode schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"/>
+                            </sts:DianExtensions>
+                        </ext:ExtensionContent>
+                    </ext:UBLExtension>
+                </ext:UBLExtensions>
+                <cbc:UBLVersionID>UBL 2.1</cbc:UBLVersionID>
+                <cbc:CustomizationID>20</cbc:CustomizationID>
+                <cbc:ProfileID>DIAN 2.1</cbc:ProfileID>
+                <cbc:ProfileExecutionID>2</cbc:ProfileExecutionID>
+                <cbc:ID>NCVP2000017</cbc:ID>
+                <cbc:UUID schemeName="CUFE-SHA384" schemeID="2"/>
+                <cbc:IssueDate>2020-07-16</cbc:IssueDate>
+                <cbc:IssueTime>19:43:06-05:00</cbc:IssueTime>
+                <!--Tipo de Factura 1=Factura de venta. 2=Factura de exportación-->
+                <cbc:CreditNoteTypeCode>91</cbc:CreditNoteTypeCode>
+                <cbc:Note>Somos responsables de IVA, Actividad Economica 1811</cbc:Note>
+                <cbc:Note>Somos facturadores electrónicos de acuerdo a la resolución 0010 del 2018.</cbc:Note>
+                <cbc:Note>NCVP</cbc:Note>
+                <cbc:Note/>
+                <cbc:Note>CUARENTA Y NUEVE MIL SETECIENTOS CUARENTA Y DOS PESOS</cbc:Note>
+                <cbc:Note>30 dias Fecha Factura</cbc:Note>
+                <cbc:Note>2020-04-30</cbc:Note>
+                <cbc:Note>0.00|0.00|0.00</cbc:Note>
+                <cbc:DocumentCurrencyCode listAgencyName="United Nations Economic Commission for Europe" listAgencyID="6" listID="ISO 4217 Alpha">COP</cbc:DocumentCurrencyCode>
+                <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+                <cac:OrderReference>
+                    <cbc:ID/>
+                </cac:OrderReference>
+                <cac:BillingReference>
+                    <cac:InvoiceDocumentReference>
+                        <cbc:ID>01T114</cbc:ID>
+                        <cbc:UUID schemeName="CUFE-SHA384">8c2e3342fa5c1d7aba216b09d294d0230a3bdf285088cdf05838714fbf7f48842c59b5b322e7dcb4cec39d83c00fa0d8</cbc:UUID>
+                        <cbc:IssueDate>2020-01-28</cbc:IssueDate>
+                    </cac:InvoiceDocumentReference>
+                </cac:BillingReference>
+                <cac:ContractDocumentReference>
+                    <cbc:ID>OC 21012020</cbc:ID>
+                    <cbc:IssueDate>2020-01-21</cbc:IssueDate>
+                </cac:ContractDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>
+SOCIEDAD_1
+                    </cbc:ID>
+                    <cbc:DocumentTypeCode>
+THOMAS GREG &amp; SONS DE COLOMBIA S.A.*NIT: 860.005.080-2*GRANDES CONTRIBUYENTES RESOLUCIÓN 012635 DE 14/12/2018*AUTORRETENEDORES RESOLUCIÓN 1716 DE 1990*CODIGO DE ACTIVIDAD 1811 AUTORET. I.R.C TARIFA 0.40%
+                    </cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>
+SOCIEDAD_2
+                    </cbc:ID>
+                    <cbc:DocumentTypeCode>
+IDEMIA COLOMBIA S.A.S*NIT: 900.386.417-9*GRANDES CONTRIBUYENTES RESOLUCIÓN 012635 DE 14/12/2018*AUTORRETENEDORES RESOLUCIÓN 8396 DE 01/08/2011*CODIGO DE ACTIVIDAD 1811 AUTORET. I.R.C TARIFA 0.40%
+                    </cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>-</cbc:ID>
+                    <cbc:DocumentTypeCode>*</cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>-</cbc:ID>
+                    <cbc:DocumentTypeCode>*</cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>-</cbc:ID>
+                    <cbc:DocumentTypeCode>*</cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>-</cbc:ID>
+                    <cbc:DocumentTypeCode>*</cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>-</cbc:ID>
+                    <cbc:DocumentTypeCode>*</cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>-</cbc:ID>
+                    <cbc:DocumentTypeCode>*</cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>-</cbc:ID>
+                    <cbc:DocumentTypeCode>*</cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <cac:AdditionalDocumentReference>
+                    <cbc:ID>-</cbc:ID>
+                    <cbc:DocumentTypeCode>*</cbc:DocumentTypeCode>
+                </cac:AdditionalDocumentReference>
+                <!--EL EMISOR-->
+                <cac:AccountingSupplierParty>
+                    <cbc:AdditionalAccountID>1</cbc:AdditionalAccountID>
+                    <cac:Party>
+                        <cac:PartyName>
+                            <cbc:Name>SOLUCIONES INTEGRALES DE LICENCIAS</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PhysicalLocation>
+                            <cac:Address>
+                                <cbc:ID>11001</cbc:ID>
+                                <cbc:CityName>Bogotá</cbc:CityName>
+                                <cbc:PostalZone>111611</cbc:PostalZone>
+                                <cbc:CountrySubentity>BOGOTA</cbc:CountrySubentity>
+                                <cbc:CountrySubentityCode>11</cbc:CountrySubentityCode>
+                                <cac:AddressLine>
+                                    <cbc:Line>AV AMERICAS 44 57</cbc:Line>
+                                </cac:AddressLine>
+                                <cac:Country>
+                                    <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+                                    <cbc:Name languageID="es">Colombia</cbc:Name>
+                                </cac:Country>
+                            </cac:Address>
+                        </cac:PhysicalLocation>
+                        <cac:PartyTaxScheme>
+                            <cbc:RegistrationName>SOLUCIONES INTEGRALES DE LICENCIAS</cbc:RegistrationName>
+                            <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="3" schemeName="31">900308506</cbc:CompanyID>
+                            <cbc:TaxLevelCode listName="48">O-09;O-11;O-14;O-37</cbc:TaxLevelCode>
+                            <cac:RegistrationAddress>
+                                <cbc:ID>11001</cbc:ID>
+                                <cbc:CityName>Bogotá</cbc:CityName>
+                                <cbc:PostalZone>111611</cbc:PostalZone>
+                                <cbc:CountrySubentity>BOGOTA</cbc:CountrySubentity>
+                                <cbc:CountrySubentityCode>11</cbc:CountrySubentityCode>
+                                <cac:AddressLine>
+                                    <cbc:Line>AV AMERICAS 44 57</cbc:Line>
+                                </cac:AddressLine>
+                                <cac:Country>
+                                    <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+                                    <cbc:Name languageID="es">Colombia</cbc:Name>
+                                </cac:Country>
+                            </cac:RegistrationAddress>
+                            <cac:TaxScheme>
+                                <cbc:ID>01</cbc:ID>
+                                <cbc:Name>IVA</cbc:Name>
+                            </cac:TaxScheme>
+                        </cac:PartyTaxScheme>
+                        <cac:PartyLegalEntity>
+                            <cbc:RegistrationName>SOLUCIONES INTEGRALES DE LICENCIAS</cbc:RegistrationName>
+                            <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="3" schemeName="31">900308506</cbc:CompanyID>
+                            <cac:CorporateRegistrationScheme>
+                                <cbc:ID>NCVP</cbc:ID>
+                            </cac:CorporateRegistrationScheme>
+                            <cac:ShareholderParty>
+                                <cbc:PartecipationPercent>50.00</cbc:PartecipationPercent>
+                                <cac:Party>
+                                    <cac:PartyTaxScheme>
+                                        <cbc:RegistrationName>THOMAS GREG &amp; SONS DE COLOMBIA S.A.</cbc:RegistrationName>
+                                        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="2" schemeName="31">860005080</cbc:CompanyID>
+                                        <cbc:TaxLevelCode listName="48">O-11</cbc:TaxLevelCode>
+                                        <cac:TaxScheme>
+                                            <cbc:ID>01</cbc:ID>
+                                            <cbc:Name>IVA</cbc:Name>
+                                        </cac:TaxScheme>
+                                    </cac:PartyTaxScheme>
+                                </cac:Party>
+                            </cac:ShareholderParty>
+                            <cac:ShareholderParty>
+                                <cbc:PartecipationPercent>50.00</cbc:PartecipationPercent>
+                                <cac:Party>
+                                    <cac:PartyTaxScheme>
+                                        <cbc:RegistrationName>IDEMIA COLOMBIA S.A.S</cbc:RegistrationName>
+                                        <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="9" schemeName="31">900386417</cbc:CompanyID>
+                                        <cbc:TaxLevelCode listName="48">O-11</cbc:TaxLevelCode>
+                                        <cac:TaxScheme>
+                                            <cbc:ID>01</cbc:ID>
+                                            <cbc:Name>IVA</cbc:Name>
+                                        </cac:TaxScheme>
+                                    </cac:PartyTaxScheme>
+                                </cac:Party>
+                            </cac:ShareholderParty>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                            <cbc:Name>SOLUCIONES INTEGRALES DE LICENCIAS</cbc:Name>
+                            <cbc:Telephone>571 3693720</cbc:Telephone>
+                            <cbc:Telefax>571 3693720</cbc:Telefax>
+                            <cbc:ElectronicMail>facturacion.csc@thomasgreg.com</cbc:ElectronicMail>
+                        </cac:Contact>
+                    </cac:Party>
+                </cac:AccountingSupplierParty>
+                <!--EL RECEPTOR-->
+                <cac:AccountingCustomerParty>
+                    <cbc:CustomerAssignedAccountID>4009731</cbc:CustomerAssignedAccountID>
+                    <cbc:AdditionalAccountID>1</cbc:AdditionalAccountID>
+                    <cac:Party>
+                        <cac:PartyName>
+                            <cbc:Name>CORPORACION ARQUITECTURA, TECNOLOGIA Y TALENTO</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PhysicalLocation>
+                            <cac:Address>
+                                <cbc:ID>68679</cbc:ID>
+                                <cbc:CityName>SAN GIL</cbc:CityName>
+                                <cbc:PostalZone>000000</cbc:PostalZone>
+                                <cbc:CountrySubentity>Santander</cbc:CountrySubentity>
+                                <cbc:CountrySubentityCode>68</cbc:CountrySubentityCode>
+                                <cac:AddressLine>
+                                    <cbc:Line>CR 9 10 20 OF 301 BRR CENTRO</cbc:Line>
+                                </cac:AddressLine>
+                                <cac:Country>
+                                    <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+                                    <cbc:Name languageID="es">Colombia</cbc:Name>
+                                </cac:Country>
+                            </cac:Address>
+                        </cac:PhysicalLocation>
+                        <cac:PartyTaxScheme>
+                            <cbc:RegistrationName>CORPORACION ARQUITECTURA, TECNOLOGIA Y TALENTO</cbc:RegistrationName>
+                            <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="1" schemeName="31">900641967</cbc:CompanyID>
+                            <cbc:TaxLevelCode listName="48">O-99</cbc:TaxLevelCode>
+                            <cac:RegistrationAddress>
+                                <cbc:ID>68679</cbc:ID>
+                                <cbc:CityName>SAN GIL</cbc:CityName>
+                                <cbc:PostalZone>000000</cbc:PostalZone>
+                                <cbc:CountrySubentity>Santander</cbc:CountrySubentity>
+                                <cbc:CountrySubentityCode>68</cbc:CountrySubentityCode>
+                                <cac:AddressLine>
+                                    <cbc:Line>CR 9 10 20 OF 301 BRR CENTRO</cbc:Line>
+                                </cac:AddressLine>
+                                <cac:Country>
+                                    <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+                                    <cbc:Name languageID="es">Colombia</cbc:Name>
+                                </cac:Country>
+                            </cac:RegistrationAddress>
+                            <cac:TaxScheme>
+                                <cbc:ID>01</cbc:ID>
+                                <cbc:Name>IVA</cbc:Name>
+                            </cac:TaxScheme>
+                        </cac:PartyTaxScheme>
+                        <cac:PartyLegalEntity>
+                            <cbc:RegistrationName>CORPORACION ARQUITECTURA, TECNOLOGIA Y TALENTO</cbc:RegistrationName>
+                            <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="1" schemeName="31">900641967</cbc:CompanyID>
+                            <cac:CorporateRegistrationScheme>
+                                <cbc:Name>CORPORACION ARQUITECTURA, TECNOLOGIA Y TALENTO</cbc:Name>
+                            </cac:CorporateRegistrationScheme>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                            <cbc:Name>CORPORACION ARQUITECTURA, TECNOLOGIA Y TALENTO</cbc:Name>
+                            <cbc:Telephone/>
+                            <cbc:Telefax/>
+                            <cbc:ElectronicMail/>
+                            <cbc:Note>X</cbc:Note>
+                        </cac:Contact>
+                    </cac:Party>
+                </cac:AccountingCustomerParty>
+                <cac:Delivery>
+                    <cbc:ActualDeliveryDate/>
+                </cac:Delivery>
+                <!--VENCIMIENTO-->
+                <cac:PaymentMeans>
+                    <cbc:ID>2</cbc:ID>
+                    <cbc:PaymentMeansCode>45</cbc:PaymentMeansCode>
+                    <cbc:PaymentDueDate>2020-04-30</cbc:PaymentDueDate>
+                </cac:PaymentMeans>
+                <!--CONDICIONES DE PAGO -->
+                <cac:PaymentTerms>
+                    <cbc:Note>30 dias Fecha Factura</cbc:Note>
+                </cac:PaymentTerms>
+                <!--IMPUESTOS Y/O RETENCIONES-->
+                <cac:TaxTotal>
+                    <cbc:TaxAmount currencyID="COP">7942.00</cbc:TaxAmount>
+                    <cac:TaxSubtotal>
+                        <cbc:TaxableAmount currencyID="COP">41800.00</cbc:TaxableAmount>
+                        <cbc:TaxAmount currencyID="COP">7942.00</cbc:TaxAmount>
+                        <cac:TaxCategory>
+                            <cbc:Percent>19.00</cbc:Percent>
+                            <cac:TaxScheme>
+                                <cbc:ID>01</cbc:ID>
+                                <cbc:Name>IVA</cbc:Name>
+                            </cac:TaxScheme>
+                        </cac:TaxCategory>
+                    </cac:TaxSubtotal>
+                </cac:TaxTotal>
+                <cac:LegalMonetaryTotal>
+                    <cbc:LineExtensionAmount currencyID="COP">41800.00</cbc:LineExtensionAmount>
+                    <cbc:TaxExclusiveAmount currencyID="COP">41800.00</cbc:TaxExclusiveAmount>
+                    <cbc:TaxInclusiveAmount currencyID="COP">49742.00</cbc:TaxInclusiveAmount>
+                    <cbc:PayableAmount currencyID="COP">49742.00</cbc:PayableAmount>
+                </cac:LegalMonetaryTotal>
+                <cac:CreditNoteLine>
+                    <cbc:ID>1</cbc:ID>
+                    <!--Texto venta de materiales viene de SAP-->
+                    <cbc:Note>18150.00 |3448.50 |21598.50</cbc:Note>
+                    <cbc:CreditedQuantity unitCode="93">1.000</cbc:CreditedQuantity>
+                    <cbc:LineExtensionAmount currencyID="COP">18150.00</cbc:LineExtensionAmount>
+                    <cac:DocumentReference>
+                        <cbc:ID>1</cbc:ID>
+                        <cbc:DocumentTypeCode/>
+                    </cac:DocumentReference>
+                    <!--IMPUESTOS Y/O RETENCIONES-->
+                    <cac:TaxTotal>
+                        <cbc:TaxAmount currencyID="COP">3448.50</cbc:TaxAmount>
+                        <cac:TaxSubtotal>
+                            <cbc:TaxableAmount currencyID="COP">18150.00</cbc:TaxableAmount>
+                            <cbc:TaxAmount currencyID="COP">3448.50</cbc:TaxAmount>
+                            <cac:TaxCategory>
+                                <cbc:Percent>19.00</cbc:Percent>
+                                <cac:TaxScheme>
+                                    <cbc:ID>01</cbc:ID>
+                                    <cbc:Name>IVA</cbc:Name>
+                                </cac:TaxScheme>
+                            </cac:TaxCategory>
+                        </cac:TaxSubtotal>
+                    </cac:TaxTotal>
+                    <cac:Item>
+                        <cbc:Description>LICENCIAS DE TRANSITO</cbc:Description>
+                        <cac:ManufacturersItemIdentification>
+                            <cbc:ID/>
+                            <cbc:ExtendedID>UN</cbc:ExtendedID>
+                        </cac:ManufacturersItemIdentification>
+                        <cac:StandardItemIdentification>
+                            <cbc:ID schemeName="Partidas Arancelarias" schemeID="020" schemeAgencyID="195"/>
+                        </cac:StandardItemIdentification>
+                        <cac:AdditionalItemProperty>
+                            <cbc:Name>INGRESOS PARA THOMAS GREG &amp; SONS DE COLOMBIA S.A.</cbc:Name>
+                            <cbc:Value>SI</cbc:Value>
+                        </cac:AdditionalItemProperty>
+                    </cac:Item>
+                    <cac:Price>
+                        <cbc:PriceAmount currencyID="COP">18150.00</cbc:PriceAmount>
+                        <cbc:BaseQuantity unitCode="93">1.00</cbc:BaseQuantity>
+                    </cac:Price>
+                </cac:CreditNoteLine>
+                <cac:CreditNoteLine>
+                    <cbc:ID>2</cbc:ID>
+                    <!--Texto venta de materiales viene de SAP-->
+                    <cbc:Note>23650.00 |4493.50 |28143.50</cbc:Note>
+                    <cbc:CreditedQuantity unitCode="93">1.000</cbc:CreditedQuantity>
+                    <cbc:LineExtensionAmount currencyID="COP">23650.00</cbc:LineExtensionAmount>
+                    <cac:DocumentReference>
+                        <cbc:ID>2</cbc:ID>
+                        <cbc:DocumentTypeCode>APLICA SOBRE FACTURA 01T114 NOTA CREDITO PARCIAL POR EL VALOR MAYOR COBRADO</cbc:DocumentTypeCode>
+                    </cac:DocumentReference>
+                    <!--IMPUESTOS Y/O RETENCIONES-->
+                    <cac:TaxTotal>
+                        <cbc:TaxAmount currencyID="COP">4493.50</cbc:TaxAmount>
+                        <cac:TaxSubtotal>
+                            <cbc:TaxableAmount currencyID="COP">23650.00</cbc:TaxableAmount>
+                            <cbc:TaxAmount currencyID="COP">4493.50</cbc:TaxAmount>
+                            <cac:TaxCategory>
+                                <cbc:Percent>19.00</cbc:Percent>
+                                <cac:TaxScheme>
+                                    <cbc:ID>01</cbc:ID>
+                                    <cbc:Name>IVA</cbc:Name>
+                                </cac:TaxScheme>
+                            </cac:TaxCategory>
+                        </cac:TaxSubtotal>
+                    </cac:TaxTotal>
+                    <cac:Item>
+                        <cbc:Description>LICENCIAS DE TRANSITO</cbc:Description>
+                        <cac:ManufacturersItemIdentification>
+                            <cbc:ID/>
+                            <cbc:ExtendedID>UN</cbc:ExtendedID>
+                        </cac:ManufacturersItemIdentification>
+                        <cac:StandardItemIdentification>
+                            <cbc:ID schemeName="Partidas Arancelarias" schemeID="020" schemeAgencyID="195"/>
+                        </cac:StandardItemIdentification>
+                        <cac:AdditionalItemProperty>
+                            <cbc:Name>INGRESOS PARA IDEMIA COLOMBIA S.A.S</cbc:Name>
+                            <cbc:Value>SI</cbc:Value>
+                        </cac:AdditionalItemProperty>
+                    </cac:Item>
+                    <cac:Price>
+                        <cbc:PriceAmount currencyID="COP">23650.00</cbc:PriceAmount>
+                        <cbc:BaseQuantity unitCode="93">1.00</cbc:BaseQuantity>
+                    </cac:Price>
+                </cac:CreditNoteLine>
+            </CreditNote>
+        </informacionOrganismo>
+        <informacionComfiar>
+            <ruc>900308506</ruc>
+            <codDoc>4</codDoc>
+            <prefixPtoVenta>NCVP</prefixPtoVenta>
+            <nroCbte>2000017</nroCbte>
+            <Receptores>
+                <Receptor>
+                    <Login/>
+                    <TipoUsuario>0</TipoUsuario>
+                    <Nombre>CORPORACION ARQUITECTURA, TECNOLOGI</Nombre>
+                    <Mail/>
+                    <Idioma>5</Idioma>
+                </Receptor>
+            </Receptores>
+        </informacionComfiar>
+    </Comprobante>
+</Comprobantes>

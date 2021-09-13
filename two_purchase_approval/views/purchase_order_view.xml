@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record id="view_purchase_order_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.thomas</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@id='bid_confirm']" position="replace">
+                    <button name="validation_mount_department" type="object" states="draft,sent" string="Confirm Order" class="oe_highlight" id="bid_confirm"/>
+                </xpath>
+                <xpath expr="//button[@id='draft_confirm']" position="replace">
+                    <button name="validation_mount_waiting" type="object" states="deparment" string="Confirm Order" id="draft_confirm" groups="	two_purchase_approval.group_purchase_thomas_production_department"/>
+                </xpath>
+                <xpath expr="//button[@name='validation_mount_waiting']" position="after">
+                    <button name="button_approve" type="object" states="waiting" string="Confirm Order" id="draft_confirm" groups="two_purchase_approval.group_purchase_thomas_production_portfolio"/>
+                    <button name="button_cancel" states="deparment,waiting" string="Cancel" type="object"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.module.category" id="module_category_purchase_thomas_production">
+            <field name="name">Purchase Production Thomas</field>
+            <field name="description">Helps you manage purchase.</field>
+        </record>
+        <record id="group_purchase_thomas_production_department" model="res.groups">
+            <field name="name">Purchase Department</field>
+            <field name="category_id" ref="module_category_purchase_thomas_production"/>
+        </record>
+        <record id="group_purchase_thomas_production_portfolio" model="res.groups">
+            <field name="name">Portfolio</field>
+            <field name="category_id" ref="module_category_purchase_thomas_production"/>
+        </record>
+    </data>
+</odoo>

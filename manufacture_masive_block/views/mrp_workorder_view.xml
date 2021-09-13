@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record id="view_mrp_workorder_inherit_form" model="ir.ui.view">
+              <field name="name">mrp.workorder.form</field>
+              <field name="model">mrp.workorder</field>
+              <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+              <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_uom_id']" position="after">
+                  <field name="bool_state" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='time_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly':[('bool_state','=',True)]}</attribute>
+                </xpath>
+              </field>
+      </record>
+  </data>
+</odoo>

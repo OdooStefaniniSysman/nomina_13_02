@@ -1,0 +1,382 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_followup_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-03 16:00+0000\n"
+"PO-Revision-Date: 2020-12-03 11:28-0500\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Cristiam Carreño <cristiamcarreno@gmail.com>\n"
+"Language: es_CO\n"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.template_followup_report_inherit
+msgid "<i class=\"fa fa-envelope\" role=\"img\" aria-label=\"Email\"/>"
+msgstr ""
+"<i class=\"fa fa-envelope\" role=\"img\" aria-label=\"Correo electrónico\"/>"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.template_followup_report_inherit
+msgid ""
+"<i class=\"fa fa-mobile fa-fw\" role=\"img\" aria-label=\"Mobile\" title="
+"\"Mobile\"/>"
+msgstr ""
+"<i class=\"fa fa-mobile fa-fw\" role=\"img\" aria-label=\"Celular\" title="
+"\"Celular\"/>"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.template_followup_report_inherit
+msgid ""
+"<i class=\"fa fa-phone fa-fw\" role=\"img\" aria-label=\"Phone\" title="
+"\"Phone\"/>"
+msgstr ""
+"<i class=\"fa fa-phone fa-fw\" role=\"img\" aria-label=\"Teléfono\" title="
+"\"Teléfono\"/>"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.template_followup_report_inherit
+msgid ""
+"<i class=\"fa fa-suitcase\" role=\"img\" aria-label=\"Follow-up status\" "
+"title=\"Follow-up status\"/>\n"
+"                        <span>Follow-up status: </span>"
+msgstr ""
+"<i class=\"fa fa-suitcase\" role=\"img\" aria-label=\"Estado de seguimiento"
+"\" title=\"Estado de seguimiento\"/>\n"
+"<span>Estado de seguimiento: </span>"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.template_followup_report_inherit
+msgid ""
+"<i class=\"fa fa-user fa-fw\" role=\"img\" aria-label=\"Contact\" title="
+"\"Contact\"/>"
+msgstr ""
+"<i class=\"fa fa-user fa-fw\" role=\"img\" aria-label=\"Contacto\" title="
+"\"Contacto\"/>"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.template_followup_report_inherit
+msgid "<span>Has no portfolio tracking contacts!</span>"
+msgstr "<span>¡No tiene contactos de seguimiento de cartera!</span>"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.template_followup_report_inherit
+msgid "<span>Portfolio tracking contacts</span>"
+msgstr "<span>Contactos de seguimiento de cartera</span>"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__account_ids
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_partner__type
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_users__type
+msgid "Address Type"
+msgstr "Tipo de dirección"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__author_id
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.followup_sent_report_search
+msgid "Author"
+msgstr "Autor"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_status__code
+msgid "Code"
+msgstr "Código"
+
+#. module: account_followup_extended
+#: model:ir.model,name:account_followup_extended.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__count_cron
+msgid "Count cron"
+msgstr "Cantidad de acciones automáticas"
+
+#. module: account_followup_extended
+#: model:ir.model.fields.selection,name:account_followup_extended.selection__res_partner__followup_date__date
+msgid "Create date"
+msgstr "Fecha de Creación"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_status__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_status__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.followup_sent_report_search
+msgid "Current Month"
+msgstr "Mes actual"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__date
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.followup_sent_report_search
+msgid "Date"
+msgstr "Fecha"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__display_name
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_status__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: account_followup_extended
+#: model:ir.model.fields.selection,name:account_followup_extended.selection__res_partner__followup_date__due
+msgid "Due date"
+msgstr "Fecha de vencimiento"
+
+#. module: account_followup_extended
+#: model:ir.model,name:account_followup_extended.model_account_followup_followup_line
+msgid "Follow-up Criteria"
+msgstr "Criterios de seguimiento"
+
+#. module: account_followup_extended
+#: model:ir.model,name:account_followup_extended.model_account_followup_report
+msgid "Follow-up Report"
+msgstr "Informe de seguimiento"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_partner__followup_status_id
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_users__followup_status_id
+msgid "Follow-up status"
+msgstr "Estado de seguimiento"
+
+#. module: account_followup_extended
+#: model:ir.actions.act_window,name:account_followup_extended.followup_sent_report_action
+#: model:ir.model,name:account_followup_extended.model_followup_sent_report
+#: model:ir.ui.menu,name:account_followup_extended.followup_sent_report
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.followup_sent_report_form
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.followup_sent_report_list
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.followup_sent_report_pivot
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.followup_sent_report_search
+msgid "Followup Sent Report"
+msgstr "Informe de seguimiento enviados"
+
+#. module: account_followup_extended
+#: model:ir.actions.act_window,name:account_followup_extended.action_followup_status_act_window
+#: model:ir.ui.menu,name:account_followup_extended.menu_followup_status
+msgid "Followup Status"
+msgstr "Estado de seguimiento"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_partner__followup_date
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_users__followup_date
+msgid "Followup date"
+msgstr "Fecha de seguimiento"
+
+#. module: account_followup_extended
+#: model:ir.model,name:account_followup_extended.model_followup_status
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.view_res_partner_filter_inherited
+msgid "Followup status"
+msgstr "Estado de seguimiento"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__friday
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.account_followup_line_inherit_form
+msgid "Friday"
+msgstr "Viernes"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__friday_time
+msgid "Friday time"
+msgstr "Hora del viernes"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.followup_sent_report_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__id
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_status__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,help:account_followup_extended.field_res_partner__type
+#: model:ir.model.fields,help:account_followup_extended.field_res_users__type
+msgid ""
+"Invoice & Delivery addresses are used in sales orders. Private addresses are "
+"only visible by authorized users."
+msgstr ""
+"Las direcciones de facturación y entrega se utilizan en los pedidos de "
+"venta. Las direcciones privadas solo son visibles para los usuarios "
+"autorizados."
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report____last_update
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_status____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_status__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_status__write_date
+msgid "Last Updated on"
+msgstr "Actualizado"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__mail_id
+msgid "Mail"
+msgstr "Correo"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__message_id
+msgid "Message"
+msgstr "Mensaje"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__monday
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.account_followup_line_inherit_form
+msgid "Monday"
+msgstr "Lunes"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__friday_cron
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__monday_cron
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__thursday_cron
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__tuesday_cron
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__wednesday_cron
+msgid "Monday cron"
+msgstr "Acción automática del Lunes"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__monday_time
+msgid "Monday time"
+msgstr "Hora del lunes"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_status__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__partner_id
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.followup_sent_report_search
+msgid "Partner"
+msgstr "Cliente"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_partner__payment_tracking
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_users__payment_tracking
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.view_res_partner_filter_inherited
+msgid "Payment tracking"
+msgstr "Seguimiento de cartera"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_partner__portfolio_contact
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_users__portfolio_contact
+msgid "Portfolio contact"
+msgstr "Contacto de Cartera"
+
+#. module: account_followup_extended
+#: model:ir.model.fields.selection,name:account_followup_extended.selection__res_partner__type__portfolio
+msgid "Portfolio tracking"
+msgstr "Seguimiento de cartera"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__qty
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.account_followup_line_inherit_form
+msgid "Schedule sending"
+msgstr "Programar envío"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.template_followup_report_inherit
+msgid "Send an email"
+msgstr "Enviar un correo electrónico"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.view_res_partner_filter_inherited
+msgid "Send follow-up report"
+msgstr "Enviar informe de seguimiento"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_partner__send_followup
+#: model:ir.model.fields,field_description:account_followup_extended.field_res_users__send_followup
+msgid "Send follow-up report?"
+msgstr "¿Enviar informe de seguimiento?"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__message_status
+msgid "State"
+msgstr "Estado"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_followup_sent_report__subject
+msgid "Subject"
+msgstr "Asunto"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__thursday
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.account_followup_line_inherit_form
+msgid "Thursday"
+msgstr "Jueves"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__thursday_time
+msgid "Thursday time"
+msgstr "Hora del jueves"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__tuesday
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.account_followup_line_inherit_form
+msgid "Tuesday"
+msgstr "Martes"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__tuesday_time
+msgid "Tuesday time"
+msgstr "Hora del martes"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__wednesday
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#. module: account_followup_extended
+#: model:ir.model.fields,field_description:account_followup_extended.field_account_followup_followup_line__wednesday_time
+msgid "Wednesday time"
+msgstr "Hora del miércoles"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.view_res_partner_filter_inherited
+msgid "Without portfolio contacts"
+msgstr "Sin contactos de cartera"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.view_followup_status_search
+msgid "followup_status_search"
+msgstr "Estado de seguimiento"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.view_followup_status_tree
+msgid "followup_status_tree"
+msgstr "Estado de seguimiento"
+
+#. module: account_followup_extended
+#: model_terms:ir.ui.view,arch_db:account_followup_extended.account_followup_line_inherit_form
+msgid "wednesday"
+msgstr "Miércoles"

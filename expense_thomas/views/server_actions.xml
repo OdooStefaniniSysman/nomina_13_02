@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record model="ir.actions.server" id="action_made_by">
+            <field name="name">Sign: made by</field>
+            <field name="model_id" ref="expense_thomas.model_expense_thomas_assignment"/>
+            <field name="binding_model_id" ref="expense_thomas.model_expense_thomas_assignment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records: 
+                    signature = records.get_sign_made_by()
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="action_sign_reviewed_by">
+            <field name="name">Sign: reviewed by</field>
+            <field name="model_id" ref="expense_thomas.model_expense_thomas_assignment"/>
+            <field name="binding_model_id" ref="expense_thomas.model_expense_thomas_assignment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records: 
+                    signature = records.get_sign_reviewed_by()
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="action_sign_approved_by">
+            <field name="name">Sign: approved by</field>
+            <field name="model_id" ref="expense_thomas.model_expense_thomas_assignment"/>
+            <field name="binding_model_id" ref="expense_thomas.model_expense_thomas_assignment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records: 
+                    signature = records.get_sign_approved_by()
+            </field>
+        </record>
+
+        <record model="ir.actions.server" id="action_sign_managment_by">
+            <field name="name">Sign: managment by</field>
+            <field name="model_id" ref="expense_thomas.model_expense_thomas_assignment"/>
+            <field name="binding_model_id" ref="expense_thomas.model_expense_thomas_assignment"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records: 
+                    signature = records.get_sign_managment_by()
+            </field>
+        </record>
+
+        
+    </data>
+</odoo>

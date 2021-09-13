@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<!-- Invoice Reports -->
+        <report 
+            string="Asientos Contables" 
+            id="action_report_account_move_print" 
+            model="account.move" 
+            report_type="qweb-pdf"
+            name="account_move_print.report_account_move_format" 
+            file="account_move_print.report_account_move_format"
+        />
+
+    </data>
+</odoo>

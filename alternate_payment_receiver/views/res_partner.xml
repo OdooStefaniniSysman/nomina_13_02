@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="res_partner_alternative_contact" model="ir.ui.view">
+            <field name="name">res.partner.alternative.contact</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form" />
+            <field name="arch" type="xml">
+                <!-- view for contract team -->
+                <xpath expr="//field[@name='bank_ids']" position="after">
+                    <field name="property_alternative_contact_id" domain="[('partner_id', '=', id)]"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

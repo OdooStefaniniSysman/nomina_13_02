@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record id="view_mrp_document_size_form" model="ir.ui.view">
+      <field name="name">mrp.document.sizeform</field>
+      <field name="model">mrp.document.size</field>
+      <field name="arch" type="xml">
+        <form string="Tamaño del Papel">
+           <group>
+             <group>
+                 <field name="name" string="Tamaño del Papel " required="True"/>
+                 <field name="width"/>
+                 <field name="heigth"/>
+             </group>
+           </group>   
+        </form>
+      </field>
+    </record> 
+
+    <record id="view_document_size_tree" model="ir.ui.view">
+      <field name="name">mrp.document.size.tree</field>
+      <field name="model">mrp.document.size</field>
+        <field name="arch" type="xml">
+            <tree string="Tamaño del Papel">
+              <field name="name" string="Tipo de Papel"/>
+              <field name="width"/>
+              <field name="heigth"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_document_size" model="ir.actions.act_window">
+        <field name="name">Tamaño del Papel</field>
+        <field name="res_model">mrp.document.size</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Tamaños del Papel Thomas Producción
+          </p>
+        </field>
+    </record>
+
+    <menuitem name='Tamaño del Papel'
+            action='action_document_size'
+            id='document_size_menu'
+            parent='sale.menu_sale_config'
+            sequence='81'/> 
+
+    </data>   
+
+</odoo>

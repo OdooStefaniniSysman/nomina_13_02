@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="helpdesk__sla_inherit_form" model="ir.ui.view">
+            <field name="name">helpdesk.sla.inherit.form</field>
+            <field name="model">helpdesk.sla</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_sla_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ticket_type_id']" position="after">
+                    <field name="activity_id" string="Actividad relacionada"/>
+                </xpath>
+                <xpath expr="//field[@name='ticket_type_id']" position="attributes">
+                    <attribute name="string">Urgencia</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="helpdesk__sla_inherit_tree" model="ir.ui.view">
+            <field name="name">helpdesk.sla.inherit.form</field>
+            <field name="model">helpdesk.sla</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_sla_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="activity_id" string="Actividad relacionada"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

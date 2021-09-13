@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_maintenance_equipment_inherit" model="ir.ui.view">
+        <field name="name">maintenance.equipment.form.inherit</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+        <field name="arch" type="xml">            
+            
+            <field name="serial_no" position="attributes" >
+                <attribute name="required">0</attribute>
+            </field>
+
+            <xpath expr="//div[(@class='oe_button_box')]" position="inside">
+                 <button string="Trazabilidad" type="object" name="action_view_stock_move_lines" class="oe_stat_button" icon="fa-exchange" groups="industry_thomas.group_access_tst"/>
+            </xpath> 
+
+            <xpath expr="//field[(@name='model')]" position="after">
+                 <field name="brand_maintenance" groups="industry_thomas.group_access_tst"/>
+                 <field name="inventory_plate" groups="industry_thomas.group_access_tst"/>
+            </xpath>
+
+            <xpath expr="//field[(@name='location')]" position="after">
+                  <field name="department" groups="industry_thomas.group_access_tst"/>
+                  <field name="branch" groups="industry_thomas.group_access_tst"/>
+                  <field name="branch_tst" groups="industry_thomas.group_access_tst"/>
+                  <field name="address" groups="industry_thomas.group_access_tst"/>
+                  <field name="office_code" groups="industry_thomas.group_access_tst"/>
+            </xpath>           
+
+            <xpath expr="//group[(@name='maintenance')]" position="after">
+                 <group>
+                   <field name="date_start_contract" groups="industry_thomas.group_access_tst"/>
+                   <field name="date_end" groups="industry_thomas.group_access_tst"/>
+                   <field name="maintenance_value" groups="industry_thomas.group_access_tst"/>
+                   <field name="maintenance_value_corrective" groups="industry_thomas.group_access_tst"/>
+                   <field name="maintenance_cant" groups="industry_thomas.group_access_tst"/>
+                   <field name="maintenance_total" groups="industry_thomas.group_access_tst"/>
+                   <field name="maintenance_frequency" groups="industry_thomas.group_access_tst"/>
+                 </group>
+            </xpath>
+            <xpath expr="//field[(@name='department_id')]" position="after">
+               <field name="rental_contract" groups="industry_thomas.group_access_tst"/>
+            </xpath>        
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_maintenance_equipment_tree">
+       <field name="name">maintenance.equipment.inherit</field>
+       <field name="model">maintenance.equipment</field>
+       <field name="type">tree</field>
+       <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
+       <field name="arch" type="xml">
+             <xpath expr="//field[(@name='category_id')]" position="after">
+                   <field name="date_start_contract" groups="industry_thomas.group_access_tst"/>
+                   <field name="date_end" groups="industry_thomas.group_access_tst"/>
+                   <field name="maintenance_value" groups="industry_thomas.group_access_tst"/>
+                   <field name="maintenance_cant" groups="industry_thomas.group_access_tst"/>
+                   <field name="maintenance_total" groups="industry_thomas.group_access_tst"/>
+                   <field name="maintenance_frequency" groups="industry_thomas.group_access_tst"/>
+                   <field name="branch" groups="industry_thomas.group_access_tst"/>
+            </xpath>
+       </field>
+    </record>
+    <record id="maintenance_equipment_thomas_form" model="ir.ui.view">
+            <field name="name">maintenance.equipment.thomas.form</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="groups_id" eval="[(4,ref('contacs_thomas.group_tst'))]" />
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form" />
+            <field name="arch" type="xml">
+                <field name='category_id' position="before">
+                    <field name="partner_client_id" required="True"/>
+                </field>      
+                <field name='company_id' position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name='location' position="attributes">
+                    <attribute name="string">Ubicacion actual de la maquina</attribute>
+                    <attribute name="required">True</attribute>
+                </field>
+                <field name='model' position="attributes">
+                    <attribute name="required">True</attribute>
+                </field>
+                <field name='serial_no' position="attributes">
+                    <attribute name="required">True</attribute>
+                </field>
+                <!-- <field name="model" position="after">
+                    <field name="brand" required="True" />
+                </field> -->
+            </field>
+        </record>
+</odoo>       

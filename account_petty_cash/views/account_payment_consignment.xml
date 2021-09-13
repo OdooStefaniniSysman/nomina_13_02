@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <act_window
+            id="multi_payment_consignment_view"
+            name="Documento de Consignación"
+            domain="[('id','in',active_ids)]"
+            res_model="account.payment.multi.consignment"
+            view_mode="form"
+            binding_model="account.payment"
+            groups="group_treasury_manager,group_treasury_user"
+            target="new"/>
+
+            <act_window
+            id="multi_payment_consignment_validate_view"
+            name="Validar Asientos"
+            domain="[('id','in',active_ids)]"
+            res_model="account.payment.multi.consignment.validate"
+            view_mode="form"
+            binding_model="account.payment"
+            groups="group_treasury_manager"
+            target="new"/>
+    </data>
+</odoo>

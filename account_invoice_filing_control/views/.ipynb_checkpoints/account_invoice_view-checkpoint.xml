@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record id="view_move_form_inherit_filing" model="ir.ui.view">
+            <field name="name">account.move.filing.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_draft']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|',('invoice_filed_internally', '=', True), ('invoice_filed_customer', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_cancel']" position="attributes">
+                    <attribute name="attrs">{'invisible':['|',('invoice_filed_internally', '=', True), ('invoice_filed_customer', '=', True)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="invoice_filed_internally" 
+                           attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                    <field name="invoice_filed_customer" 
+                           attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                    
+                    <field name="invoice_filed_treasury" 
+                           attrs="{'invisible': [('type', 'not in', ('in_invoice', 'in_refund'))]}"/>
+                    <field name="invoice_filed_supplier" 
+                           attrs="{'invisible': [('type', 'not in', ('in_invoice', 'in_refund'))]}"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="view_invoice_tree_inherit_filing" model="ir.ui.view">
+            <field name="name">account.invoice.filing.tree</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="invoice_filed_internally" 
+                           string="Radicado Cartera" optional="hide"
+                           attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                    <field name="invoice_filed_customer"  
+                           string="Radicado Cliente" optional="hide"
+                           attrs="{'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                    <field name="invoice_filed_supplier" 
+                           string="Radicado CxP" optional="hide"
+                           attrs="{'invisible': [('type', 'not in', ('in_invoice', 'in_refund'))]}"/>
+                    <field name="invoice_filed_treasury"  
+                           string="Radicado Tesoreria" optional="hide"
+                           attrs="{'invisible': [('type', 'not in', ('in_invoice', 'in_refund'))]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

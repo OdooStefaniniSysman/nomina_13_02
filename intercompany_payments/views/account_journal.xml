@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_journal_ut_view_form_inherit" model="ir.ui.view">
+            <field name="name">account.journal.ut.view.form.inherit</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="is_ut" attrs="{'invisible': ('type','!=','bank')}"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='advanced_settings']" position="after">
+                    <page name="ut" string="Temporal Union" attrs="{'invisible': ['|',('is_ut','=',False),('type','!=','bank')]}">
+                        <group>
+                            <group>
+                                <field name="alternate_partner_id" attrs="{'invisible': [('is_ut','=',False),('type','!=','bank')],
+                                                                            'required': [('is_ut','=',True),('type','=','bank')]}"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

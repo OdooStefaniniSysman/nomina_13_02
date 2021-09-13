@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <record id="view_inherit_stock_picking_form" model="ir.ui.view">
+            <field name="name">inherit.stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="priority">15</field>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='button_validate']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_validate']" position="after">
+                    <button name="active_wizard_stock" type="object" string="Validate"  class="oe_highlight" groups="base.group_user" attrs="{'invisible': [('bool_wizard','=',False)]}"/>
+                    <field name="bool_wizard" invisible="1"/>
+                </xpath>
+                 <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+                    <page name="sync" string="Sync Approve">
+                    <group name="sync">
+                        <field name="sync1" widget="signature" readonly="1"/>
+                        <field name="sync2" widget="signature" readonly="1"/>
+                        <field name="sync3" widget="signature" readonly="1"/>
+                    </group>
+                    </page>
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/notebook[1]/page[3]/field[@name='move_ids_without_package']/tree[1]/field[@name='reserved_availability']" position="after">
+            <field name="requested"/>
+        </xpath>
+            </field>
+        </record>
+        <record id="view_stock_picking_wizard_form" model="ir.ui.view">
+            <field name="name">stock.picking.wizard.form</field>
+            <field name="model">stock.picking.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="stock picking wizard">
+                <span>Stock Picking Wizard</span>
+                <group>
+                    <group>
+                        <field name="sync1" widget="signature"/>
+                        <field name="sync2" widget="signature"/>
+                        <field name="sync3" widget="signature"/>
+                    </group>
+                </group>
+                <footer>
+		    	<button string="Validate" name="active_validation" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+        <record id="view_inherit_stock_picking_form_thco" model="ir.ui.view">
+            <field name="name">inherit.stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="priority">15</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='move_line_ids_without_package']" position="inside">
+                    <field name="qty_done" attrs="{'readonly': [('state', 'in', ('done', 'cancel')), ('is_locked', '=', True)]}" force_save="1"/>
+                    <field name="requested"/>
+                </xpath>    
+            </field>
+        </record>        
+        <record id="action_stock_picking_wizard" model="ir.actions.act_window">
+            <field name="name">stock picking wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking.wizard</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

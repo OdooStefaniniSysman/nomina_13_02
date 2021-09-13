@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <report 
+            id="action_account_segment_report"
+            model="mrp.production"
+            string="Informe Cuentas Analíticas por segmento"
+            report_type="qweb-html"
+            name="account_analytic_ext.mrp_cost_structure"
+            file="account_analytic_ext.mrp_cost_structure"
+            print_report_name="'Cost Analysis - %s ' % object.name"
+        />
+
+        <record id="account_analytic_account_inherit_form" model="ir.ui.view">
+            <field name="name">account.analytic.account.inherit.form</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/div/button[1]" position="before">
+                    <button class="oe_stat_button" name="%(account_analytic_ext.action_account_segment_report)d" type="action"  icon="fa-file-o" string="Reporte cuentas por segmentos" widget="statinfo"/>
+                </xpath>
+                <xpath expr="//form/sheet/group/group[2]/field[@name='company_id']" position="after">
+                    <field name="ceco_sap"/>
+                    <field name="segment_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

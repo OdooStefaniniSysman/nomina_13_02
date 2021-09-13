@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+		<record id="advances_authorized_group_user" model="res.groups">
+			<field name="name">Authorize Advances above the fixed %</field>
+			<field name="category_id" ref="base.module_category_hidden"/>
+		</record>
+	</data>
+</openerp>

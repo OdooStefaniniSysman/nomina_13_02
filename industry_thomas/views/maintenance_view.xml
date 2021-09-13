@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+        <record id="maintenance_equipment_thomas_form" model="ir.ui.view">
+            <field name="name">maintenance.equipment.thomas.form</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="groups_id" eval="[(4,ref('contacs_thomas.group_tst'))]" />
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form" />
+            <field name="arch" type="xml">
+                <field name='category_id' position="before">
+                    <field name="partner_client_id"  groups="industry_thomas.group_access_tst"/>
+                </field>      
+                <field name='company_id' position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name='location' position="attributes">
+                    <attribute name="string">Ubicacion actual de la maquina</attribute>
+                    <attribute name="required">True</attribute>
+                </field>
+                <field name='model' position="attributes">
+                    <attribute name="required">True</attribute>
+                </field>
+                <field name='serial_no' position="attributes">
+                    <attribute name="required">True</attribute>
+                </field>
+                <!-- <field name="model" position="after">
+                    <field name="brand" required="True" />
+                </field> -->
+            </field>
+        </record>
+
+        <!-- <record id="maintenance_request_thomas_form" model="ir.ui.view">
+            <field name="name">maintenance.request.thomas.form</field>
+            <field name="model">maintenance.request</field>
+            <field name="groups_id" eval="[(4,ref('contacs_thomas.group_tst'))]" />
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form" />
+            <field name="arch" type="xml">
+                <field name="equipment_id" position="attributes">
+                    <attribute name="string">Equipo a revisar</attribute>
+                    <attribute name="required">True</attribute>
+                </field>
+                <field name='company_id' position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name='email_cc' position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name='maintenance_team_id' position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name='employee_id' position="before">
+                    <field name="service_order" />
+                    <field name="partner_client_id" domain="[('is_tst','=',True)]" required="True"/>
+                    <field name="client_city" readonly="True" force_save="True" />
+                    <field name="contract_code" readonly="True" force_save="True" />
+                    <field name="contract_end" readonly="True" force_save="True" />
+                    <field name="aprobation_type" readonly="True" force_save="True" />
+                </field>
+                <field name="equipment_id" position="after">
+                    <field name="equipment_serie" readonly="True" force_save="True" />
+                    <field name="equipment_brand" readonly="True" force_save="True" />
+                    <field name="equipment_model" readonly="True" force_save="True" />
+                    <field name="equipment_location" readonly="True" force_save="True" />
+                </field>
+            </field>
+        </record> -->
+    </data>
+</odoo>

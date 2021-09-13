@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <record id="view_wizard_deparment" model="ir.ui.view">
+            <field name="name">wizard.purchase.form</field>
+            <field name="model">wizard.purchase</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="Wizard Purchase">
+                <span></span>
+                <group>
+                    <group>
+                        <field name="message" />
+                        <field name="users_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}"/>
+                    </group>
+                </group>
+                <footer>
+		    	<button string="Notify" name="action_wizard_deparment" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+        <record id="action_create_wizard_deparment" model="ir.actions.act_window">
+            <field name="name">create wizard deparment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.purchase</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="view_wizard_waiting" model="ir.ui.view">
+            <field name="name">wizard.purchase.form</field>
+            <field name="model">wizard.purchase</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="Wizard Purchase">
+                <span></span>
+                <group>
+                    <group>
+                        <field name="message" />
+                        <field name="users_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}"/>
+                    </group>
+                </group>
+                <footer>
+		    	<button string="Notify" name="action_wizard_waiting" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+        <record id="action_create_wizard_waiting" model="ir.actions.act_window">
+            <field name="name">create wizard waiting</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.purchase</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

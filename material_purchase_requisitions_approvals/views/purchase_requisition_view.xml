@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record id="material_purchase_requisition_inherit_form_view" model="ir.ui.view">
+            <field name="name">material.purchase.requisition.inherit.form.view</field>
+            <field name="model">material.purchase.requisition</field>
+            <field name="inherit_id" ref="material_purchase_requisitions.material_purchase_requisition_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header//button[@name='manager_approve']" position="after">
+                    <field name="is_approver" invisible="True"/>
+                    <field name="is_approver2" invisible="True"/>
+                    <button name="reject_transfer" string="Rechazar etapa 1" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('is_approver', '=', False),('state', '!=', 'dept_confirm')]}"
+                            />
+                    <button name="approve2_transfer" string="Aprobar 2" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('is_approver2', '=', False),('state', '!=', 'approved')]}"/>
+                    <button name="reject2_transfer" string="Rechazar etapa 2" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('is_approver2', '=', False),('state', '!=', 'approved')]}"/>
+                </xpath>
+                <xpath expr="//form/sheet/group/group/field[@name='requisiton_responsible_id']" position="after">
+                   <field name="code_access_groups" string="Código grupo de proceso" required="True" attrs="{'readonly': [('state','!=','draft')]}"/>
+                   <field name="currency_id" attrs="{'readonly': [('state','!=','draft')]}"/>
+                </xpath>
+                <xpath expr="//header//button[@name='requisition_confirm']" position="attributes">
+                    <attribute name="states">draft</attribute>
+                </xpath>
+                <xpath expr="//header//button[@name='action_cancel']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state', 'in', ('cancelled', 'posted', 'rejected2'))]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//header//button[@name='user_approve']" position="attributes">
+                    <attribute name="states">rejected,rejected2</attribute>
+                    <attribute name="attrs">{'invisible': ['|',('is_approver2', '=', False),('state', '!=', 'ir_approve')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//header//button[@name='requisition_reject']" position="attributes">
+                   <attribute name="states">rejected,rejected2</attribute>
+                </xpath>
+                <xpath expr="//header//button[@name='manager_approve']" position="attributes">
+                    <attribute name="states"></attribute>
+                    <attribute name="attrs">{'invisible': ['|',('is_approver', '=', False),('state', '!=', 'dept_confirm')]}</attribute>
+                    <attribute name="string">Aprobar 1</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+    
+    </data>
+</odoo>

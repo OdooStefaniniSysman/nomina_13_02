@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sitrac_interface_sitrac_interface,sistrac_interface.sitrac_interface,model_sitrac_interface_sitrac_interface,base.group_user,1,1,1,1

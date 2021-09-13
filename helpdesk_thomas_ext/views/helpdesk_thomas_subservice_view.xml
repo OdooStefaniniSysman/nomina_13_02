@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="helpdesk_subservice_form">
+                <field name="name">helpdesk.subservice.form</field>
+                <field name="model">helpdesk.subservice</field>
+                <field name="arch" type="xml">
+                    <form string="Subservicios">
+                        <sheet>
+                            <group>
+                                <div class="oe_title">
+                                    <h1>
+                                        <field name="name" required="1"/>
+                                    </h1>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="service_id" string='Servicio' required="1"/>
+                                <field name="group_users_id" string='Grupos' required="1"/>
+                                <field name="team_id" string='Mesa de ayuda relacionado' required="1"/>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="helpdesk_subservice_tree">
+            <field name="name">helpdesk.subservice.tree</field>
+            <field name="model">helpdesk.subservice</field>
+            <field name="arch" type="xml">
+                <tree string="Subservicio">
+                    <field name="name"/>
+                    <field name="service_id" />
+                    <field name="team_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="helpdesk_sub_servicio_action">
+            <field name="name">Subservicios</field>
+            <field name="res_model">helpdesk.subservice</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem id="helpdesk_sub_servicio_menu" parent="helpdesk.helpdesk_menu_config" name="Sub-servicio" action="helpdesk_thomas_ext.helpdesk_sub_servicio_action" sequence="110"/>
+
+    </data>
+</odoo>

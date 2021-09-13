@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- account.move inherit form view -->
+        <record id="view_move_form" model="ir.ui.view">
+            <field name="name">account.move.inherit.view.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_origin']" position="after">
+                    <field name="number_contract" attrs="{'required': [('is_ut','=',True), ('type', 'in', ('out_invoice', 'out_refund'))], 'readonly': [('state', '!=', 'draft')], 'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                    <field name="date_contract" attrs="{'required': [('is_ut','=',True), ('type', 'in', ('out_invoice', 'out_refund'))], 'readonly': [('state', '!=', 'draft')], 'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                    <field name="is_ut" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='sequence']" position="after">
+                    <field name="item" force_save="1"/>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='sequence']" position="after">
+                    <field name="item" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="additional_document_reference" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                    <field name="additional_document" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                    <field name="purchase_order_date" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('type', 'not in', ('out_invoice', 'out_refund'))]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

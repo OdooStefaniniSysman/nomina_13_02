@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- sale.advance.payment.inv inherit form view -->
+        <record id="view_sale_advance_payment_inv" model="ir.ui.view">
+            <field name="name">sale.advance.payment.inv.inherit.view.form</field>
+            <field name="model">sale.advance.payment.inv</field>
+            <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="after">
+                    <group>
+                        <group>
+                            <field name="journal_id" options="{'no_create_edit': True}"/>
+                        </group>
+                        <group>
+                            <field name="grouped_sale_partner"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record id="helpdesk_ticket_thomas_form" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.thomas.form</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="groups_id" eval="[(4,ref('contacs_thomas.group_tst'))]" />
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form" />
+            <field name="arch" type="xml">
+                <!-- view for contract team -->
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="val_req_contact" attrs="{'invisible': ['|',('stage_id', '=', %(stage_new_contract_c)d)
+                                                                    ,('team_id', '!=', %(helpdesk_contract_managment)d)]}" />
+                    <field name="tiket_number_contract" attrs="{'invisible': ['|',('stage_id', '=', %(stage_new_contract_c)d)
+                                                                    ,'|',('stage_id', '=', %(stage_requirements_verification_C)d)
+                                                                    ,('team_id', '!=', %(helpdesk_contract_managment)d)]
+                                                          ,'required': [('stage_id', '!=', %(stage_new_contract_c)d)
+                                                                    ,('stage_id', '!=', %(stage_requirements_verification_C)d)
+                                                                    ,('team_id', '=', %(helpdesk_contract_managment)d)]}" />
+                </xpath>
+                <!-- view for warranty team -->
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="maintenance_equipment_id" attrs="{'invisible': [('team_id', '!=', %(helpdesk_warranty_managment)d)]
+                                                                    ,'required': [('team_id', '=', %(helpdesk_warranty_managment)d)]}" />
+                    <field name="equipment_model" attrs="{'invisible': [('team_id', '!=', %(helpdesk_warranty_managment)d)]}" />
+                    <field name="equipment_serial" attrs="{'invisible': [('team_id', '!=', %(helpdesk_warranty_managment)d)]}" />
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="equipment_supplier" attrs="{'invisible': [('team_id', '!=', %(helpdesk_warranty_managment)d)]}" />
+                    <field name="guarantee_reply" attrs="{'invisible': ['|',('stage_id', '=', %(stage_new_warranty_g)d)
+                                                                    ,'|',('stage_id', '=', %(stage_supplier_valuation_g)d)
+                                                                    ,('team_id', '!=', %(helpdesk_warranty_managment)d)]
+                                                                    ,'required': ['|',('stage_id','=',%(stage_supplier_response_g)d)
+                                                                    ,'|',('stage_id','=',%(stage_inventary_g)d)
+                                                                    ,('stage_id','=',%(stage_client_response_g)d)
+                                                                    ,('team_id', '=', %(helpdesk_warranty_managment)d)]}" />
+                    <field name="inventory_ubication" attrs="{'invisible': ['|',('stage_id', '=', %(stage_new_warranty_g)d)
+                                                                    ,'|',('stage_id', '=', %(stage_supplier_valuation_g)d)
+                                                                    ,'|',('stage_id', '=', %(stage_supplier_response_g)d)
+                                                                    ,('team_id', '!=', %(helpdesk_warranty_managment)d)]
+                                                                    ,'required': ['|',('stage_id', '=', %(stage_inventary_g)d)
+                                                                    ,('stage_id', '=', %(stage_client_response_g)d)
+                                                                    ,('team_id', '=', %(helpdesk_warranty_managment)d)]}" />
+                    <field name="customer_response" attrs="{'invisible': ['|',('stage_id', '!=', %(stage_client_response_g)d)
+                                                                    ,('team_id', '!=', %(helpdesk_warranty_managment)d)]
+                                                                    ,'required': [('stage_id', '=', %(stage_client_response_g)d)
+                                                                    ,('team_id', '=', %(helpdesk_warranty_managment)d)]}" />
+
+                </xpath>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]" position="attributes">
+                    <attribute name="attrs">{'invisible': [('team_id', '=', %(helpdesk_contract_managment)d)]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

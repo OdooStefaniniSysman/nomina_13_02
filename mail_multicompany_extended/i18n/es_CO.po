@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* multicompany_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-05 01:58+0000\n"
+"PO-Revision-Date: 2020-11-05 01:58+0000\n"
+"Last-Translator: Juan Arcos juanparmer@gmail.com\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_mail_activity_type
+msgid "Activity Type"
+msgstr "Tipo de actividad"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_crm_stage
+msgid "CRM Stages"
+msgstr "Fases del CRM"
+
+#. module: multicompany_extended
+#: model:ir.model.fields,field_description:multicompany_extended.field_crm_lead_tag__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_crm_lost_reason__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_crm_stage__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_helpdesk_stage__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_helpdesk_tag__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_mail_activity_type__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_mailing_mailing__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_product_category__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_project_tags__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_project_task_type__company_id
+#: model:ir.model.fields,field_description:multicompany_extended.field_survey_survey__company_id
+#: model_terms:ir.ui.view,arch_db:multicompany_extended.view_mailing_mailing_form
+#: model_terms:ir.ui.view,arch_db:multicompany_extended.view_survey_survey_form
+msgid "Company"
+msgstr "Compañía"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_helpdesk_stage
+msgid "Helpdesk Stage"
+msgstr "Etapa de Mesa de Ayuda"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_helpdesk_tag
+msgid "Helpdesk Tags"
+msgstr "Etiquetas de Mesa de Ayuda"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_crm_lead_tag
+msgid "Lead Tag"
+msgstr "Etiqueta de Iniciativa"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_mailing_mailing
+msgid "Mass Mailing"
+msgstr "Correo masivo"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_crm_lost_reason
+msgid "Opp. Lost Reason"
+msgstr "Motivo de pérdida de la oportunidad"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_product_category
+msgid "Product Category"
+msgstr "Categoría del Producto"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_project_tags
+msgid "Project Tags"
+msgstr "Etiquetas del Proyecto"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_survey_survey
+msgid "Survey"
+msgstr "Encuesta"
+
+#. module: multicompany_extended
+#: model:ir.model,name:multicompany_extended.model_project_task_type
+msgid "Task Stage"
+msgstr "Fase/Etapa de la Tarea"
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_res_partner_inherit" model="ir.ui.view">
+        <field name="name">res.users.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml"> 
+            <xpath expr="//notebook"  position="inside">
+                <page string="TST" groups="industry_thomas.group_access_tst">
+                    <group>
+                       <field name="is_technical"/>
+                       <field name="technical_code" attrs="{'invisible': [('is_technical', '!=', True)]}"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>     

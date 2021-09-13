@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- res.partner inherit form view -->
+        <record id="view_partner_party_tax_scheme_form" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Invoicing" name="einvoicing">
+                        <group>
+                            <group string="Fiscal responsibilities" name="g_1">
+                                <field name="tax_level_code_id"
+                                        options="{'no_create': True}"
+                                        widget="many2many_tags"
+                                        required='0'/>
+                                <field name="tax_scheme_id"
+                                        options="{'no_create': True}"
+                                        required='0'/>
+                            </group>
+                            <group name="g_2">
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

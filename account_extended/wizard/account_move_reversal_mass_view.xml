@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_move_reversal_mass" model="ir.ui.view">
+            <field name="name">account.move.reversal.form</field>
+            <field name="model">account.move.reversal.mass</field>
+            <field name="arch" type="xml">
+                <form string="Account Move Reversal Massive">
+                    <group>
+                         <group>
+                            <field name="refund_method" widget="radio" readonly="1"/>
+                         </group>
+                         <group>
+                            <div attrs="{'invisible':[('refund_method', '!=', 'modify')]}" class="oe_grey" colspan="4">
+                               The credit note is auto-validated and reconciled with the invoice.
+                               The original invoice is duplicated as a new draft.
+                            </div>
+                         </group>
+                    </group>
+                    <group>
+                         <group>
+                             <field name="discrepancy_response_code_id"/>
+                             <field name="reason"/>
+                             <field name="date" string="Refund Date"/>
+                         </group>
+                         <group>
+                            <field name="journal_id"/>
+                            <field name="journal_new_id" attrs="{'invisible':[('refund_method', '!=', 'modify')]}"/>
+                         </group>
+                    </group>
+                    <footer>
+                        <button string='Reverse' name="reverse_moves" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+        <record id="action_view_account_move_reversal_mass" model="ir.actions.act_window">
+            <field name="name">Reversal Massive</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.move.reversal.mass</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_account_move_reversal_mass" />
+            <field name="target">new</field>
+        </record>
+
+        <!-- <record id="action_view_account_move_reversal_mass" model="ir.actions.server">
+            <field name="name">Reversal Massive</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move_reversal_mass" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">records.mass_processed()</field>
+        </record> -->
+
+        <act_window
+            id="action_view_account_move_reversal_mass_view"
+            name="Reversal Massive"
+            domain="[('id','in',active_ids)]"
+            res_model="account.move.reversal.mass"
+            view_mode="form"
+            binding_model="account.move"
+            target="new"/>  
+
+    </data>
+</odoo>

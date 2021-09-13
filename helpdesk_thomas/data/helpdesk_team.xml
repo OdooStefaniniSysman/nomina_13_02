@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <data>
+        <record id="helpdesk_contract_managment" model="helpdesk.team">
+            <field name="name">Gestion de contratos</field>
+            <field name="alias_name">Contratos</field>
+            <field name="stage_ids" eval="False"/> 
+            <!--field name="company_id" ref="contacs_thomas.TST_company"/-->
+        </record>
+
+        <record id="helpdesk_warranty_managment" model="helpdesk.team">
+            <field name="name">Gestion de garantias</field>
+            <field name="alias_name">Garantias</field>
+            <field name="stage_ids" eval="False"/> 
+            <!--field name="company_id" ref="contacs_thomas.TST_company"/-->
+        </record>
+
+
+        <!-- stages for contracts-->
+        <record id="stage_new_contract_c" model="helpdesk.stage">
+            <field name="name">RENOVACION/NUEVO CONTRATO</field>
+            <field name="sequence">0</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_contract_managment'))]"/>
+            <field name="is_close" eval="False"/>
+            <field name="template_id" ref="helpdesk.new_ticket_request_email_template"/>
+        </record>
+        <record id="stage_requirements_verification_C" model="helpdesk.stage">
+            <field name="name">VERIFICACION DE REQUERIMIENTO</field>
+            <field name="sequence">1</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_contract_managment'))]"/>
+            <field name="is_close" eval="False"/>
+        </record>
+        <record id="stage_policies_c" model="helpdesk.stage">
+            <field name="name">TRAMITE DE POLIZAS</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_contract_managment'))]"/>
+            <field name="sequence">2</field>
+            <field name="is_close" eval="True"/>
+        </record>
+        <record id="stage_comercial_revision_c" model="helpdesk.stage">
+            <field name="name">REVISION COMERCIAL</field>
+            <field name="sequence">3</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_contract_managment'))]"/>
+            <field name="is_close" eval="True"/>
+            <field name="fold" eval="True"/>
+        </record>
+        <record id="stage_signatures_c" model="helpdesk.stage">
+            <field name="name">FIRMAS</field>
+            <field name="sequence">4</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_contract_managment'))]"/>
+            <field name="is_close" eval="True"/>
+            <field name="fold" eval="True"/>
+        </record>
+        <record id="stage_tracing_c" model="helpdesk.stage">
+            <field name="name">SEGUIMIENTO</field>
+            <field name="sequence">5</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_contract_managment'))]"/>
+            <field name="is_close" eval="True"/>
+            <field name="fold" eval="True"/>
+        </record>
+        <record id="stage_archive_c" model="helpdesk.stage">
+            <field name="name">ARCHIVO</field>
+            <field name="sequence">6</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_contract_managment'))]"/>
+            <field name="is_close" eval="True"/>
+            <field name="fold" eval="True"/>
+        </record>
+        <record id="stage_cancelled_c" model="helpdesk.stage">
+            <field name="name">CANCELADO</field>
+            <field name="sequence">7</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_contract_managment'))]"/>
+            <field name="is_close" eval="True"/>
+            <field name="fold" eval="True"/>
+        </record>
+
+        <!-- stages for warranty-->
+        <record id="stage_new_warranty_g" model="helpdesk.stage">
+            <field name="name">NUEVA GARANTIA</field>
+            <field name="sequence">0</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_warranty_managment'))]"/>
+            <field name="is_close" eval="False"/>
+            <field name="template_id" ref="helpdesk.new_ticket_request_email_template"/>
+        </record>
+        <record id="stage_supplier_valuation_g" model="helpdesk.stage">
+            <field name="name">EVALUACION POR PROVEEDOR</field>
+            <field name="sequence">1</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_warranty_managment'))]"/>
+            <field name="is_close" eval="False"/>
+        </record>
+        <record id="stage_supplier_response_g" model="helpdesk.stage">
+            <field name="name">RESPUESTA DEL PROVEEDOR GARANTIA</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_warranty_managment'))]"/>
+            <field name="sequence">2</field>
+            <field name="is_close" eval="True"/>
+        </record>
+        <record id="stage_inventary_g" model="helpdesk.stage">
+            <field name="name">INVENTARIO</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_warranty_managment'))]"/>
+            <field name="sequence">3</field>
+            <field name="is_close" eval="True"/>
+        </record>
+        <record id="stage_client_response_g" model="helpdesk.stage">
+            <field name="name">RESPUESTA A CLIENTE</field>
+            <field name="sequence">4</field>
+            <field name="team_ids" eval="[(4, ref('helpdesk_warranty_managment'))]"/>
+            <field name="is_close" eval="True"/>
+            <field name="fold" eval="True"/>
+        </record>
+    </data>
+</odoo>

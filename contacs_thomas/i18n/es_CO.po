@@ -1,0 +1,2498 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* contacs_thomas
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-02 12:52+0000\n"
+"PO-Revision-Date: 2020-06-02 12:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.cambios_etapa_entregado_cliente
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} a cambiado a etapa ${(object.stage_id.name)}.\n"
+"                        </div>\n"
+"                        "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.licitacion_subasta
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere ${(object.tender_type)}.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Fecha de subasta:\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Página web licitación: </b> ${(object.web_page_tender)}<br/>\n"
+"                        <b>Número de proceso: </b> ${(object.process_number)}<br/>\n"
+"                        <b>Objeto: </b> ${(object.object_crm)}<br/>\n"
+"                        <b>Presupuesto: </b> ${(object.tender_budget)}<br/>\n"
+"                        <b>Fecha de apertura: </b> ${(object.opening_date)}<br/>\n"
+"                        <b>Cierre previsto: </b> ${(object.close_date)}<br/>\n"
+"                        ${object.get_table_competition() | safe}\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Agradecemos su colaboración con la definición de valores a ofertar y acompañamiento en la subasta.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.cambios_etapa_oportunidad
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial Saludo, <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} a cambiado a etapa ${(object.stage_id.name)}.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.solicitud_aprobacion_oficial
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial Saludo, <br/>\n"
+"                        <br/>\n"
+"                        Se ha creado el cliente ${(object.name)} y presenta consulta de lista restrictiva negativa.\n"
+"                        <br/>\n"
+"                        <br/> \n"
+"                        <b>Cliente: </b> ${(object.name)}<br/> \n"
+"                        <b>Nit: </b>${(object.nit)}<br/> \n"
+"                        <b>Tipo de Cliente: </b>${(object.customer_type)}<br/> \n"
+"                        <b>Sector: </b>${(object.sector)}<br/> \n"
+"                        <b>Potencial: </b>${(object.billing_potencial)}<br/> \n"
+"                        <br/> \n"
+"                        <br/>  \n"
+"                        <b>Consulta lista restrictiva: </b>${(object.consult_order)}<br/> \n"
+"                        <b>Fecha de consulta: </b>${(object.fecha_consulta)}<br/> \n"
+"                        <b>Perfil de riesgo: </b>${(object.risk_profile)}<br/> \n"
+"                        <b>Porcentaje de Riesgo: </b>${(object.risk_percentage)}<br/> \n"
+"                        <br/>\n"
+"                        <br/>                \n"
+"                        Quedo atento a sus indicaciones\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.solicitud_aprobacion_junta_temporal
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial Saludo, <br/>\n"
+"                        <br/>\n"
+"                        Se ha creado la nueva iniciativa ${(object.name)} del cliente ${(object.partner_id.display_name)} que requiere autorización de junta Directiva por unión Temporal.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Los datos de la Oportunidad son:\n"
+"                        <br/> \n"
+"                        <br/>  \n"
+"                        <b>Cliente: </b>${(object.partner_id.display_name)}<br/> \n"
+"                        <b>Centro de Beneficios: </b>${(object.benefit_center.name)}<br/> \n"
+"                        <b>Segmento: </b>${(object.segment_crm.name)}<br/> \n"
+"                        <b>Unidad de negocio: </b>${(object.bussinets_units.name)}<br/> \n"
+"                        <b>Director Comercial: </b>${(object.user_id.name)}<br/> \n"
+"                        <b>Categoria: </b>${(object.tag_ids.name)}<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Número de Proceso: </b>${(object.process_number)}<br/> \n"
+"                        <b>Objeto: </b>${(object.object_crm)}<br/> \n"
+"                        <b>Presupuesto: </b>${(object.tender_budget)}<br/> \n"
+"                        <b>Fecha de apertura: </b>${(object.opening_date)}<br/> \n"
+"                        <b>Cierre previsto: </b>${(object.close_date)}<br/> \n"
+"                        <b>Tipo de licitación: </b>${(object.tender_type)}<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        ${object.get_table_competition() | safe}\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Nombre de la Unión Temporal: </b>${(object.name_union)}<br/> \n"
+"                        <b>Sigla de la Unión Temporal: </b>${(object.initials_union)}<br/> \n"
+"                        <b>Lider de la Unión Temporal: </b>${(object.leader_union_name.name)}<br/> \n"
+"                        <b>Empresa que factura: </b>${(object.company_invoices_id.name)}<br/>\n"
+"                        <br/>\n"
+"                        ${object.get_table_member() | safe}  \n"
+"                        <br/>\n"
+"                        Quedamos atentos a su respuesta \n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.solicitud_aprobacion_junta
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial Saludo, <br/>\n"
+"                        <br/>\n"
+"                        Se ha creado la nueva iniciativa ${(object.name)} del cliente ${(object.partner_id.display_name)} que requiere autorización de junta Directiva.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Los datos de la Oportunidad son:\n"
+"                        <br/> \n"
+"                        <br/> \n"
+"                        <br/>  \n"
+"                        <b>Cliente: </b>${(object.partner_id.display_name)}<br/> \n"
+"                        <b>Centro de Beneficio: </b>${(object.benefit_center.name)}<br/> \n"
+"                        <b>Segmento: </b>${(object.segment_crm.name)}<br/> \n"
+"                        <b>Unidad de negocio: </b>${(object.bussinets_units.name)}<br/> \n"
+"                        <b>Director Comercial: </b>${(object.user_id.name)}<br/> \n"
+"                        <b>Categoría: </b>${(object.tag_ids.name)}<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Número de proceso: </b>${(object.process_number)}<br/> \n"
+"                        <b>Objeto: </b>${(object.object_crm)}<br/> \n"
+"                        <b>Presupuesto: </b>${(object.tender_budget)}<br/> \n"
+"                        <b>Fecha de apertura: </b>${(object.opening_date)}<br/> \n"
+"                        <b>Cierre previsto: </b>${(object.close_date)}<br/> \n"
+"                        <b>Tipo de licitación: </b>${(object.tender_type)}<br/> \n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        ${object.get_table_competition() | safe}\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Quedamos atentos a su respuesta.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.business_case
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} de ${(object.tag_ids.name)} del cliente ${(object.partner_id.display_name)} requiere aprobación de busines case.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Datos de la oportunidad\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Cliente: </b> ${(object.partner_id.display_name)}<br/> \n"
+"                        <b>Tipo de Cliente: </b> ${(object.customer_type_crm)}<br/> \n"
+"                        <b>Centro de beneficio: </b> ${(object.benefit_center.name)}<br/> \n"
+"                        <b>Segmento: </b> ${(object.segment_crm.name)}<br/> \n"
+"                        <b>Unidad de negocio: </b> ${(object.bussinets_units.name)}<br/>\n"
+"                        <b>Situación de la oportunidad: </b> ${(object.opportuny_situation)}<br/>  \n"
+"                        <b>Potencial de facturazión: </b> ${(object.billing_potencial)}<br/>\n"
+"                        <br/>\n"
+"                        ${object.get_table_competition() | safe}<br/>\n"
+"                        <br/>\n"
+"                        Se anexa business case.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Quedamos atentos.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.autorizacion_solicitud_muestras
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} de ${(object.tag_ids.name)} del cliente ${(object.partner_id.display_name)} requiere autorización para ser impresa.<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Plazo de entrega:<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Datos de la oportunidad<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Cliente: </b> ${(object.partner_id.display_name)}<br/> \n"
+"                        <b>Tipo de Cliente: </b> ${(object.customer_type_crm)}<br/> \n"
+"                        <b>Centro de beneficio: </b> ${(object.benefit_center.name)}<br/> \n"
+"                        <b>Segmento: </b> ${(object.segment_crm.name)}<br/> \n"
+"                        <b>Unidad de negocio: </b> ${(object.bussinets_units.name)}<br/>\n"
+"                        <b>Situación de la oportunidad: </b> ${(object.opportuny_situation)}<br/>  \n"
+"                        <b>Potencial de facturazión: </b> ${(object.billing_potencial)}<br/>\n"
+"                        <br/>\n"
+"                        ${object.get_table_competition() | safe}<br/>\n"
+"                        <br/> \n"
+"                        <br/>\n"
+"                        Se anexa costos de la muestra.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Quedamos atentos.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.requerimiento_tecnologia
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} de ${(object.tag_ids.name)} del cliente ${(object.partner_id.display_name)} tiene un requerimiento del área de tecnología.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Datos de la oportunidad\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Cliente: </b> ${(object.partner_id.display_name)}<br/> \n"
+"                        <b>Tipo de Cliente: </b> ${(object.customer_type_crm)}<br/> \n"
+"                        <b>Centro de beneficio: </b> ${(object.benefit_center.name)}<br/> \n"
+"                        <b>Segmento: </b> ${(object.segment_crm.name)}<br/> \n"
+"                        <b>Unidad de negocio: </b> ${(object.bussinets_units.name)}<br/>\n"
+"                        <b>Situación de la oportunidad: </b> ${(object.opportuny_situation)}<br/>  \n"
+"                        <b>Potencial de facturazión: </b> ${(object.billing_potencial)}<br/> \n"
+"                        <br/>\n"
+"                        ${object.get_table_competition() | safe}<br/>\n"
+"                        <br/>\n"
+"                        Se anexa Formato de Requerimiento Tecnología.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Quedamos atentos.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.requerimiento_autorizacion_salida
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere entrega de muestras.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Tipo de muestra y descripción:\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.solicitud_muestra
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere entrega de muestras.<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Tipo de muestra:<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Se anexa solicitud\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.solicitud_documentos_creacion_cliente
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere los siguientes documentos para ser creado.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Listado de Documentos:<br/>\n"
+"                        Formato SAGRLAFT (excel)<br/>\n"
+"                        Certificado de Existencia Cámara de Comercio<br/>\n"
+"                        RUT<br/>\n"
+"                        EEFF o Declaración de Renta<br/>\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.pago_legalizacion_contrato
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere los siguientes pagos.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Listado de pagos requeridos:\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.remita_observaciones_liquidacion
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere que remita sus observaciones.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Fecha límite para observar:<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Página web de licitación: </b> ${(object.web_page_tender)}<br/>\n"
+"                        <b>Número de proceso: </b> ${(object.process_number)}<br/>\n"
+"                        <b>Objeto: </b> ${(object.object_crm)}<br/>\n"
+"                        <b>Presupuesto: </b> ${(object.tender_budget)}<br/>\n"
+"                        <b>Fecha de apertura: </b> ${(object.opening_date)}<br/>\n"
+"                        <b>Cierre previsto: </b> ${(object.close_date)}<br/>\n"
+"                        <b>Estado de la licitación: </b> ${(object.tender_status)}<br/>\n"
+"                        <br/>\n"
+"                        ${object.get_table_competition() | safe}<br/>\n"
+"                        <br/>\n"
+"                        Agradecemos su pronta respuesta.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.estimar_costos_nueva
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere ser costeada.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Plazo de entrega:<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Datos de la Oportunidad:<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Cliente: </b> ${(object.partner_id.display_name)}<br/>\n"
+"                        <b>Tipo de cliente: </b> ${(object.customer_type_crm)}<br/>\n"
+"                        <b>Cetro de beneficio: </b> ${(object.benefit_center.name)}<br/>\n"
+"                        <b>Segmento: </b> ${(object.segment_crm.name)}<br/>\n"
+"                        <b>Unidad de negocio: </b> ${(object.bussinets_units.name)}<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Agradecemos su pronta respuesta.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.estimar_costos_nueva_licitacion
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere ser costeada.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Plazo de entrega:<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Datos de la Oportunidad:<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Página web licitación: </b> ${(object.web_page_tender)}<br/>\n"
+"                        <b>Número de proceso : </b> ${(object.process_number)}<br/>\n"
+"                        <b>Objeto: </b> ${(object.object_crm)}<br/>\n"
+"                        <b>Presupuesto: </b> ${(object.tender_budget)}<br/>\n"
+"                        <b>Fecha de apertura: </b> ${(object.opening_date)}<br/>\n"
+"                        <b>Cierre previsto: </b> ${(object.close_date)}<br/>\n"
+"                        <b>Estado de la licitación: </b> ${(object.tender_status)}<br/>\n"
+"                        <br/>\n"
+"                        ${object.get_table_competition() | safe}\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Agradecemos su pronta respuesta.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.aprobacion_oferta_comercial_financiero
+#: model:mail.template,body_html:contacs_thomas.aprobacion_oferta_comercial_gerente
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere su aprobación.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.aprobacion_oferta
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} requiere su aprobación.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <b>Página web de licitación: </b> ${(object.web_page_tender)}<br/>\n"
+"                        <b>Número de proceso: </b> ${(object.process_number)}<br/>\n"
+"                        <b>Objeto: </b> ${(object.object_crm)}<br/>\n"
+"                        <b>Presupuesto: </b> ${(object.tender_budget)}<br/>\n"
+"                        <b>Fecha de apertura: </b> ${(object.opening_date)}<br/>\n"
+"                        <b>Cierre previsto: </b> ${(object.close_date)}<br/>\n"
+"                        <b>Estado de la licitación: </b> ${(object.tender_status)}<br/>\n"
+"                        <br/>\n"
+"                        ${object.get_table_competition() | safe}<br/>\n"
+"                        <br/>\n"
+"                        Quedamos atentos.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.visto_bueno_contrato
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} tiene contrato que requiere su visto bueno.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.revision_propuesta_licitacion
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} tiene fecha de revisión jurídica.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Fecha de revisión\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.solicitar_modificaciones_contrato
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} tiene modificaciones jurídicas al contrato.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.ticket_mesa_ayuda
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} tiene un ticket en mesa de ayuda.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        No. De Ticket:\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.comprobante_pago
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} ya tiene dos pagos realizados.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Anexo soporte de pagos\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,body_html:contacs_thomas.poliza_contrato
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        Cordial saludo<br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        La oportunidad ${(object.name)} del cliente ${(object.partner_id.display_name)} ya tiene póliza de contrato.\n"
+"                        </div>\n"
+"                        \n"
+"            "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__participation
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "% Participación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__billing_potencial__100m-500m
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__billing_potencial__100m-500m
+msgid "100M-500M"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__billing_potencial__10m-20m
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__billing_potencial__10m-20m
+msgid "10M-20M"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__billing_potencial__1m-10m
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__billing_potencial__1m-10m
+msgid "1M-10M"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__billing_potencial__20m-50m
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__billing_potencial__20m-50m
+msgid "20M-50M"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "404"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__billing_potencial__50m-100m
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__billing_potencial__50m-100m
+msgid "50M-100M"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__customer_type_crm__actual
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__customer_type__actual
+msgid "ACTUAL"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__attitude__amigo
+msgid "AMIGO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "APARTAMENTO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__type_contract__aprobación_propuesta
+msgid "APROBACIÓN PROPUESTA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__rol__approves
+msgid "APRUEBA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "AUTOPISTA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.autorizacion_solicitud_muestras
+msgid "AUTORIZACIÓN SOLICITUD DE MUESTRAS PARA SER IMPRESA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "AVENIDA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__act_liquidation
+msgid "Acta de liquidación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__attitude
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__attitude
+msgid "Actitud"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.address_code_form
+msgid "Address Code"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.address_code_tree
+msgid "Address Codes"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,help:contacs_thomas.field_res_partner__lang
+#: model:ir.model.fields,help:contacs_thomas.field_res_users__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+"Todos los correos electrónicos y documentos enviados a este contacto se "
+"traducirán en este idioma."
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Apellido"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__comercial_approval
+msgid "Aprobación Gerencia Comercial"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__financial_approval
+msgid "Aprobación Gerencia Financiera "
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__approval_compliance
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__approval_compliance
+msgid "Aprobación Oficial de cumplimiento"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__comercial_manager_approval
+msgid "Aprobación Viabilidad Gerencia Comercial"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__approval_director
+msgid "Aprobación de director comercial"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__executive_approval
+msgid "Aprobación junta directiva"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center__bussinets_units
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__bussinets_units
+msgid "Bussinets Units"
+msgstr "Unidades de negocio"
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.cambios_etapa_entregado_cliente
+msgid "CAMBIOS DE ETAPA A ENTREGADO AL CLIENTE"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.cambios_etapa_oportunidad
+msgid "CAMBIOS DE ETAPA DE LA OPORTUNIDAD"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__ciiu
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__ciiu
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "CIIU"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.comprobante_pago
+msgid "COMPROBANTE DE PAGO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__type_contract__contrato
+msgid "CONTRATO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_10
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_10
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_10
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_10
+msgid "Campo direccion 10"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_12
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_12
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_12
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_12
+msgid "Campo direccion 12"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_2
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_2
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_2
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_2
+msgid "Campo direccion 2"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_5
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_5
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_5
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_5
+msgid "Campo direccion 5"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_8
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_8
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_8
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_8
+msgid "Campo direccion 8"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_3
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_3
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_3
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_3
+msgid "Campo dirección 3"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_6
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_6
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_6
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_6
+msgid "Campo dirección 6"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__stage_from
+msgid "Campo test"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Campos de dirección"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__quantity
+msgid "Cantidad"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__l10n_co_document_type__diplomatic_card
+msgid "Carné Diplomatico"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.benefit_center_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.benefit_center_tree
+msgid "Centro Beneficios"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center__name
+msgid "Centro de Beneficio"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__benefit_center
+msgid "Centro de beneficio"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__check_cost_table
+msgid "Check Cost Table"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__check_stage
+msgid "Check Stage"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__check_tag_ids
+msgid "Check Tag"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__check_union_temporal
+msgid "Check Union Temporal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__city
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__city_crm
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__city_crm
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Ciudad"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,help:contacs_thomas.field_crm_lead__tag_ids
+msgid ""
+"Classify and analyze your lead/opportunity categories like: Training, "
+"Service"
+msgstr ""
+"Clasificar y analizar sus categorías de iniciativas/oportunidades como: "
+"formación, servicio..."
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__code_id
+msgid "Code"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code__company_id
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value__company_id
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__company_id
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__company_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__company_name
+msgid "Company Name"
+msgstr "Nombre de la compañía"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__company_type
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__company_type
+msgid "Company Type"
+msgstr "Tipo de compañía"
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Company name"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Competencia"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_lost_thomas
+msgid "Competidor Ganador"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__winner_competitor
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead_lost__winner_competitor
+msgid "Competidor ganador"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__competitor
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_competitor_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.temporary_union_form
+msgid "Competidores"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__competitor_ids
+msgid "Competitor"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__complement_adress
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__complement_adress
+msgid "Complemento"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__consult_order
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__consult_order
+msgid "Consulta lista restrictiva"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_lost_thomas
+msgid "Contacto"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__contact_personal
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead_lost__contact_personal
+msgid "Contacto por cambio de personal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Contrato"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_lead2opportunity_partner
+msgid "Convert Lead to Opportunity (not in mass)"
+msgstr "Convertir Iniciativa en Oportunidad (sin ser en masa)"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__cost_id
+msgid "Cost"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost__cost_realted_ids
+msgid "Cost Realted"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost_name__name
+msgid "Costo"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__cost_total
+msgid "Costo Total"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Costos"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_cost_tree
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Costos Operacionales"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.unspsc_code_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.unspsc_code_tree
+msgid "Costos operacionales"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_res_country_state
+msgid "Country state"
+msgstr "Provincia"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__create_date
+msgid "Create Date"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_adress_contact__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_bussinets_units__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_company_invoices__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor_competitor__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost_name__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_segment__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_strengths__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_weaknesses__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union_name__create_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_unspsc_code__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_adress_contact__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_bussinets_units__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_company_invoices__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor_competitor__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost_name__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_segment__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_strengths__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_weaknesses__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union_name__create_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_unspsc_code__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__partner_id
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__l10n_co_document_type__foreign_id_card
+msgid "Cédula Extranjera"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__l10n_co_document_type__national_citizen_id
+msgid "Cédula de ciudadanía"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code__code
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value__code
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code__code
+#: model:ir.model.fields,field_description:contacs_thomas.field_unspsc_code__name
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.res_country_state_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.res_country_state_tree
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.unspsc_code_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.unspsc_code_tree
+msgid "Código"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Códigos UNSPSC"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__rol__decides
+msgid "DECIDE"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__tender_type__directa
+msgid "DIRECTA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__dv
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__dv
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "DV"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Datos relevantes / Perfil / Gustos"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Datos relevantes /Perfil / Gustos"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__weaknesses
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_weaknesses__name
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_weaknesses_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_weaknesses_tree
+msgid "Debilidades"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code__name
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value__name
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code__name
+msgid "Descripción"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__full_adress
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__full_adress
+msgid "Dirección Completa"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__street_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__street_thomas
+msgid "Dirección aux"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__street_contact
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__street_contact
+msgid "Dirección completa"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Director Comercial"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_adress_contact__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_bussinets_units__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_company_invoices__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor_competitor__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost_name__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_segment__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_strengths__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_weaknesses__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union_name__display_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_unspsc_code__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__l10n_co_document_type
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__l10n_co_document_type
+msgid "Document Type"
+msgstr "Tipo de documento"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__sarlaf_document
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__sarlaf_document
+msgid "Documentación SARLAF"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "EJ: 35"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "EJ: 43"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "EJ: AMÉRICA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "EJ: INGENIERO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__empresa_industrial_y_comercial_del_estado
+msgid "EMPRESA INDUSTRIAL Y COMERCIAL DEL ESTADO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__attitude__enemigo
+msgid "ENEMIGO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__entidad_extranjera
+msgid "ENTIDAD EXTRANJERA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__entidad_orden_nacional
+msgid "ENTIDAD ORDEN NACIONAL"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__entidad_orden_territorial
+msgid "ENTIDAD ORDEN TERRITORIAL"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__entidad_privada
+msgid "ENTIDAD PRIVADA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__entidad_sin_ánimo_de_lucro
+msgid "ENTIDAD SIN ÁNIMO DE LUCRO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__rol__evaluate
+msgid "EVALUA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Ej: Le gustan los gatos"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__email_from
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__email
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__email
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,help:contacs_thomas.field_crm_lead__email_from
+msgid "Email address of the contact"
+msgstr "Dirección de correo electrónico del contacto"
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Empresa que Factura"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_company_invoices__name
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__company_invoices_id
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.company_invoices_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.company_invoices_tree
+msgid "Empresa que factura"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Estado de licitación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,help:contacs_thomas.field_crm_lead__date_deadline
+msgid "Estimate of the date on which the opportunity will be won."
+msgstr "Fecha estimada en la que la oportunidad será ganada."
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__date_deadline
+msgid "Expected Closing"
+msgstr "Cierre previsto"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__date_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__date_update
+msgid "Fecha de Actualización de datos"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__opening_date
+msgid "Fecha de apertura de licitación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__close_date
+msgid "Fecha de cierre de licitación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__fecha_consulta
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__fecha_consulta
+msgid "Fecha de consulta"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__subscription_start
+msgid "Fecha de inicio"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__departure_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__departure_date
+msgid "Fecha de salida"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__subscription_date
+msgid "Fecha de suscripción"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__subscription_end
+msgid "Fecha de terminación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__liquidation_date
+msgid "Fecha del acta de liquidación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_1
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_1
+msgid "Field 1"
+msgstr "Campo dirección 1"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_11
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_11
+msgid "Field 11"
+msgstr "Campo dirección 11"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_4
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_4
+msgid "Field 4"
+msgstr "Campo dirección 4"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_7
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_7
+msgid "Field 7"
+msgstr "Campo dirección 7"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_9
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_9
+msgid "Field 9"
+msgstr "Campo dirección 9"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_1
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_1
+msgid "Field Contact 1"
+msgstr "Campo dirección 1"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_11
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_11
+msgid "Field Contact 11"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_4
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_4
+msgid "Field Contact 4"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_7
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_7
+msgid "Field Contact 7"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__field_contact_9
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__field_contact_9
+msgid "Field Contact 9"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__file_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__file_name_sarlaf
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__file_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__file_name_sarlaf
+msgid "File Name"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.ciiu_value_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.ciiu_value_tree
+msgid "Form ciiu"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__strengths
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_strengths__name
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_strengths_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_strengths_tree
+msgid "Fortalezas"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Full name"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__funtions
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Funciones"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_lead_lost
+msgid "Get Lost Reason"
+msgstr "Ponga la razón de la perdida"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_adress_contact__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_bussinets_units__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_company_invoices__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor_competitor__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost_name__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_segment__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_strengths__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_weaknesses__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union_name__id
+#: model:ir.model.fields,field_description:contacs_thomas.field_unspsc_code__id
+msgid "ID"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__l10n_co_document_type__external_id
+msgid "ID del Exterior"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__customer_type_crm__inactivo
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__customer_type__inactivo
+msgid "INACTIVO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__rol__influence
+msgid "INFLUENCIA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__lang
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__lang
+msgid "Idioma"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,help:contacs_thomas.field_res_partner__l10n_co_document_type
+#: model:ir.model.fields,help:contacs_thomas.field_res_users__l10n_co_document_type
+msgid "Indicates to what document the information in here belongs to."
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__indicative_country
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__indicative_country
+msgid "Indicativo País"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__indicative_state
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__indicative_state
+msgid "Indicativo Provincia"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_country_state__indicative_state_code
+msgid "Indicativo de provincia"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.licitacion_subasta
+msgid "LICITACIÓN REQUIERE SUBASTA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__ltda_
+msgid "LTDA."
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_adress_contact____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_bussinets_units____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_company_invoices____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor_competitor____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost_name____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_segment____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_strengths____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_weaknesses____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union_name____last_update
+#: model:ir.model.fields,field_description:contacs_thomas.field_unspsc_code____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_adress_contact__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_bussinets_units__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_company_invoices__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor_competitor__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost_name__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_segment__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_strengths__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_weaknesses__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union_name__write_uid
+#: model:ir.model.fields,field_description:contacs_thomas.field_unspsc_code__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_address_code__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_adress_contact__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_bussinets_units__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_ciiu_value__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_company_invoices__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor_competitor__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost_name__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_segment__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_strengths__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_weaknesses__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_street_code__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union_name__write_date
+#: model:ir.model.fields,field_description:contacs_thomas.field_unspsc_code__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__leader_union_name
+msgid "Leader Union Name"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Licitación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,help:contacs_thomas.field_crm_lead__partner_id
+msgid ""
+"Linked partner (optional). Usually created when converting the lead. You can"
+" find a partner by its Name, TIN, Email or Internal Reference."
+msgstr ""
+"Empresa ligada (opcional). Usualmente creada al convertir la iniciativa. "
+"Puedes encontrar la empresa por su Nombre, RFC, Email o Referencia Interna."
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Líder de la Unión Temporal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__sector__mixto
+msgid "MIXTO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__member_union_id
+msgid "Member Union"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__name
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union_name__name
+msgid "Miembro de la unión temporal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Miembros unión temporal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_adress_contact__name
+msgid "Model: adress"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Motivo de Perdida"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__billing_potencial__más_de_500m
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__billing_potencial__más_de_500m
+msgid "MÁS DE 500M"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__tender_type__mínima_cuantía
+msgid "MÍNIMA CUANTÍA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__attitude__neutral
+msgid "NEUTRAL"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__nit
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__nit
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__l10n_co_document_type__rut
+msgid "NIT"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__act_liquidation__no
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__comercial_approval__no
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__comercial_manager_approval__no
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__executive_approval__no
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__financial_approval__no
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__temporary_union__no
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__approval_compliance__no
+msgid "NO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__approval_compliance__no_aplica
+msgid "NO APLICA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__consult_order__no_reportado
+msgid "NO REPORTADO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "NORTE"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost__name
+msgid "Name"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__company_nature
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__company_nature
+msgid "Naturaleza de la compañía"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_unspsc_code__code_name
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_cost_tree
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.unspsc_code_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.unspsc_code_tree
+msgid "Nombre"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__firts_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__firts_name
+msgid "Nombre 1"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__last_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__last_name
+msgid "Nombre 2"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__middle_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__middle_name
+msgid "Nombre 3"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__second_last_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__second_last_name
+msgid "Nombre 4"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor__competitor_name
+msgid "Nombre Competidor"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Nombre Unión Temporal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.temporary_union_form
+msgid "Nombre lider"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__name_union
+msgid "Nombre unión temporal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__main_road_name
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__main_road_name
+msgid "Nombre vía principal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Nombres"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__contract_number
+msgid "Número de Contrato"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__process_number
+msgid "Número de proceso"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.business_case
+msgid "OPORTUNIDAD CON BUSINESS CASE"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__attitude__opositor
+msgid "OPOSITOR"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__type_contract__orden_de_compra
+msgid "ORDEN DE COMPRA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__organización_economía_solidaria
+msgid "ORGANIZACIÓN ECONOMÍA SOLIDARIA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__object_crm
+msgid "Objeto"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__object_contract
+msgid "Objeto de contrato"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__observations
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__observations_contract
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead_lost__observations
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_lost_thomas
+msgid "Observaciones"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__attitude__padrino
+msgid "PADRINO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__tender_status__pliego
+msgid "PLIEGO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__tender_status__pre-pliego
+msgid "PRE-PLIEGO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__tender_type__privada
+msgid "PRIVADA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__sector__privado
+msgid "PRIVADO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__customer_type_crm__prospecto
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__customer_type__prospecto
+msgid "PROSPECTO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__partner_address_phone
+msgid "Partner Contact Phone"
+msgstr "Teléfono de Contacto de la Empresa"
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__l10n_co_document_type__passport
+msgid "Pasaporte"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__risk_profile
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__risk_profile
+msgid "Perfil de riesgo"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__contribution_percentage
+msgid "Porcentaje de contribución"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__risk_percentage
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__risk_percentage
+msgid "Porcentaje de riesgo"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__billing_potencial
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__billing_potencial
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__billing_potencial
+msgid "Potencial de Facturación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_lost_thomas
+msgid "Precio Ganador"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__unit_price
+msgid "Precio Unitario"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__winner_price
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead_lost__winner_price
+msgid "Precio ganador"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__price_offered
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead_lost__price_offered
+msgid "Precio ofertado por Thomas"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__price_n_iva
+msgid "Precio total sin IVA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__farm
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__farm
+msgid "Predio"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__budget_from
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_team__budget
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_team_budget
+msgid "Presupuesto"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__tender_budget
+msgid "Presupuesto de licitación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_lost_thomas
+msgid "Problema de Calidad o Motivo de Perdida"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__lost_problem
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead_lost__lost_problem
+msgid "Problema de calidad o motivo de perdida"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.poliza_contrato
+msgid "PÓLIZA DE CONTRATO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__tender_type__pública
+msgid "PÚBLICA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__sector__público
+msgid "PÚBLICO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__web_page_tender
+msgid "Página Web licitación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__consult_order__reportado
+msgid "REPORTADO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.requerimiento_tecnologia
+msgid "REQUERIMIENTO DE TECNOLOGÍA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.requerimiento_autorizacion_salida
+msgid "REQUERIMIENTO PARA AUTORIZACIÓN DE SALIDA. MUESTRAS"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.revision_propuesta_licitacion
+msgid "REVISION DE LA PROPUESTA DE LICITACIÓN CON JURÍDICO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__rut
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__rut
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "RUT"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__l10n_co_document_type__civil_registration
+msgid "Registro Civil"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_lost_thomas
+msgid "Requisitos No Cumplidos"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__requeriments_no_fulfill
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead_lost__requeriments_no_fulfill
+msgid "Requisitos no cumplidos"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__res_lang_id
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__res_lang_id
+msgid "Res Lang"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,help:contacs_thomas.field_res_partner__website_id
+msgid "Restrict publishing to this website."
+msgstr "Restringir publicar a este sitio web."
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__rol
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__rol
+msgid "Rol"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__s_a_
+msgid "S.A."
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__s_a_s_
+msgid "S.A.S."
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.aprobacion_oferta_comercial_financiero
+#: model:mail.template,subject:contacs_thomas.aprobacion_oferta_comercial_gerente
+msgid "SE REQUIERE APROBACIÓN DE LA OFERTA COMERCIAL"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.aprobacion_oferta
+msgid "SE REQUIERE APROBACIÓN DE LA OFERTA COMERCIAL LICITACIÓN"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.estimar_costos_nueva
+msgid "SE REQUIERE ESTIMAR COSTOS DE UNA NUEVA OPORTUNIDAD"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.estimar_costos_nueva_licitacion
+msgid "SE REQUIERE ESTIMAR COSTOS DE UNA NUEVA OPORTUNIDAD DE LICITACIÓN"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.remita_observaciones_liquidacion
+msgid "SE REQUIERE REMITA OBSERVACIONES AL PROCESO DE LICITACIÓN"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.visto_bueno_contrato
+msgid "SE REQUIERE UN VISTO BUENO SOBRE EL DOCUMENTO CONTRATO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.pago_legalizacion_contrato
+msgid "SE SOLICITA PAGO PARA LEGALIZACIÓN DE CONTRATO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.solicitar_modificaciones_contrato
+msgid "SE SOLICITAN MODIFICACIONES AL CONTRATO JURÍDICO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__act_liquidation__si
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__comercial_approval__si
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__comercial_manager_approval__si
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__executive_approval__si
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__financial_approval__si
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__temporary_union__si
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__approval_compliance__si
+msgid "SI"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__company_nature__sociedad_en_comandita_por_acciones
+msgid "SOCIEDAD EN COMANDITA POR ACCIONES"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.solicitud_aprobacion_junta
+msgid "SOLICITUD DE APROBACIÓN JUNTA DIRECTIVA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.solicitud_aprobacion_junta_temporal
+msgid "SOLICITUD DE APROBACIÓN JUNTA DIRECTIVA UNIÓN TEMPORAL"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.solicitud_aprobacion_oficial
+msgid "SOLICITUD DE APROBACIÓN OFICIAL DE CUMPLIMIENTO. LISTAS RESTRICTIVAS"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.solicitud_documentos_creacion_cliente
+msgid "SOLICITUD DE DOCUMENTOS PARA CREACIÓN DE CLIENTE"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.solicitud_muestra
+msgid "SOLICITUD DE MUESTRAS"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__tender_status__subasta
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__crm_lead__tender_type__subasta
+msgid "SUBASTA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "SUR"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_team
+msgid "Sales Team"
+msgstr "Equipo de Ventas"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__user_id
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__l10n_co_document_type__residence_document
+msgid "Salvoconducto de Permanencia"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__sector
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__sector
+msgid "Sector"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_benefit_center__segment_crm
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__segment_crm
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_segment__name
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_segment_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_segment_tree
+msgid "Segmento"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Segundo Apellido"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Segundo Nombre"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__check_colombia
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__check_colombia
+msgid "Seleccion Colombia"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Sigla Unión Temporal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__initials_union
+msgid "Sigla unión temporal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__opportuny_situation
+msgid "Situación de la oportunidad"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.street_code_form
+msgid "Street Code"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.street_code_tree
+msgid "Street Codes"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:mail.template,subject:contacs_thomas.ticket_mesa_ayuda
+msgid "TICKET MESA DE AYUDA"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__tag_ids
+msgid "Tags"
+msgstr "Categorías"
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__l10n_co_document_type__id_card
+msgid "Tarjeta de Identidad"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__vat
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__vat
+msgid "Tax ID"
+msgstr "NIF"
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__temporary_union_id
+#: model:ir.model.fields,field_description:contacs_thomas.field_temporary_union__temporary_union_ids
+msgid "Temporary Union"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__tender_status
+msgid "Tender Status"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,help:contacs_thomas.field_res_partner__vat
+#: model:ir.model.fields,help:contacs_thomas.field_res_users__vat
+msgid ""
+"The Tax Identification Number. Complete it if the contact is subjected to "
+"government taxes. Used in some legal statements."
+msgstr ""
+"El número de identificación de impuesto. Complételo si el contacto está "
+"sujeto a los impuestos del gobierno. Utilizado en algunas declaraciones "
+"legales."
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_lost_thomas
+msgid "Tiempo Ofertado por Thomas"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_lost_thomas
+msgid "Tiempo Requerido"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__required_time
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead_lost__required_time
+msgid "Tiempo requerido"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Tipo de Cliente"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__type_contract
+msgid "Tipo de Contrato"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__tender_type
+msgid "Tipo de Licitación"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__customer_type_crm
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__customer_type
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__customer_type
+msgid "Tipo de cliente"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "Tipo de documento"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields.selection,name:contacs_thomas.selection__res_partner__rol__user
+msgid "USUARIO"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.bussinets_units_form
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.bussinets_units_tree
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Unidad de Negocio"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_bussinets_units__name
+msgid "Unidad de negocio"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Unión Temporal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "VILLAS"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_cost__cost_value
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_cost_tree
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "Valor"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__executed_contract_value
+msgid "Valor ejecutado del contrato"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__inicial_contract_value
+msgid "Valor inicial del contrato"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__generating_route
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__generating_route
+msgid "Vía generadora:"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__main_road
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_users__main_road
+msgid "Vía principal"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_res_partner__website_id
+msgid "Website"
+msgstr "Sitio Web"
+
+#. module: contacs_thomas
+#: model:ir.model.constraint,message:contacs_thomas.constraint_crm_lead_doc_unique
+msgid "Ya esta descripcion"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.constraint,message:contacs_thomas.constraint_res_partner_doc_unique
+msgid "Ya existe un contacto con este documento"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_address_code
+msgid "address.code"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_adress_contact
+msgid "adress.contact"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_benefit_center
+msgid "benefit.center"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_bussinets_units
+msgid "bussinets.units"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_ciiu_value
+msgid "ciiu.value"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_company_invoices
+msgid "company.invoices"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_competitor
+msgid "crm.competitor"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_competitor_competitor
+msgid "crm.competitor.competitor"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_cost
+msgid "crm.cost"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_cost_name
+msgid "crm.cost.name"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_segment
+msgid "crm.segment"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_strengths
+msgid "crm.strengths"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_crm_weaknesses
+msgid "crm.weaknesses"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.contacts_lead_form
+msgid "e.g. BE0477472701"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_competitor_competitor__name
+msgid "nombre"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_street_code
+msgid "street.code"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_temporary_union
+msgid "temporary.union"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_temporary_union_name
+msgid "temporary.union.name"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model,name:contacs_thomas.model_unspsc_code
+msgid "unspsc.code"
+msgstr ""
+
+#. module: contacs_thomas
+#: model:ir.model.fields,field_description:contacs_thomas.field_crm_lead__temporary_union
+msgid "¿ Requiere Unión Temporal ?"
+msgstr ""
+
+#. module: contacs_thomas
+#: model_terms:ir.ui.view,arch_db:contacs_thomas.crm_lead_form
+msgid "¿Requiere Unión Temporal?"
+msgstr ""

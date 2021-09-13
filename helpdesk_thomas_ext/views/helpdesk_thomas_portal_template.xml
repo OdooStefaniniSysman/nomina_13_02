@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="tickets_followup_inherit" name="Helpdesk Tickets" inherit_id="helpdesk.tickets_followup">>
+            <xpath expr="//t[1]/div[2]" position="after">
+                <div class="text-center mt-5">
+                  <!--  <button class="btn btn-primary mb-1 pt-1" data-target="#helpdesk_ticket_close_modal" data-toggle="modal"><small><b>Cerrar este ticket</b></small></button>
+                    <p>
+                        <small>Si el problema se ha solucionado, puede cerrar la consulta</small>
+                    </p> -->
+                    <button class="btn btn-danger mb-1 pt-1" id="rechazar_ticket_btn"  data-toggle="modal"><small><b>Rechazar el ticket</b></small></button>
+                    <p> 
+                        <small>Si no está deacuerdo con el ticket, pulse rechazar</small>
+                    </p>
+
+                    <div  class="modal" tabindex="-1" role="dialog" id="helpdesk_ticket_close_modal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Close ticket</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&amp;times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you wish to proceed?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a role="button" class="btn btn-primary" t-att-href="'/my/ticket/close/%s/%s' % (ticket.id, ticket.access_token)">Close the ticket</a>
+                                    <button type="button" class="btn btn-light" data-dismiss="modal">Discard</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </xpath>
+
+            <xpath expr="//t[1]/div[3]" position="inside">
+                <input type='hidden' t-att-value="ticket.id" id='ticket_id_template'/>
+            </xpath>
+            
+        </template>
+    </data>
+</odoo>

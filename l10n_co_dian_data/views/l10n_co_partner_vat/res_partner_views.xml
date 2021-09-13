@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_partner_vat" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base_vat.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!-- <field name="property_account_position_id" position="replace"/> -->
+
+                <field name="country_id" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <!-- <field name="website" position="before">
+                    <field name="property_account_position_id" options="{'no_create': True, 'no_open': True}"/>
+                    <field name="document_type_id" widget="selection"/>
+                    <field name="identification_document" attrs="{'required': [('document_type_id', '!=', False)]}"/>
+                    <field name="document_type_code" invisible="1"/>
+                    <field name="check_digit" attrs="{'invisible': [('document_type_code', '!=', '31')], 'required': [('document_type_code', '=', '31')]}"/>
+                    <field name="vat" invisible="1"/>
+                </field> -->
+                <!-- <group name="fiscal_information" position="replace"/> -->
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter_partner_vat" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="vat" string="Identification Document"/>
+                    <!-- <field name="property_account_position_id"/> -->
+                </field>
+            </field>
+        </record>
+
+        <!-- res.partner inherit form view -->
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="replace">
+                    <label for="document_type_id" string="Tipo de documento"/>
+                    <div class="o_row">
+                        <field name="document_type_id" required="True" />
+                        <field name="document_type_code" invisible="1"/>
+                        <field name="identification_document" required="True" />
+                        <label for="check_digit" string="DV" attrs="{'required':[('document_type_code', '==', '31')],'invisible':[('document_type_code', '!=', '31')]}" />
+                        <field name="check_digit" attrs="{'required':[('document_type_code', '==', '31')],'invisible':[('document_type_code', '!=', '31')]}" />
+                    </div>
+                    <button name="update_self_document" type="object" string="Update Id Doc" class="oe_link" invisible="1"/>
+                    <button name="update_all_document" type="object" string="Update all Id Doc" class="oe_link" invisible="1"/>
+                    <field name="l10n_co_document_type" invisible="1"/>
+                    <field name="vat" invisible="1"/>
+                    <field name="l10n_co_verification_code" invisible="1"/>
+                    <!-- <field name="property_account_position_id" options="{'no_create': True, 'no_open': True}"/> -->
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_partner_form_inherit_l10n_co" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_co.view_partner_form_inherit_l10n_co"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='l10n_co_document_type']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_partner_vat_is_pa_form" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_co_dian_data.view_partner_party_tax_scheme_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='g_2']" position="inside">
+                    <field name="is_pa"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

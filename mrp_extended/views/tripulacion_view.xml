@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+        <record id="mrp_workorder_form__inherit_tripulacion_view" model="ir.ui.view">
+            <field name="name">mrp.workorder.form.tripulacion.view</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp_workorder.mrp_workorder_view_form_tablet"/>
+            <field name="arch" type="xml"> 
+             <xpath expr="//button[@name='action_skip']" position="after">
+                <div>
+                    <label for="operators" string=" Number of Operators: " style="font-size:10px"/> 
+                    <field name="operators" style="width:100px;" readonly="0"/>
+                </div>
+             </xpath> 
+            </field>
+        </record>
+        <record id="mrp_workorder_form_inherit_tripulacion_view" model="ir.ui.view">
+            <field name="name">mrp.workorder.inherit.form.tripulacion.view</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+            <field name="arch" type="xml"> 
+                <xpath expr="//field[@name='time_ids']" position="replace">
+                    <field name="time_ids" nolabel="1" context="{'default_workcenter_id': workcenter_id, 'default_workorder_id': id}">
+                        <tree>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="operators_number"/>
+                            <field name="real_time_operator_line" widget="float_time"/>
+                            <field name="duration" widget="float_time" sum="Total duration"/>
+                            <field name="user_id"/>
+                            <field name="workcenter_id" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="loss_id" string="Productivity"/>
+                        </tree>
+                        <form>
+                            <group>
+                                <group>
+                                    <field name="date_start"/>
+                                    <field name="date_end"/>
+                                    <field name="operators_number"/>
+                                    <!--<field name="operators" required="1"/>-->
+                                    <!--<field name="operators_test" required="1"/>-->
+                                    <field name="duration" widget="float_time"/>
+                                    <field name="company_id" invisible="1"/>
+                                </group>
+                                <group>
+                                    <field name="user_id"/>
+                                    <field name="workcenter_id"/>
+                                    <field name="company_id" invisible="1"/>
+                                    <field name="loss_id"/>
+                                </group>
+                            </group>
+                        </form>
+                    </field>
+                </xpath>
+                
+            </field>
+
+            <!--<field name="arch" type="xml">
+                <xpath expr="//field[@name='time_ids']" position="after">
+                 <field name="real_time_operator"/>
+                </xpath>
+                <xpath expr="//field[@name='real_time_operator']" position="attributes">
+			     <attribute name="string">Tiempo real operador</attribute>
+		        </xpath> 
+            </field>-->
+
+        </record>
+    </data>
+</odoo>

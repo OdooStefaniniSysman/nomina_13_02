@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="treasury_config_comp_rule" model="ir.rule">
+		    <field name="name">Contact company rule</field>
+		    <field name="model_id" ref="model_res_partner"/>
+		    <field name="global" eval="True"/>
+		    <field name="domain_force">['|',('contact_company_id','=',False),('contact_company_id', 'in', company_ids)]</field>
+		</record>
+	</data>
+</odoo>

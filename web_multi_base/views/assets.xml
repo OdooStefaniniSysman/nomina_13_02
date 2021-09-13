@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<odoo>
+    <template id="assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script
+                type="text/javascript"
+                src="/web_multi_base/static/lib/js/session.js"
+            />
+            <script
+                type="text/javascript"
+                src="/web_multi_base/static/lib/js/web_client.js"
+            />
+            <script
+                type="text/javascript"
+                src="/web_multi_base/static/lib/js/switch_website_menu.js"
+            />
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_journal_form_inherit" model="ir.ui.view">
+            <field name="name">account.journal.form.inherit.account</field>
+            <field name="model">account.journal</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='advanced_settings']" position="after">
+			<page name="advanced_settings" string="Approvals Settings" attrs="{'invisible': [('type', 'not in', ['cash','bank'])]}">
+                        <group id="advances_journal_tab_group">
+                            <div class="row mt16 o_settings_container">
+                                <div class="col-12 col-lg-6 o_setting_box" title="Enables approval feature in inbound payments."
+                                     groups="account.group_account_manager">
+                                    <div class="o_setting_left_pane">
+                                        <field name="payment_approval_in"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        
+                                        <label for="payment_approval_in"/>
+                                        <div class="text-muted">
+                                            Enable to bring the approval in the inbound payment.
+                                            Only account managers can approve the request.
+                                        </div>
+                                        <separator string="Analyst Approvar" attrs="{'invisible': [('payment_approval_in', '=', False)]}"/>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_in', '=', False)]}">
+                                            <div class="row">
+                                                <label string="User" for="approval_in_user_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval_in_user_id"
+                                                       attrs="{'required': [('payment_approval_in', '=', True)]}"/>
+                                            </div>
+                                        </div>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_in', '=', False)]}">
+                                            <div class="row">
+                                                <label string="Amount" for="approval_in_amount"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval_in_amount"
+                                                       attrs="{'required': [('payment_approval_in', '=', True)]}"/>
+                                            </div>
+                                            <div class="row">
+                                                <label string="Currency" for="approval_in_currency_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval_in_currency_id"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="o_setting_right_pane">
+                                        <separator string="Coordinator Approvar" attrs="{'invisible': [('payment_approval_in', '=', False)]}"/>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_in', '=', False)]}">
+                                            <div class="row">
+                                                <label string="User" for="approval2_in_user_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval2_in_user_id"
+                                                       attrs="{'required': [('payment_approval_in', '=', True)]}"/>
+                                            </div>
+                                        </div>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_in', '=', False)]}">
+                                            <div class="row">
+                                                <label string="Amount" for="approval2_in_amount"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval2_in_amount"
+                                                       attrs="{'required': [('payment_approval_in', '=', True)]}"/>
+                                            </div>
+                                            <div class="row">
+                                                <label string="Currency" for="approval2_in_currency_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval2_in_currency_id"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <separator/>
+                                    <div class="o_setting_right_pane">
+                                        <separator string="Director Approvar" attrs="{'invisible': [('payment_approval_in', '=', False)]}"/>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_in', '=', False)]}">
+                                            <div class="row">
+                                                <label string="user" for="approval3_in_user_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval3_in_user_id"
+                                                       attrs="{'required': [('payment_approval_in', '=', True)]}"/>
+                                            </div>
+                                        </div>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_in', '=', False)]}">
+                                            <div class="row">
+                                                <label string="Amount" for="approval3_in_amount"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval3_in_amount"
+                                                       attrs="{'required': [('payment_approval_in', '=', True)]}"/>
+                                            </div>
+                                            <div class="row">
+                                                <label string="Currency" for="approval3_in_currency_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval3_in_currency_id"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="col-12 col-lg-6 o_setting_box" title="Enables approval feature in outbound payments."
+                                     groups="account.group_account_manager">
+                                    <div class="o_setting_left_pane">
+                                        <field name="payment_approval_out"/>
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        
+                                        <label for="payment_approval_out"/>
+                                        <div class="text-muted">
+                                            Enable to bring the approval in the outbound payment.
+                                            Only account managers can approve the request.
+                                        </div>
+                                        <separator string="Analyst Approvar" attrs="{'invisible': [('payment_approval_out', '=', False)]}"/>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_out', '=', False)]}">
+                                            <div class="row">
+                                                <label string="User" for="approval_out_user_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval_out_user_id"
+                                                       attrs="{'required': [('payment_approval_out', '=', True)]}"/>
+                                            </div>
+                                        </div>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_out', '=', False)]}">
+                                            <div class="row">
+                                                <label string="Amount" for="approval_out_amount"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval_out_amount"
+                                                       attrs="{'required': [('payment_approval_out', '=', True)]}"/>
+                                            </div>
+                                            <div class="row">
+                                                <label string="Currency" for="approval_out_currency_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval_out_currency_id"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="o_setting_right_pane">
+                                        <separator string="Coordinator Approvar" attrs="{'invisible': [('payment_approval_out', '=', False)]}"/>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_out', '=', False)]}">
+                                            <div class="row">
+                                                <label string="User" for="approval2_out_user_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval2_out_user_id"
+                                                       attrs="{'required': [('payment_approval_out', '=', True)]}"/>
+                                            </div>
+                                        </div>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_out', '=', False)]}">
+                                            <div class="row">
+                                                <label string="Amount" for="approval2_out_amount"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval2_out_amount"
+                                                       attrs="{'required': [('payment_approval_out', '=', True)]}"/>
+                                            </div>
+                                            <div class="row">
+                                                <label string="Currency" for="approval2_out_currency_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval2_out_currency_id"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <separator/>
+                                    <div class="o_setting_right_pane">
+                                        <separator string="Director Approvar" attrs="{'invisible': [('payment_approval_out', '=', False)]}"/>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_out', '=', False)]}">
+                                            <div class="row">
+                                                <label string="user" for="approval3_out_user_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval3_out_user_id"
+                                                       attrs="{'required': [('payment_approval_out', '=', True)]}"/>
+                                            </div>
+                                        </div>
+                                        <div class="content-group" attrs="{'invisible': [('payment_approval_out', '=', False)]}">
+                                            <div class="row">
+                                                <label string="Amount" for="approval3_out_amount"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval3_out_amount"
+                                                       attrs="{'required': [('payment_approval_out', '=', True)]}"/>
+                                            </div>
+                                            <div class="row">
+                                                <label string="Currency" for="approval3_out_currency_id"
+                                                       class="col-lg-3 o_light_label"/>
+                                                <field name="approval3_out_currency_id"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

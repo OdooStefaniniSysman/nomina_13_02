@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+	<record id="multi_payment_consignment_validate_view" model="ir.ui.view">
+		<field name="name">Multiple Validación de Asientos</field>
+		<field name="model">account.payment.multi.consignment.validate</field>
+		<field name="arch" type="xml">
+			<form string="Multiple Validación de Asientos">
+				<group>
+					<field name="payment_ids" readonly="1" string="">
+						<tree create="false" delete="false">
+							<field name="name"/>
+							<field name="payment_date"/>
+							<field name="partner_id"/>
+							<field name="partner_id"/>
+							<field name="amount" sum="total_amount"/>
+						</tree>
+						<form>
+							<script>
+						        $(document).ready(function(){
+						        $(".btn-primary").hide();
+						        $(".btn-primary").hide();
+						        });
+						    </script>
+						    <group>
+								<group>
+									<field name="name" readonly="1"/>
+									<field name="payment_date" readonly="1"/>
+									<field name="partner_id" readonly="1"/>
+									<field name="amount" readonly="1"/>
+								</group>
+
+							</group>
+						</form>
+					</field>
+				</group>
+				<footer>
+					<button name="register_multi_consignment_validate" 
+						string="Validar Asiento de Conciliación" 
+						type="object" 
+						class="btn-primary"/>
+					<button string="Cancelar" class="btn-default" special="cancel"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+	</data>
+</odoo>

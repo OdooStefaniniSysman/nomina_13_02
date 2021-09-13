@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_filing_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-03 14:14+0000\n"
+"PO-Revision-Date: 2020-11-03 14:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+
+#. module: account_invoice_filing_control
+#: model:ir.model.fields,field_description:account_invoice_filing_control.field_account_move_multi_filed_customer__display_name
+#: model:ir.model.fields,field_description:account_invoice_filing_control.field_account_move_multi_filed_internally__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_invoice_filing_control
+#: model_terms:ir.ui.view,arch_db:account_invoice_filing_control.view_invoice_tree_inherit_filing
+msgid "Filed Customer"
+msgstr "Radicado Cliente"
+
+#. module: account_invoice_filing_control
+#: model_terms:ir.ui.view,arch_db:account_invoice_filing_control.view_invoice_tree_inherit_filing
+msgid "Filed Internally"
+msgstr "Radicado Cartera"
+
+#. module: account_invoice_filing_control
+#: model:ir.model.fields,field_description:account_invoice_filing_control.field_account_move__invoice_filed_customer
+msgid "Invoice Filed Customer"
+msgstr "Radicado Cliente"
+
+#. module: account_invoice_filing_control
+#: model:ir.model.fields,field_description:account_invoice_filing_control.field_account_move__invoice_filed_internally
+msgid "Invoice Filed Internally"
+msgstr "Radicado Cartera"
+
+
+#. module: account_invoice_filing_control
+#: model_terms:ir.ui.view,arch_db:account_invoice_filing_control.view_invoice_tree_inherit_filing
+msgid "Filed Supplier"
+msgstr "Radicado Cliente"
+
+#. module: account_invoice_filing_control
+#: model_terms:ir.ui.view,arch_db:account_invoice_filing_control.view_invoice_tree_inherit_filing
+msgid "Filed Internally"
+msgstr "Radicado CxP"
+
+#. module: account_invoice_filing_control
+#: model:ir.model.fields,field_description:account_invoice_filing_control.field_account_move__invoice_filed_customer
+msgid "Invoice Filed Customer"
+msgstr "Radicado Cliente"
+
+#. module: account_invoice_filing_control
+#: model:ir.model.fields,field_description:account_invoice_filing_control.field_account_move__invoice_filed_internally
+msgid "Invoice Filed Internally"
+msgstr "Radicado Cartera"
+
+
+#. module: account_invoice_filing_control
+#: model:ir.model,name:account_invoice_filing_control.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: account_invoice_filing_control
+#: model:ir.actions.act_window,name:account_invoice_filing_control.multi_invoice_filed_customer_view
+#: model:res.groups,name:account_invoice_filing_control.group_invoice_field_customer
+msgid "Mark as invoices filed in the customer"
+msgstr "Marcar como facturas radicadas en el cliente"
+
+#. module: account_invoice_filing_control
+#: model:ir.actions.act_window,name:account_invoice_filing_control.multi_invoice_filed_internally_view
+#: model:res.groups,name:account_invoice_filing_control.group_invoice_field_internally
+msgid "Mark as invoices filed in the payment office"
+msgstr "Marcar como facturas radicadas en Cartera"
+
+#. module: account_invoice_filing_control
+#: model_terms:ir.ui.view,arch_db:account_invoice_filing_control.multi_filed_internally_view
+msgid "Multiple Move Filed Internally"
+msgstr "Múltiple Radicado en Cartera"
+
+#. module: account_invoice_filing_control
+#: model:ir.model,name:account_invoice_filing_control.model_account_move_multi_filed_customer
+msgid "Invoice Filed Customer"
+msgstr "Radicado Cliente"
+
+#. module: account_invoice_filing_control
+#: model:ir.model,name:account_invoice_filing_control.model_account_move_multi_filed_internally
+msgid "Invoice Filed Internally"
+msgstr "Radicado Cartera"

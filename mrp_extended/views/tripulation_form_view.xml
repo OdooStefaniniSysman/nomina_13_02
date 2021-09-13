@@ -1,0 +1,13 @@
+<odoo>
+    <record id="mrp_workorder_productivity_form_inherit_tripulacion_view" model="ir.ui.view">
+            <field name="name">mrp.workorder.productivity.inherit.form.tripulacion.view</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='time_ids']//field[@name='date_end']" position="after">
+                <field name="operators" required="1"/>
+            </xpath>
+            </field>
+     </record>       
+
+</odoo>

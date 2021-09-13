@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <record id="account_payment_advance_action_supplier" model="ir.actions.act_window">
+            <field name="name">Advances</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_mode">tree,kanban,form,graph</field>
+            <field name="context">{
+                'default_payment_type': 'outbound',
+                'default_partner_type': 'supplier',
+                'search_default_outbound_filter': 1,
+                'res_partner_search_mode': 'supplier',
+            }</field>
+            <field name="domain">[('payment_as_advance','=',True),('partner_type','=','supplier')]</field>
+            <field name="view_id" ref="account.view_account_supplier_payment_tree"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                  Create a new advance payment
+                </p>
+            </field>
+        </record>
+        
+        <record id="account_payment_advance_action_customer" model="ir.actions.act_window">
+            <field name="name">Advances</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.payment</field>
+            <field name="view_mode">tree,kanban,form,graph</field>
+            <field name="context">{
+                'default_payment_type': 'inbound',
+                'default_partner_type': 'customer',
+                'search_default_inbound_filter': 1,
+                'res_partner_search_mode': 'customer',
+            }</field>
+            <field name="domain">[('payment_as_advance','=',True),('partner_type','=','customer')]</field>
+            <field name="view_id" ref="account.view_account_payment_tree"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                  Create a new advance payment
+                </p>
+            </field>
+        </record>
+
+        <menuitem 
+                id="menu_finance_advances_customer" 
+                name="Advances" 
+                parent="account.menu_finance_receivables" 
+                action="account_advances.account_payment_advance_action_customer"
+                sequence="220"/>
+        
+        <menuitem 
+                id="menu_finance_advances_supplier" 
+                name="Advances" 
+                parent="account.menu_finance_payables" 
+                action="account_advances.account_payment_advance_action_supplier" 
+                sequence="220"/>
+        
+    </data>
+</odoo>

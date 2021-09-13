@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+	<record id="multiple_payment_reconcile" model="ir.ui.view">
+		<field name="name">Multiple Conciliacion de Pagos</field>
+		<field name="model">account.payment.multi.reconcile</field>
+		<field name="arch" type="xml">
+			<form string="Multiple Conciliación de Pagos">
+				<group>	
+					<group>
+						<field name="journal_id"/>
+						<field name="partner_id"/>
+					</group>
+					<group>
+						<field name="journal_payment_id"/>
+						<field name="date"/>
+						<field name="account_analytic_tag_id"/>
+					</group>
+				</group>
+				<group>
+					<field name="payment_ids" readonly="1" string="">
+						<tree create="false" delete="false">
+							<field name="name"/>
+							<field name="payment_date"/>
+							<field name="partner_id"/>
+							<field name="journal_id" invisible="1"/>
+							<field name="payment_account_id" invisible="1"/>
+							<field name="amount" sum="total_amount"/>
+						</tree>
+						<form>
+							<script>
+						        $(document).ready(function(){
+						        $(".btn-primary").hide();
+						        $(".btn-primary").hide();
+						        });
+						    </script>
+						    <group>
+								<group>
+									<field name="name" readonly="1"/>
+									<field name="payment_date" readonly="1"/>
+									<field name="partner_id" readonly="1"/>
+									<field name="amount" readonly="1"/>
+								</group>
+								<group>
+									<field name="journal_id" readonly="1"/>
+									<field name="payment_account_id" readonly="1"/>
+								</group>
+							</group>
+						</form>
+					</field>
+				</group>
+				<group>
+					<group>
+						<field name="amount_base" help="Base calculada y establecida para el calculo de los gastos bancarios a través de impuestos"/>
+					</group>
+					<group>
+						<field name="bank_base_tax_amount" string="Impuesto Cálculo Base" help="Impuesto traido desde el Diario seleccionado para la conciliación"/>
+					</group>
+				</group>
+				<group>
+					<field name="tax_ids">
+						<tree editable="bottom">
+							<field name="tax_id"/>
+							<field name="account_id"/>
+							<field name="amount"/>
+						</tree>
+					</field>
+				</group>
+				<group>
+					<field name="memo"/>
+				</group>
+				<footer>
+					<button name="register_multi_payment" 
+						string="Crear Asiento de Conciliación" 
+						type="object" 
+						class="btn-primary"/>
+					<button string="Cancelar" class="btn-default" special="cancel"/>
+					<button name="save_reconcile_payment_wizard" string="Guardar" class="oe_highlight" default_focus="1" type="object"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	</data>
+</odoo>

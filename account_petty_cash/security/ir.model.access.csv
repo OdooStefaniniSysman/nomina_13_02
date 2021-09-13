@@ -1,0 +1,20 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_warehouse_treasury_user,stock.warehouse treasury_user,stock.model_stock_warehouse,group_treasury_user,1,0,0,0
+access_account_journal_treasury_user,account.journal treasury_user,account.model_account_journal,group_treasury_user,1,0,0,0
+access_account_payment_method_treasury_user,account.payment.method treasury_user,account.model_account_payment_method,group_treasury_manager,1,0,0,0
+access_treasury_session_user,treasury.session user,model_treasury_session,group_treasury_user,1,1,1,0
+access_treasury_config_user,treasury.config user,model_treasury_config,group_treasury_user,1,1,0,0
+access_treasury_config_manager,treasury.config manager,model_treasury_config,group_treasury_manager,1,1,1,1
+access_treasury_payment,treasury.payment manager,model_treasury_payment,group_treasury_manager,1,1,1,1
+access_treasury_payment,treasury.payment manager,model_treasury_payment,group_treasury_user,1,1,1,0
+access_account_cashbox_line_user,account.cashbox.line user,account.model_account_cashbox_line,group_treasury_user,1,1,1,1
+access_decimal_precision_user,decimal.precision,base.model_decimal_precision,group_treasury_user,1,0,0,0
+access_treasury_payment_method_user,treasury.payment.method user,model_treasury_payment_method,group_treasury_user,1,0,0,0
+access_treasury_payment_method_manager,treasury.payment.method manager,model_treasury_payment_method,group_treasury_manager,1,1,1,1
+access_account_analytic_tag,account.analytic.tag manager,account.model_account_analytic_tag,group_treasury_manager,1,1,1,1
+access_account_bank_statement_line_manager,account.bank.statement.line manager,account.model_account_bank_statement_line,group_treasury_manager,1,1,1,1
+access_account_bank_statement,account.bank.statement,account.model_account_bank_statement,group_treasury_user,1,1,1,0
+access_account_bank_statement_manager,account.bank.statement manager,account.model_account_bank_statement,group_treasury_manager,1,1,1,1
+access_account_bank_statement_line,account.bank.statement.line,account.model_account_bank_statement_line,group_treasury_user,1,1,1,0
+access_bank_statement_cashbox_user,account.bank.statement.cashbox user,account.model_account_bank_statement_cashbox,group_treasury_user,1,1,1,0
+access_account_cashbox_line_user,account.cashbox.line user,account.model_account_cashbox_line,group_treasury_user,1,1,1,1

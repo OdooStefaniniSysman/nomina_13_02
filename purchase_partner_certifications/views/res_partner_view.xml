@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="last_payment"/>
+                    <field name="last_payment_date"/>
+                    <field name="last_invoice"/>
+                    <field name="last_invoice_date"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_partner_certifications">
+            <field name="name">Certificación de Proveedores</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Certificado de Proveedores</p>
+            </field>
+        </record> 
+        <menuitem id="action_view_partner_certifications" name="Certificación de Proveedores" parent="account.menu_analytic_accounting"
+                  action="action_partner_certifications"  sequence="98"/>         
+    </data>
+</odoo>

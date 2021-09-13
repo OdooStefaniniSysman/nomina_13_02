@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="product_concept_type_tree">
+        <field name="name">product.concept.type.tree</field>
+        <field name="model">product.concept.type</field>
+        <field name="arch" type="xml">
+            <!-- <tree string="Sectores" editable="top"> -->
+            <tree string="Product Concept">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+        <!-- explicit form view definition -->
+
+    <record id="product_concept_type_form" model="ir.ui.view">
+        <field name="name">product.concept.type.form</field>
+        <field name="model">product.concept.type</field>
+        <field name="arch" type="xml">
+            <form string="Concept Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" /> 
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="product_concept_type_action">
+        <field name="name">Produc Concept</field>
+        <field name="res_model">product.concept.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- menu -->
+    <menuitem action="product_concept_type_action" id="product_concept_type_menu" parent="account.account_invoicing_menu" name="Product Concept" sequence="7"/>
+
+</odoo>

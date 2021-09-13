@@ -1,0 +1,160 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="expense_thomas_asignment_list">
+            <field name="name">expense.thomas.assignment.list</field>
+            <field name="model">expense.thomas.assignment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="name"/>
+                    <field name="initial_date"/>
+                    <field name="end_date"/>
+                    <field name="total_hotel"/>
+                    <field name="unpaid_total_hotel"/>
+                    <field name="total_hotel_days"/>
+                    <field name="total_feeding_value"/>
+                    <field name="unpaid_total_feeding"/>
+                    <field name="total_feeding"/>
+                    <field name="total_by_payroll"/>
+                    <field name="discount"/>
+                    <field name="total_discount"/>
+                    <field name="total_transport"/>
+                    <field name="total_required"/>  
+                </tree>
+            </field>
+        </record>
+
+        <record id="expense_thomas_assignment_form" model="ir.ui.view">
+            <field name="name">expense.thomas.assignment.form</field>
+            <field name="model">expense.thomas.assignment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" options="{'clickable': '1'}" widget="statusbar"/>
+                        <!-- <field name="state" widget="statusbar"/> -->
+                    </header>
+                    <sheet>
+                        <h1 class="col-6">
+                            <field name="name" placeholder="Name" required="True" />
+                        </h1>
+                        <group>
+                            <group string="Advance">
+                                <field name="employee_id" required="True" />
+                                <field name="identification_id" readonly="True" />
+                                <field name="bank_account_id" readonly="True" />
+                                <field name="bank_id" readonly="True" />
+                                <field name="city"/>
+                                <field name="initial_date" required="True" />
+                                <field name="end_date" required="True" />
+                                <field name="product_id" required="True" />
+                                <field name="advance" required="True" />
+                                <field name="advance_date" required="True" />
+                                <field name="total_residual" readonly="True"/>
+                            </group>
+                            <group string="Totals">
+                                <field name="total_by_payroll" force_save="1" readonly="True"/>
+                                <field name="discount" force_save="1" readonly="True"/>
+                                <field name="total_discount" force_save="1" readonly="True"/>
+                                <field name="total_transport" force_save="1" readonly="True"/>
+                                <field name="total_required" force_save="1" readonly="True"/>                                
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Hotel">
+                                <field name="hotel_days"/>
+                                <field name="unitary_hotel"/>
+                                <field name="total_hotel" force_save="1" readonly="True"/>
+                            </group>
+                            <group string="Unpaid Hotel">
+                                <field name="unpaid_hotel_days"/>
+                                <field name="unpaid_unitary_hotel"/>
+                                <field name="unpaid_total_hotel" force_save="1" readonly="True"/>                              
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="total_hotel_days" force_save="1" readonly="True"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Feeding">
+                                <field name="feeding_days"/>
+                                <field name="unit_value_feeding"/>
+                                <field name="total_feeding_value" force_save="1" readonly="True"/>
+                            </group>
+                            <group string="Unpaid Feeding">
+                                <field name="unpaid_feeding_days"/>
+                                <field name="unpaid_unit_value_feeding"/>
+                                <field name="unpaid_total_feeding" force_save="1" readonly="True"/>                              
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="total_feeding" force_save="1" readonly="True"/>
+
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="total_feeding" force_save="1" readonly="True"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+
+                                <field name="made_by" widget="signature"/>
+                                <field name="approved_by" widget="signature"/>
+                            </group>
+                            <group>
+                                <field name="reviewed_by" widget="signature"/>
+                                <field name="managment_sign" widget="signature"/>
+                            </group>
+                        </group>                        
+                        <notebook>
+                            <page name="expenses" string="Expenses">
+                                <field name="hr_expense_ids">
+                                    <!-- <tree string="Gastos">
+                                        <field name="product_id" />
+                                        <field name="total_amount" />
+                                        <field name="date" />
+                                    </tree> -->
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="expense_thomas.asignment_action_window">
+            <field name="name">Advance asignment</field>
+            <field name="res_model">expense.thomas.assignment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Viatics and advances asignment" id="thomas_expenses_asignment" parent="hr_expense.menu_hr_expense_root" action="expense_thomas.asignment_action_window" />
+
+
+        <!-- <record id="expense_thomas_assignment_form_wizard" model="ir.ui.view">
+            <field name="name">sign.expenses.assignment.form</field>
+            <field name="model">sign.expenses.assignment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="made_by" widget="signature"/>
+                            <field name="approved_by" widget="signature"/>
+                        </group>
+                        <group>
+                            <field name="reviewed_by" widget="signature"/>
+                            <field name="managment_sign" widget="signature"/>
+                        </group>
+                    </group> 
+                </form>
+            </field>
+        </record> -->
+
+    </data>
+</odoo>

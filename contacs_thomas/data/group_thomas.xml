@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_tst" model="res.groups">
+        <field name="name">TST</field>
+        <!-- <field name="category_id" ref="base.module_category_user_type"/> -->
+        <field name="comment">The user will have access to the TST's developments</field>
+    </record>
+</odoo>

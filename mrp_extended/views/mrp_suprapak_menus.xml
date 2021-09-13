@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <menuitem id="costos_produccion" name="Costos producción" parent="account_accountant.menu_accounting" sequence="5"/>
+        <menuitem id="centro_produccion_act" name="Centros de producción" parent="costos_produccion" action="mrp.mrp_workcenter_action" sequence="10"/>
+        <menuitem id="ordenes_fabri_trabajo" name="Órdenes de fabricación/Trabajo" parent="costos_produccion" action="mrp.mrp_workorder_todo" sequence="20"/>
+        <menuitem id="analisis_variaciones" name="Análisis variaciones" parent="costos_produccion" action="mrp_extended.mrp_variation_action" sequence="30"/>
+        <menuitem id="contabilizacion_variaciones" name="Contabilización variaciones" parent="costos_produccion" action="mrp_extended.mrp_variation_accounting_action" sequence="40"/>
+    </data>
+</odoo>
+
+

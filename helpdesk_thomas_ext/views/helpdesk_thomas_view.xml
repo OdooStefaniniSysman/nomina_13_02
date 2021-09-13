@@ -1,0 +1,355 @@
+<odoo>
+    <data>
+   <!--     <record id="helpdesk_ticket_noedit_thomas_form" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.noedit.thomas.form</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form" />
+            <field name="groups_id" eval="[(4,ref('helpdesk_thomas_ext.managament_final_user_helpdesk'))]" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="attributes">
+                    <attribute name="edit">1</attribute>
+                </xpath>
+            </field>
+        </record> -->
+        
+        <record id="helpdesk_ticket_thomas_form" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.thomas.form</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form" />
+            <field name="arch" type="xml">
+                <header>
+                    <button string="Avanzar etapa" type="object" name="action_stage_next"
+                             class="oe_highlight" invisible='True'/>
+                    <button string="Retroceder etapa" type="object" name="action_stage_return"
+                             class="oe_highlight" invisible='True'/>  
+                    <button string="CANCELAR" type="object" name="action_stage_cancel"
+                             class="oe_highlight" invisible='True'/>
+                </header>
+                <xpath expr="//form[1]/sheet[1]/group[1]/group[1]" position="attributes">
+                    <attribute name="string">Diligencie la siguiente información:</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                
+                <xpath expr="//field[@name='stage_id']" position="attributes">
+                    <attribute name="groups">helpdesk_thomas_ext.managament_helpdesk</attribute>
+                    <attribute name="attrs">{'readonly':[('state_record', '=', 'CERRADO')]}</attribute>
+                </xpath> 
+                
+                <xpath expr="//field[@name='team_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='ticket_type_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                    <attribute name="string">Urgencia</attribute>
+                </xpath> 
+
+                <xpath expr="//field[@name='email_cc']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='priority']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='sla_deadline']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_email']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|',('state_record', 'in', ['NUEVO'])], 'required': [('state_record', 'not in', ['NUEVO'])]}</attribute>
+                    <attribute name="domain">[('id','in',users_groups_related)]</attribute>
+                </xpath> 
+                <xpath expr="//field[@name='partner_name']" position="attributes">
+                    <attribute name="attrs">{'invisible':[('state_record', '=', 'NUEVO')]}</attribute>
+                </xpath> 
+
+                <xpath expr="//field[@name='tag_ids']" position="replace" >
+                    <field name="team_label" string="Label estado" invisible='True'/> 
+                    <field name="service_id_label" string="Label estado" invisible='True'/>
+                    <field name="sub_service_id_label" string="Label estado" invisible='True'/>
+                    <field name="check_file_document" string="Cumplió SLA" invisible='True'/>
+                    <field name="check_ans_fecha" string="Cumplió SLA" invisible='True'/>
+                    <field name="ticket_type" string="Tipo de Ticket" widget="radio"  options="{&quot;horizontal&quot;:true}"  attrs="{'invisible':[('team_label', '=', 'MESA DE AYUDA SEGURIDAD')], 'required':[('team_label', '!=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                    <field name="service_id" string="Servicio" required='True' options = "{'no_open': true, 'no_quick_create': true ,'no_create_edit': true,'no_create':true}"/>
+                    <field name="state_record" string="Estado label" invisible='True'/>
+                    <field name="subservice_id" string="Subservicio"  attrs="{'invisible':[('service_id', '=', False)], 'required':[('service_id', '=', True)]}" required='True' options = "{'no_open': true, 'no_quick_create': true ,'no_create_edit': true,'no_create':true}"/>
+                    <field name="producto_entregar" string="Producto a entregar y/o recolectar" attrs="{'required':[('service_id_label', '=', 'RECOLECCIÓN Y ENTREGAS DE SEGURIDAD')],'invisible':[('service_id_label', '!=', 'RECOLECCIÓN Y ENTREGAS DE SEGURIDAD')]}"/>
+                    <field name="activity_id" string="Problema/Actividad" options = "{'no_open': true, 'no_quick_create': true ,'no_create_edit': true,'no_create':true}" attrs="{'invisible':['|','|','|',('ticket_type', '=', False),('team_label', '=', 'MESA DE AYUDA SEGURIDAD'),('subservice_id', '=', False)], 'required':['|','|',('team_label', '!=', 'MESA DE AYUDA SEGURIDAD'),('team_label', '!=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                    <field name="ticket_type_id" string="Urgencia" tracking="True" required="True"/>
+                    <field name="material" string="Material" attrs="{'invisible':[('service_id_label', '!=', 'ASEGURAMIENTO DE PRODUCTOS')], 'required':[('service_id_label', '=', 'ASEGURAMIENTO DE PRODUCTOS')]}"/>
+                    <field name="muestras_id" string="Producto/Muestras/Articulo" attrs="{'invisible':[('service_id_label', '!=', 'MUESTRAS')], 'required':[('service_id_label', '=', 'MUESTRAS')]}"/>
+                    <field name="clase_anulado" string="Clase de Anulado" attrs="{'invisible':[('service_id_label', '!=', 'MUESTRAS')], 'required':[('service_id_label', '=', 'MUESTRAS')]}"/>
+                    <field name="entregar" string="Entregar a" attrs="{'invisible':[('service_id_label', '!=', 'MUESTRAS')], 'required':[('service_id_label', '=', 'MUESTRAS')]}"/>
+                    <field name="area_ingreso" string="Área de ingreso" attrs="{'required':[('service_id_label', '=', 'INGRESO COMPAÑÍA VISITANTES')],'invisible':[('service_id_label', '!=', 'INGRESO COMPAÑÍA VISITANTES')]}"/>
+                    <field name="fecha_ingreso" string="Fecha y hora de ingreso" attrs="{'required':[('service_id_label', '=', 'INGRESO COMPAÑÍA VISITANTES')],'invisible':[('service_id_label', '!=', 'INGRESO COMPAÑÍA VISITANTES')]}"/>
+                    <field name="fecha_salida" string="Fecha y hora de Salida" attrs="{'required':[('service_id_label', '=', 'INGRESO COMPAÑÍA VISITANTES')],'invisible':[('service_id_label', '!=', 'INGRESO COMPAÑÍA VISITANTES')]}"/>
+                    <field name="registro_personas" string="Registro de personas" attrs="{'required':['|',('area_ingreso', '=', 'administrativa'),('service_id_label', '=', 'INGRESO COMPAÑÍA VISITANTES')],'invisible':['|',('area_ingreso', '!=', 'administrativa'),('service_id_label', '!=', 'INGRESO COMPAÑÍA VISITANTES')]}"/>
+                    <field name="registro_personas_adjunto" string="Registro de personas (Recuerde adjuntar la o las planillas de para-fiscales)" attrs="{'required':['|',('area_ingreso', '=', 'planta'),('service_id_label', '=', 'INGRESO COMPAÑÍA VISITANTES')],'invisible':['|',('area_ingreso', '!=', 'planta'),('service_id_label', '!=', 'INGRESO COMPAÑÍA VISITANTES')]}"/>
+                    <field name="cliente" string="Cliente" attrs="{'required':[('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')],'invisible':[('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="producto" string="Producto" attrs="{'required':[('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')],'invisible':[('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="ubicacion_producto" string="Ubicación o dirección del producto" attrs="{'required':[('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')],'invisible':[('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="fecha_solicitada_recoleccion" string="Fecha solicitada para recoleción" attrs="{'required':[('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')],'invisible':[('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="producto_articulo" string="Producto/articulo" attrs="{'required':[('service_id_label', '=', 'ORDENES DE SALIDA')],'invisible':[('service_id_label', '!=', 'ORDENES DE SALIDA')]}"/>
+                    <field name="nombre_persona_retira" string="Nombre de la persona que retira" attrs="{'required':[('service_id_label', '=', 'ORDENES DE SALIDA')],'invisible':[('service_id_label', '!=', 'ORDENES DE SALIDA')]}"/>
+                    <field name="destino" string="Destino" attrs="{'required':[('service_id_label', '=', 'ORDENES DE SALIDA')],'invisible':[('service_id_label', '!=', 'ORDENES DE SALIDA')]}"/>
+                    <field name="departament" string="Departamento" attrs="{'invisible':[('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                    <field name="request_contact" string="Solicitud de tercero:" options = "{'no_open': true, 'no_quick_create': true ,'no_create_edit': true,'no_create':true}" attrs="{'invisible':[('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                    <field filename="format_archive_filename" name="format_archive" string="Adjunte el formato requerido" attrs="{'invisible':[('check_file_document', '=', False)], 'required':[('check_file_document', '=', True)]}"/>
+                    <field name="solicitud_almacenamiento" string="Solicitud de Almacenamiento hasta:" attrs="{'required':[('service_id_label', '=', 'ASEGURAMIENTO DE PRODUCTOS')],'invisible':[('service_id_label', '!=', 'ASEGURAMIENTO DE PRODUCTOS')]}"/>
+
+                 <!--   <label for="start_time" string="Tiempos estimados en cada etapa" groups='helpdesk_thomas.managament_helpdesk'/>
+                        <field name="date_aper" string="Fecha de Apertura" groups='helpdesk_thomas.managament_helpdesk'/>
+                        <field name="tiempo_1ra_aprobacion" widget='float_time' string="Tiempo etapa Nuevo"  readonly="True"  attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="fecha_hora_2da_aprobacion" string="Fecha inicio en Revisión"  readonly="True" attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="tiempo_2da_aprobacion" widget='float_time' string="Tiempo en Revisión"  readonly="True"  attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="fecha_hora_3ra_aprobacion" string="Fecha inicio Aprobación Segurinfor" readonly="True" attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="tiempo_3ra_aprobacion" widget='float_time' string="Tiempo Aprobación Segurinfor" readonly="True" attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="fecha_hora_aprobada_cliente" string="Fecha inicio En espera" readonly="True"  attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="tiempo_aprobada_cliente" widget='float_time' string="Tiempo En Espera" readonly="True"  attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="fecha_hora_aprobacion" string="Fecha Inicio en Gestión" readonly="True"  attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="tiempo_aprobada" widget='float_time' string="Tiempo en Gestión" readonly="True"  attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="fecha_hora_finalizada" string="Fecha escalada a terceros" readonly="True"  attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="tiempo_hora_finalizada" widget='float_time' string="Tiempo en Escalado a terceros" readonly="True"  attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                        <field name="tiempo_total"  widget='float_time' string="Tiempo Total" readonly="True"/>
+                        <field name="sum_no_ans"  widget='float_time' string='Tiempo que no incluye SLA' readonly="True"/>
+                        <field name="tiempo_gestion_tecnologia"  widget='float_time' string="Tiempo de SLA" readonly="True"/>    -->
+                    
+                <!--    <label for="start_time" string="Tiempos estiamdos en cada etapa" groups='helpdesk_thomas.managament_helpdesk'/>
+                        <field name="date_aper" string="Fecha de Apertura" groups='helpdesk_thomas.managament_helpdesk'/>
+                        <field name="tiempo_1ra_aprobacion_2" string="Tiempo en recepción"  readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="fecha_hora_2da_aprobacion_2" string="Fecha inicio Autorizacion o aprobaciones"  readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="tiempo_2da_aprobacion_2" string="Tiempo en Autorizacion o aprobaciones"  readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="fecha_hora_3ra_aprobacion_2" string="Fecha inicio Verificación" readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="tiempo_3ra_aprobacion_2" string="Tiempo Verificación" readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="fecha_hora_aprobada_cliente_2" string="Fecha inicio Devolución" readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="tiempo_aprobada_cliente_2" string="Tiempo En Devolución" readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="fecha_hora_aprobacion_2" string="Fecha Inicio en Tercero" readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="tiempo_aprobada_2" string="Tiempo en Tercero" readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="fecha_hora_finalizada_2" string="Fecha en Rechazar" readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="tiempo_hora_finalizada_2" string="Tiempo en Rechazar" readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible': [('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>
+                        <field name="tiempo_total" string="Tiempo Total" readonly="True" groups='helpdesk_thomas.managament_helpdesk' attrs="{'invisible':[('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/> -->
+                </xpath>
+
+                <xpath expr="//field[@name='partner_email']" position="after">
+                    
+                    <field name="solicitud_video_aprobado" string="Solicitud de video Aprobado" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '!=', 'SOLICITUD VIDEOS')]}"/>
+                    <field name="video_aprobado_entrega" string="Video aprobado para la entrega" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '!=', 'SOLICITUD VIDEOS')]}"/>
+                    <field name="aprobado_salud" string="Aprobado salud Ocupacional" attrs="{'invisible':['|',('state_record', 'in', ['REVISIÓN','NUEVO','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']),('service_id_label', '!=', 'INGRESO COMPAÑÍA VISITANTES')]}"/>
+                    <field name="aprobado_gerencia" string="Aprobado por gerencia" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'MUESTRAS')]}"/>
+                    <field name="aprobado_gerencia_seguridad" string="Aprobado por gerencia de seguridad" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'MUESTRAS')]}"/>
+                    <field name="aprobado_laboratorio" string="Aprobado por laboratorio" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '!=', 'MUESTRAS')]}"/>
+                    <field name="requiere_devolucion" string="Requiere devolución" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '!=', 'MUESTRAS')]}"/>
+                    <field name="fecha_devolucion_muestra" string="Fecha y hora de devolución de la muestra" attrs="{'invisible': ['|','|',('state_record', 'in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '!=', 'MUESTRAS'),('requiere_devolucion', '!=', True)], 'required': [('state_record', 'not in', ['REVISIÓN','NUEVO','CERRADO']),('service_id_label', '=', 'MUESTRAS'),('requiere_devolucion', '=', True)]}"/>
+                    <field name="numeracion" string="Numeración" attrs="{'invisible':[('sub_service_id_label', '!=', 'LOTERÍA')],'required':[('state_record', '!=', 'RECHAZADO'),('sub_service_id_label', '=', 'LOTERÍA')]}"/>
+                    <field name="no_sorteo" string="No. del sorteo" attrs="{'invisible':[('sub_service_id_label', '!=', 'LOTERÍA')],'required':[('state_record', '!=', 'RECHAZADO'),('sub_service_id_label', '=', 'LOTERÍA')]}"/>
+                    <field name="serie" string="Serie" attrs="{'invisible':[('sub_service_id_label', '!=', 'LOTERÍA')],'required':[('state_record', '!=', 'RECHAZADO'),('sub_service_id_label', '=', 'LOTERÍA')]}"/>
+                    <field name="fraccion" string="Fracción" attrs="{'invisible':[('sub_service_id_label', '!=', 'LOTERÍA')],'required':[('state_record', '!=', 'RECHAZADO'),('sub_service_id_label', '=', 'LOTERÍA')]}"/>
+                    <field name="aprobado_gerencia_seguridad" string="Aprobado por gerencia de seguridad" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']), ('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('state_record', 'not in', ['REVISIÓN','NUEVO']), ('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="aprobado_seguridad" string="Aprobado jefe inmediato" widget='radio' options="{&quot;horizontal&quot;:true}" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']), ('service_id_label', '!=', 'ORDENES DE SALIDA')], 'required': [('state_record', 'not in', ['REVISIÓN','NUEVO']), ('service_id_label', '=', 'ORDENES DE SALIDA')]}"/>
+                    <field name="aprobado_seguridad_informacion" string="Aprobado por Seguridad de información" widget='radio' options="{&quot;horizontal&quot;:true}" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']), ('service_id_label', '!=', 'ORDENES DE SALIDA')], 'required': [('state_record', 'not in', ['REVISIÓN','NUEVO']), ('service_id_label', '=', 'ORDENES DE SALIDA')]}"/>
+                    <field name="aprobado_jede_departamento" string="Aprobación supervisor de seguridad" widget='radio' options="{&quot;horizontal&quot;:true}" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']),('service_id_label', 'not in', ['ORDENES DE SALIDA','INGRESO COMPAÑÍA VISITANTES'])]}"/>
+                    <field name="porteria" string="Portería" widget='radio' options="{&quot;horizontal&quot;:true}" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO', 'AUTORIZACIÓN O APROBACIONES (SOLICITANTE, SEGURINFO, SEGURIDAD, COMERCIAL, OPERACIONES, TGSC)','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']), ('service_id_label', 'not in', ['ORDENES DE SALIDA','INGRESO COMPAÑÍA VISITANTES'])]}"/>
+                    <field name="devolutivo" string="Devolutivo" widget='radio' options="{&quot;horizontal&quot;:true}" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO', 'AUTORIZACIÓN O APROBACIONES (SOLICITANTE, SEGURINFO, SEGURIDAD, COMERCIAL, OPERACIONES, TGSC)','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']), ('service_id_label', '!=', 'ORDENES DE SALIDA')], 'required': [('state_record', 'not in', ['REVISIÓN','NUEVO', 'AUTORIZACIÓN O APROBACIONES (SOLICITANTE, SEGURINFO, SEGURIDAD, COMERCIAL, OPERACIONES, TGSC)','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']), ('service_id_label', '=', 'ORDENES DE SALIDA')]}"/>
+                    <field name="fecha_devolucion" string="Fecha de devolucion" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO', 'AUTORIZACIÓN O APROBACIONES (SOLICITANTE, SEGURINFO, SEGURIDAD, COMERCIAL, OPERACIONES, TGSC)','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']), ('service_id_label', '!=', 'ORDENES DE SALIDA')]}"/>
+                    <field name="vigilantes_verifica_devolucion_id" string="Vigilante que verifica Devolución"   attrs="{'invisible': ['|',('state_record', 'not in', ['SOLUCIONADO', 'CERRADO']), ('sub_service_id_label', '!=', 'DEVOLUTIVA')], 'required': [('state_record', 'in', ['SOLUCIONADO', 'CERRADO']), ('sub_service_id_label', '=', 'DEVOLUTIVA')]}"/>
+                    <field name="vigilantes_id" string="Vigilante que verifica salida"  attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO', 'AUTORIZACIÓN O APROBACIONES (SOLICITANTE, SEGURINFO, SEGURIDAD, COMERCIAL, OPERACIONES, TGSC)','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']), ('service_id_label', '!=', 'ORDENES DE SALIDA')], 'required': [('state_record', 'not in', ['REVISIÓN','NUEVO', 'AUTORIZACIÓN O APROBACIONES (SOLICITANTE, SEGURINFO, SEGURIDAD, COMERCIAL, OPERACIONES, TGSC)','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']), ('service_id_label', '=', 'ORDENES DE SALIDA')]}"/>
+                    <field name="material_requiere" string="Material requiere investigación" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'ASEGURAMIENTO DE PRODUCTOS')],'required': [('state_record', 'not in', ['REVISIÓN','NUEVO']),('service_id_label', '=', 'ASEGURAMIENTO DE PRODUCTOS')]}"/>
+                    <field name="reporte_indemnidad" string="Reporte de indemnidad" attrs="{'invisible':['|','|',('material_requiere', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'ASEGURAMIENTO DE PRODUCTOS')]}"/>
+                    <field name="producto_incompleto" string="Reporte de producto Incompleto, Auténtico" attrs="{'invisible':['|','|',('material_requiere', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'ASEGURAMIENTO DE PRODUCTOS')]}"/>
+                    <field name="fecha_programacion" string="Fecha y hora de programación" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']), ('service_id_label', '!=', 'RECOLECCIÓN Y ENTREGAS DE SEGURIDAD')],'required': [('state_record', 'not in', ['REVISIÓN','NUEVO']), ('service_id_label', '=', 'RECOLECCIÓN Y ENTREGAS DE SEGURIDAD')]}"/>
+                    <field name="escolta_asignado_id" string="Escolta Asignado" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']), ('service_id_label', '!=', 'RECOLECCIÓN Y ENTREGAS DE SEGURIDAD')], 'required': [('state_record', 'not in', ['REVISIÓN','NUEVO']), ('service_id_label', '=', 'RECOLECCIÓN Y ENTREGAS DE SEGURIDAD')]}"/>
+                    <field name="escolta_asignado_id" string="Escolta Asignado para la recolección" attrs="{'invisible': ['|','|',('state_record', 'in', ['REVISIÓN','NUEVO']), ('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD'), ('aprobado_gerencia_seguridad', '!=', True)], 'required': [('state_record', 'not in', ['REVISIÓN','NUEVO']), ('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD'), ('aprobado_gerencia_seguridad', '=', True)]}"/>
+                    
+                    <field name="analisis_tecnologia" string="*Análisis de tecnología" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']), ('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <!--
+                    <field name="verificacion_codigo_barras" string="1. VERIFICACION CODIGO DE BARRAS: " attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_tecnologia', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="verificacion_codigo_control" string="2. VERIFICACION CODIGO DE CONTROL: " attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_tecnologia', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="verificacion_distribuidor" string="3. VERIFICACION DEL DISTRIBUIDOR: " attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_tecnologia', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="verificacion_sorteo" string="4. VERIFICACION SORTEO: " attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_tecnologia', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="verificacion_billete" string="5. VERIFICACION N° DE BILLETE: " attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_tecnologia', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="verificacion_serie" string="6. VERIFICACION SERIE: " attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_tecnologia', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="verificacion_variable" string="7. VER INF.VARIABLE TIRA DE CONTROL: " attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_tecnologia', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="tira_control_virtual" string="8. TIRA CONTROL VIRTUAL: " attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_tecnologia', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="analisis_realizado" string="Análisis realizado por: " attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_tecnologia', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="cargo" string="cargo" attrs="{'invisible': ['|','|',('analisis_tecnologia', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                   -->
+                     <field name="analisis_preprensa" string="*Análisis por preprensa" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']), ('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <!--<field name="fondos_especiales" string="A. FONDOS ESPECIALES UTILIZADOS " attrs="{'invisible': ['|','|',('analisis_preprensa', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_preprensa', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="antifotocopias" string="B. ANTIFOTOCOPIAS NULO " attrs="{'invisible': ['|','|',('analisis_preprensa', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_preprensa', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="verificacion_microtextos" string="C. VERIFICACION MICROTEXTOS" attrs="{'invisible': ['|','|',('analisis_preprensa', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_preprensa', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="verificacion_impresion" string="D. VERIFICACION DE LA IMPRESIÓN LITOGRAFICA" attrs="{'invisible': ['|','|',('analisis_preprensa', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_preprensa', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="cremocromaticas" string="E. CREMOCROMATICAS" attrs="{'invisible': ['|','|',('analisis_preprensa', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_preprensa', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="analisis_realizado_preprensa" string="Análisis realizado por:" attrs="{'invisible': ['|','|',('analisis_preprensa', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_preprensa', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="cargo_preprensa" string="*cargo" attrs="{'invisible': ['|','|',('analisis_preprensa', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    -->
+                    <field name="analisis_laboratorio" string="*Análisis de Laboratorio" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO']), ('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <!--
+                    <field name="fluorescente_invisible" string="A. FONDOS ESPECIALES UTILIZADOS " attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="fluorescente_visible" string="B. FLUORESCENTE VISIBLE " attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="fluoranulado" string="C. FLUORANULADO " attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="reactivo_moneda" string="D. REACTIVO A LA MONEDA " attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="anulado" string="E. ANULADO " attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="sensible_borrado" string="F. SENSIBLE AL BORRADO " attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="termocromicas" string="G. TERMOCROMICAS " attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="fotocromaticas" string="H. FOTOCROMATICAS " attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="analisis_realizado_laboratorio" string="Análisis realizado por " attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO','RECHAZADO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                    <field name="cargo_laboratorio" string="Cargo" attrs="{'invisible': ['|','|',('analisis_laboratorio', '=', False),('state_record', 'in', ['REVISIÓN','NUEVO']),('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('analisis_laboratorio', '!=', False),('state_record', 'not in', ['REVISIÓN','NUEVO']),('service_id_label', '=', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/>
+                  -->
+
+                    <!--  <field name="validacion_analisis_gerente_seguridad" string="Validaciones análisis gerente de seguridad" attrs="{'invisible': ['|',('state_record', 'in', ['REVISIÓN','NUEVO','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']), ('service_id_label', '!=', 'INFORME ANÁLISIS DE AUTENTICIDAD')], 'required': [('state_record', 'not in', ['NUEVO','REVISIÓN','VERIFICACIÓN (SEGURIDAD. LABORATORIO)']), ('service_id_label', '==', 'INFORME ANÁLISIS DE AUTENTICIDAD')]}"/> -->
+                    
+                    <field name="escolta_asignado_entrega_id" string="Escolta Asignado para la entrega" attrs="{'invisible': ['|',('state_record', 'not in', ['DEVOLUCIÓN / DESTRUCCIÓN / ENTREGA','EN TERCERO','SOLUCIONADO']), ('aprobado_gerencia_seguridad', '!=', True)], 'required': [('state_record', 'in', ['DEVOLUCIÓN / DESTRUCCIÓN / ENTREGA','EN TERCERO','SOLUCIONADO']), ('aprobado_gerencia_seguridad', '=', True)]}"/>
+                    
+                    <field name="acta_destruccion" string="Acta de destrucción"  attrs="{'invisible': ['|',('state_record', 'not in', ['DEVOLUCIÓN / DESTRUCCIÓN / ENTREGA','EN TERCERO','SOLUCIONADO','CERRADO']),('service_id_label', '!=', 'ASEGURAMIENTO DE PRODUCTOS')]}"/>
+                    <field name="link_video" string="Link de video" attrs="{'invisible': ['|',('state_record', 'not in', ['DEVOLUCIÓN / DESTRUCCIÓN / ENTREGA','EN TERCERO','SOLUCIONADO','CERRADO']),('service_id_label', '!=', 'ASEGURAMIENTO DE PRODUCTOS')]}"/>     
+                    <field name="aprobacion_segurinfo" string="Aprobación usuario Segurinfo" widget='radio' options="{&quot;horizontal&quot;:true}" attrs="{'invisible': ['|','|',('state_record', 'in', ['NUEVO','EN REVISIÓN','EN ESPERA DE INFORMACIÓN USUARIO']),('team_label', '!=', 'MESA DE AYUDA TECNOLOGÍA'),('info_security_scale', '!=', 'Si')]}"/> 
+                    <field name="resolved" string="Resuelto" widget='radio' options="{&quot;horizontal&quot;:true}" attrs="{'invisible': ['|',('state_record', 'not in', ['SOLUCIONADO','CERRADO']),('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                    <field name="description_solution" string="Describa la solución de ticket" attrs="{'invisible': ['|',('state_record', 'not in', ['SOLUCIONADO','CERRADO']),('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}" />
+                    <field name="sla_deadline" string="Fecha límite de SLA" attrs="{'invisible': [('state_record', 'in', ['NUEVO'])]}"/>
+                    <field name="fecha_hora_solucion" string="Fecha y hora de solución" readonly="True" attrs="{'invisible': [('state_record', 'not in', ['SOLUCIONADO','CERRADO'])]}"/>
+                 <!--   <field name="fecha_hora_solucion_2" string="Fecha y hora de solución" readonly="True" attrs="{'invisible': ['|',('state_record', 'not in', ['SOLUCIONADO','CERRADO']),('team_label', '=', 'MESA DE AYUDA TECNOLOGÍA')]}"/>-->
+                    <field name="sla_check" string="Cumplió SLA" attrs="{'invisible': [('state_record', 'not in', ['SOLUCIONADO','CERRADO'])]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='description']" position="attributes">
+                    <attribute name="attrs">{"required": [["team_id","=",1]]}</attribute>
+                    <attribute name="placeholder">Describa con sus palabras la solicitud</attribute>
+                    <attribute name="string">Detalle del Ticket</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_name']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_email']" position="after">
+                    <field name="group_users_id" string="Asignado al grupo" attrs="{'invisible':['|',('state_record', '=', 'NUEVO'),('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}" options="{'no_create': True, 'no_create_edit':True}"/>
+                    <xpath expr="//field[@name='user_id']" position="move"/>
+                    <field name="material_type" attrs="{'invisible':['|',('state_record', '=', 'NUEVO'),('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}" groups='helpdesk_thomas_ext.managament_helpdesk'/>
+                    <field name="users_groups_related" invisible="True"/>
+                    <field name="ans_datetime" string="Seleccione la fecha en la que se debe cumplir el ANS" attrs="{'invisible': ['|',('state_record', '=', 'NUEVO'),('check_ans_fecha', '=', False)], 'required': [('state_record', '!=', 'NUEVO'),('check_ans_fecha', '!=', False)]}"/>
+                    <field name="priority" readonly="True" widget="priority" string="Prioridad:" attrs="{'invisible':['|',('state_record', '=', 'NUEVO'),('team_label', '=', 'MESA DE AYUDA SEGURIDAD')], 'required':[('state_record', '!=', 'NUEVO'),('team_label', '!=', 'MESA DE AYUDA SEGURIDAD')]}"/>
+                    <field name="required_information_ticket" string="Información requerida en el ticket esta completa" widget='radio' options="{&quot;horizontal&quot;:true}" attrs="{'invisible':['|',('state_record', '=', 'NUEVO'),('team_label', '=', 'MESA DE AYUDA SEGURIDAD')], 'required':[('state_record', '!=', 'NUEVO'),('team_label', '!=', 'MESA DE AYUDA SEGURIDAD')]}" />
+                    <field name="info_security" string="Actividad requiere de seguridad de la información" attrs="{'invisible':['|',('state_record', '=', 'NUEVO'),('team_label', '=', 'MESA DE AYUDA SEGURIDAD')]}" />
+                    <field name="info_security_scale" string="Ticket requiere de seguridad de la información" widget='radio' attrs="{'invisible':['|',('state_record', '=', 'NUEVO'),('team_label', '=', 'MESA DE AYUDA SEGURIDAD')], 'required':['|',('state_record', '!=', 'NUEVO'),('team_label', '!=', 'MESA DE AYUDA SEGURIDAD')]}" options="{&quot;horizontal&quot;:true}" />
+                </xpath>
+
+            </field>
+        </record>
+                       
+       <record id="helpdesk_ticket_view_tree" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.thomas.tree</field>  
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_kanban"/>
+            <field name="groups_id" eval="[(4,ref('helpdesk_thomas_ext.managament_final_user_helpdesk'))]" />
+            <field name="arch" type="xml">
+                <xpath expr="//kanban/field[@name='stage_id']" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </xpath>
+                <xpath expr="//kanban/templates/t/div/div" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record> 
+        
+      <!--  <record id="helpdesk_ticket_stage_edit_view_kanban" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.thomas.stage.edit.kanban</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk_thomas_ext.helpdesk_ticket_view_tree"/>
+            <field name="groups_id" eval="[(4,ref('helpdesk.group_helpdesk_manager'))]" />
+            <field name="arch" type="xml">
+                 <xpath expr="//kanban/field[@name='stage_id']" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                 </xpath>
+            </field>
+        </record>-->
+
+        <record id="helpdesk_ticket_view_kanban" model="ir.ui.view">
+            <field name="name">helpdesk.ticket.thomas.kanban</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="team_label" invisible='True'/> 
+                    <field name="team_id" invisible='True'/>
+                    <field name="id" string="Número de Ticket"/>
+                    <field name="display_name" string="Ticket Name"/>
+                    <field name="date_aper" string='Fecha y hora de ingreso' optional="show" />
+                    <field name="create_uid" string="Creado por" optional="show"/>  
+                    <field name="departament" string='Departamento' optional="show"/>
+                    <field name="request_contact" string='Solicitud de tercero' optional="show"/>
+                    <field name="name" optional="hide"/>
+                    <field name="ticket_type" string='Tipo de ticket' optional="show" />
+                    <field name="service_id" optional="hide"/>
+                    <field name="subservice_id" optional="hide"/>
+                    <field name="activity_id" string='Actividad Solicitada/Incidente Presentado' optional="show" />
+                    <field name="ticket_type_id" string='Urgencia' optional="show"/>
+                    <field name="priority" optional="hide"/>
+                    <field name="user_id" string='Asignado a' optional="hide" />
+                    <field name="group_users_id" string='Grupo TI' optional="hide"/>
+                    <field name="stage_id" string='Estado' optional="show"/>
+                    <field name="sum_no_ans" widget="float_time_duration" string='Tiempo que no aplica SLA' optional="hide"/>
+                    <field name="tiempo_gestion_tecnologia" widget="float_time_duration" string="Tiempo de SLA" optional="hide"/>
+
+
+                    <field name="partner_id" optional="show"/>
+                    <field name="close_hours" widget="float_time_duration" string="Tiempo total del ticket" optional="hide"/>
+                    <field name="sla_check" optional="show"/>
+                    <field name="tiempo_1ra_aprobacion" widget="float_time_duration" string="Tiempo etapa Nuevo (Tecnología)" optional="hide"/>
+                    <field name="tiempo_2da_aprobacion" widget="float_time_duration" string="Tiempo etapa en revisión (Tecnología)" optional="hide"/>
+                    <field name="tiempo_3ra_aprobacion" widget="float_time_duration" string="Tiempo etapa en Aprobación Segurinfor (Tecnología)" optional="hide"/>
+                    <field name="tiempo_aprobada_cliente" widget="float_time_duration" string="Tiempo etapa en espera Información de Usuario (Tecnología)" optional="hide"/>
+                    <field name="tiempo_aprobada" widget="float_time_duration" string="Tiempo etapa en Gestión (Tecnología)" optional="hide"/>
+                    <field name="tiempo_hora_finalizada" widget="float_time_duration" string="Tiempo etapa en Escalado a terceros (Tecnología)" optional="hide"/>
+                    <field name="fecha_hora_solucion" optional="hide"/>
+  
+                    <field name="close_date" string='Fecha y hora de cierre' optional="hide"/>
+                    <field name="sla_deadline" string='Fecha y hora de SLA' optional="hide"/>
+                    <field name="info_security" string='Actividad requiere de seguridad de la información' optional="hide"/>
+                    <field name="info_security_scale" string='Ticket requiere de seguridad de la información' optional="hide"/>
+
+                    <field name="tiempo_1ra_aprobacion_2" widget="float_time_duration" string="Tiempo en recepción (Seguridad)" optional="hide"/>
+                    <field name="tiempo_2da_aprobacion_2" widget="float_time_duration" string="Tiempo en Autorizacion o aprobaciones (Seguridad)" optional="hide"/>
+                    <field name="tiempo_3ra_aprobacion_2" widget="float_time_duration" string="Tiempo Verificación (Seguridad)" optional="hide"/>
+                    <field name="tiempo_aprobada_cliente_2" widget="float_time_duration" string="Tiempo En Devolución (Seguridad)" optional="hide"/>
+                    <field name="tiempo_aprobada_2" widget="float_time_duration" string="Tiempo en Tercero (Seguridad)" optional="hide"/>
+                    <field name="fecha_hora_solucion_2" optional="hide"/>  
+
+                    <field name="tiempo_hora_solucion" widget="float_time_duration" string="Tiempo en etapa Solucionado" optional="hide"/>
+                    <field name="required_information_ticket" optional="hide"/>
+                    <field name="material_type" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="helpdesk_ticket_view_form_inherit_hidden_sale" model="ir.ui.view">
+            <field name='name'>helpdesk.ticket.form.inherit.hidden.sale</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk_sale.helpdesk_ticket_view_form_inherit_helpdesk_invoicing"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sale_order_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="helpdesk_ticket_kanban_action">
+            <field name="name">Tickets kanban</field>
+            <field name="res_model">helpdesk.ticket</field>
+            <field name="view_mode">kanban,form,tree</field>
+        </record>
+
+    </data>
+</odoo>
+

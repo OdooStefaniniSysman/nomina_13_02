@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+       <record id="view_mrp_workcenter_prelimit_inherit" model="ir.ui.view">
+            <field name="name">mrp.workcenter.prelimit.inherit</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="bool_prelimit"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

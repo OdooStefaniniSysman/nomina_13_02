@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="account_bank_statement_inherit_form" model="ir.ui.view">
+            <field name="name">account.bank.statement.inherit.form</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='line_ids']/tree/field[@name='amount']" position="after">
+                    <field name="comment"/>
+                    <field name="reconciled_move_id" readonly="True"/>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='line_ids']/tree/field[@name='partner_id']" position="after">
+                    <field name="assigned_to"/>
+                </xpath>
+                <xpath expr="//notebook/page/field[@name='line_ids']/tree/field[@name='note']" position="replace">
+                    <field name="note" attrs="{'required': [('assigned_to', '!=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

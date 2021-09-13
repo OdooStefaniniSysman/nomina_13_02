@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <record id="account_analytic_segment_form" model="ir.ui.view">
+            <field name="name">account.analytic.segment.form</field>
+            <field name="model">account.analytic.segment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="ref"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_analytic_segment_tree" model="ir.ui.view">
+            <field name="name">account.analytic.segment.tree</field>
+            <field name="model">account.analytic.segment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Nombre"/>
+                    <field name="ref" string="Referencia"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="account_analytic_segment_action">
+            <field name="name">Segmentos</field>
+            <field name="res_model">account.analytic.segment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem id="account_analytic_segment_menu" parent="account.menu_analytic_accounting" action='account_analytic_ext.account_analytic_segment_action' name="Segmentos"  sequence="20"/>
+    
+    </data>
+</odoo>

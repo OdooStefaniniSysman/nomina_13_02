@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="material_purchase_requisition_inherit_form_view" model="ir.ui.view">
+            <field name="name">material.purchase.requisition.inherit.form.view</field>
+            <field name="model">material.purchase.requisition</field>
+            <field name="inherit_id" ref="material_purchase_requisitions.material_purchase_requisition_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group[1]/group[2]/field[@name='date_end']" position="after">
+                    <field name="internal_spending"/>
+                    <field name="journal_id" string="Diario"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page/field/tree/field[@name='qty']" position="after">
+                    <field name="total_cost"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

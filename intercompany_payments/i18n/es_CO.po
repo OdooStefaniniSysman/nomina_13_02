@@ -1,0 +1,43 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* intercompany_payments
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-18 21:46+0000\n"
+"PO-Revision-Date: 2020-10-18 21:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: intercompany_payments
+#: model:ir.model,name:intercompany_payments.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: intercompany_payments
+#: model:ir.model,name:intercompany_payments.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: intercompany_payments
+#: model:ir.model.fields,field_description:intercompany_payments.field_res_company__rule_type
+msgid "Rule"
+msgstr "Regla"
+
+#. module: intercompany_payments
+#: model:ir.model.fields,help:intercompany_payments.field_res_company__rule_type
+msgid "Select the type to setup inter company rules in selected company."
+msgstr ""
+"Seleccione el tipo para establecer reglas intercompañía en la compañía "
+"seleccionada."
+
+#. module: intercompany_payments
+#: model:ir.model.fields.selection,name:intercompany_payments.selection__res_company__rule_type__cu_and_sup
+msgid "Synchronize payments Customer/Supplier"
+msgstr "Sincronizar Pagos Clientes/Proveedores"

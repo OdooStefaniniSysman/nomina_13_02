@@ -1,0 +1,37 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_suprapak
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-20 21:14+0000\n"
+"PO-Revision-Date: 2020-04-20 21:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_suprapak
+#: model_terms:ir.ui.view,arch_db:crm_suprapak.crm_lead_form
+msgid "<span class=\"oe_grey p-2\"> at </span>"
+msgstr "<span class=\"oe_grey p-2\"> en </span>"
+
+#. module: crm_suprapak
+#: model:ir.model.fields,field_description:crm_suprapak.field_crm_lead__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: crm_suprapak
+#: model:ir.model.fields,field_description:crm_suprapak.field_crm_lead__computed_revenue
+#: model:ir.model.fields,field_description:crm_suprapak.field_crm_lead__planned_revenue
+msgid "Expected Revenue"
+msgstr "Ingreso estimado"
+
+#. module: crm_suprapak
+#: model:ir.model,name:crm_suprapak.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"

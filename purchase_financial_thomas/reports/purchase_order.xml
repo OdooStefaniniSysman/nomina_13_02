@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<template id="inherit_purchase_order_thomas" inherit_id="purchase.report_purchaseorder_document">
+			<xpath expr="/t/t/div/div[4]" position="after">
+			    <div class="row">
+			      <div class="col">
+			        <span t-field="o.description_th"/>
+			      </div>
+			    </div>
+            </xpath>
+		</template>
+    </data>
+</odoo>

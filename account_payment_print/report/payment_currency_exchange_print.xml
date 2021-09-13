@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_account_payment_format_document">
+        
+              <div class="header" style="font-family: 'Helvetica' !important;font-size:14px;color:#151515; border:solid 1px;">
+          
+            <table class="" style="width:100%; text-align:center;">
+                <tr>
+                    <!--<td style="width:20%;padding-top:8px;color:#151515;font-size:12px;">
+                        <div>Página <span class="page"/> de <span class="topage"/></div>
+                        <div style="text-align:center; padding-left:2px;">
+                            <img width="157px" height="117px" src="/universo_invoice_report/static/src/img/logo_invoice.jpg" style="width:159px;height:117px;"/>
+                        </div>
+                    </td>-->
+                    <td style="width:40%;padding-top:8px;">
+                        <div>
+                              <span class="company_name" style="width:100%; text-align:center; font-weight:bold;font-size:22px;color:#151515;">
+                                  <t t-esc="doc.company_id.name"/>.
+                              </span><br/>
+                              <strong style="color:#151515; font-size:14px;">NIT: <t t-esc="doc.company_id.vat"/></strong><br/>
+                        </div>
+                    </td>
+                    <td style="width:60%;padding-top:8px;padding-right:5px;">
+                        
+                        <t t-if="doc.payment_type == 'inbound'">
+                            <div style="font-size:16px;color:#151515; text-align:right; font-weight:bold;">COMPROBANTE DE INGRESO<span style="color:#a41111;font-size:18px;">
+                                <br/><t t-esc="doc.move_name"/></span>
+                            </div>
+                        </t>
+                        <t t-if="doc.payment_type == 'outbound'">
+                            <div style="font-size:16px;color:#151515; text-align:right; font-weight:bold;">COMPROBANTE DE EGRESO<span style="color:#a41111;font-size:18px;">
+                                <br/><t t-esc="doc.move_name"/></span>
+                            </div>
+                        </t>
+                        
+                            
+                        <!--<div style="font-size:11px;color:#151515; text-align:center; height:80px;padding-top:4px;">
+                            <t t-esc="doc.journal_id.invoice_sequence_id.dian_resolution_text"/>
+                        </div>-->
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div>
+                            <table style="width:100%;padding:3px;font-size:13px;color:#151515;"><tr>
+                                <th style="width:20%;padding:3px; text-align:left;background-color:#cecece;">BENEFICIARIO</th>
+                                <td style="width:80%;padding:3px;background-color:#cecece;"><t t-esc="doc.partner_id.name"/></td>
+                            </tr></table>
+                        </div>
+                    </td>
+                    
+                </tr>
+                
+                <tr>
+                    <td style="width:50%;">
+                        <table style="width:100%;color:#151515;height:80px;">
+                            <tr>
+                                <th style="width:20%;padding:3px; text-align:left;">NIT</th>
+                                <td colspan="3" style="width:80%;padding:3px;"><strong><t t-esc="doc.partner_id.vat"/></strong></td>
+                            </tr>
+                            <tr>
+                                <td style="height:25px;width:70px;font-size:11px; padding-left:3px;padding-top:3px;">
+                                    Dirección
+                                </td>
+                                <td colspan="3" style="padding-left:3px;font-size:11px;">
+                                    <t t-esc="doc.partner_id.street"/>
+                                    <t t-if="doc.partner_id.street"/>
+                                        <t t-esc="doc.partner_id.street2"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height:15px;width:70px;font-size:11px;padding-left:3px;">
+                                    Ciudad
+                                </td>
+                                <td style="padding-left:3px;font-size:11px;">
+                                    <t t-esc="doc.partner_id.city"/>
+                                </td>
+                                <td style="height:15px;width:70px;font-size:11px;padding-left:3px;">
+                                    Teléfono
+                                </td>
+                                <td style="padding-left:3px;font-size:11px;">
+                                    <t t-if="doc.partner_id.mobile">
+                                        <t t-esc="doc.partner_id.mobile"/>
+                                    </t>
+                                    <t t-if="doc.partner_id.phone">
+                                        / <t t-esc="doc.partner_id.phone"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </td>
+
+                    <td style="width:50%;">
+                        <table style="width:100%;color:#151515;height:80px;">
+                            <tr>
+                                <th style="height:25px;width:70px;font-size:12px; padding-left:3px;padding-top:3px;text-align:left;border-left:1px solid #cecece;">
+                                    POR CONCEPTO DE
+                                </th>
+                                </tr><tr>
+                                <td colspan="3" style="padding-left:3px;font-size:12px;text-align:left;padding-bottom:5px;border-left:1px solid #cecece;">
+                                    <t t-esc="doc.communication"/>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2" style="width:100%;">
+                        <table style="width:100%;color:#151515;">
+                            <tr>
+                                <th style="width:50%;height:25px;text-align:center;font-size:12px;background-color:#cecece;vertical-align:middle;">
+                                    DIARIO
+                                </th>
+                                <th style="width:20%;height:25px;text-align:center;font-size:12px;background-color:#cecece;vertical-align:middle;">
+                                    ESTADO
+                                </th>
+                                <th style="width:30%;height:25px;text-align:center;font-size:12px;background-color:#cecece;vertical-align:middle;">
+                                    REFERENCIA
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;font-size:12px;padding-top:3px;padding-bottom:3px;">
+                                    <t t-esc="doc.journal_id.name"/>
+                                </td>
+                                <td style="text-align:center;font-size:12px;padding-top:3px;padding-bottom:3px;">
+                                    <t t-if="doc.state =='posted'">
+                                        VALIDADO
+                                    </t>
+                                    <t t-if="doc.state =='draft'">
+                                        BORRADOR
+                                    </t>
+                                    <t t-if="doc.state =='cancelled'">
+                                        <span style="color:red;"><strong>ANULADO</strong></span>
+                                    </t>
+                                    <t t-if="doc.state =='reconciled'">
+                                        RECONCILIADO
+                                    </t>
+                                </td>
+                                <td style="text-align:center;font-size:12px;padding-top:3px;padding-bottom:3px;">
+                                    <t t-esc="doc.payment_reference"/>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                
+                </tr>
+                <tr>
+                    <td colspan="2" style="width:100%;">
+                        <table style="width:100%;color:#151515;">
+                            <tr>
+                                <th style="width:25%;height:25px;text-align:center;font-size:12px;background-color:#cecece;vertical-align:middle;">
+                                    FECHA DOCUMENTO
+                                </th>
+                                <th style="width:25%;height:25px;text-align:center;font-size:12px;background-color:#cecece;vertical-align:middle;">
+                                    FECHA VENCIMIENTO
+                                </th>
+                                <th style="width:35%;height:25px;width:70px;font-size:12px; padding-left:3px;padding-top:3px;text-align:left;background-color:#cecece;vertical-align:middle;">
+                                    ELABORADOR POR
+                                </th>
+                                <th style="width:15%;height:25px;width:70px;font-size:12px; padding-left:3px;padding-top:3px;text-align:left;background-color:#cecece;vertical-align:middle;">
+                                    CHEQUE NO.
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;font-size:12px;">
+                                    <t t-esc="doc.payment_date"/>
+                                </td>
+                                <td style="text-align:center;font-size:12px;">
+                                    <t t-esc="doc.payment_date"/>
+                                </td>
+
+                                <td style="height:25px;width:70px;font-size:12px; padding-left:3px;padding-top:3px;text-align:left;">
+                                    <t t-esc="doc.create_uid.partner_id.name"/>
+                                </td>
+                                <td style="height:25px;width:70px;font-size:12px; padding-left:3px;padding-top:3px;text-align:left;">
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                
+                </tr>
+                    
+                
+                
+            </table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                                
+
+            
+      </div>
+      
+        
+      
+    <t t-set="product_total_und" t-value="0"/>
+    <t t-set="discount_total" t-value="0"/>
+    <t t-set="tax_total" t-value="0"/>
+    <t t-set="line_item" t-value="1"/>      
+      
+      
+    <div class="article o_report_layout_standard">
+        <div class="page" style="font-size:13px;color:#151515;border-left: solid 1px; border-right: solid 1px;border-bottom: solid 1px;">
+            
+            
+            <t t-if="doc.move_line_ids">
+                <div>
+                    <table class="" style="margin-top:10px;font-size:13px; width:100%;">
+                        <thead>
+                            <tr>
+                                <th style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>CÓDIGO CUENTA</strong>
+                                </th>
+                                <th style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>CONCEPTO</strong>
+                                </th>
+                                <th style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>TERCERO</strong>
+                                </th>
+                                <th class="text-right" style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>DÉBITO</strong>
+                                </th>
+                                <th class="text-right" style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;border-top:1px solid #343838;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>CRÉDITO</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:13px;">
+                            <t t-set="move_id" t-value="0"/>
+                            <t t-set="amount" t-value="0"/> 
+                            <t t-set="amount_to_text" t-value="0"/>
+                            <!-- Estos foreach se hacen para poder llegar al asiento completo del pago, puesto que en el comprobante
+                            se necesita toda la información que colocan luego a mano en el asiento -->
+                            <t t-foreach="doc.move_line_ids" t-as="accmov">
+                                
+                                <tr t-if="accmov.move_id.id != move_id">
+                                    <t t-set="move_id" t-value="accmov.move_id.id"/>
+                                    <tr t-foreach="accmov.move_id.line_ids" t-as="accmov1">
+                                        <td style="padding-bottom:5px;padding-left:3px;padding-top:5px;border-right:1px solid #cecece;">
+                                            <span t-field="accmov1.account_id.code"/>
+                                        </td>
+                                        <td style="padding-bottom:5px;padding-left:3px;padding-top:5px;border-right:1px solid #cecece;padding-right:3px;">
+                                            <span t-field="accmov1.move_id.ref"/>
+                                        </td>
+                                        <td style="padding-bottom:5px;padding-left:3px;padding-top:5px;border-right:1px solid #cecece;padding-right:3px;">
+                                            <span t-field="accmov1.partner_id.name"/>
+                                        </td>
+                                        <td style="padding-right:3px;padding-bottom:5px;padding-left:3px;padding-top:5px;text-align:right;border-right:1px solid #cecece;">
+                                            <span t-esc="doc.currency_id.symbol"/><span t-esc="'{:,}'.format(int(round(accmov1.debit))).replace(',','.')"/>
+                                        </td>
+                                        <td style="padding-right:3px;padding-bottom:5px;padding-left:3px;padding-top:5px;text-align:right;">
+                                            <span t-esc="doc.currency_id.symbol"/><span t-esc="'{:,}'.format(int(round(accmov1.credit))).replace(',','.')"/>
+                                        </td>
+                                        <t t-set="amount" t-value="accmov1.move_id.amount"/>
+                                        <t t-set="amount_to_text" t-value="accmov1.move_id.amount_to_text"/> 
+                                    </tr>
+                                    
+                                </tr>
+
+                                
+                            </t>
+                            <tr>
+                    
+                                <th colspan="2" style="padding-top:3px;padding-bottom:3px;width:50%;padding-left:3px;border-right:1px solid #343838;border-top:1px solid #343838;">
+                                    Valor en Letras
+                                </th>
+                                <th style="text-align:center;padding-top:3px;padding-bottom:3px;width:26%;padding-left:3px;border-right:1px solid #343838;border-bottom:1px solid #343838;border-top:1px solid #343838;">
+                                    TOTAL DEL DOCUMENTO
+                                </th>
+                                <th style="padding-right:3px;text-align:right;padding-top:3px;padding-bottom:3px;width:12%;padding-left:3px;border-right:1px solid #343838;border-bottom:1px solid #343838;border-top:1px solid #343838;">
+                                    <span t-esc="doc.currency_id.symbol"/><span t-esc="'{:,}'.format(int(round(amount))).replace(',','.')"/>
+                                </th>
+                                <th style="padding-right:3px;text-align:right;padding-top:3px;padding-bottom:3px;width:12%;padding-left:3px;border-right:1px solid #343838;border-bottom:1px solid #343838;border-top:1px solid #343838;">
+                                    <span t-esc="doc.currency_id.symbol"/><span t-esc="'{:,}'.format(int(round(amount))).replace(',','.')"/>
+                                </th>
+                            </tr>
+                       
+                    
+                    
+                        
+                            <tr>
+                                <td colspan="2" style="border-top:1px solid #343838;border-bottom:1px solid #343838;padding-bottom:5px;border-right:1px solid #343838;padding-top:5px;padding-left:3px;">
+                                    <t t-esc="amount_to_text"/> PESOS M/CTE              
+                                </td>
+                                <td rowspan="2" colspan="3" style="text-size:11px;padding-left:3px;border-bottom:1px solid #343838;">
+                                    FIRMA Y SELLO DEL BENEFICIARIO
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size:13px; padding-left:5px;padding-top:5px;height:70px;border-right:1px solid #343838;border-bottom:1px solid #343838;">
+                                    REVISADO POR
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size:13px; padding-left:5px;padding-top:5px;height:70px;border-right:1px solid #343838;">
+                                    APROBADO POR
+                                </td>
+                                <td colspan="3" style="padding-top:5px;padding-left:3px;">CC / NIT
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                    </table>
+
+                </div>
+            </t>
+            
+            
+            
+            
+            <!--
+            <t t-if="doc.invoice_ids">
+                <div>
+                    <table class="" style="margin-top:10px;font-size:13px; width:100%;">
+                        <thead>
+                            <tr>
+                                <th style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>CÓDIGO CUENTA</strong>
+                                </th>
+                                <th style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>CONCEPTO</strong>
+                                </th>
+                                <th style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>TERCERO</strong>
+                                </th>
+                                <th class="text-right" style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>DÉBITO</strong>
+                                </th>
+                                <th class="text-right" style="padding-bottom:5px;border-top:1px solid #343838;padding-top:5px;border-top:1px solid #343838;text-align:center;background-color:#343838;color:#FFF;vertical-align:middle;">
+                                    <strong>CRÉDITO</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:13px;">
+                            <t t-foreach="doc.invoice_ids" t-as="inv">
+                                <tr t-foreach="inv.move_id.line_ids" t-as="accmov">
+                                    <td style="padding-bottom:5px;padding-left:3px;padding-top:5px;border-right:1px solid #cecece;">
+                                        <span t-field="accmov.account_id.code"/>
+                                    </td>
+                                    <td style="padding-bottom:5px;padding-left:3px;padding-top:5px;border-right:1px solid #cecece;padding-right:3px;">
+                                        <span t-field="accmov.ref"/>
+                                    </td>
+                                    <td style="padding-bottom:5px;padding-left:3px;padding-top:5px;border-right:1px solid #cecece;padding-right:3px;">
+                                        <span t-field="accmov.partner_id.name"/>
+                                    </td>
+                                    <td style="padding-right:3px;padding-bottom:5px;padding-left:3px;padding-top:5px;text-align:right;border-right:1px solid #cecece;">
+                                        <span t-esc="doc.currency_id.symbol"/><span t-esc="'{:,}'.format(int(accmov.debit_cash_basis)).replace(',','.')"/>
+                                    </td>
+                                    <td style="padding-right:3px;padding-bottom:5px;padding-left:3px;padding-top:5px;text-align:right;">
+                                        <span t-esc="doc.currency_id.symbol"/><span t-esc="'{:,}'.format(int(accmov.credit_cash_basis)).replace(',','.')"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr>
+                    
+                                <th colspan="2" style="padding-top:3px;padding-bottom:3px;width:50%;padding-left:3px;border-right:1px solid #343838;border-top:1px solid #343838;">
+                                    Valor en Letras
+                                </th>
+                                <th style="text-align:center;padding-top:3px;padding-bottom:3px;width:26%;padding-left:3px;border-right:1px solid #343838;border-bottom:1px solid #343838;border-top:1px solid #343838;">
+                                    TOTAL DEL DOCUMENTO
+                                </th>
+                                <th style="padding-right:3px;text-align:right;padding-top:3px;padding-bottom:3px;width:12%;padding-left:3px;border-right:1px solid #343838;border-bottom:1px solid #343838;border-top:1px solid #343838;">
+                                    <span t-esc="doc.currency_id.symbol"/><span t-esc="'{:,}'.format(int(doc.amount)).replace(',','.')"/>
+                                </th>
+                                <th style="padding-right:3px;text-align:right;padding-top:3px;padding-bottom:3px;width:12%;padding-left:3px;border-right:1px solid #343838;border-bottom:1px solid #343838;border-top:1px solid #343838;">
+                                    <span t-esc="doc.currency_id.symbol"/><span t-esc="'{:,}'.format(int(doc.amount)).replace(',','.')"/>
+                                </th>
+                            </tr>
+                       
+                    
+                    
+                        
+                            <tr>
+                                <td colspan="2" style="border-top:1px solid #343838;border-bottom:1px solid #343838;padding-bottom:5px;border-right:1px solid #343838;padding-top:5px;padding-left:3px;">
+                                    <t t-esc="doc.amount_to_text"/> PESOS M/CTE              
+                                </td>
+                                <td rowspan="2" colspan="3" style="text-size:11px;padding-left:3px;border-bottom:1px solid #343838;">
+                                    FIRMA Y SELLO DEL BENEFICIARIO
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size:13px; padding-left:5px;padding-top:5px;height:70px;border-right:1px solid #343838;border-bottom:1px solid #343838;">
+                                    REVISADO POR
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size:13px; padding-left:5px;padding-top:5px;height:70px;border-right:1px solid #343838;">
+                                    APROBADO POR
+                                </td>
+                                <td colspan="3" style="padding-top:5px;padding-left:3px;">CC / NIT
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                    </table>
+
+                </div>
+            </t>
+            -->
+            
+            
+            
+        </div>
+    </div>
+      
+      
+      
+        
+    </template>
+
+    <template id="report_account_payment_format">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="account_payment_print.report_account_payment_format_document" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+
+
+
+

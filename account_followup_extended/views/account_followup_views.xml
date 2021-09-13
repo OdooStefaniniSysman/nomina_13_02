@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_followup_line_inherit_form" model="ir.ui.view">
+            <field name="name">account.followup.line.inherit.form</field>
+            <field name="model">account_followup.followup.line</field>
+            <field name="inherit_id" ref="account_followup.view_account_followup_followup_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="after">
+                    <group name="schedule_sending">
+                        <group name="left">
+                            <field name="account_ids" widget="many2many_tags"/>
+                            <field name="count_cron" invisible="1"/>
+                        </group>
+                        <group name="right" string="Schedule sending">
+                            <label for="monday" string="Monday"/>
+                            <div class="o_row">
+                                <field name="monday"/>
+                                <field name="monday_time" widget="timepicker" />
+                                <field name="monday_cron" invisible="1"/>
+                            </div>
+                            <label for="tuesday" string="Tuesday"/>
+                            <div class="o_row">
+                                <field name="tuesday"/>
+                                <field name="tuesday_time" widget="timepicker" />
+                                <field name="tuesday_cron" invisible="1"/>
+                            </div>
+                            <label for="wednesday" string="wednesday"/>
+                            <div class="o_row">
+                                <field name="wednesday"/>
+                                <field name="wednesday_time" widget="timepicker" />
+                                <field name="wednesday_cron" invisible="1"/>
+                            </div>
+                            <label for="thursday" string="Thursday"/>
+                            <div class="o_row">
+                                <field name="thursday"/>
+                                <field name="thursday_time" widget="timepicker" />
+                                <field name="thursday_cron" invisible="1"/>
+                            </div>
+                            <label for="friday" string="Friday"/>
+                            <div class="o_row">
+                                <field name="friday"/>
+                                <field name="friday_time" widget="timepicker" />
+                                <field name="friday_cron" invisible="1"/>
+                            </div>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <template id="template_followup_report_inherit" inherit_id="account_followup.template_followup_report" primary="True">
+            <xpath expr="//t[@t-if='invoice_address_id.email']" position="after">
+                <t name="followup_status">
+                    <p>
+                        <i class='fa fa-suitcase' role="img" aria-label="Follow-up status" title="Follow-up status"/>
+                        <span>Follow-up status: </span>
+                        <t t-if="partner.followup_status_id">
+                            <t t-esc='partner.followup_status_id.name' />
+                        </t>
+                    </p>
+                </t>
+            </xpath>
+            <xpath expr="//div[@class='row']" position="after">
+                <h3 t-if='context.get("print_mode") != True' class="no_print">
+                    <span>Portfolio tracking contacts</span>
+                </h3>
+                <div class="row">
+                    <t t-foreach="partner.child_ids" t-as="contact">
+                        <t t-if="contact.type == 'portfolio'">
+                            <div class="col-xl-4">
+                                <b t-if='context.get("print_mode") != True' class="no_print">
+                                    <span>
+                                        <i class='fa fa-user fa-fw' role="img" aria-label="Contact" title="Contact"/>
+                                        <t t-esc='contact.name' />
+                                        <span t-if="contact.country_id"><small>(<t t-esc='contact.country_id.name' />)</small></span>
+                                    </span>
+                                </b>
+                                <p t-if='context.get("print_mode") != True' class='o_account_reports_contact_info'>
+                                    <t t-if="contact.phone">
+                                        <a class="o_account_reports_contact_info_call"
+                                            t-att-data-number="contact.phone"
+                                            t-att-data-id="contact.id"
+                                            t-att-data-model="contact._name"
+                                            t-attf-href="tel:#{contact.phone}">
+                                            <i class='fa fa-phone fa-fw' role="img" aria-label="Phone" title="Phone"/><t t-esc="contact.phone" />
+                                        </a>
+                                        <br />
+                                    </t>
+                                    <t t-if="contact.mobile">
+                                        <a class="o_account_reports_contact_info_call"
+                                            t-att-data-number="contact.mobile"
+                                            t-att-data-id="contact.id"
+                                            t-att-data-model="contact._name"
+                                            t-attf-href="tel:#{contact.mobile}">
+                                            <i class='fa fa-mobile fa-fw' role="img" aria-label="Mobile" title="Mobile"/><t t-esc="contact.mobile" />
+                                        </a>
+                                        <br />
+                                    </t>
+                                    <t t-if="contact.email">
+                                        <a t-att-href="'mailto:' + contact.email" title="Send an email">
+                                            <i class='fa fa-envelope' role="img" aria-label="Email"/><t t-esc="' ' + contact.email" />
+                                        </a>
+                                    </t>
+                                </p>
+                            </div>
+                        </t>
+                    </t>
+                    <t t-if="not partner.child_ids">
+                        <div class="alert alert-warning">
+                            <b t-if='context.get("print_mode") != True' class="no_print">
+                                <span>Has no portfolio tracking contacts!</span>
+                            </b>
+                        </div>
+                    </t>
+                </div>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

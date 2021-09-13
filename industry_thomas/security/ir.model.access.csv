@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_maintenance_thomas_maintenance_thomas,maintenance_thomas.maintenance_thomas,model_maintenance_equipment,contacs_thomas.group_tst,1,1,1,1

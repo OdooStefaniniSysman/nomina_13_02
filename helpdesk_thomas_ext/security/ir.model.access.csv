@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_helpdesk_groupusers,helpdesk_groupusers.helpdesk_groupusers,model_helpdesk_groupusers,base.group_user,1,1,1,1
+access_helpdesk_service,helpdesk_service.helpdesk_service,model_helpdesk_service,base.group_user,1,1,1,1
+access_helpdesk_subservice,helpdesk_subservice.helpdesk_subservice,model_helpdesk_subservice,base.group_user,1,1,1,1
+access_helpdesk_type,helpdesk_type.helpdesk_type,model_helpdesk_type,base.group_user,1,1,1,1
+access_helpdesk_activity,helpdesk_activity.helpdesk_activity,model_helpdesk_activity,base.group_user,1,1,1,1
+access_helpdesk_material_type,helpdesk_material_type.helpdesk_material_type,model_helpdesk_material_type,base.group_user,1,1,1,1
+access_helpdesk_problem,helpdesk_problem.helpdesk_problem,model_helpdesk_problem,base.group_user,1,1,1,1
+access_helpdesk_helpdesk,helpdesk_helpdesk.helpdesk_helpdesk,model_helpdesk_helpdesk,base.group_user,1,1,1,1
+access_helpdesk_escolta,helpdesk_escolta.helpdesk_escolta,model_helpdesk_escolta,base.group_user,1,1,1,1
+access_helpdesk_vigilante,helpdesk_vigilante.helpdesk_vigilante,model_helpdesk_vigilante,base.group_user,1,1,1,1
+access_helpdesk_material,helpdesk_material.helpdesk_material,model_helpdesk_material,base.group_user,1,1,1,1
+access_helpdesk_producto,helpdesk_producto.helpdesk_producto,model_helpdesk_producto,base.group_user,1,1,1,1
+access_helpdesk_personas,helpdesk_personas.helpdesk_personas,model_helpdesk_personas,base.group_user,1,1,1,1
+access_helpdesk_producto_muestras,helpdesk_producto_muestras.helpdesk_producto_muestras,model_helpdesk_producto_muestras,base.group_user,1,1,1,1
