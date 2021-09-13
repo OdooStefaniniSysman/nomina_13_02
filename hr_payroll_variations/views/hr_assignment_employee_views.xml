@@ -50,8 +50,8 @@
                 <tree>
                     <field name="name" width="12%"/>
                     <field name="company_id" width="12%"/>
-                    <field name="day_from" width="12%"/>
-                    <field name="day_to" width="12%"/>
+		    <!--<field name="day_from" width="12%"/>
+		    <field name="day_to" width="12%"/>-->
                     <field name="percentage" width="12%"/>
 		    <!--<field name="date_from" width="12%"/>
 		    <field name="date_to" width="12%"/>-->
