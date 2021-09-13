@@ -179,7 +179,7 @@ class Todoo(models.Model):
     prueba=fields.Char()
     sede=fields.Char(string="Sede", related="requisicion.sede",tracking=True)
     departamento_req=fields.Many2one(related="requisicion.departamento")
-    area_req=fields.Char(string="Área", related="requisicion.area")   
+    area_req=fields.Char(string="Área", related="requisicion.area")
     turno_trabajo=fields.Selection(related="requisicion.turn",tracking=True)
     personal_cargo=fields.Selection(related="requisicion.personal_a_cargo",tracking=True)
     psicologo_req=fields.Many2one(related="requisicion.psicologo_req", string="Psicologo")
@@ -309,8 +309,10 @@ class Todoo(models.Model):
     #Estados  
     estado_de_solicitud=fields.Char(related="stage_id.name")
     id_estado_de_solicitud=fields.Integer(related="stage_id.sequence")
-    ide_requisicion = fields.Char(related="requisicion.name", string="Identificador de la Requisición")    
-             
+    ide_requisicion = fields.Char(related="requisicion.name", string="Identificador de la Requisición")
+    number_of_children = fields.Integer(string="Número de Hijos")
+    
+    
     @api.onchange('from_date', 'final_date','total_days')
     def calculate_date(self):
         if self.from_date and self.final_date:
@@ -335,6 +337,7 @@ class Todoo(models.Model):
             self.via_generadora if self.via_generadora else "",           
             self.Predio if self.Predio else "",
             self.complemento if self.complemento else "")
+
     
     #concatenación Dirección persona caso de Emergencia
     @api.onchange('via_principal_con', 'nombre_via_principal_cont', 'via_generadora_con', 'predio_con', 'complemento_con')                  
@@ -346,6 +349,7 @@ class Todoo(models.Model):
             self.predio_con if self.predio_con else "",
             self.complemento_con if self.complemento_con else "")
 
+
     #concatenación asunto/solicitante
     @api.onchange('ide_requisicion','cargo_aplica', 'partner_name')                  
     def _onchange_asunto_solicitante(self):
@@ -353,19 +357,20 @@ class Todoo(models.Model):
             self.ide_requisicion if self.ide_requisicion else "",
             self.cargo_aplica if self.cargo_aplica else "",          
             self.partner_name if self.partner_name else "")
+        
 
     #concatenación: Nombre del aplicante
-    @api.onchange('tratamiento','name3',   'name4',  'name1',  'name2')
+    @api.onchange('name3',   'name4',  'name1',  'name2')
     def _onchange_street(self):
-        self.partner_name = "%s %s %s %s %s" % (
-            self.tratamiento if self.tratamiento else "",
-            self.name3 if self.name3 else "",        
-          
-            self.name4 if self.name4 else "",         
+        self.partner_name = "%s %s %s %s" % (
             
-            self.name1 if self.name1 else "",
+            self.name1 if self.name1 else "",        
+          
+            self.name2 if self.name2 else "",         
+            
+            self.name3 if self.name3 else "",
            
-            self.name2 if self.name2 else "")
+            self.name4 if self.name4 else "")
 
     # validar numero de identifiacion y confirmacion del mismo. 
     @api.constrains('ide', 'cide')
@@ -388,10 +393,10 @@ class Todoo(models.Model):
             if record.email_from != record.emal_cc:
                 raise ValidationError("Verificar la confirmación de su Correo! : %s" % record.email_from)
 
+
     # en esta funcion pater hay que enviar tambien los cambios que guradan los nombres                       
     def create_employee_from_applicant(self):
         res = super(Todoo, self).create_employee_from_applicant()
-        # res['main_road_name'] = self.nombre_via_principla
         employee_id = self.env['hr.employee'].browse(res['res_id'])
         vals = {
             'main_road': self.direccion_dian,
@@ -541,6 +546,7 @@ class Todoo(models.Model):
             'aplicante': self.partner_name,
             'complete_direction': self.dire_completo,
             'complete_direction_parent': self.direccion_contacto,
+            'number_of_children': self.number_of_children,
         }
         employee_id.write(vals)
         employee_id.action_req()

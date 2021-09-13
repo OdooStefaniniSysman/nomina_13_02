@@ -40,7 +40,7 @@ class Hijo(models.Model):
     identificacion=fields.Integer()
     hijastro=fields.Selection([('si', 'SI'),('no', 'NO')])
     ocupacion_hijo=fields.Selection([('EMPLEADO', 'EMPLEADO'),('ESTUDIANTE', 'ESTUDIANTE'),('DESOCUPADO','DESOCUPADO')])
-    nivel_escolaridad_hijo=fields.Selection([('PRIMARIA', 'PRIMARIA'),('BACHILLER', 'BACHILLER'),('CURSO O SEMINARIO','CURSO O SEMINARIO'),('TÉCNICA','TÉCNICA'),('TÉCNOLOGICA','TÉCNOLOGICA'),('UNIVERSITARIA','UNIVERSITARIA'),('ESPECIALIZACIÓN','ESPECIALIZACIÓN'),('MAESTRIA','MAESTRÍA'),('DOCTORADO','DOCTORADO')])
+    nivel_escolaridad_hijo=fields.Selection([('PRIMARIA', 'PRIMARIA'),('BACHILLER', 'BACHILLER'),('CURSO O SEMINARIO','CURSO O SEMINARIO'),('TÉCNICA','TÉCNICA'),('TÉCNOLOGICA','TÉCNOLOGICA'),('UNIVERSITARIA','UNIVERSITARIA'),('ESPECIALIZACIÓN','ESPECIALIZACIÓN'),('MAESTRÍA','MAESTRÍA'),('DOCTORADO','DOCTORADO')])
     padre_o_madre=fields.Char(related="applicant_id.partner_name")
     padre_madre_emp=fields.Char(related="employee_id.name")
     

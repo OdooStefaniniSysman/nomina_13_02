@@ -55,6 +55,12 @@ manager_model_clase_salario,manager_model_clase_salario,model_clase_salario,hr_r
 manager_model_division,manager_model_division,model_division,hr_recruitment.group_hr_recruitment_manager,1,1,1,0
 manager_model_area_personal,manager_model_area_personal,model_area_personal,hr_recruitment.group_hr_recruitment_manager,1,1,1,0
 manager_model_evaluacion,manager_model_evaluacion,model_evaluacion,hr_recruitment.group_hr_recruitment_manager,1,1,1,0
+manager_model_personal,manager_model_personal,model_personal,hr_recruitment.group_hr_recruitment_manager,1,1,1,0
+manager_model_personal_cargo,manager_model_personal_cargo,model_personal_cargo,hr_recruitment.group_hr_recruitment_manager,1,1,1,0
+manager_model_formacion_cargos,manager_model_formacion_cargos,model_formacion_cargos,hr_recruitment.group_hr_recruitment_manager,1,1,1,0
+
+
+
 
 
 

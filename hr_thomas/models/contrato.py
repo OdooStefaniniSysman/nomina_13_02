@@ -109,8 +109,25 @@ class Todoo(models.Model):
    #imagen para firma
    firma = fields.Binary(string="Firma")
    clase_beneficio = fields.Integer(string="Importe Clase Beneficio", related="employee_id.importe_clase_beneficio_emp")
+   arl_percentage = fields.Float(string="Porcentaje ARL", compute="_calculate_arl_percentage")
   
         
+
+   @api.depends('nivel_riesgo_arl')
+   def _calculate_arl_percentage(self):
+   	for record in self:
+   		if record.nivel_riesgo_arl:
+   			if record.nivel_riesgo_arl == '1 RIESGO I':
+   				record.arl_percentage = 0.522
+   			elif record.nivel_riesgo_arl == '2 RIESGO II':
+   				record.arl_percentage = 1.044
+   			elif record.nivel_riesgo_arl == '3 RIESGO III':
+   				record.arl_percentage = 2.436
+   			elif record.nivel_riesgo_arl == '4 RIESGO IV':
+   				record.arl_percentage = 4.350
+   			else:
+   				record.arl_percentage = 6.960
+
 
    #Función para llevar información de requisiciones a contratos - 
    @api.onchange('requisicion')
@@ -160,4 +177,8 @@ class Todoo(models.Model):
          self.cliente = self.requisicion.cliente1
          self.jefe_inmediato_con = self.requisicion.jefe_inmediato
          self.res_city = self.requisicion.res_city
+         self.valor_auxilio_alimentacion = self.requisicion.valor_auxilio_alimentacion
+         self.valor_aux_alimentacion_pro = self.requisicion.valor_aux_alimentacion_pro
+         self.valor_aux_rodamiento_pro = self.requisicion.valor_aux_rodamiento_pro
+         self.Valor_Auxili_de_Rodamiento = self.requisicion.Valor_Auxili_de_Rodamiento
          

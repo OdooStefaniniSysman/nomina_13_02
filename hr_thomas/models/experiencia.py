@@ -4,7 +4,9 @@
 from odoo import fields, models, api, exceptions
 from odoo.exceptions import ValidationError
 from datetime import datetime,date,timedelta
+import logging
 
+_logger = logging.getLogger(__name__)
 
 
 class HrResumeLine(models.Model):
@@ -21,10 +23,12 @@ class HrResumeLine(models.Model):
     tiempo_laborando = fields.Char()
     applicant_id = fields.Many2one('hr.applicant', 'Aplicante')
     employee_id = fields.Many2one(required=False)
-    total_days=fields.Integer(string="TOTAL DAYS")
+    total_days=fields.Integer(string="TOTAL DAYS", compute="_calculate_date")
 
     @api.onchange('date_start', 'date_end','total_days')
-    def calculate_date(self):
+    #@api.depends('date_start', 'date_end','total_days')
+    def _calculate_date(self):
+        self.total_days=0
         if self.date_start and self.date_end:
             d1=datetime.strptime(str(self.date_start),'%Y-%m-%d') 
             d2=datetime.strptime(str(self.date_end),'%Y-%m-%d')

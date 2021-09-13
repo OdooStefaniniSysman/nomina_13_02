@@ -9,7 +9,17 @@
            <group>
              <group>
                 <field name="nombre_tipo_cotizante" string="Tipo de Cotizante"/>
-              
+                <field name="code"/>
+             </group>
+             <group>
+                <field name="has_arl"/>
+                <field name="arl_rate" attrs="{'invisible': [('has_arl', '!=', True)]}"/>
+                <field name="has_afp"/>
+                <field name="pension_rate" attrs="{'invisible': [('has_afp', '!=', True)]}"/>
+                <field name="has_eps"/>
+                <field name="eps_rate" attrs="{'invisible': [('has_eps', '!=', True)]}"/>
+                <field name="has_ccf"/>
+                <field name="ccf_rate" attrs="{'invisible': [('has_ccf', '!=', True)]}"/>
              </group>
            </group>   
         </form>
@@ -22,8 +32,6 @@
         <field name="arch" type="xml">
             <tree string="sector tipo">
                 <field name="nombre_tipo_cotizante" string="Tipo de Cotizante"/>
-              
-                
             </tree>
         </field>
     </record>
