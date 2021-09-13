@@ -1532,11 +1532,6 @@ msgid "Value"
 msgstr "Valor"
 
 #. module: hr_payroll_extended
-#: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payroll_config_lines__variable
-msgid "Variable"
-msgstr ""
-
-#. module: hr_payroll_extended
 #: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_employee__voluntary_contribution_id
 #: model:ir.model.fields,field_description:hr_payroll_extended.field_hr_payslip__voluntary_contribution_id
 #: model:ir.model.fields,field_description:hr_payroll_extended.field_res_partner__is_voluntary_contribution

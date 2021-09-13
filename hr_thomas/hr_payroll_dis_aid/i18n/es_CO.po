@@ -512,17 +512,6 @@ msgid "Discount Type"
 msgstr "Tipo de Descuento"
 
 #. module: hr_payroll_dis_aid
-#: model:ir.model,name:hr_payroll_dis_aid.model_hr_payroll_discount_variable
-msgid "Discount Variable for Module Debt Capacity"
-msgstr "Variable de descuento para la capacidad de endeudamiento"
-
-#. module: hr_payroll_dis_aid
-#: model:ir.actions.act_window,name:hr_payroll_dis_aid.hr_payroll_dis_discounts_action
-#: model:ir.ui.menu,name:hr_payroll_dis_aid.Discounts Variable
-msgid "Discount variable"
-msgstr "Variable de Descuento"
-
-#. module: hr_payroll_dis_aid
 #: model:ir.model.fields,field_description:hr_payroll_dis_aid.field_hr_payroll_dis_aid_committed__dis_aid_id
 #: model:ir.model.fields,field_description:hr_payroll_dis_aid.field_hr_payroll_dis_aid_line__dis_aid_id
 #: model:ir.model.fields,field_description:hr_payroll_dis_aid.field_hr_payroll_dis_aid_payment_line__dis_aid_id
