@@ -29,7 +29,7 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
+        #'security/ir.model.access.csv',
         'views/rrhh_todoo_view.xml',
         'views/requisiciones.xml',
         'views/ciudades.xml',
