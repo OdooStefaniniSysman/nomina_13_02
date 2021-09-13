@@ -19,7 +19,7 @@
                 ],
     'data': [
         'security/hr_pv_security.xml',
-        'data/calendar_data.xml',
+        #'data/calendar_data.xml',
         'data/hr_pv_type.xml',
         'data/hr_pv_type_subtype.xml',
         'data/hr_pv_event.xml',
