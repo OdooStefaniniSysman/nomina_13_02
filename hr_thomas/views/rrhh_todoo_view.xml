@@ -44,7 +44,6 @@
                         <field name="ciudad_req"/>
                         <field name="sede" string="Sede"/>                       
                         <field name="area_req" string="Área"/>
-                        <field name="area_req" string="Area relacionada"/>
                         <field name="psicologo_req"/>
                         <field name="reclutador_req"/> 
                     </group>
@@ -163,9 +162,10 @@
                                     <field name="estrato" string="Estrato Socioeconómico"/>
                                 </group>
                                 <group>
-                                    <field name="eps" string="EPS" domain="[('check_eps', '=', True)]"/>
-                                    <field name="afp" string="AFP" domain="[('check_afp', '=', True)]"/>
-                                    <field name="afc" string="AFC" domain="[('check_afc', '=', True)]"/>
+                                    <field name="eps" string="EPS" domain="[('tipo', '=', 'EPS')]"/>
+                                    <field name="afp" string="AFP" domain="[('tipo', '=', 'AFP')]"/>
+                                    <field name="afc" string="AFC" domain="[('tipo', '=', 'AFC')]"/>
+                                  
                                 </group>
                             </group>
                         </page>
@@ -200,7 +200,6 @@
                                     <field name="medio_transporte_sec" string="Medio de Transporte Secundario"/>
                                     <field name="Horas_trabajo" string="Horas parra llegar al Trabajo"/>
                                     <field name="estado_civil" string="Estado Civil"/>
-                                    <field name="number_of_children" string="Número de Hijos"/>
                                 </group>
                                 <group string="Cónyuge" attrs="{'invisible': [('estado_civil', 'not in', ['CASADO/A','UNIÓN LIBRE'])], 'required': [('estado_civil', 'in', ('CASADO/A','UNIÓN LIBRE'))]}">
                                     <field name="primer_apellido_conyugue" string="Primer Apellido del Cónyuge" attrs="{'invisible': [('estado_civil', 'not in', ['CASADO/A','UNIÓN LIBRE'])], 'required': [('estado_civil', 'in', ('CASADO/A','UNIÓN LIBRE'))]}"/>
@@ -216,7 +215,6 @@
                                 <group>
                                 </group>
                             </group>
-                            
                             <group string="Información de los Hijos">                                
                                 <field  name="hijos_Line">
                                     <tree>

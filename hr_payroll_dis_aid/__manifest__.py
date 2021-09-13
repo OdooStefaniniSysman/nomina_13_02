@@ -5,7 +5,7 @@
 {
     'name': 'HR Payroll Discounts',
     'summary': 'HR Payroll Employee Discount like liens, loans, etc or Aid for todoo',
-    'version': '13.0.1.0.2',
+    'version': '13.0.1.0.1',
     'category': 'Human Resources',
     'website': 'https://todoo.co/',
     'author': 'Todoo S.A.S',

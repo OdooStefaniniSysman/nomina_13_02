@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+ access_hr_employee_substitution,access_hr_employee_substitution,model_hr_employee_substitution,base.group_user,1,1,1,1
+ access_division,access_division,model_division,base.group_user,1,1,1,1
+ access_area_personal,access_area_personal,model_area_personal,base.group_user,1,1,1,1

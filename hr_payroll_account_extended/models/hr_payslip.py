@@ -9,6 +9,7 @@ from odoo.tools import float_compare, float_is_zero
 class HrPayslip(models.Model):
     _inherit = "hr.payslip"
 
+
     def action_payslip_done(self):
         res = super(HrPayslip, self).action_payslip_done()
         payslips_to_post = self.filtered(lambda slip: slip.move_id)
@@ -21,7 +22,7 @@ class HrPayslip(models.Model):
                     ('employee_id', '=', slip.employee_id.id),
                     ('company_id', '=', self.env.company.id),
                     ('name', '=', move_line.name),
-                ], limit=1)
+                    ], limit=1)
 
                 if slip_line:
                     partner = slip_line.get_partner(slip_line.salary_rule_id, slip.employee_id)
@@ -34,32 +35,32 @@ class HrPayslip(models.Model):
 class HrPayslipLine(models.Model):
     _inherit = "hr.payslip.line"
 
+
     def get_partner(self, rule, employee):
         partner = employee.address_home_id
         if rule:
             if rule.partner_type == 'layoffs':
                 partner = employee.found_layoffs_id
             elif rule.partner_type == 'eps':
-                partner = employee.eps_emp
+                partner = employee.eps_id
             elif rule.partner_type == 'afp':
-                partner = employee.afp_emp
+                partner = employee.pension_fund_id
             elif rule.partner_type == 'unemployment':
                 partner = employee.unemployment_fund_id
             elif rule.partner_type == 'arl':
-                partner = employee.arl_emp
+                partner = employee.arl_id
             elif rule.partner_type == 'pre_medicine':
                 partner = employee.prepaid_medicine_id
             elif rule.partner_type == 'pre_medicine2':
                 partner = employee.prepaid_medicine2_id
             elif rule.partner_type == 'afc':
-                partner = employee.afc_emp
-            elif rule.partner_type == 'compensation':
-                partner = employee.caja_compensacion_emp
+                partner = employee.afc_id
             elif rule.partner_type == 'voluntary':
                 partner = employee.voluntary_contribution_id
             elif rule.partner_type == 'voluntary2':
                 partner = employee.voluntary_contribution2_id
 
         return partner
+
 
 #

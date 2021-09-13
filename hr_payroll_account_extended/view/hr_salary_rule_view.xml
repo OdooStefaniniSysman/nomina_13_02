@@ -10,7 +10,7 @@
             <xpath expr="//field[@name='not_computed_in_net']" position="after">
                 <field name="partner_type"/>
             </xpath>
-
+            
         </field>
     </record>
 

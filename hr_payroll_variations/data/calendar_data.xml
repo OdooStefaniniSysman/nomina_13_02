@@ -3,7 +3,7 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
 <odoo>
 
-    <data noupdate="1">
+	<!--<data noupdate="1">
         <record id="resource_calendar_std_full" model="resource.calendar">
             <field name="name">Standard Full</field>
             <field name="company_id" ref="base.main_company"/>
@@ -28,6 +28,6 @@
             ]"
             />
         </record>
-    </data>
+	</data>-->
 
 </odoo>

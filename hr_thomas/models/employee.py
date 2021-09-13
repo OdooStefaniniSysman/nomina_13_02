@@ -61,8 +61,12 @@ class Todoo(models.Model):
     area_requi = fields.Char(string="Area",tracking=True)
     tratamiento_emp = fields.Selection([('SR.','SR.'),('SRA.','SRA.')],'Tratamiento', tracking=True)
     unidad_organizativa_requi = fields.Many2one('unidades', tracking=True)
+
     centro_costo_empleado = fields.Many2one('centro', string="Centro de Costo", tracking=True)
+
+
     centro_de_costo_requisicion = fields.Many2one('centro',string="Número del Centro de Costo",tracking=True)
+
     nombre_centro_costo_requi = fields.Char(related="centro_de_costo_requisicion.centro_costo",string="Nombre del Centro de Costo",tracking=True)
     porcentaje_nivel_de_riesgo = fields.Selection(related="requisition_id.nivel_riesgo", tracking=True)
     nivel_de_riesgo = fields.Selection(related="requisition_id.nivel_riesgo_arl", tracking=True)
@@ -72,6 +76,7 @@ class Todoo(models.Model):
     #Private Information
     applicant_id = fields.Many2one('hr.applicant',tracking=True)
     formacion_line_emp = fields.One2many('formacion','employee_id','Formación')
+
     #employee_id One2many
     idioma_line_emp = fields.One2many('lenguage','employee_id','Idiomas')
     mascotas_line_emp = fields.One2many('mascotas','employee_id', 'Mascotas')
@@ -119,10 +124,14 @@ class Todoo(models.Model):
     trash_service = fields.Selection([('Si', 'SI'),('No', 'NO')],'Cuenta con servicio de Recolección de Basura?',tracking=True)
     etnic_group = fields.Selection([('Mestizo', 'MESTIZO'),('Blanco', 'BLANCO'),('Afrocolombiano', 'AFROCOLOMBIANO'),('Indigena','INDIGENA'),('Gitano','GITANO')],'Grupo Étnico',tracking=True)
     socioeconomical_state = fields.Selection([('1', 'ESTRATO 1'),('2', 'ESTRATO 2'),('3', 'ESTRATO 3'),('4','ESTRATO 4'),('5','ESTRATO 5'),('6','ESTRATO 6')],'Estrato Socioeconómico',tracking=True)
+
     #6 grupo persona en caso de emergencia//
     full_name = fields.Char('Nombre Completo',tracking=True)
     Phone = fields.Char('Telefono',tracking=True)
+
     relationship = fields.Selection([('ABUELO (A)', 'ABUELO (A)'),('AMIGO (A)', 'AMIGO (A)'),('ESPOSO (A)', 'ESPOSO (A)'),('HERMANO (A)','HERMANO (A)'),('PADRE','PADRE'),('MADRE','MADRE'),('SORBINO (A)','SOBRINO (A)'),('TIO (A)','TIO (A)'),('HIJO (A)','HIJO (A)'),('OTRO','OTRO')],tracking=True)
+
+
     what_relationship = fields.Char('Cuál parentesco?',tracking=True)
     #dirección
     main_road_parent = fields.Many2one('direccion','Vía Principal',tracking=True)
@@ -136,6 +145,7 @@ class Todoo(models.Model):
     head_family = fields.Selection([('Si', 'SI'),('No', 'NO')],'Es cabeza de familia?',tracking=True)
     number_family = fields.Integer('Número de personas del núcleo familiar',tracking=True)
     number_person_discapacited = fields.Integer('Número de personas en estado de discapacidad',tracking=True)
+
     #9 grupo
     drive_license = fields.Selection([('SI', 'SI'),('NO', 'NO')],'Tiene Licencia para conducir?',tracking=True)
     license_type = fields.Selection([('A1', 'A1'),('A2', 'A2'),('B1', 'B1'),('B2','B2'),('B3','B3'),('C1', 'C1'),('C2','C2'),('C3','C3')],'Tipo de Licencia',tracking=True)
@@ -273,8 +283,7 @@ class Todoo(models.Model):
     fecha_retiro = fields.Date(string="Fecha de Retiro", tracking=True)
     check = fields.Boolean(string="Retiro")
     check_tag_ids = fields.Boolean(compute='_compute_check_tag_ids', invisible=True)
-    account_type = fields.Selection([('ahorros', 'AHORROS'),('corriente', 'CORRIENTE')],'Tipo de Cuenta',tracking=True)
-    number_of_children = fields.Integer(string="Numero de Hijos")
+
     departure_reason = fields.Selection(selection_add=[
         ('mutuo acuerdo', 'Mutuo Acuerdo'),
         ('expiracion plazo fijo pactado', 'Expiración plazo fijo pactado'),
@@ -289,13 +298,7 @@ class Todoo(models.Model):
         ('terminacion periodo prueba','Terminación Período Prueba'),
         ('renuncia','Renuncia'),
     ], string="Motivo de salida")
-    """Redefinición del campo original para eliminar dependencia del grupo hr.group_hr_manager"""
-    category_ids = fields.Many2many(
-        'hr.employee.category', 'employee_category_rel',
-        'emp_id', 'category_id', groups="",
-        string='Tags')
-    contract_warning = fields.Boolean(string='Contract Warning', store=True, compute='_compute_contract_warning')
-                
+
     @api.onchange('requisition_id')
     def action_req(self):
       for record in self:
@@ -311,11 +314,6 @@ class Todoo(models.Model):
             record.manejo_incapacidades_req = record.requisition_id.manejo_incapacidades
             record.manejo_vacaciones_req = record.requisition_id.manejo_vacaciones
             record.nivel_riesgo = record.requisition_id.nivel_riesgo_arl
-    
-    @api.onchange('bank_account_id')
-    def _onchange_bank_account_id(self):
-          if self.bank_account_id:
-             self.account_type =  self.bank_account_id.account_type
 
     @api.depends('category_ids')
     def _compute_check_tag_ids(self):
@@ -323,17 +321,18 @@ class Todoo(models.Model):
             record.check_tag_ids = True if record.category_ids and record.category_ids[0].name == 'APRENDIZ' else False    
 
     # concatenar nombre completo del empleado
-    @api.onchange('name', 'first_name', 'second_name', 'third_name', 'fourth_name')
+    @api.onchange('tratamiento_emp', 'name', 'first_name', 'second_name', 'third_name', 'fourth_name')
     def _onchange_nombre_completo(self):
-        self.third_name = self.third_name.upper() if self.third_name else False
-        self.fourth_name = self.fourth_name.upper() if self.fourth_name else False
         self.first_name = self.first_name.upper() if self.first_name else False
         self.second_name = self.second_name.upper() if self.second_name else False
-        self.name = "%s %s %s %s" % (
-            self.third_name if self.third_name else "",
-            self.fourth_name if self.fourth_name else "",
+        self.third_name = self.third_name.upper() if self.third_name else False
+        self.fourth_name = self.fourth_name.upper() if self.fourth_name else False
+        self.name = "%s %s %s %s  %s" % (
+            self.tratamiento_emp if self.tratamiento_emp else "",
             self.first_name if self.first_name else "",
-            self.second_name if self.second_name else "")
+            self.second_name if self.second_name else "",
+            self.third_name if self.third_name else "",
+            self.fourth_name if self.fourth_name else "")
 
     # validar fecha de nacimiento
     @api.constrains('birthday', 'confirmation_date_of_birth')

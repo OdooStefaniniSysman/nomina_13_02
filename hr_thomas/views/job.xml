@@ -12,15 +12,7 @@
 
             <xpath expr="//div[(@name='button_box')]" position="after">
                 <widget name="web_ribbon" title="Archivado" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'archive')]}"/>
-		<span style="padding-right:5px;">Esta Publicado</span>
-            	<field name="is_published" string="PUBLICADO"/>
             </xpath>
-
-	    <!--<xpath expr="//div[(@name='button_box')]" position="inside">
-              <button class="oe_stat_button" icon="fa-globe" name="170"  context="{'default_user_id': user_id}" type="action">
-                    <field name="is_published" widget="statinfo" string="PUBLICADO"/>
-                </button>
-	    </xpath>-->
 
             <xpath expr="//button[(@name='set_open')]" position="after">
                 <button name="button_open" string="Confirmar" states="create,write" type="object"/>

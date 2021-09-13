@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_risk_type,access_hr_risk_type,model_hr_risk_type,base.group_user,1,1,1,1
+access_hr_contributor_type,access_hr_contributor_type,model_hr_contributor_type,base.group_user,1,1,1,1
+access_hr_payroll_pila,access_hr_payroll_pila,model_hr_payroll_pila,base.group_user,1,1,1,1
+access_hr_type2f1_line,access_hr_type2f1_line,model_hr_type2f1_line,base.group_user,1,1,1,1
+access_hr_type2f2_1_line,access_hr_type2f2_1_line,model_hr_type2f2_1_line,base.group_user,1,1,1,1
+access_hr_type2f2_2_line,access_hr_type2f2_2_line,model_hr_type2f2_2_line,base.group_user,1,1,1,1

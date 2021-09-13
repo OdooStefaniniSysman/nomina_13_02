@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020-TODAY Miguel Pardo <ing.miguel.pardo@gmail.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+    <record id="extended_hr_contract_view_form_inherit_inherit" model="ir.ui.view">
+        <field name="name">extended.hr.contract.view.form.inherit.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract_extended.extended_hr_contract_view_form_inherit"/>
+        <field name="arch" type="xml">
+            <field name="arl_percentage" position="before">
+                <field name="risk_type_id"
+                       options="{'no_create': True, 'no_create_edit': True}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

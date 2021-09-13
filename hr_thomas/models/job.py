@@ -45,7 +45,7 @@ class HrJob(models.Model):
     tipo_relacion4 = fields.Selection([('DIRECTA', 'DIRECTA'), ('INDIRECTA', 'INDIRECTA')],tracking=True)
 
     # Campos: Educación:
-    nivel_primario_educativo_minimo = fields.Selection([('PRIMARIA', 'PRIMARIA'), ('BACHILLER', 'BACHILLER'), ('TECNICO', 'TÉCNICO'),('TECNOLOGICO','TECNOLÓGICO'),('PROFESIONAL','PROFESIONAL'),('N/A','N/A')],tracking=True)
+    nivel_primario_educativo_minimo = fields.Selection([('BACHILLER', 'BACHILLER'), ('TECNICO', 'TÉCNICO'),('TECNOLOGICO','TECNOLÓGICO'),('PROFESIONAL','PROFESIONAL'),('N/A','N/A')],tracking=True)
     nombre_programa_carrera = fields.Char('Nombre del Programa o Carrera',tracking=True)
     nivel_secundario_educativo = fields.Selection([('ESPECIALISTA', 'ESPECIALISTA'), ('MAGISTER', 'MAGISTER'),('N/A','N/A')],tracking=True)
     nombre_programa = fields.Char(tracking=True)
@@ -53,46 +53,8 @@ class HrJob(models.Model):
     # campo many2may formacion
     formacion_esp = fields.One2many('formacion.cargos','job_id',tracking=True)    
     #general
-    general=fields.Selection([
-        ('SIN EXPERIENCIA', 'SIN EXPERIENCIA'),
-        ('SIN EXPERIENCIA O MENOS DE SEIS MESES', 'SIN EXPERIENCIA O MENOS DE SEIS MESES'),
-        ('6 MESES', '6 MESES'),('1 AÑO','1 AÑO'),
-        ('1 AÑO', '1 AÑO'),
-        ('1 AÑO Y SEIS MESES', '1 AÑO Y SEIS MESES'),
-        ('2 AÑOS','2 AÑOS'),
-        ('2 AÑOS Y SEIS MESES', '2 AÑOS Y SEIS MESES'),
-        ('2 A 3 AÑOS', '2 A 3 AÑOS'),
-        ('3 AÑOS','3 AÑOS'),
-        ('4 AÑOS','4 AÑOS'),
-        ('5 AÑOS','5 AÑOS'),
-        ('6 AÑOS','6 AÑOS'),
-        ('7 AÑOS','7 AÑOS'),
-        ('8 AÑOS','8 AÑOS'),
-        ('9 AÑOS','9 AÑOS'),
-        ('10 AÑOS','10 AÑOS'),
-        ('11 AÑOS','11 AÑOS'),
-    ],tracking=True)
-
-
-    especifica_cargos_similares=fields.Selection([
-        ('SIN EXPERIENCIA', 'SIN EXPERIENCIA'),
-        ('SIN EXPERIENCIA O MENOS DE SEIS MESES', 'SIN EXPERIENCIA O MENOS DE SEIS MESES'),
-        ('6 MESES', '6 MESES'),('1 AÑO','1 AÑO'),
-        ('1 AÑO', '1 AÑO'),
-        ('1 AÑO Y SEIS MESES', '1 AÑO Y SEIS MESES'),
-        ('2 AÑOS','2 AÑOS'),
-        ('2 AÑOS Y SEIS MESES', '2 AÑOS Y SEIS MESES'),
-        ('2 A 3 AÑOS', '2 A 3 AÑOS'),
-        ('3 AÑOS','3 AÑOS'),
-        ('4 AÑOS','4 AÑOS'),
-        ('5 AÑOS','5 AÑOS'),
-        ('6 AÑOS','6 AÑOS'),
-        ('7 AÑOS','7 AÑOS'),
-        ('8 AÑOS','8 AÑOS'),
-        ('9 AÑOS','9 AÑOS'),
-        ('10 AÑOS','10 AÑOS'),
-        ('11 AÑOS','11 AÑOS'),
-    ],tracking=True)
+    general=fields.Selection([('SIN EXPERIENCIA', 'SIN EXPERIENCIA'), ('6 MESES', '6 MESES'),('1 AÑO','1 AÑO'),('2 AÑOS','2 AÑOS'),('3 AÑOS','3 AÑOS'),('4 AÑOS','4 AÑOS'),('5 AÑOS','5 AÑOS')],tracking=True)
+    especifica_cargos_similares=fields.Selection([('SIN EXPERIENCIA', 'SIN EXPERIENCIA'), ('6 MESES', '6 MESES'),('1 AÑO','1 AÑO'),('2 AÑOS','2 AÑOS'),('3 AÑOS','3 AÑOS'),('4 AÑOS','4 AÑOS'),('5 AÑOS','5 AÑOS')],tracking=True)
 
     # objetivo del cargo
     objetivo_cargo = fields.Text(tracking=True)

@@ -28,7 +28,7 @@ class HrDepartureWizard(models.TransientModel):
     def action_register_departure(self):
         res = super(HrDepartureWizard,self).action_register_departure()
         employee = self.employee_id
-        #employee.fourth_name = employee.fourth_name + ' ARCHIVADO'
-        #employee.name = employee.name + ' ARCHIVADO'
+        employee.fourth_name = employee.fourth_name + ' ARCHIVADO'
+        employee.name = employee.name + ' ARCHIVADO'
         employee.fecha_retiro = self.fecha_retiro
         return res

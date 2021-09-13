@@ -6,25 +6,18 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
-                <page name="payroll_pila" string="Pila" attrs="{'invisible': [('check_colombia_form', '!=', True)]}">
+                <page string="UGPP">
                     <group>
                         <group>
-                            <field name="check_colombia_form" invisible="True"/>
-                            <field name="check_arl"/>
-                            <field name="identificator_arl" attrs="{'invisible': [('check_arl', '!=', True)]}"/>
-                            <field name="check_afp"/>
-                            <field name="identificator_afp" attrs="{'invisible': [('check_afp', '!=', True)]}"/>
-                            <field name="check_box"/>
-                            <field name="identificator_box" attrs="{'invisible': [('check_box', '!=', True)]}"/>
-                            <field name="check_eps"/>
-                            <field name="identificator_eps" attrs="{'invisible': [('check_eps', '!=', True)]}"/>
-                            <field name="check_afc"/>
-                            <field name="identificator_afc" attrs="{'invisible': [('check_afc', '!=', True)]}"/>
-                            <field name="check_loan"/>
+                            <field name="identificador" string="Identificador"/>
+                            <field name="tipo" String="Clasificación UGPP"/>  
                         </group>
+                        
                     </group>
+                   
                 </page>
-            </xpath>
+
+            </xpath>    
         </field>
     </record>
-</odoo>
+</odoo>                      
