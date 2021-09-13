@@ -12,7 +12,7 @@ class AccountInvoice(models.Model):
 	
 	@api.model
 	def _get_zzz(self):
-		zz_id = self.env['account.payment.mean.code'].search([('code','=','ZZZ')])
+		#zz_id = self.env['account.payment.mean.code'].search([('code','=','ZZZ')])
 		if zz_id:
 			return zz_id.id
 		return False
