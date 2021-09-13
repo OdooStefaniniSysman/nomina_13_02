@@ -8,7 +8,8 @@
     'author': 'todoo',
     'depends': ['base', 'hr_management_human_talent', 'hr_payroll_variations', 'hr_payroll_dis_aid'],
     'demo': [''],
-    'data': ['security/ir.model.access.csv',
+    'data': [
+            #'security/ir.model.access.csv',
              'data/hr_employee_substitution_data.xml',
              'views/hr_employee_substitution_views.xml',
              #'views/new_fields_todoo_views.xml',
