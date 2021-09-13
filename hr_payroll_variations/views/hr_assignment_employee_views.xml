@@ -18,8 +18,8 @@
                         <group>
                             <group>
                                 <field name="company_id" required="1"/>
-                                <field name="date_from" required="1"/>
-                                <field name="date_to" required="1"/>
+				<!--<field name="date_from" required="1"/>
+				<field name="date_to" required="1"/>-->
                             </group>
                             <group>
                                 <field name="event_id" required="1"/>
@@ -53,8 +53,8 @@
                     <field name="day_from" width="12%"/>
                     <field name="day_to" width="12%"/>
                     <field name="percentage" width="12%"/>
-                    <field name="date_from" width="12%"/>
-                    <field name="date_to" width="12%"/>
+		    <!--<field name="date_from" width="12%"/>
+		    <field name="date_to" width="12%"/>-->
                     <field name="is_active" width="12%"/>
                 </tree>
             </field>
