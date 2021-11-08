@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="treasury_session_report_template">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+             <!--<t t-call="web.external_layout">-->
+             <t t-if="not o" t-set="o" t-value="doc"/>
+            <t t-if="not company">
+              <!-- Multicompany -->
+              <t t-if="company_id">
+                  <t t-set="company" t-value="company_id"/>
+              </t>
+              <t t-elif="o and 'company_id' in o">
+                  <t t-set="company" t-value="o.company_id.sudo()"/>
+              </t>
+              <t t-else="else">
+                  <t t-set="company" t-value="res_company"/>
+              </t>
+            </t>
+
+            <t t-esc="company.update_scss()"/>
+            <t t-if="company.external_report_layout_id" t-call="{{company.external_report_layout_id.key}}"><t t-raw="0"/></t>
+            <t t-else="else" t-call="web.external_layout_standard"><t t-raw="0"/></t>
+            
+            <div class="header">
+                <div class="row">
+                    <div class="col-3 mb4">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;" alt="Logo"/>
+                    </div>
+                    <div class="col-9 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+                </div>
+                <div t-if="company.logo or company.report_header" class="row zero_min_height">
+                    <div class="col-12">
+                        <div style="border-bottom: 1px solid black;"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6" name="company_address" style="font-size:13px;">
+                        <div t-field="company.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <h6>
+                        <strong><span>Reporte de Sesión de Punto de Venta</span></strong>
+                        <strong><span t-field="doc.name" style="float:right;"/></strong>
+                    </h6>
+                    <div class="row mt32 mb32" style="font-size:13px;">
+                        <div class="col-auto mw-100 mb-2">
+                            <strong>Punto de Venta:</strong>
+                            <p t-field="doc.config_id"/>
+                        </div>
+                        <div class="col-auto mw-100 mb-2">
+                            <strong>Responsable Caja:</strong>
+                            <p t-field="doc.user_id"/>
+                        </div>
+                        <div class="col-auto mw-100 mb-2">
+                            <strong>Administrador Punto de Venta:</strong>
+                            <p t-field="doc.user2_id"/>
+                        </div>
+                        <div class="col-auto mw-100 mb-2">
+                            <strong>Fecha de Apertura:</strong>
+                            <p t-field="doc.start_at"/>
+                        </div>
+                        <div class="col-auto mw-100 mb-2">
+                            <strong>Fecha de Cierre:</strong>
+                            <p t-field="doc.stop_at"/>
+                        </div>
+                    </div>
+
+                    <!--<table class="table table-condensed table-striped">-->
+                    <table class="" style="width:100%;font-size:13px;font-weight:normal;margin-top:-20px;">
+                        <thead>
+                            <tr><th colspan="7">CIERRE DE CAJA</th></tr>
+                            <tr>
+                                <th style="background-color:#dedbdb;" class="text-right">Balance Inicial</th>
+                                <th style="background-color:#dedbdb;" class="text-right">Subtotal de Transacciones</th>
+                                <th style="background-color:#dedbdb;" class="text-right">Balance Final</th>
+                                <th style="background-color:#dedbdb;" class="text-right">Diferencia</th>
+                                <th style="background-color:#dedbdb;" class="text-right">Estado Sesión</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="total_cash" t-value="0"/>
+                            <t t-set="journal_cash" t-value=""/>
+                            <t t-foreach="doc.payment_ids.sorted(key=lambda x: x.journal_id)" t-as="record">
+                              <t t-set="total_cash" t-if="record.journal_id.type == 'cash'" t-value="total_cash + record.amount"/>
+                              <t t-set="journal_cash" t-if="record.journal_id.type == 'cash'" t-value="record.journal_id.name"/>
+                            </t>
+                              <tr style="border-bottom: 1px solid black;">
+                                  <td class="text-right">
+                                      <span t-field="doc.cash_register_balance_start"/>
+                                  </td>
+                                  <td class="text-right">
+                                      <span t-field="doc.cash_register_total_entry_encoding"/>
+                                  </td>
+                                  <td class="text-right">
+                                      <span t-field="doc.cash_register_balance_end"/>
+                                  </td>
+                                  <td class="text-right">
+                                      <span t-field="doc.cash_register_difference"/>
+                                  </td>
+                                  <td class="text-right">
+                                      <span t-field="doc.state"/>
+                                  </td>
+                              </tr>
+                            </tbody>
+                    </table>
+                  
+                    <h6 style="padding-top:20px; text-align:center;"><strong>Resúmen por Métodos de Pago</strong></h6>
+
+                    <table class="" style="width:100%;font-size:13px;font-weight:normal;">
+                        <thead>
+                          <tr><th colspan="6">TRANSACCIONES EN EFECTIVO</th></tr>
+                        </thead>
+                        <tbody>  
+                            <t t-set="total_cash" t-value="0"/>
+                            <t t-set="journal_cash" t-value=""/>
+                            <t t-set="ctl" t-value="0"/>
+                            <t t-set="ctl2" t-value="0"/>
+                            <t t-set="amount_total" t-value="0"/>
+                            <t t-set="amount_subtotal" t-value="0"/>
+                            <!--<t t-foreach="doc.payment_ids.sorted(key=lambda x: x.partner_id.name)" t-as="record">-->
+                            <t t-foreach="doc.payment_ids.sorted(key=lambda r: r.journal_id.name, reverse=True)" t-as="record">
+                            <t t-if="record.journal_id.type == 'cash'">
+                              <t t-set="amount_total" t-value="amount_total + record.amount"/>
+                              <t t-set="amount_subtotal" t-value="amount_subtotal + record.amount"/>
+                              <t t-if="ctl==0">
+                                <tr>
+                                  <th style="width:10%;background-color:#dedbdb;"/>
+                                  <th style="width:10%;background-color:#dedbdb;" class="text-center">Orden de Venta</th>
+                                  <th style="width:40%;background-color:#dedbdb;" class="text-center">Cliente</th>
+                                  <th style="width:15%;background-color:#dedbdb;" class="text-center">Total Pedido</th>
+                                  <th style="width:15%;background-color:#dedbdb;" class="text-center">Valor Ingreso</th>
+                                  <th style="width:10%;background-color:#dedbdb;" class="text-center">Estado</th>
+                                </tr>
+                              </t>
+                              <t t-if="journal_cash!=record.journal_id.id">
+                                <tr><th colspan="6">
+                                  <span t-esc="record.journal_id.name"/>
+                                </th></tr>
+                                <tr>
+                                  <td/>
+                                  <td style="border-bottom: solid 1px #eaeaea;">
+                                      <span t-field="record.sale_order_id.name"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;">
+                                      <span t-field="record.partner_id.name"/> (<span t-field="record.partner_id.vat"/>)
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.currency_id.symbol"/><span t-esc="'{0:,.0f}'.format(record.sale_order_id.amount_total).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.currency_id.symbol"/><span t-esc="'{0:,.0f}'.format(record.amount).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.state"/>
+                                  </td>
+                                </tr>
+                                <t t-set="journal_cash" t-value="record.journal_id.id"/>
+                              </t>
+                              <t t-if="ctl &gt; 0 and journal_cash==record.journal_id.id">
+                                <tr>
+                                  <td/>
+                                  <td style="border-bottom: solid 1px #eaeaea;">
+                                      <span t-field="record.sale_order_id.name"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;">
+                                      <span t-field="record.partner_id.name"/> (<span t-field="record.partner_id.vat"/>)
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.currency_id.symbol"/><span t-esc="'{0:,.0f}'.format(record.sale_order_id.amount_total).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.currency_id.symbol"/><span t-esc="'{0:,.0f}'.format(record.amount).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.state"/>
+                                  </td>
+                                </tr>
+                              </t>
+
+                              <t t-set="ctl" t-value="ctl+1"/>
+                            </t>
+                            </t>
+                            <tr>
+                              <td colspan="3"/>
+                               <td class="text-right" style="font-size:14px;padding-top:5px;border-top:solid 1px #151515;border-color:#151515;">
+                                    <strong>$<span t-esc="'{0:,.0f}'.format(amount_subtotal).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/></strong>
+                               </td>
+                               <td class="text-right" style="font-size:14px;padding-top:5px;border-top:solid 1px #151515;border-color:#151515;">
+                                    <strong>$<span t-esc="'{0:,.0f}'.format(amount_subtotal).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/></strong>
+                               </td>
+                               <td/>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <table class="" style="width:100%;font-size:13px;font-weight:normal;">
+                        <thead>
+                          <tr><th colspan="6">TRANSACCIONES DE BANCO</th></tr>
+                        </thead>
+                        <tbody>  
+                            <t t-set="total_bank" t-value="0"/>
+                            <t t-set="journal_bank" t-value=""/>
+                            <t t-set="ctl" t-value="0"/>
+                            <t t-set="ctl2" t-value="0"/>
+                            <t t-set="amount_subtotal" t-value="0"/>
+                            <!--<t t-foreach="doc.payment_ids.sorted(key=lambda x: x.partner_id.name)" t-as="record">-->
+                            <t t-foreach="doc.payment_ids.sorted(key=lambda r: r.journal_id.name, reverse=True)" t-as="record">
+                            <t t-if="record.journal_id.type == 'bank'">
+                              <t t-set="amount_total" t-value="amount_total + record.amount"/>
+                              <t t-set="amount_subtotal" t-value="amount_subtotal + record.amount"/>
+                              <t t-if="ctl==0">
+                                <tr>
+                                  <th style="width:10%;background-color:#dedbdb;"/>
+                                  <th style="width:10%;background-color:#dedbdb;" class="text-center">Orden de Venta</th>
+                                  <th style="width:40%;background-color:#dedbdb;" class="text-center">Cliente</th>
+                                  <th style="width:15%;background-color:#dedbdb;" class="text-center">Total Pedido</th>
+                                  <th style="width:15%;background-color:#dedbdb;" class="text-center">Valor Ingreso</th>
+                                  <th style="width:10%;background-color:#dedbdb;" class="text-center">Estado</th>
+                                </tr>
+                              </t>
+                              <t t-if="journal_bank!=record.journal_id.id">
+                                <tr><th colspan="6">
+                                  <span t-esc="record.journal_id.name"/>
+                                </th></tr>
+                                <tr>
+                                  <td/>
+                                  <td style="border-bottom: solid 1px #eaeaea;">
+                                      <span t-field="record.sale_order_id.name"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;">
+                                      <span t-field="record.partner_id.name"/> (<span t-field="record.partner_id.vat"/>)
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.currency_id.symbol"/><span t-esc="'{0:,.0f}'.format(record.sale_order_id.amount_total).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.currency_id.symbol"/><span t-esc="'{0:,.0f}'.format(record.amount).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.state"/>
+                                  </td>
+                                </tr>
+                                <t t-set="journal_bank" t-value="record.journal_id.id"/>
+                              </t>
+                              <t t-if="ctl &gt; 0 and journal_bank==record.journal_id.id">
+                                <tr>
+                                  <td/>
+                                  <td style="border-bottom: solid 1px #eaeaea;">
+                                      <span t-field="record.sale_order_id.name"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;">
+                                      <span t-field="record.partner_id.name"/> (<span t-field="record.partner_id.vat"/>)
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.currency_id.symbol"/><span t-esc="'{0:,.0f}'.format(record.sale_order_id.amount_total).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.currency_id.symbol"/><span t-esc="'{0:,.0f}'.format(record.amount).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/>
+                                  </td>
+                                  <td style="border-bottom: solid 1px #eaeaea;" class="text-right">
+                                      <span t-field="record.state"/>
+                                  </td>
+                                </tr>
+                              </t>
+
+                              <t t-set="ctl" t-value="ctl+1"/>
+                            </t>
+                            </t>
+                            <tr>
+                              <td colspan="3"/>
+                               <td class="text-right" style="font-size:14px;padding-top:5px;border-top:solid 1px #151515;border-color:#151515;">
+                                    <strong>$<span t-esc="'{0:,.0f}'.format(amount_subtotal).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/></strong>
+                               </td>
+                               <td class="text-right" style="font-size:14px;padding-top:5px;border-top:solid 1px #151515;border-color:#151515;">
+                                    <strong>$<span t-esc="'{0:,.0f}'.format(amount_subtotal).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/></strong>
+                               </td>
+                               <td/>
+                            </tr>
+                            <tr>
+                              <td colspan="3"/>
+                               <td class="text-right" style="font-size:14px;padding-top:5px;border-top:solid 1px #151515;border-color:#151515;">
+                                    <strong>$<span t-esc="'{0:,.0f}'.format(amount_total).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/></strong>
+                               </td>
+                               <td class="text-right" style="font-size:14px;padding-top:5px;border-top:solid 1px #151515;border-color:#151515;">
+                                    <strong>$<span t-esc="'{0:,.0f}'.format(amount_total).replace(',','.')" t-esc-options="{&quot;widget&quot;: &quot;False&quot;}"/></strong>
+                               </td>
+                               <td/>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <table class="table-condensed" width="100%">
+                        <tr>
+                            <td width="50%" class="text-center">
+                                _________________________________________
+                                <strong><p style="font-size:13px;" t-field="doc.user_id"/></strong>
+                            </td>
+                            <td width="50%" class="text-center">
+                              _________________________________________
+                                <strong><p style="font-size:13px;" t-field="doc.user2_id"/></strong>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+              </div>
+              <div class="footer o_standard_footer">
+                <div class="text-center" style="border-top: 1px solid black;font-size:12px;">
+                    <ul class="list-inline mb4">
+                        <!-- using the list-inline-item class from bootstrap causes weird behaviours in pdf report
+                             adding d-inline class fixes the problem-->
+                        <li t-if="company.phone" class="list-inline-item d-inline">Phone: <span t-field="company.phone"/></li>
+                        <li t-if="company.email" class="list-inline-item d-inline">Email: <span t-field="company.email"/></li>
+                        <li t-if="company.website" class="list-inline-item d-inline">Web: <span t-field="company.website"/></li>
+                        <li t-if="company.vat" class="list-inline-item d-inline"><t t-esc="company.country_id.vat_label or 'Tax ID'"/>: <span t-field="company.vat"/></li>
+                    </ul>
+    
+                    <!--<div name="financial_infos">
+                        <span t-field="company.report_footer"/>
+                    </div>-->
+    
+                    <div t-if="report_type == 'pdf'" class="text-muted" style="margin-top:-6px;">
+                        Page: <span class="page"/> / <span class="topage"/>
+                    </div>
+                </div>
+              </div>
+
+
+            <!--</t>-->
+        </t>
+    </t>
+    </template>
+</odoo>

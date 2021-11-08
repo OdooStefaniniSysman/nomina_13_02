@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        
+        <record model="ir.ui.view" id="helpdesk_ticket_kanban">
+            <field name="name">helpdesk.ticket.kanban</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="arch" type="xml">
+                <kanban string="crear solicitud">
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_card_content"><field name="name" modifiers="{}"/>
+                                <div class="col-6 o_kanban_primary_left">
+                                     <button class="btn btn-primary" name="165" type="action">INGRESAR</button>
+                                        <filter string="My Tickets" domain="[('user_id','=',uid)]" name="my_ticket"/>
+                                </div>
+                            </div>
+                        </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    </data>
+</odoo>

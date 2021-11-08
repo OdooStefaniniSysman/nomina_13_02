@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <!-- mrp.variation form view -->
+        <record id="mrp_variation_view_form" model="ir.ui.view">
+            <field name="name">mrp.variation.view.form</field>
+            <field name="model">mrp.variation</field>
+            <field name="arch" type="xml">
+                <form string="Centro Beneficios">
+                    <header>
+                        <button string="Confirmar" name="state_to_confirm" type="object" class="oe_highlight" attrs="{'invisible': ['|',('line_ids','=',False),('state','!=','draft')]}"/>
+                        <button string="Bloquear OTs" name="block_workorders" type="object" class="oe_highlight" attrs="{'invisible': [('state','!=','draft')]}"/>
+                        <button string="Generar Reporte" name="generate_report" type="object" class="oe_highlight" attrs="{'invisible': [('state','!=','draft')]}"/>
+                        <button string="Generar Asientos" name="generate_account_moves" type="object" class="oe_highlight" confirm="¿Esta seguro, de contabilizar estas variaciones?" attrs="{'invisible': [('state','!=','confirm')]}"/>
+                        <button string="Cancelar" name="state_to_cancel" type="object" class="oe_link" attrs="{'invisible': [('state','in',('accounted','cancel'))]}"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="go_to_variation_lines" type="object" class="oe_stat_button" icon="fa-dollar" string="Detalle Costos de Variación" attrs="{'invisible': [('line_ids', '=', False)]}">
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1><field name="name" placeholder="Análisis de Variaciones" nolabel="1" attrs="{'readonly': [('state','!=','draft')]}"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <label for="start_time" string="Rango de Fechas"/>
+                                <div class="o_row">
+                                    <field name="start_time" class="oe_inline" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                    <strong> a </strong>
+                                    <field name="end_time" attrs="{'readonly': [('state','!=','draft')]}"/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="journal_id" attrs="{'readonly': [('state','=','accounted')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Resumen Reporte" name="resumen" attrs="{'invisible': [('state','=','draft')]}">
+                                <field name="line_ids" readonly="1">
+                                    <tree>
+                                        <field name="workorder_id" options="{'bg_color': '#8A9DEC', 'fg_color': 'black'}"/>
+                                        <field name="production_id" options="{'bg_color': '#8A9DEC', 'fg_color': 'black'}"/>
+                                        <field name="product_id" options="{'bg_color': '#8A9DEC', 'fg_color': 'black'}"/>
+                                        <field name="qty_planned" options="{'bg_color': '#8A9DEC', 'fg_color': 'black'}"/>
+                                        <field name="qty_finished" options="{'bg_color': '#8A9DEC', 'fg_color': 'black'}"/>
+                                        <field name="state" options="{'bg_color': '#8A9DEC', 'fg_color': 'black'}"/>
+                                        <field name="mod_variation" options="{'bg_color': '#DCDF7F', 'fg_color': 'black'}"/>
+                                        <field name="cif_variation" options="{'bg_color': '#DCDF7F', 'fg_color': 'black'}"/>
+                                        <field name="maq_variation" options="{'bg_color': '#DCDF7F', 'fg_color': 'black'}"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Ordenes de Fabricación" name="om">
+                                <field name="production_ids" attrs="{'readonly': [('state','!=','draft')]}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- mrp.variation tree view -->
+        <record id="mrp_variation_view_tree" model="ir.ui.view">
+            <field name="name">mrp.variation.view.tree</field>
+            <field name="model">mrp.variation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- mrp.variation action window -->
+        <record id="mrp_variation_action" model="ir.actions.act_window">
+            <field name="name">Análisis de Variaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.variation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="mrp_variation_view_tree"/>
+            <field name="domain">[('state','in',('draft','cancel'))]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+
+        <!-- mrp.variation action window -->
+        <record id="mrp_variation_accounting_action" model="ir.actions.act_window">
+            <field name="name">Contabilización Variaciones</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.variation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="mrp_variation_view_tree"/>
+            <field name="domain">[('state','in',('confirm','accounted'))]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

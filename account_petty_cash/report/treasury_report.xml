@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="treasury_session_report"
+            model="treasury.session"
+            string="Reporte de Sesión de Punto de Venta"
+            report_type="qweb-pdf"
+            name="sale_session_app.treasury_session_report_template"
+            file="sale_session_app.treasury_session_report_template"
+        />
+    </data>
+</odoo>

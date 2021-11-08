@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- res.partner inherit form view -->
+        <record id="view_partner_listname_form" model="ir.ui.view">
+            <field name="name">res.partner.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_co_dian_data.view_partner_party_tax_scheme_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tax_level_code_id']" position="before">
+                    <field name="listname"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="account_payment_report_list" model="ir.ui.view">
+            <field name="name">account.payment.report.list</field>
+            <field name="model">account.payment.report</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="payment_id"/>
+                    <field name="partner_id"/>
+                    <field name="identification"/>
+                    <field name="journal_id" invisible="1"/>
+                    <field name="company_id"/>
+                    <field name="currency_id"/>
+                    <field name="move_id"/>
+                    <field name="move_ref"/>
+                    <field name="payment_ref"/>
+                    <field name="payment_date"/>
+                    <field name="imp_mi"/>
+                    <field name="payment_amount" sum="Amount payment"/>
+                    <field name="debit_credit" sum="D / H"/>
+                    <field name="tax_iva" sum="Amount tax"/>
+                    <field name="amount_untaxed" sum="Amount Subtotal"/>
+                    <field name="amount_total" sum="Amount Total"/>
+                    <field name="variation" sum="Variation"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="account_payment_report_search" model="ir.ui.view">
+            <field name="name">account.payment.report.search</field>
+            <field name="model">account.payment.report</field>
+            <field name="arch" type="xml">
+                <search string="Account Payment Report">
+                    <field name="payment_id"/>
+                    <field name="partner_id"/>
+                    <field name="move_id"/>
+                    <field name="company_id"/>
+                    <field name="currency_id"/>
+                    <separator/>
+                    <filter string="Current Month" name="month" domain="[('payment_date', '&gt;=', datetime.datetime.now().strftime('%Y-%m-01'))]" />
+                    <group expand="0" string="Group By">
+                        <filter name="payment_id" string="Payment" domain="[]" context="{'group_by' : 'payment_id'}"/>
+                        <filter name="partner_id" string="Partner" domain="[]" context="{'group_by' : 'partner_id'}"/>
+                        <filter name="move_id" string="Invoice" domain="[]" context="{'group_by' : 'move_id'}"/>
+                        <filter name="company_id" string="Company" domain="[]" context="{'group_by' : 'company_id'}"/>
+                        <filter name="currency_id" string="Currency" domain="[]" context="{'group_by' : 'currency_id'}"/>
+                        <filter name="payment_date" string="Payment date" domain="[]" context="{'group_by' : 'payment_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="account_payment_report_action" model="ir.actions.act_window">
+            <field name="name">Account Payment Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.payment.report</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="account_extended.account_payment_report_search"/>
+        </record>
+
+        <menuitem
+            id="account_payment_report"
+            name="Payment track report"
+            action="account_extended.account_payment_report_action"
+            parent="account_reports.account_reports_partners_reports_menu"
+            sequence="20"
+        />
+
+    </data>
+</odoo>

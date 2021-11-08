@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="helpdesk_material_type_form">
+                <field name="name">helpdesk.material.type.form</field>
+                <field name="model">helpdesk.material.type</field>
+                <field name="arch" type="xml">
+                    <form>
+                        <sheet string="Tipo de material">
+                            <div class="oe_title">
+                                        <h1>
+                                            <field name="name" required="1"/>
+                                        </h1>
+                                    </div>
+                            <group name="studio_group_7319c0">
+                                <group name="studio_group_7319c0_left"/>
+                                <group name="studio_group_7319c0_right"/>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="helpdesk_material_type_tree">
+            <field name="name">helpdesk.material.type.tree</field>
+            <field name="model">helpdesk.material.type</field>
+            <field name="arch" type="xml">
+                <tree string="Material Type">
+                   <field name="name" modifiers="{}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="helpdesk_tipo_material_action">
+            <field name="name">Tipo de Ticket</field>
+            <field name="res_model">helpdesk.material.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem id="helpdesk_tipo_material_menu" parent="helpdesk.helpdesk_menu_config" action='helpdesk_thomas_ext.helpdesk_tipo_material_action' name="Tipo de Material"  sequence="150"/>
+   
+    </data>
+</odoo>

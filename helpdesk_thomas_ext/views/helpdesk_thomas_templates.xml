@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="ticker_resuelto_helpdesk" model="mail.template">
+            <field name="name">TICKET RESUELTO</field>
+            <field name="email_from">${user.email_formatted | safe}</field>
+            <field name="subject">TICKET RESUELTO</field>
+            <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+            <field name="auto_delete" eval="True"/>            
+            <field name="body_html"><![CDATA[
+                        <div style="font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+                        <div>Estimado/a ${object.sudo().partner_id.name or 'Sr/Sra'},<br><br>Este mensaje es para avisarle que hemos actualizado su ticket (reference ${object.id}) a estado SOLUCIONADO.&nbsp; agradecemos usted realice el cierre del tiket de lo contrario en 3 dias esta solicitud sera cerrada a satisfacción. Esperamos que el servicio proporcionado cumpla sus expectativas. Si tiene preguntas o comentarios, no dude en responder a este mensaje para re-abrir su ticket.<br><br><br><br><a href="${object.get_portal_url()}" class="btn btn-beta" style="text-decoration:none;padding:8px 16px;font-size: 13px; border-radius: 5px;">Cerrar o Rechazar el ticket</a><br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br><br>Gracias por su cooperación.<br>Saludos cordiales,<br><br>El equipo ${object.team_id.name or 'Helpdesk'}.<br></div>
+                        </div>
+                        ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

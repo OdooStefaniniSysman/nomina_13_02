@@ -1,0 +1,207 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* helpdesk_thomas
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-16 03:08+0000\n"
+"PO-Revision-Date: 2020-06-16 03:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_archive_c
+msgid "ARCHIVO"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_archive_c
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_cancelled_c
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_client_response_g
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_comercial_revision_c
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_inventary_g
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_new_contract_c
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_new_warranty_g
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_policies_c
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_requirements_verification_C
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_signatures_c
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_supplier_response_g
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_supplier_valuation_g
+#: model:helpdesk.stage,legend_blocked:helpdesk_thomas.stage_tracing_c
+msgid "Bloqueada"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__equipment_serial
+msgid "Brand"
+msgstr "Marca"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_cancelled_c
+msgid "CANCELADO"
+msgstr "CANCELADO"
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__customer_response
+msgid "Customer_response"
+msgstr "Respuesta al cliente"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_supplier_valuation_g
+msgid "EVALUACION POR PROVEEDOR"
+msgstr "EVALUACION POR PROVEEDOR"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_archive_c
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_cancelled_c
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_client_response_g
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_comercial_revision_c
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_inventary_g
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_new_contract_c
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_new_warranty_g
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_policies_c
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_requirements_verification_C
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_signatures_c
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_supplier_response_g
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_supplier_valuation_g
+#: model:helpdesk.stage,legend_normal:helpdesk_thomas.stage_tracing_c
+msgid "En progreso"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_signatures_c
+msgid "FIRMAS"
+msgstr "FIRMAS"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.team,name:helpdesk_thomas.helpdesk_contract_managment
+msgid "Gestion de contratos"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:helpdesk.team,name:helpdesk_thomas.helpdesk_warranty_managment
+msgid "Gestion de garantias"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__guarantee_reply
+msgid "Guarantee reply"
+msgstr "Respuesta garantia"
+
+#. module: helpdesk_thomas
+#: model:ir.model,name:helpdesk_thomas.model_helpdesk_ticket
+msgid "Helpdesk Ticket"
+msgstr "Tiquete del Servicio de Asistencia"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_inventary_g
+msgid "INVENTARIO"
+msgstr "INVENTARIO"
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__inventory_ubication
+msgid "Inventory ubication"
+msgstr "Ubicacion del inventario"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_archive_c
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_cancelled_c
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_client_response_g
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_comercial_revision_c
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_inventary_g
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_new_contract_c
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_new_warranty_g
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_policies_c
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_requirements_verification_C
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_signatures_c
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_supplier_response_g
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_supplier_valuation_g
+#: model:helpdesk.stage,legend_done:helpdesk_thomas.stage_tracing_c
+msgid "Lista para la siguiente etapa"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__maintenance_equipment_id
+msgid "Maintenance Equipment"
+msgstr "Equipo de mantenimiento"
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__equipment_model
+msgid "Model"
+msgstr "Modelo"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_new_warranty_g
+msgid "NUEVA GARANTIA"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_new_contract_c
+msgid "RENOVACION/NUEVO CONTRATO"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_client_response_g
+msgid "RESPUESTA A CLIENTE"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_supplier_response_g
+msgid "RESPUESTA DEL PROVEEDOR GARANTIA"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_comercial_revision_c
+msgid "REVISION COMERCIAL"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_tracing_c
+msgid "SEGUIMIENTO"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__equipment_supplier
+msgid "Supplier associated to the guarantee"
+msgstr "Proveedor asociado con la garantia"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_policies_c
+msgid "TRAMITE DE POLIZAS"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__tiket_number_contract
+msgid "Ticket number Legal management"
+msgstr "N° de ticket Gerencia Jurídica"
+
+#. module: helpdesk_thomas
+#: model:helpdesk.stage,name:helpdesk_thomas.stage_requirements_verification_C
+msgid "VERIFICACION DE REQUERIMIENTO"
+msgstr ""
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__val_req_contact
+msgid "Valid requirements"
+msgstr "Requerimientos validados"
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields.selection,name:helpdesk_thomas.selection__helpdesk_ticket__inventory_ubication__product_at_supplier_location
+msgid "product at supplier location"
+msgstr "Producto en ubicación del proveedor"
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields.selection,name:helpdesk_thomas.selection__helpdesk_ticket__inventory_ubication__product_in_cellar
+msgid "product in cellar"
+msgstr "Producto en bodega"
+
+#. module: helpdesk_thomas
+#: model:ir.model.fields,field_description:helpdesk_thomas.field_helpdesk_ticket__is_tst
+msgid "¿Es TST?"
+msgstr ""

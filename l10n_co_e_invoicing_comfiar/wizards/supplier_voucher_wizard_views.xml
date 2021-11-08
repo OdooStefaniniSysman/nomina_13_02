@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- custom.report.wizard form view -->
+        <record id="supplier_voucher_wizard_view_form" model="ir.ui.view">
+            <field name="name">supplier.voucher.wizard.view.form</field>
+            <field name="model">supplier.voucher.wizard</field>
+            <field name="arch" type="xml">
+                <form string="supplier voucher wizard">
+                    <sheet>
+                        <group>
+                            <field name="move_id" readonly="1"/>
+                            <field name="partner_id" options="{'no_create_edit': 1}"/>
+                        </group>
+                        <group>
+                            <group>
+                                
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines" name="lines" >
+                                <field name="line_ids">
+                                    <tree>
+                                        <field name="account_id"/>
+                                        <field name="partner_id"/>
+                                        <field name="name"/>
+                                        <field name="tax_ids" widget="many2many_tags"/>
+                                        <field name="debit"/>
+                                        <field name="credit"/>
+                                        <field name="tax_base_amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button string='Generate'
+                            name="generate_voucher"
+                            type="object"
+                            class="btn-primary"/>
+                        <button string="Cancel"
+                            class="btn-default"
+                            special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_supplier_voucher_wizard" model="ir.actions.act_window">
+            <field name="name">Supplier Voucher wizard</field>
+            <field name="res_model">supplier.voucher.wizard</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="supplier_voucher_wizard_view_form"/>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="binding_view_types">list</field>
+        </record>
+    </data>
+</odoo>

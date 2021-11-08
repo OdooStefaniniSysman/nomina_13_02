@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="account_type_menu"
+        action="account.action_account_type_form"
+        sequence="30"
+        parent="account.account_account_menu"/>
+    
+    <record id="view_account_form_inherit_account_extended" model="ir.ui.view">
+            <field name="name">account.account.form.inherit.account.extended</field>
+            <field name="model">account.account</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="colgap_account_ok" widget="boolean"/>
+                    <field name="niff_account_ok" widget="boolean"/>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>

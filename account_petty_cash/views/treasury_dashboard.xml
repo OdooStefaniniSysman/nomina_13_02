@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_treasury_session_filtered" model="ir.actions.act_window">
+        <field name="name">Sesiones</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">treasury.session</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_treasury_session_search" />
+        <field name="context">{
+            'search_default_config_id': [active_id],
+            'default_config_id': active_id}
+        </field>
+    </record>
+
+    <record id="action_treasury_order_filtered" model="ir.actions.act_window">
+        <field name="name">Pedidos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+        <field name="context">{
+            'search_default_config_id': [active_id],
+            'default_config_id': active_id}
+        </field>
+    </record>
+
+
+    <record id="action_treasury_payment_filtered" model="ir.actions.act_window">
+        <field name="name">Ingresos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.payment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="account.view_account_supplier_payment_tree"/>
+        <field name="context">{
+            'search_default_config_id': [active_id],
+            'default_config_id': active_id}
+        </field>
+    </record>
+
+    <record id="view_treasury_config_kanban" model="ir.ui.view">
+        <field name="name">treasury.config.kanban.view</field>
+        <field name="model">treasury.config</field>
+        <field name="arch" type="xml">
+            <kanban create="false" class="o_kanban_dashboard o_treasury_kanban">
+                <field name="current_user_id" invisible="1" />
+                <field name="name"/>
+                <field name="current_session_id"/>
+                <field name="current_session_state"/>
+                <field name="last_session_closing_date"/>
+                <field name="treasury_session_username"/>
+                <field name="treasury_session_state"/>
+                <field name="treasury_session_duration"/>
+                <field name="currency_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div>
+                            <div class="o_kanban_card_header">
+                                <div class="o_kanban_card_header_title mb16">
+                                    <div class="o_primary">
+                                        <t t-esc="record.name.value"/>
+                                    </div>
+                                    <t t-if="record.treasury_session_state.raw_value == 'new_session'">
+                                        <div class="badge badge-info o_kanban_inline_block">Nueva Sesión</div>
+                                    </t>
+                                    <t t-if="!record.current_session_id.raw_value &amp;&amp; record.treasury_session_username.value">
+                                        <div class="badge badge-info o_kanban_inline_block">Abierta por <t t-esc="record.treasury_session_username.value"/></div>
+                                    </t>
+                                    <t t-if="record.treasury_session_state.raw_value == 'opening_control'">
+                                        <div class="badge badge-info o_kanban_inline_block">Control de Apertura</div>
+                                    </t>
+                                    <t t-if="record.treasury_session_state.raw_value == 'closing_control'">
+                                        <div class="badge badge-info o_kanban_inline_block">Control de Cierre</div>
+                                    </t>
+                                    <t t-if="record.treasury_session_state.raw_value == 'opened' and record.treasury_session_duration.raw_value > 1">
+                                        <div t-attf-class="badge badge-#{record.treasury_session_duration.raw_value > 3 and 'danger' or 'warning'} o_kanban_inline_block"
+                                             title="La sesión se ha abierto por un período inusualmente largo. Por favor considere cerrar sesión.">
+                                             Cerrar
+                                        </div>
+                                    </t>
+                                </div>
+                                <div class="o_kanban_manage_button_section">
+                                    <a class="o_kanban_manage_toggle_button" href="#"><i class="fa fa-ellipsis-v" role="img" aria-label="Manage" title="Manage"/></a>
+                                </div>
+                            </div>
+                            <div class="container o_kanban_card_content">
+                                <div class="row">
+                                    <div class="col-4 o_kanban_primary_left">
+                                        <button 
+                                                t-if="record.current_session_state.raw_value === 'new_session' || record.current_session_state.raw_value === 'opening_control'" 
+                                                class="btn btn-primary" name="open_existing_session_cb" type="object">
+                                            Sesión abierta
+                                        </button>
+                                        <button 
+                                                t-if="_.contains(['opened', 'closing_control'], record.current_session_state.raw_value)" 
+                                                class="btn btn-secondary" 
+                                                name="open_existing_session_cb" 
+                                                type="object">
+                                            Ver Sesión
+                                        </button>
+                                        <button 
+                                                t-if="!record.current_session_id.raw_value &amp;&amp; !record.treasury_session_username.value" 
+                                                class="btn btn-primary" 
+                                                name="open_session_cb" 
+                                                type="object">
+                                            Nueva Sesión
+                                        </button>
+                                    </div>
+                                    <div class="col-8 o_kanban_primary_right">
+                                        <div t-if="record.last_session_closing_date.value" class="row">
+                                            <div class="col-6">
+                                                <span>Última Fecha de Cierre</span>
+                                            </div>
+                                            <div class="col-6">
+                                                <span><t t-esc="record.last_session_closing_date.value"/></span>
+                                            </div>
+                                        </div>
+                                        <div t-if="record.last_session_closing_date.value" class="row">
+                                            <div class="col-6">
+                                                <span>Saldo en Efectivo</span>
+                                            </div>
+                                            <div class="col-6">
+                                                <span><field name="last_session_closing_cash" widget="monetary"/></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="text-align:right;" t-if="record.current_user_id.value">
+                                    <img
+                                        class="rounded-circle oe_kanban_avatar o_image_24_cover"
+                                        t-att-src="kanban_image('res.users', 'image_128', record.current_user_id.raw_value)"
+                                        t-att-title="record.current_user_id.value"
+                                        t-att-alt="record.current_user_id.value"
+                                    />
+                                </div>
+                            </div><div class="container o_kanban_card_manage_pane dropdown-menu" role="menu">
+                                <div class="row">
+                                    <div class="col-6 o_kanban_card_manage_section o_kanban_manage_view">
+                                        <div role="menuitem" class="o_kanban_card_manage_title">
+                                            <span>Operaciones de Caja Menor</span>
+                                        </div>
+                                        <div role="menuitem">
+                                            <a name="%(action_treasury_session_filtered)d" type="action">Sesiones</a>
+                                        </div>
+                                        <div role="menuitem">
+                                            <a name="%(action_treasury_order_filtered)d" type="action">Entradas</a>
+                                        </div>
+                                        <div role="menuitem">
+                                            <a name="%(action_treasury_payment_filtered)d" type="action">Salidas</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div t-if="widget.editable" class="o_kanban_card_manage_settings row" groups="point_of_sale.group_treasury_manager">
+                                    <div role="menuitem" class="col-12">
+                                        <a type="edit">Configuraciones</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>

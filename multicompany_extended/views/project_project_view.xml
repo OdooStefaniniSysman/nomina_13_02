@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <!-- mail.activity.type -->
+        <record id="view_mail_activity_type_form" model="ir.ui.view">
+            <field name="name">view.mail.activity.type.form</field>
+            <field name="model">mail.activity.type</field>
+            <field name="inherit_id" ref="mail.mail_activity_type_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group" position="inside">
+                    <group>
+                        <field name="company_id" groups="base.group_multi_company" 
+                            options="{'no_create': True}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- project.tags -->
+        <record id="view_project_tags_tree" model="ir.ui.view">
+            <field name="name">view.project.tags.tree</field>
+            <field name="model">project.tags</field>
+            <field name="inherit_id" ref="project.project_tags_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="company_id" groups="base.group_multi_company" 
+                        options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- project.task.type -->
+        <record id="view_project_task_type_form" model="ir.ui.view">
+            <field name="name">view.project.task.type.form</field>
+            <field name="model">project.task.type</field>
+            <field name="inherit_id" ref="project.task_type_edit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group" position="inside">
+                    <group>
+                        <field name="company_id" groups="base.group_multi_company" 
+                            options="{'no_create': True}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

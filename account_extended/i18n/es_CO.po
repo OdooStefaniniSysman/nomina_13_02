@@ -1,0 +1,891 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20191227\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-03 14:17+0000\n"
+"PO-Revision-Date: 2020-12-03 10:37-0500\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Cristiam Carreño <cristiamcarreno@gmail.com>\n"
+"Language: es_CO\n"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_bank_statement.py:0
+#, python-format
+msgid ""
+"\n"
+" Bank statement <a href=# data-oe-model=account.bank.statement data-oe-id=%d>"
+"%s</a>"
+msgstr ""
+"\n"
+" Extracto bancario <a href=# data-oe-model=account.bank.statement data-oe-id="
+"%d>%s</a>"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "1 - 30"
+msgstr "1 - 30"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "121 - 180"
+msgstr "121 - 180"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "181 - 360"
+msgstr "181 - 360"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "31 - 60"
+msgstr "31 - 60"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "61 - 90"
+msgstr "61 - 90"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "91 - 120"
+msgstr "91 - 120"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#: model:ir.model,name:account_extended.model_account_account
+#, python-format
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: account_extended
+#: model:ir.actions.act_window,name:account_extended.account_payment_report_action
+#: model:ir.model,name:account_extended.model_account_payment_report
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_search
+msgid "Account Payment Report"
+msgstr "Reporte trazabilidad de pagos"
+
+#. module: account_extended
+#: model:ir.ui.menu,name:account_extended.account_type_menu
+msgid "Account Types"
+msgstr "Tipos de cuenta"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_bank_statement_line__assigned_to__accounting
+#: model:mail.channel,name:account_extended.channel_account_bank_statement_accounting
+#: model:res.groups,name:account_extended.group_account_bank_statement_accounting
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_report_account_report_agedpartnerbalance
+msgid "Aged Partner Balance Report"
+msgstr "Estado de antigüedad de saldos"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_account_aged_partner
+msgid "Aged Partner Balances"
+msgstr "Saldos vencidos de empresa"
+
+#. module: account_extended
+#: model:ir.actions.client,name:account_extended.action_account_report_ar_comparison
+msgid "Aged Receivable"
+msgstr "Vencida por Cobrar"
+
+#. module: account_extended
+#: model:ir.ui.menu,name:account_extended.menu_action_account_report_aged_receivable_comparison
+msgid "Aged Receivable Comparison"
+msgstr "Comparación Vencida por Cobrar"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_journal_form_inherit
+msgid "Amount"
+msgstr "Importe"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment__amount_signed
+msgid "Amount Signed"
+msgstr "Importe con signo"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__amount_untaxed
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_list
+msgid "Amount Subtotal"
+msgstr "Subtotal"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__amount_total
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_list
+msgid "Amount Total"
+msgstr "Importe total"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__payment_amount
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_list
+msgid "Amount payment"
+msgstr "Importe de pago"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__tax_iva
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_list
+msgid "Amount tax"
+msgstr "Importe de impuesto"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_journal_form_inherit
+msgid "Analyst Approvar"
+msgstr "Analista de aprobación"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_form_inherit
+msgid "Analyst Approve"
+msgstr "Analista de aprobación"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_payment__state__approved
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_search_inherit
+msgid "Analyst Approved"
+msgstr "Aprobado por analista"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__approval_user_id
+msgid "Analyst Approver"
+msgstr "Analista de aprobación"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_payment__state__rejected
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_search_inherit
+msgid "Analyst Rejected"
+msgstr "Rechazado por analista"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment__analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__approval2_currency_id
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__approval3_currency_id
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__approval_currency_id
+msgid "Approval Currency"
+msgstr "Moneda de aprobación"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_journal_form_inherit
+msgid "Approvals Settings"
+msgstr "Configuración de aprobaciones"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "As of: %s"
+msgstr "Desde: %s"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_bank_statement_line__assigned_to
+msgid "Assigned to"
+msgstr "Asignado a"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Línea extracto bancario"
+
+#. module: account_extended
+#: model:ir.module.category,name:account_extended.category_account_bank_statement
+msgid "Bank statement"
+msgstr "Extracto bancario"
+
+#. module: account_extended
+#: model:ir.model.fields,help:account_extended.field_account_account__niff_account_ok
+msgid ""
+"By default Odoo accounting reflects IFRS standards, check this box to "
+"indicate that the account behaves NIFF"
+msgstr ""
+"Por defecto, la contabilidad de Odoo refleja los estándares IFRS, marque "
+"esta casilla para indicar que la cuenta se comporta como NIFF"
+
+#. module: account_extended
+#: model:ir.model.fields,help:account_extended.field_account_account__colgap_account_ok
+msgid ""
+"By default Odoo accounting reflects IFRS standards, check this box to "
+"indicate that the account behaves locally(COLPGAP)"
+msgstr ""
+"Por defecto, la contabilidad de Odoo refleja los estándares IFRS, marque "
+"esta casilla para indicar que la cuenta se comporta localmente (COLPGAP)"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_account__colgap_account_ok
+msgid "COLGAP Account"
+msgstr "Cuenta COLGAP"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.account_move_form
+msgid "Calculate taxes"
+msgstr "Calcular impuestos"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.account_move_form
+msgid "Calculate the tax base"
+msgstr "Calcula la base de los impuestos"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_bank_statement_line__comment
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__company_id
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_search
+msgid "Company"
+msgstr "Compañía"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_fiscal_position_tax__tax_comparation
+msgid "Comparacion"
+msgstr "Comparación"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_product_concept_type__name
+#: model:ir.model.fields,field_description:account_extended.field_product_product__concept_type_id
+#: model:ir.model.fields,field_description:account_extended.field_product_template__concept_type_id
+#: model_terms:ir.ui.view,arch_db:account_extended.product_concept_type_form
+msgid "Concept Type"
+msgstr "Tipo de concepto"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: account_extended
+#: model:ir.model.fields,help:account_extended.field_account_journal__approval2_currency_id
+#: model:ir.model.fields,help:account_extended.field_account_journal__approval3_currency_id
+#: model:ir.model.fields,help:account_extended.field_account_journal__approval_currency_id
+msgid "Converts the payment amount to this currency if chosen."
+msgstr "Convierte el monto del pago a esta moneda si se elige."
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_journal_form_inherit
+msgid "Coordinator Approvar"
+msgstr "Coordinador de Aprobación"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_form_inherit
+msgid "Coordinator Approve"
+msgstr "Coordinador de Aprobación"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_payment__state__approved2
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_search_inherit
+msgid "Coordinator Approved"
+msgstr "Aprobado por coordinador"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__approval2_user_id
+msgid "Coordinator Approver"
+msgstr "Coordinador de Aprobación"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_form_inherit
+msgid "Coordinator Reject"
+msgstr "Rechazado por coordinador"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_payment__state__rejected2
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_search_inherit
+msgid "Coordinator Rejected"
+msgstr "Rechazado por coordinador"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_product_concept_type__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_product_concept_type__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_res_currency
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__currency_id
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_search
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_journal_form_inherit
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_move__invoice_exchange_rate
+#: model:ir.model.fields,field_description:account_extended.field_account_payment__payment_exchange_rate
+msgid "Currency Exchange Rate Value"
+msgstr "Tasa de cambio"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_search
+msgid "Current Month"
+msgstr "Mes actual"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_payment.py:0
+#, python-format
+msgid "Customer Credit Note"
+msgstr "Nota crédito cliente"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_payment.py:0
+#, python-format
+msgid "Customer Payment"
+msgstr "Pago de cliente"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_list
+msgid "D / H"
+msgstr "D / H"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__debit_credit
+msgid "D/H"
+msgstr "D/H"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_journal_form_inherit
+msgid "Director Approvar"
+msgstr "Director de Aprobación"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_form_inherit
+msgid "Director Approve"
+msgstr "Director de Aprobación"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_payment__state__approved3
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_search_inherit
+msgid "Director Approved"
+msgstr "Aprobado por director"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__approval3_user_id
+msgid "Director Approver"
+msgstr "Director de Aprobación"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_form_inherit
+msgid "Director Reject"
+msgstr "Rechazado por coordinador"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_payment__state__rejected3
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_search_inherit
+msgid "Director Rejected"
+msgstr "Rechazado por coordinador"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__display_name
+#: model:ir.model.fields,field_description:account_extended.field_product_concept_type__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Doc Number"
+msgstr "No Identificación"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Due Date"
+msgstr "Fecha de vencimiento"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Due days"
+msgstr "Días de vencido"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_journal_form_inherit
+msgid ""
+"Enable to bring the approval in the payment.\n"
+"                                            Only account managers can "
+"approve the request."
+msgstr ""
+"Habilite para traer la aprobación en el pago.\n"
+"Solo los administradores de cuentas pueden aprobar la solicitud."
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_journal_form_inherit
+msgid "Enables approval feature in payments."
+msgstr "Habilita la función de aprobación en pagos."
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Exp. Date"
+msgstr "Fecha Exp."
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr "Posición Fiscal"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__id
+#: model:ir.model.fields,field_description:account_extended.field_product_concept_type__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__identification
+msgid "Identification"
+msgstr "Identificación"
+
+#. module: account_extended
+#: model:ir.model.fields,help:account_extended.field_account_journal__approval2_amount
+#: model:ir.model.fields,help:account_extended.field_account_journal__approval3_amount
+#: model:ir.model.fields,help:account_extended.field_account_journal__approval_amount
+msgid "If amount is 0.00, All the payments go through approval."
+msgstr "Si el monto es 0.00, todos los pagos pasan por aprobación."
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__imp_mi
+msgid "Imp MI"
+msgstr "Imp MI"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Industry"
+msgstr "Sector"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__move_id
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_search
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_move__invoice_has_exchange_rate
+msgid "Invoice has currency exchange rate"
+msgstr "La factura tiene tasa de cambio"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment__is_approver
+msgid "Is Approver"
+msgstr "Es aprobador"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment__is_approver2
+msgid "Is Approver2"
+msgstr "Es aprobador 2"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment__is_approver3
+msgid "Is Approver3"
+msgstr "Es aprobador 3"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#: model:ir.model,name:account_extended.model_account_journal
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__journal_id
+#, python-format
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_account_move
+msgid "Journal Entries"
+msgstr "Asientos contables"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_account_move_line
+msgid "Journal Item"
+msgstr "Apuntes contables"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report____last_update
+#: model:ir.model.fields,field_description:account_extended.field_product_concept_type____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_product_concept_type__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_product_concept_type__write_date
+msgid "Last Updated on"
+msgstr "Actualizado"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_register__message_many_currencies
+msgid "Message Diferent Currency"
+msgstr "Mensaje en moneda diferente"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__approval2_amount
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__approval3_amount
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__approval_amount
+msgid "Minimum Approval Amount"
+msgstr "Monto mínimo de aprobación"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_account__niff_account_ok
+msgid "NIFF Account"
+msgstr "Cuenta NIFF"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Older"
+msgstr "Más antiguo"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_invoice.py:0
+#, python-format
+msgid "Outstanding credits"
+msgstr "Créditos pendientes"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_invoice.py:0
+#, python-format
+msgid "Outstanding debits"
+msgstr "Débitos pendientes"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__partner_id
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_search
+msgid "Partner"
+msgstr "Cliente"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__payment_id
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_search
+msgid "Payment"
+msgstr "Pagos"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_journal__payment_approval
+msgid "Payment Approval"
+msgstr "Aprobación de pago"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_payment.py:0
+#, python-format
+msgid "Payment Currency Warning"
+msgstr "Advertencia de moneda de pago"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__payment_date
+msgid "Payment Date"
+msgstr "Fecha de pago"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__payment_ref
+msgid "Payment Reference"
+msgstr "Referencia de pago"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_search
+msgid "Payment date"
+msgstr "Fecha de pago"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment__payment_has_exchange_rate
+msgid "Payment has currency exchange rate"
+msgstr "El pago tiene tasa de cambio"
+
+#. module: account_extended
+#: model:ir.ui.menu,name:account_extended.account_payment_report
+msgid "Payment track report"
+msgstr "Informe de seguimiento de pagos"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_bank_statement_line__assigned_to__payroll
+#: model:mail.channel,name:account_extended.channel_account_bank_statement_payroll
+#: model:res.groups,name:account_extended.group_account_bank_statement_payroll
+msgid "Payroll"
+msgstr "Nómina"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_bank_statement_line__assigned_to__portfolio
+#: model:mail.channel,name:account_extended.channel_account_bank_statement_portfolio
+#: model:res.groups,name:account_extended.group_account_bank_statement_portfolio
+msgid "Portfolio"
+msgstr "Cartera"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Prev 1 - 30"
+msgstr "Prev 1 - 30"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Prev 121 - 180"
+msgstr "Prev 121 - 180"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Prev 181 - 360"
+msgstr "Prev 181 - 360"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Prev 31 - 60"
+msgstr "Prev 31 - 60"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Prev 61 - 90"
+msgstr "Prev 61 - 90"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Prev 91 - 120"
+msgstr "Prev 91 - 120"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Prev As of: %s"
+msgstr "Prev desde: %s"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Prev Older"
+msgstr "Prev más antiguo"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Prev Total"
+msgstr "Prev Total"
+
+#. module: account_extended
+#: model:ir.actions.act_window,name:account_extended.product_concept_type_action
+msgid "Produc Concept"
+msgstr "Concepto del producto"
+
+#. module: account_extended
+#: model:ir.ui.menu,name:account_extended.product_concept_type_menu
+#: model_terms:ir.ui.view,arch_db:account_extended.product_concept_type_tree
+msgid "Product Concept"
+msgstr ""
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_product_template
+msgid "Product Template"
+msgstr "Plantilla del Producto"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Rad. Partner"
+msgstr "Rad. Cliente"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Rad. Portfolio"
+msgstr "Rad. Cartera"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_bank_statement_line__assigned_to__receivable
+#: model:mail.channel,name:account_extended.channel_account_bank_statement_receivable
+#: model:res.groups,name:account_extended.group_account_bank_statement_receivable
+msgid "Receivable"
+msgstr "Cuenta por cobrar"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_bank_statement_line__reconciled_move_id
+msgid "Reconciled move"
+msgstr "Movimiento conciliado"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__move_ref
+#, python-format
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_account_payment_register
+msgid "Register Payment"
+msgstr "Registro de pago"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_form_inherit
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Tags"
+msgstr "Categorías"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_invoice_tree_inherit_account_extended
+msgid "Tasa de cambio"
+msgstr "Tasa de cambio"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_account_fiscal_position_tax
+msgid "Tax Mapping of Fiscal Position"
+msgstr "Mapeo de impuestos de la posición fiscal"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_bank_statement.py:0
+#, python-format
+msgid "The bank statement line (%s) was assigned to the group %s."
+msgstr "La línea del extracto bancario (%s) se asignó al grupo %s."
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_form_multi_inherit_account_extended
+msgid ""
+"The payment currency is different from the currency of any of the related "
+"invoices"
+msgstr ""
+"La moneda de pago es diferente a la moneda de alguna de las facturas "
+"relacionadas"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_payment.py:0
+#, python-format
+msgid ""
+"The payment currency is different from the currency of any of the related "
+"invoices."
+msgstr ""
+"La moneda de pago es diferente a la moneda de alguna de las facturas "
+"relacionadas."
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_fiscal_position_tax__concept_type_id
+msgid "Tipo de Concepto"
+msgstr "Tipo de Concepto"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_payment.py:0
+#, python-format
+msgid "Transfer from %s"
+msgstr "Transferencia de %s"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_payment.py:0
+#, python-format
+msgid "Transfer to %s"
+msgstr "Transferir a %s"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_bank_statement_line__assigned_to__treasury
+#: model:mail.channel,name:account_extended.channel_account_bank_statement_treasury
+#: model:res.groups,name:account_extended.group_account_bank_statement_treasury
+msgid "Treasury"
+msgstr "Tesorería"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_aged_partner_balance.py:0
+#, python-format
+msgid "Unknown Partner"
+msgstr "Socio desconocido"
+
+#. module: account_extended
+#: model_terms:ir.ui.view,arch_db:account_extended.view_invoice_tree_inherit_account_extended
+msgid "Valor Factura"
+msgstr "Valor Factura"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_fiscal_position_tax__tax_comparation_value
+msgid "Value"
+msgstr "Valor"
+
+#. module: account_extended
+#: model:ir.model.fields,field_description:account_extended.field_account_payment_report__variation
+#: model_terms:ir.ui.view,arch_db:account_extended.account_payment_report_list
+msgid "Variation"
+msgstr "Variación"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_payment.py:0
+#, python-format
+msgid "Vendor Credit Note"
+msgstr "Nota de crédito del proveedor"
+
+#. module: account_extended
+#: code:addons/account_extended/models/account_payment.py:0
+#, python-format
+msgid "Vendor Payment"
+msgstr "Pago del proveedor"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_payment__state__waiting_approval
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_search_inherit
+msgid "Waiting For Analyst Approval"
+msgstr "Esperando la aprobación del analista"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_payment__state__waiting_approval2
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_search_inherit
+msgid "Waiting For Coordinator Approval"
+msgstr "Esperando aprobación del coordinador"
+
+#. module: account_extended
+#: model:ir.model.fields.selection,name:account_extended.selection__account_payment__state__waiting_approval3
+#: model_terms:ir.ui.view,arch_db:account_extended.view_account_payment_search_inherit
+msgid "Waiting For Director Approval"
+msgstr "Esperando aprobación del director"
+
+#. module: account_extended
+#: model:ir.model,name:account_extended.model_product_concept_type
+msgid "product.concept.type"
+msgstr "product.concept.type"

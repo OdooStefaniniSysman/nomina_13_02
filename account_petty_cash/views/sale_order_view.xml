@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--<record model="ir.ui.view" id="view_order_form_inherit_sale_stock_inherit">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock" />
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="session_id" readonly="0"/>
+                </field>
+            </field>
+        </record>-->
+
+        <record model="ir.ui.view" id="view_order_form_inherit_sale_stock_inherit_sessions">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_order_advances_app.view_order_form_inherit_sale_stock_inherit_advances" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook//field[@name='payment_ids']//tree//field[@name='state']" position="after">
+                    <field name="session_id" />
+                </xpath>
+                <xpath expr="//notebook//field[@name='payment_ids']//form//field[@name='journal_id']" position="after">
+                    <field name="session_id" required="1"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_inherti_custom_thomas_production" inherit_id="mrp_thomas.report_custom1_template">
+
+          <xpath expr="/t[1]/t[1]/t[1]/div[1]/table[1]/tr[1]/th[3]/span[1]/span[1]" position="attributes">
+		     <attribute name="t-options-widget">"barcode"</attribute>
+		  </xpath>
+
+		  <xpath expr="/t[1]/t[1]/t[1]/div[1]/table[1]/tr[1]/th[3]/span[1]/span[1]" position="attributes">
+		    <attribute name="t-options-width">80</attribute>
+		  </xpath>
+
+		  <xpath expr="/t[1]/t[1]/t[1]/div[1]/table[1]/tr[1]/th[3]/span[1]/span[1]" position="attributes">
+		    <attribute name="t-options-width">100</attribute>
+		  </xpath>
+
+		  <xpath expr="/t[1]/t[1]/t[1]/div[1]/table[1]/tr[1]/th[3]/span[1]/span[1]" position="attributes">
+		    <attribute name="t-options-width">200</attribute>
+		  </xpath>
+
+		  <xpath expr="/t[1]/t[1]/t[1]/div[1]/table[1]/tr[1]/th[3]/span[1]/span[1]" position="attributes">
+		    <attribute name="t-options-height">80</attribute>
+		  </xpath>
+
+		  <xpath expr="/t[1]/t[1]/t[1]/div[1]/table[1]/tr[1]/th[3]/span[1]/span[1]" position="attributes">
+		    <attribute name="t-options-height">50</attribute>
+		  </xpath>
+
+		  <xpath expr="/t[1]/t[1]/t[1]/div[1]/table[1]/tr[1]/th[3]/span[1]/span[1]" position="attributes">
+		    <attribute name="t-options-width">180</attribute>
+		  </xpath>
+
+		  <xpath expr="/t[1]/t[1]/t[1]/div[1]/table[1]/tr[1]/th[3]/span[1]/span[1]" position="attributes">
+		    <attribute name="t-options-width">150</attribute>
+		  </xpath>
+		  
+		 </template>
+    </data>
+</odoo>

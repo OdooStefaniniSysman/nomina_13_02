@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="view_message_activity" model="ir.ui.view">
+            <field name="name">wizard.maintenance.form</field>
+            <field name="model">wizard.maintenance</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+            <form string="Wizard Maintenance">
+                <span></span>
+                <group>
+                    <group>
+                        <field name="message" />
+                        <field name="users_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}"/>
+                    </group>
+                </group>
+                <footer>
+		    	<button string="Notify" name="action_create_activity" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+        <record id="action_create_maintenance" model="ir.actions.act_window">
+            <field name="name">create maintenance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.maintenance</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

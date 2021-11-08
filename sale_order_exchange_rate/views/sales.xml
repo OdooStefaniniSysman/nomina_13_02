@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_order_form__exchange_rate">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+
+            </field>
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <field name="currency_rate_raw" readonly="True" string="TRM del Día"/>
+                <field name="so_exchange_allow_ok" invisible="True"/>    
+                <field
+                    name="so_has_exchange_rate"
+                    groups="base.group_multi_currency"
+                    string="TRM por Documento"
+                    attrs="{
+                        'invisible': [
+                            ('so_exchange_allow_ok', '=', False)
+                        ],
+                    }"/>
+                <field name="so_exchange_rate" 
+                    groups="base.group_multi_currency"
+                    string="Tasa del Documento"
+                    attrs="{'invisible': [('so_has_exchange_rate','=',False)]}"/>
+            </xpath>
+            <xpath expr="//group[@name='sale_total']" position="inside">
+                <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                    <label for="amount_total_exchange_rate" string="Total TRM Aplicada"
+                           attrs="{
+                           'invisible': [
+                               ('so_exchange_allow_ok', '=', False)
+                           ],
+                       }"/>
+                </div>
+                <field name="amount_total_exchange_rate" 
+                       nolabel="1"
+                       class="oe_subtotal_footer_separator" 
+                       widget='monetary'
+                       attrs="{
+                           'invisible': [
+                               ('so_exchange_allow_ok', '=', False)
+                           ],
+                       }"
+                       options="{'currency_field': 'company_currency_id'}"/>
+            </xpath>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="view_quotation_tree_inherit_exchange_rate">
+	<field name="name">sale.order.form</field>
+	<field name="model">sale.order</field>
+	<field name="inherit_id" ref="sale.view_quotation_tree" />
+	<field name="arch" type="xml">
+       	    <xpath expr="//field[@name='currency_id']" position="attributes">
+                <attribute name="invisible">False</attribute>
+	    </xpath>
+	    <xpath expr="//field[@name='amount_total']" position="after">
+            	<field name="so_exchange_rate" groups="base.group_multi_currency"/>
+            	<field name="amount_total_exchange_rate" groups="base.group_multi_currency"/>
+	    </xpath>
+	</field>
+    </record>
+</odoo>

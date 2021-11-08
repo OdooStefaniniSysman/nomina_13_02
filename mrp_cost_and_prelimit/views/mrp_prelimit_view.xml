@@ -1,0 +1,70 @@
+<odoo>
+    <data>
+       <record model="ir.ui.view" id="mrp_prelimit_form">
+            <field name="name">mrp.prelimit.form</field>
+            <field name="model">mrp.prelimit</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="workcenter_id"/>
+                            </group>
+                            <group>
+                                <field name="prelimit_code"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="general" string="Genral Information">
+                                <group>
+                                    <group>
+                                        <div class="o_row">
+                                            <h6 style="font-weight: bold;font-family: sans-serif;color: #666666">Quanity Worked Hours</h6>
+                                            <span></span><field name="distribution"/>
+                                        </div>
+                                    </group>
+                                    <group></group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+       <record model="ir.ui.view" id="mrp_prelimit_tree">
+            <field name="name">mrp.prelimit.tree</field>
+            <field name="model">mrp.prelimit</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="prelimit_code" />
+                    <field name="workcenter_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="production_id"/>
+                    <field name="hours" />
+                    <field name="distribution"/>
+                    <field name="distribution_percentage"/>
+                    <field name="cost_mod"/>
+                    <field name="cost_cif"/>
+                    <field name="cost_maq"/>
+                </tree>
+            </field>
+        </record>
+        <record id="mrp_prelimit_tree_action" model="ir.actions.act_window">
+            <field name="name">Prelimit</field>
+            <field name="res_model">mrp.prelimit</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="mrp_prelimit_tree"/>
+        </record>
+        <record id="action_account_report_analytic_prelimit" model="ir.actions.client">
+            <field name="name">Analytic Report</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'account.analytic.report'}" />
+        </record>
+        <menuitem id="preliminares" name="Preliminares" parent="account.menu_finance_reports" sequence="15"
+                  action="mrp_prelimit_tree_action"/>
+        <menuitem id="menu_action_report_account_analytic_prelimit" name="Analytic Prelimit Report" action="action_account_report_analytic_prelimit" parent="account.menu_finance_reports" sequence="20" groups="analytic.group_analytic_accounting"/>
+    </data>
+</odoo>

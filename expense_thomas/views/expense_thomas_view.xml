@@ -1,0 +1,212 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="expense_thomas_list">
+            <field name="name">expense_thomas list</field>
+            <field name="model">expense.thomas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="employee_id" />
+                    <field name="request_date" />
+                    <field name="document" />
+                    <field name="total" />
+                    <field name="refund_state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="expense_thomas_form" model="ir.ui.view">
+            <field name="name">expense.thomas.form</field>
+            <field name="model">expense.thomas</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="Asignación: " name="assigment" colspan="1">
+                                <field name="name" required="True" />
+                                <field name="request_date" required="True" />
+                                <field name="employee_id" required="True" />
+                                <field name="document" required="True" />
+                                <field name="coin" />
+                                <field name="bills" />
+                            </group>
+                            <group string="Totals: " name="totals" colspan="1">
+                                <field name="total" readonly="True" force_save="True" />
+                                <field name="total_coins" attrs="{'invisible': [('coin','=',False)]}" readonly="True" force_save="True" />
+                                <field name="total_bills" attrs="{'invisible': [('bills','=',False)]}" readonly="True" force_save="True" />
+                            </group>
+                            <br />
+                            <group string="Return: " name="return" colspan="1">
+                                <field name="refund_date" required="True" />
+                                <field name="refund_state" required="True" />
+                            </group>
+                        </group>
+                        <br />
+                        <!-- old coins -->
+                        <group attrs="{'invisible': [('coin','=',False)]}">
+                            <group string="Old coins: " name="old_coins" colspan="1">
+                                <field name="oc_50" />
+                                <field name="oc_100" />
+                                <field name="oc_200" />
+                                <field name="oc_500" />
+                            </group>
+                            <group string="Total: " name="total_oc" colspan="1">
+                                <group>
+                                    <field name="oc_50_total" readonly="True" force_save="True" />
+                                    <field name="oc_100_total" readonly="True" force_save="True" />
+                                    <field name="oc_200_total" readonly="True" force_save="True" />
+                                    <field name="oc_500_total" readonly="True" force_save="True" />
+                                </group>
+                                <br />
+                                <br />
+                                <group string="Total amount old coins: " name="oc_total_amount" colspan="1">
+                                    <field name="oc_total" readonly="True" force_save="True" />
+                                </group>
+                            </group>
+                        </group>
+                        <!-- onew coins -->
+                        <group attrs="{'invisible': [('coin','=',False)]}">
+                            <group string="New coins: " name="new_coins" colspan="1">
+                                <field name="nc_50" />
+                                <field name="nc_100" />
+                                <field name="nc_200" />
+                                <field name="nc_500" />
+                                <field name="nc_1000" />
+                            </group>
+                            <group string="Total: " name="total_nc" colspan="1">
+                                <group>
+                                    <field name="nc_50_total" readonly="True" force_save="True" />
+                                    <field name="nc_100_total" readonly="True" force_save="True" />
+                                    <field name="nc_200_total" readonly="True" force_save="True" />
+                                    <field name="nc_500_total" readonly="True" force_save="True" />
+                                    <field name="nc_1000_total" readonly="True" force_save="True" />
+                                </group>
+                                <br />
+                                <br />
+                                <group string="Total amount new coins: " name="nc_total_amount" colspan="1">
+                                    <field name="nc_total" readonly="True" force_save="True" />
+                                </group>
+                            </group>
+                        </group>
+                        <!-- old bills -->
+                        <group attrs="{'invisible': [('bills','=',False)]}">
+                            <group string="Old bills: " name="old_bills" colspan="1">
+                                <field name="ob_1k" />
+                                <field name="ob_2k" />
+                                <field name="ob_5k" />
+                                <field name="ob_10k" />
+                                <field name="ob_20k" />
+                                <field name="ob_50k" />
+                            </group>
+                            <group string="Total: " name="total_ob" colspan="1">
+                                <group>
+                                    <field name="ob_1k_total" readonly="True" force_save="True" />
+                                    <field name="ob_2k_total" readonly="True" force_save="True" />
+                                    <field name="ob_5k_total" readonly="True" force_save="True" />
+                                    <field name="ob_10k_total" readonly="True" force_save="True" />
+                                    <field name="ob_20k_total" readonly="True" force_save="True" />
+                                    <field name="ob_50k_total" readonly="True" force_save="True" />
+                                </group>
+                                <br />
+                                <br />
+                                <group string="Total amount old bills: " name="ob_total_amount" colspan="1">
+                                    <field name="ob_total" readonly="True" force_save="True" />
+                                </group>
+                            </group>
+                        </group>
+                        <!-- new bills -->
+                        <group attrs="{'invisible': [('bills','=',False)]}">
+                            <group string="New bills: " name="new_bills" colspan="1">
+                                <field name="nb_2k" />
+                                <field name="nb_5k" />
+                                <field name="nb_10k" />
+                                <field name="nb_20k" />
+                                <field name="nb_50k" />
+                                <field name="nb_100k" />
+                            </group>
+                            <group string="Total: " name="total_nb" colspan="1">
+                                <group>
+                                    <field name="nb_2k_total" readonly="True" force_save="True" />
+                                    <field name="nb_5k_total" readonly="True" force_save="True" />
+                                    <field name="nb_10k_total" readonly="True" force_save="True" />
+                                    <field name="nb_20k_total" readonly="True" force_save="True" />
+                                    <field name="nb_50k_total" readonly="True" force_save="True" />
+                                    <field name="nb_100k_total" readonly="True" force_save="True" />
+                                </group>
+                                <br />
+                                <br />
+                                <group string="Total amount new bills: " name="nb_total_amount" colspan="1">
+                                    <field name="nb_total" readonly="True" force_save="True" />
+                                </group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="expense_thomas.action_window">
+            <field name="name">Money test</field>
+            <field name="res_model">expense.thomas</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="hr_expense_thomas_inherited" model="ir.ui.view">
+            <field name="name">hr.expense.thomas.inherited</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_view_form" />
+            <!-- <field name="groups_id" eval="[(4,ref('contacs_thomas.group_tst'))]" /> -->
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group/group/field[@name='employee_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group/div/field[@name='payment_mode']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group/label[@for='payment_mode']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='product_id']" position="attributes">
+                    <attribute name="string">Concept</attribute>
+                </xpath>
+                <xpath expr="//sheet/group/group" position="before">
+                    <group string="Employee: ">
+                        <field name="employee_id" groups="hr_expense.group_hr_expense_team_approver" context="{'default_company_id': company_id}"/>
+                        <field name="identification_id"/>
+                        <field name="address"/>
+                        <field name="city"/>
+                        <field name="employee_state"/>
+                        <field name="phone"/>
+                    </group>
+                    <group string="Values: ">
+                        <field name="gross_value"/>
+                        <field name="iva_tax"/>
+                        <field name="consumption_tax"/>
+                        <field name="rteiva_rate"/>
+                        <field name="rteiva_value"/>
+                        <field name="rtefte_rate"/>
+                        <field name="rtefte_value"/>
+                        <field name="rteica_rate"/>
+                        <field name="rteica_value"/>
+                        <field name="total_pay"/>
+                    </group>
+                </xpath>
+                <xpath expr="//sheet/group" position="after">
+                    <group>
+                        <field name="maintenance_request_ids" domain="[('user_id','=',employee_id)]" />
+                        <field name="assigment_thomas_id" invisible="True"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='total_amount']" position="after">
+                    <field name="partner_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem name="Money test" id="thomas_expenses" parent="hr_expense.menu_hr_expense_root" action="expense_thomas.action_window" />
+
+    </data>
+</odoo>

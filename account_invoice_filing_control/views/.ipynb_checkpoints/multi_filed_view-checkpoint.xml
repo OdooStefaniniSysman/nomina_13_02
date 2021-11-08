@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <act_window
+            id="multi_invoice_filed_internally_view"
+            name="Marcar como facturas radicadas en Cartera"
+            domain="[('id','in',active_ids)]"
+            res_model="account.move.multi.filed.internally"
+            view_mode="form"
+            binding_model="account.move"
+            groups="group_invoice_field_internally"
+            target="new"/>
+        
+        <act_window
+            id="multi_invoice_filed_customer_view"
+            name="Marcar como facturas radicadas en Cliente"
+            domain="[('id','in',active_ids)]"
+            res_model="account.move.multi.filed.customer"
+            view_mode="form"
+            binding_model="account.move"
+            groups="group_invoice_field_customer"
+            target="new"/>
+        
+        <act_window
+            id="multi_invoice_filed_supplier_view"
+            name="Marcar como facturas radicadas en Cuentas por Pagar"
+            domain="[('id','in',active_ids)]"
+            res_model="account.move.multi.filed.supplier"
+            view_mode="form"
+            binding_model="account.move"
+            groups="group_invoice_field_supplier"
+            target="new"/>
+        
+        <act_window
+            id="multi_invoice_filed_treasury_view"
+            name="Marcar como facturas radicadas en Tesoreria"
+            domain="[('id','in',active_ids)]"
+            res_model="account.move.multi.filed.treasury"
+            view_mode="form"
+            binding_model="account.move"
+            groups="group_invoice_field_treasury"
+            target="new"/>
+    </data>
+</odoo>

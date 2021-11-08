@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <report
+                id="report_custom"
+                string="Orden de Venta Thomas Producción"
+                model="sale.order"
+                report_type="qweb-pdf"
+                name="mrp_thomas.report_custom_template"
+        />
+
+        <record id="paperformat_low_monthly_report" model="report.paperformat">
+          <field name="name">Formato de Papel Orden de venta Thomas Producción</field>
+          <field name="default" eval="True"/>
+          <field name="format">A4</field>
+          <field name="page_height">0</field>
+          <field name="page_width">0</field>
+          <field name="orientation">Portrait</field>
+          <field name="margin_top">10</field>
+          <field name="margin_bottom">15</field>
+          <field name="margin_left">7</field>
+          <field name="margin_right">7</field>
+          <field name="header_line" eval="False"/>
+          <field name="header_spacing">3</field>
+          <field name="dpi">90</field>
+        </record>
+
+        <template id="report_custom_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">                    
+                        <div class="page">
+                           <head>
+                              <style>
+                                  *{
+                                  margin:0px;
+                                  padding:0px;
+                                  }
+                                   div#a{
+                                   margin:auto;
+                                   margin-top:60px;
+                                   width:50px;
+                                   height:50px;
+                                   border: 0px solid black;
+                                  }
+                                   div#b{
+                                   width:300px;
+                                   height:150px;
+                                   background-color:white;
+                                   float:left;
+                                   border: 1px solid black;
+                                  }
+                                   div#c{
+                                   width:301px;
+                                   height:120px;
+                                   background-color:white;
+                                   float:left;
+                                   border: 1px solid black;
+                                  }
+                                  div#d{
+                                   width:260px;
+                                   height:150px;
+                                   background-color:white;
+                                   float:right;
+                                   border: 1px solid black;
+                                  }
+                                   div#e{
+                                   width:150px;
+                                   height:30px;
+                                   background-color:white;
+                                   float:left;
+                                   border: 1px solid black;
+                                  }
+                                   div#e1{
+                                   width:145px;
+                                   height:30px;
+                                   background-color:white;
+                                   float:left;
+                                  }
+                                  table{
+                                  border: 1px solid black
+                                  }
+                                  div#f{
+                                   width:200px;
+                                   height:150px;
+                                   background-color:white;
+                                   float:left;
+                                   border: 0px solid black;
+                                  }
+                                   div#espacio{
+                                   width:300px;
+                                   height:30px;
+                                   background-color:white;
+                                   float:left;
+                                   border: 0px solid black;
+                                  }
+                                  table {
+                                  border-collapse: collapse;
+                                  }
+                                  table, th, td {
+                                  border: 1px solid black;
+                                  }
+                                  div#check{          
+                                  width:45px;
+                                  height:20px;
+                                  background-color:white;
+                                  float:right;
+                                  border: 1px solid black;
+                                  border-radius: 40px;         
+                                }
+                                div#span{
+                                   width:1000px;
+                                   height:30px;
+                                   background-color:back;
+                                   float:left;
+                                   border: 0px solid black;
+                                  }
+                                  th, td {
+                                  padding: 2px;
+                                  }
+                              </style>
+                           </head>
+                            
+            <div t-if="doc.date_order and doc.state not in ['draft','sent']" class="col-auto mw-100 mb-2"></div>
+            <div t-if="doc.validity_date and doc.state in ['draft', 'sent']" class="col-auto mw-100 mb-2" name="expiration_date"></div>
+            
+           <table width="100%">
+              <tr>
+                <th><img t-att-src="'data:image/png;base64,%s' % to_text(doc.logo)" width="370" height="140"/></th>
+                <th><p style="font-size:30px">ORDEN DE VENTA<br></br> No.<span t-field="doc.name"></span> </p></th>
+              </tr>
+  
+          </table>
+          <br></br>
+          <t t-foreach="doc.partner_id" t-as="p">
+           <table width="100%">
+          		<td><strong>Cliente:</strong> <span> </span> <span t-field="doc.partner_id"></span>
+          		<br></br> 
+          		<strong>NIT:</strong> <span> </span> <span t-field="doc.nit"></span>
+          		<br></br>
+          		<strong>Dirección:</strong> <span> </span> <span t-field="p.street"></span>
+          		<br></br>
+          		<strong>Télefono:</strong> <span> </span> <span t-field="doc.customer_phone"></span>   
+          	    </td>
+
+          		<td><strong>Fecha:</strong> <span> </span> <span t-field="doc.date_order"></span>
+          		<br></br>
+          		<strong>Plazos de Pago:</strong> <span> </span> <span t-field="doc.payment_term_id"></span>
+          		<br></br>
+          		<strong>Lista de Precios:</strong> <span> </span> <span t-field="doc.pricelist_id"></span>
+          		<br></br>
+          		<strong>Venta:</strong><span> </span><span t-field="doc.sale_type"></span> 
+          	    </td>
+
+          </table>
+         </t>
+          <br></br>
+          <table width="100%">
+          	<td>
+          	   <strong>Elaboración de Arte:</strong> <span> </span><span t-field="doc.elaboration_art_type"></span>
+          	   <br></br>
+          	   <strong>Línea de Impresión:</strong> <span> </span><span t-field="doc.printing_line_type"></span>	
+          	</td>
+          	<td>
+          		<strong>Referencia Orden Anterior:</strong> <span> </span><span t-field="doc.prev_order"></span>
+          	</td>
+          </table>
+          <br></br>
+          <table  width="100%">
+          	<td>
+          		<strong>Producto Fabricado:</strong> <span> </span> <div id="check" style=" text-align: center;"> <t t-if="doc.check_manufactured_product == True"><span>✔</span>  </t> </div>
+          	</td>
+          </table>
+            <br></br>
+            <table class="table table-sm o_main_table" width="100%">
+                <thead>
+                    <tr>
+                        <th name="th_description" class="text-left" style="background-color:#05871B"><p style="color:white;">Descripción</p></th>
+                        <th name="th_quantity" class="text-right" style="background-color:#05871B"><p style="color:white;">Cantidad</p></th>
+                        <th class="text-right" style="background-color:#05871B"><p style="color:white;">Costo</p></th>
+                        <th name="th_priceunit" class="text-right" style="background-color:#05871B"><p style="color:white;">Precio Unitario</p></th>
+                        <th name="th_discount" t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line" style="background-color:#05871B">
+                            <p style="color:white;"><span>Disc.%</span></p>
+                        </th>
+                        <th name="th_taxes" class="text-right" style="background-color:#05871B"><p style="color:white;">Impuestos</p></th>
+                        <th name="th_subtotal" class="text-right" style="background-color:#05871B">
+                            <t groups="account.group_show_line_subtotals_tax_excluded" style="background-color:#05871B"><p style="color:white;">Venta Total</p></t>
+                            <t groups="account.group_show_line_subtotals_tax_included" style="background-color:#05871B"><p style="color:white;">Precio Total</p></t>
+                        </th>
+                        <th class="text-right" style="background-color:#05871B"><p style="color:white;">%Marg Cont</p></th>
+                    </tr>
+                </thead>
+                <tbody class="sale_tbody">
+
+                    <t t-set="current_subtotal" t-value="0"/>
+
+                    <t t-foreach="doc.order_line" t-as="line">
+
+                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+
+                        <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                            <t t-if="not line.display_type">
+                                <td name="td_name"><span t-field="line.name"/></td>
+                                <td name="td_quantity" class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom" groups="uom.group_uom"/>
+                                </td>
+                                <td>0</td>
+                                <td name="td_priceunit" class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+
+                                <td t-if="display_discount" class="text-right" groups="product.group_discount_per_so_line">
+                                    <span t-field="line.discount"/>
+                                </td>
+
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
+                                </td>
+                                <td name="td_subtotal" class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                                    <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+                                </td>
+                                <td></td>
+                            </t>
+                            <t t-if="line.display_type == 'line_section'">
+                                <td name="td_section_line" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                                <t t-set="current_section" t-value="line"/>
+                                <t t-set="current_subtotal" t-value="0"/>
+                            </t>
+                            <t t-if="line.display_type == 'line_note'">
+                                <td name="td_note_line" colspan="99">
+                                    <span t-field="line.name"/>
+                                </td>
+                            </t>
+                        </tr>
+
+                        <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')">
+                            <tr class="is-subtotal text-right">
+                                <td name="td_section_subtotal" colspan="99">
+                                    <strong class="mr16">Subtotal</strong>
+                                    <span t-esc="current_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </t>
+                </tbody>
+            </table>
+            <br></br>
+            <div class="clearfix" name="so_total_summary">
+                <div id="total" class="row" name="total">
+                    <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                        <table class="table table-sm" align="right" width="30%">
+                            <tr class="border-black o_subtotal" style="">
+                                <td name="td_amount_untaxed_label" style="background-color:#05871B"><strong><p style="color:white;">Subtotal</p></strong></td>
+                                <td name="td_amount_untaxed" class="text-right">
+                                    <span t-field="doc.amount_untaxed"/>
+                                </td>
+                            </tr>
+                            <t t-foreach="doc.amount_by_group" t-as="amount_by_group">
+                                <tr style="">
+                                    <t t-if="amount_by_group[5] == 1 and doc.amount_untaxed == amount_by_group[2]">
+                                        <td name="td_amount_by_group_label_3" style="background-color:#05871B">
+                                        	<strong><p style="color:white;">Impuestos</p></strong>
+                                            <!--<span t-esc="amount_by_group[0]"/>
+                                            <span>&amp;nbsp;<span>on</span>&amp;nbsp;<t t-esc="amount_by_group[2]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></span> -->
+                                        </td>
+                                        <td name="td_amount_by_group_3" class="text-right o_price_total">
+                                            <span t-esc="amount_by_group[1]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                                        </td>
+                                    </t>
+                                    <t t-else="">
+                                        <td name="td_amount_by_group_label">
+                                            <span t-esc="amount_by_group[0]"/>
+                                        </td>
+                                        <td name="td_amount_by_group" class="text-right o_price_total">
+                                            <span t-esc="amount_by_group[1]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </t>
+                            <tr class="border-black o_total">
+                                <td name="td_amount_total_label" style="background-color:#05871B"><strong><p style="color:white;">Total</p></strong></td>
+                                <td name="td_amount_total" class="text-right">
+                                    <span t-field="doc.amount_total"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <br></br>
+                         
+                    </div>
+                </div>
+            </div>
+
+            <div t-if="doc.signature" class="mt32 ml64 mr4" name="signature">
+                
+                <div class="offset-8 text-center">
+                   
+                </div>
+            </div>
+
+            <div class="oe_structure"/>
+            <p id="fiscal_position_remark" t-if="doc.fiscal_position_id and doc.fiscal_position_id.sudo().note">
+               
+            </p>
+
+            </div>
+            <br></br><br></br><br></br>
+            <p></p>
+            <t t-if="doc.apply_thomas == True">  
+              <br></br>
+              <table class="egt"  width="100%">
+                <tr>
+                   <th colspan="4" style="background-color:#05871B"><p style="color:white;">Papel</p></th>
+                </tr>
+                <tr>
+                   <td><strong>Tipo de Papel:</strong><br></br><span> </span><span t-field="doc.mrp_kind_of_paper_id"></span></td>
+                   <td><strong>Tamaño de Papel:</strong><br></br><span> </span><span t-field="doc.mrp_document_size_id"></span></td>
+                   <td><strong>Diseño:</strong><br></br><span> </span><span t-field="doc.design_type"></span></td>
+                   <td><strong>Suministro de Arte/Muestra:</strong><br></br><span> </span><span t-field="doc.art_supply"></span></td>
+                </tr>
+               </table>
+               
+            </t>
+            <br></br>
+            <t t-if="doc.il_apply == True">
+               <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="3" style="background-color:#05871B"><p style="color:white;">Tintas</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Tintas para cada componente o Documento:</strong><br></br><span> </span><span t-field="doc.mrp_inks_id"></span></td>
+                   <td><strong>Descripción Anverso:</strong><br></br><span> </span><span t-field="doc.mrp_reverse_id"></span></td>
+                   <td><strong>Descripción Reverso:</strong><br></br><span> </span><span t-field="doc.mrp_adverse_id"></span></td>
+                 </tr>
+               </table> 
+            </t>
+               <br></br>
+               <t t-if="doc.ii_apply == True">
+                <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="2" style="background-color:#05871B"><p style="color:white;">Impresión Intaglio</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Tintas para cada componente o Documento:</strong><br></br><span> </span><span t-field="doc.mrp_inks_1_id"></span></td>
+                   <td><strong>Descripción Anverso:</strong><br></br><span> </span><span t-field="doc.mrp_adverse_1_id"></span></td>
+                 </tr>
+                </table>
+               </t>
+               <br></br>
+               <t t-if="doc.process_apply == True">
+                <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="3" style="background-color:#05871B"><p style="color:white;">Procesos de Tipografía</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Tintas para cada componente o Documento:</strong><br></br><span> </span><span t-field="doc.mrp_inks_1_id"></span></td>
+                   <td><strong>Descripción Anverso:</strong><br></br><span> </span><span t-field="doc.mrp_adverse_id"></span></td>
+                   <td><strong>Descripción Reverso:</strong><br></br><span> </span><span t-field="doc.mrp_reverse_id"></span></td>
+                 </tr>
+                </table>
+               </t>
+               <br></br>
+                <t t-if="doc.pt_apply == True">
+                <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="10" style="background-color:#05871B"><p style="color:white;">Procesos de Tipografía</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Clase de Tinta:</strong><br></br><span> </span><span t-field="doc.mrp_kind_of_inks_id"></span></td>
+                   <td><strong>No.Digitos:</strong><br></br><span> </span><span t-field="doc.number_of_digits"></span></td>
+                   <td><strong>Posición:</strong><br></br><span> </span><span t-field="doc.position"></span></td>
+                   <td><strong>Prefijo:</strong><br></br><span> </span><span t-field="doc.prefix_type"></span></td>
+                   <td><strong>Medio Corte:</strong><br></br><span> </span><span t-field="doc.half_cut_type"></span></td>
+                   <td><strong>Troquel de Seguridad:</strong><br></br><span> </span><span t-field="doc.security_die_type"></span></td>
+                   <td><strong>Estampado:</strong><br></br><span> </span><span t-field="doc.stamping_type"></span></td>
+                   <td><strong>Color Cinta:</strong><br></br><span> </span><span t-field="doc.ribbon_color"></span></td>
+                   <td><strong>Diseño a Estampar:</strong><br></br><span> </span><span t-field="doc.design_to_print"></span></td>
+                   <td><strong>Perforado:</strong><br></br><span> </span><span t-field="doc.perforated_type"></span></td>
+                 </tr>
+                </table>
+               </t>
+               <br></br>
+                <t t-if="doc.numeration == True">
+                <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="2" style="background-color:#05871B"><p style="color:white;">Numeración</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Desde:</strong><br></br><span> </span><span t-field="doc.since"></span></td>
+                   <td><strong>Hasta:</strong><br></br><span> </span><span t-field="doc.until"></span></td>
+                 </tr>
+                </table>
+               </t>
+               <br></br>
+                <t t-if="doc.per_apply == True">
+                 <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="6" style="background-color:#05871B"><p style="color:white;">Personalización</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Personalización:</strong><br></br><span> </span><span t-field="doc.personalization"></span></td>
+                   <td><strong>Ubicación de la Personalización:</strong><br></br><span> </span><span t-field="doc.customization_location"></span></td>
+                   <td><strong>Tipo de Información:</strong><br></br><span> </span><span t-field="doc.type_of_information"></span></td>
+                   <td><strong>Procesamiento de la Información:</strong><br></br><span> </span><span t-field="doc.information_processing"></span></td>
+                   <td><strong>Tipo de Personalización:</strong><br></br><span> </span><span t-field="doc.type_of_customization"></span></td>
+                   <td><strong>Numeración:</strong><br></br><span> </span><span t-field="doc.customization_numbering"></span></td>
+                 </tr>
+                 </table>
+               </t>
+               <br></br>
+                <t t-if="doc.finishing_processes_apply == True">
+                 <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="5" style="background-color:#05871B"><p style="color:white;">Procesos de Acabados</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Presentación Final:</strong><br></br><span> </span><span t-field="doc.final_presentation"></span></td>
+                   <td><strong>Forma de Empaque:</strong><br></br><span> </span><span t-field="doc.packing_form"></span></td>
+                   <td><strong>Cantidad por Empaque:</strong><br></br><span> </span><span t-field="doc.quantity_package"></span></td>
+                   <td><strong>Custodia:</strong><br></br><span> </span><span t-field="doc.custody"></span></td>
+                   <td><strong>Especificación del Rotulo de Empaque:</strong><br></br><span> </span><span t-field="doc.packaging_label"></span></td>
+                 </tr>
+                 </table>
+               </t>
+               <br></br>
+               <t t-if="doc.billing_description_apply == True">
+                 <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="3" style="background-color:#05871B"><p style="color:white;">Descripción de Facturación</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Nombre Cliente a Quien se Factura:</strong><br></br><span> </span><span t-field="doc.customer_to_bill"></span></td>
+                   <td><strong>Facturable:</strong><br></br><span> </span><span t-field="doc.billable"></span></td>
+                   <td><strong>(Servicio) Contenido y Manejo de la Facturación:</strong><br></br><span> </span><span t-field="doc.billing_management"></span></td>
+                 </tr>
+                 </table>
+               </t>
+               <br></br>
+                 <t t-if="doc.is_a_test == True">
+                 <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="7" style="background-color:#05871B"><p style="color:white;">Si el Pedido de Venta es una Prueba(Servicio)</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Nombre de la Prueba:</strong><br></br><span> </span><span t-field="doc.test_name"></span></td>
+                   <td><strong>Fecha de Aplicación:</strong><br></br><span> </span><span t-field="doc.date_of_application"></span></td>
+                   <td><strong>Componentes:</strong><br></br><span> </span><span t-field="doc.components"></span></td>
+                   <td><strong>Impresión:</strong><br></br><span> </span><span t-field="doc.impressions"></span></td>
+                   <td><strong>Tipo de Servicio:</strong><br></br><span> </span><span t-field="doc.type_of_service"></span></td>
+                   <td><strong>Sitios de la Aplicación:</strong><br></br><span> </span><span t-field="doc.application_sites"></span></td>
+                   <td><strong>Cantidad por Tipo de Servicio:</strong><br></br><span> </span><span t-field="doc.quantity_type_service"></span></td>
+                 </tr>
+                 </table>
+               </t>
+               <br></br>
+                <t t-if="doc.process_apply == True">
+                 <table class="egt"  width="100%">
+                 <tr>
+                   <th colspan="6" style="background-color:#05871B"><p style="color:white;">Otros</p></th>
+                 </tr>
+                 <tr>
+                   <td><strong>Producto Presupuestado:</strong><br></br><span> </span><span t-field="doc.budgeted_product"></span></td>
+                   <td><strong>Producto Nuevo:</strong><br></br><span> </span><span t-field="doc.new_product"></span></td>
+                   <td><strong>Producto Por Contrato:</strong><br></br><span> </span><span t-field="doc.contract_product"></span></td>
+                   <td><strong>Fecha Inicio de Contrato:</strong><br></br><span> </span><span t-field="doc.start_date_thomas"></span></td>
+                   <td><strong>Fecha de Terminación de Contrato:</strong><br></br><span> </span><span t-field="doc.finish_date"></span></td>
+                   <td><strong>Contrato por Suministro o Cantidad:</strong><br></br><span> </span><span t-field="doc.supply_contract"></span></td>
+                 </tr>
+                 </table>
+               </t>
+              </t>
+            </t>
+
+            
+        </template>
+  </data>
+
+</odoo>                         

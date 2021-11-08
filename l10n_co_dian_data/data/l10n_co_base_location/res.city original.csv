@@ -1,0 +1,1123 @@
+﻿id,name,zipcode,state_id:id,country_id:id
+base.res_city_co_5002,Abejorral,55030,base.state_co_01,base.co
+base.res_city_co_54003,Ábrego,546070,base.state_co_18,base.co
+base.res_city_co_5004,Abriaquí,57460,base.state_co_01,base.co
+base.res_city_co_50006,Acacías,507001,base.state_co_16,base.co
+base.res_city_co_27006,Acandí,278010,base.state_co_12,base.co
+base.res_city_co_41006,Acevedo,417070,base.state_co_13,base.co
+base.res_city_co_13006,Achí,134020,base.state_co_04,base.co
+base.res_city_co_41013,Agrado,414040,base.state_co_13,base.co
+base.res_city_co_25001,Agua De Dios,252850,base.state_co_11,base.co
+base.res_city_co_20011,Aguachica,205010,base.state_co_09,base.co
+base.res_city_co_68013,Aguada,685521,base.state_co_21,base.co
+base.res_city_co_17013,Aguadas,172020,base.state_co_06,base.co
+base.res_city_co_85010,Aguazul,856010,base.state_co_26,base.co
+base.res_city_co_20013,Agustín Codazzi,202050,base.state_co_09,base.co
+base.res_city_co_41016,Aipe,411001,base.state_co_13,base.co
+base.res_city_co_25019,Albán,253201,base.state_co_11,base.co
+base.res_city_co_52019,Albán,520557,base.state_co_17,base.co
+base.res_city_co_18029,Albania,186030,base.state_co_07,base.co
+base.res_city_co_44035,Albania,403001,base.state_co_14,base.co
+base.res_city_co_68020,Albania,684531,base.state_co_21,base.co
+base.res_city_co_76020,Alcalá,762040,base.state_co_24,base.co
+base.res_city_co_52022,Aldana,524540,base.state_co_17,base.co
+base.res_city_co_5021,Alejandría,53820,base.state_co_01,base.co
+base.res_city_co_47030,Algarrobo,472040,base.state_co_15,base.co
+base.res_city_co_41020,Algeciras,413040,base.state_co_13,base.co
+base.res_city_co_19022,Almaguer,194080,base.state_co_08,base.co
+base.res_city_co_15022,Almeida,153020,base.state_co_05,base.co
+base.res_city_co_73024,Alpujarra,734560,base.state_co_23,base.co
+base.res_city_co_41026,Altamira,416020,base.state_co_13,base.co
+base.res_city_co_27025,Alto Baudó,276070,base.state_co_12,base.co
+base.res_city_co_13030,Altos Del Rosario,133501,base.state_co_04,base.co
+base.res_city_co_73026,Alvarado,730520,base.state_co_23,base.co
+base.res_city_co_5030,Amagá,55840,base.state_co_01,base.co
+base.res_city_co_5031,Amalfi,52840,base.state_co_01,base.co
+base.res_city_co_73030,Ambalema,731001,base.state_co_23,base.co
+base.res_city_co_25035,Anapoima,252640,base.state_co_11,base.co
+base.res_city_co_52036,Ancuyá,526001,base.state_co_17,base.co
+base.res_city_co_76036,Andalucía,763010,base.state_co_24,base.co
+base.res_city_co_5034,Andes,56060,base.state_co_01,base.co
+base.res_city_co_5036,Angelópolis,55830,base.state_co_01,base.co
+base.res_city_co_5038,Angostura,51810,base.state_co_01,base.co
+base.res_city_co_25040,Anolaima,253040,base.state_co_11,base.co
+base.res_city_co_5040,Anorí,52850,base.state_co_01,base.co
+base.res_city_co_17042,Anserma,177080,base.state_co_06,base.co
+base.res_city_co_76041,Ansermanuevo,762010,base.state_co_24,base.co
+base.res_city_co_5044,Anzá,56850,base.state_co_01,base.co
+base.res_city_co_73043,Anzoátegui,730540,base.state_co_23,base.co
+base.res_city_co_5045,Apartadó,57840,base.state_co_01,base.co
+base.res_city_co_66045,Apía,663030,base.state_co_20,base.co
+base.res_city_co_25599,Apulo,252650,base.state_co_11,base.co
+base.res_city_co_15047,Aquitania,152420,base.state_co_05,base.co
+base.res_city_co_47053,Aracataca,472001,base.state_co_15,base.co
+base.res_city_co_17050,Aranzazu,171040,base.state_co_06,base.co
+base.res_city_co_68051,Aratoca,682051,base.state_co_21,base.co
+base.res_city_co_81001,Arauca,810001,base.state_co_25,base.co
+base.res_city_co_81065,Arauquita,816010,base.state_co_25,base.co
+base.res_city_co_25053,Arbeláez,252001,base.state_co_11,base.co
+base.res_city_co_52051,Arboleda,520570,base.state_co_17,base.co
+base.res_city_co_54051,Arboledas,544550,base.state_co_18,base.co
+base.res_city_co_5051,Arboletes,57820,base.state_co_01,base.co
+base.res_city_co_15051,Arcabuco,154201,base.state_co_05,base.co
+base.res_city_co_13042,Arenal,134520,base.state_co_04,base.co
+base.res_city_co_5055,Argelia,54830,base.state_co_01,base.co
+base.res_city_co_19050,Argelia,195560,base.state_co_08,base.co
+base.res_city_co_76054,Argelia,761510,base.state_co_24,base.co
+base.res_city_co_47058,Ariguaní,475010,base.state_co_15,base.co
+base.res_city_co_13052,Arjona,131020,base.state_co_04,base.co
+base.res_city_co_5059,Armenia,55860,base.state_co_01,base.co
+base.res_city_co_63001,Armenia,630001,base.state_co_19,base.co
+base.res_city_co_73055,Armero Guayabal,732060,base.state_co_23,base.co
+base.res_city_co_13062,Arroyohondo,131560,base.state_co_04,base.co
+base.res_city_co_20032,Astrea,201040,base.state_co_09,base.co
+base.res_city_co_73067,Ataco,735050,base.state_co_23,base.co
+base.res_city_co_27050,Atrato,272010,base.state_co_12,base.co
+base.res_city_co_23068,Ayapel,233530,base.state_co_10,base.co
+base.res_city_co_27073,Bagadó,271050,base.state_co_12,base.co
+base.res_city_co_27075,Bahía Solano,276030,base.state_co_12,base.co
+base.res_city_co_27077,Bajo Baudó,275030,base.state_co_12,base.co
+base.res_city_co_19075,Balboa,195530,base.state_co_08,base.co
+base.res_city_co_66075,Balboa,662010,base.state_co_20,base.co
+base.res_city_co_8078,Baranoa,82020,base.state_co_02,base.co
+base.res_city_co_41078,Baraya,411060,base.state_co_13,base.co
+base.res_city_co_52079,Barbacoas,528060,base.state_co_17,base.co
+base.res_city_co_5079,Barbosa,51020,base.state_co_01,base.co
+base.res_city_co_68077,Barbosa,684511,base.state_co_21,base.co
+base.res_city_co_68079,Barichara,684041,base.state_co_21,base.co
+base.res_city_co_50110,Barranca De Upía,501001,base.state_co_16,base.co
+base.res_city_co_68081,Barrancabermeja,687031,base.state_co_21,base.co
+base.res_city_co_44078,Barrancas,443040,base.state_co_14,base.co
+base.res_city_co_13074,Barranco De Loba,133510,base.state_co_04,base.co
+base.res_city_co_94343,Barranco Minas,944010,base.state_co_30,base.co
+base.res_city_co_8001,Barranquilla,80001,base.state_co_02,base.co
+base.res_city_co_20045,Becerril,203001,base.state_co_09,base.co
+base.res_city_co_17088,Belalcázar,177001,base.state_co_06,base.co
+base.res_city_co_15087,Belén,150640,base.state_co_05,base.co
+base.res_city_co_52083,Belén,521080,base.state_co_17,base.co
+base.res_city_co_18094,Belén De Los Andaquíes,186010,base.state_co_07,base.co
+base.res_city_co_66088,Belén De Umbría,664040,base.state_co_20,base.co
+base.res_city_co_5088,Bello,51050,base.state_co_01,base.co
+base.res_city_co_5086,Belmira,51420,base.state_co_01,base.co
+base.res_city_co_25086,Beltrán,253260,base.state_co_11,base.co
+base.res_city_co_15090,Berbeo,152610,base.state_co_05,base.co
+base.res_city_co_5091,Betania,56070,base.state_co_01,base.co
+base.res_city_co_15092,Betéitiva,150610,base.state_co_05,base.co
+base.res_city_co_5093,Betulia,56860,base.state_co_01,base.co
+base.res_city_co_68092,Betulia,686501,base.state_co_21,base.co
+base.res_city_co_25095,Bituima,253220,base.state_co_11,base.co
+base.res_city_co_15097,Boavita,151060,base.state_co_05,base.co
+base.res_city_co_54099,Bochalema,543010,base.state_co_18,base.co
+base.res_city_co_11001,"Bogotá, D.C.",110111,base.state_co_03,base.co
+base.res_city_co_25099,Bojacá,253001,base.state_co_11,base.co
+base.res_city_co_27099,Bojayá,277050,base.state_co_12,base.co
+base.res_city_co_19100,Bolívar,195001,base.state_co_08,base.co
+base.res_city_co_68101,Bolívar,685001,base.state_co_21,base.co
+base.res_city_co_76100,Bolívar,761001,base.state_co_24,base.co
+base.res_city_co_20060,Bosconia,201020,base.state_co_09,base.co
+base.res_city_co_15104,Boyacá,153610,base.state_co_05,base.co
+base.res_city_co_5107,Briceño,52060,base.state_co_01,base.co
+base.res_city_co_15106,Briceño,154670,base.state_co_05,base.co
+base.res_city_co_68001,Bucaramanga,680001,base.state_co_21,base.co
+base.res_city_co_54109,Bucarasica,545550,base.state_co_18,base.co
+base.res_city_co_76109,Buenaventura,764501,base.state_co_24,base.co
+base.res_city_co_15109,Buenavista,154840,base.state_co_05,base.co
+base.res_city_co_23079,Buenavista,233020,base.state_co_10,base.co
+base.res_city_co_63111,Buenavista,632040,base.state_co_19,base.co
+base.res_city_co_70110,Buenavista,702030,base.state_co_22,base.co
+base.res_city_co_19110,Buenos Aires,191001,base.state_co_08,base.co
+base.res_city_co_52110,Buesaco,520501,base.state_co_17,base.co
+base.res_city_co_76113,Bugalagrande,763001,base.state_co_24,base.co
+base.res_city_co_5113,Buriticá,57030,base.state_co_01,base.co
+base.res_city_co_15114,Busbanzá,152080,base.state_co_05,base.co
+base.res_city_co_25120,Cabrera,252040,base.state_co_11,base.co
+base.res_city_co_68121,Cabrera,683501,base.state_co_21,base.co
+base.res_city_co_50124,Cabuyaro,501011,base.state_co_16,base.co
+base.res_city_co_94886,Cacahual,941010,base.state_co_30,base.co
+base.res_city_co_5120,Cáceres,52450,base.state_co_01,base.co
+base.res_city_co_25123,Cachipay,253020,base.state_co_11,base.co
+base.res_city_co_54128,Cáchira,546030,base.state_co_18,base.co
+base.res_city_co_54125,Cácota,544010,base.state_co_18,base.co
+base.res_city_co_5125,Caicedo,56840,base.state_co_01,base.co
+base.res_city_co_76122,Caicedonia,762540,base.state_co_24,base.co
+base.res_city_co_70124,Caimito,704010,base.state_co_22,base.co
+base.res_city_co_73124,Cajamarca,732501,base.state_co_23,base.co
+base.res_city_co_19130,Cajibío,190501,base.state_co_08,base.co
+base.res_city_co_25126,Cajicá,250240,base.state_co_11,base.co
+base.res_city_co_13140,Calamar,131540,base.state_co_04,base.co
+base.res_city_co_95015,Calamar,953001,base.state_co_31,base.co
+base.res_city_co_63130,Calarcá,632001,base.state_co_19,base.co
+base.res_city_co_5129,Caldas,55440,base.state_co_01,base.co
+base.res_city_co_15131,Caldas,154660,base.state_co_05,base.co
+base.res_city_co_19137,Caldono,192040,base.state_co_08,base.co
+base.res_city_co_76001,Cali,760001,base.state_co_24,base.co
+base.res_city_co_68132,California,680511,base.state_co_21,base.co
+base.res_city_co_76126,Calima (Darien),760530,base.state_co_24,base.co
+base.res_city_co_19142,Caloto,191070,base.state_co_08,base.co
+base.res_city_co_5134,Campamento,52020,base.state_co_01,base.co
+base.res_city_co_8137,Campo De La Cruz,84040,base.state_co_02,base.co
+base.res_city_co_41132,Campoalegre,413020,base.state_co_13,base.co
+base.res_city_co_15135,Campohermoso,152640,base.state_co_05,base.co
+base.res_city_co_23090,Canalete,235040,base.state_co_10,base.co
+base.res_city_co_8141,Candelaria,84020,base.state_co_02,base.co
+base.res_city_co_76130,Candelaria,763570,base.state_co_24,base.co
+base.res_city_co_13160,Cantagallo,135060,base.state_co_04,base.co
+base.res_city_co_5138,Cañasgordas,57060,base.state_co_01,base.co
+base.res_city_co_25148,Caparrapí,253460,base.state_co_11,base.co
+base.res_city_co_68147,Capitanejo,681541,base.state_co_21,base.co
+base.res_city_co_25151,Cáqueza,251820,base.state_co_11,base.co
+base.res_city_co_5142,Caracolí,53450,base.state_co_01,base.co
+base.res_city_co_5145,Caramanta,56040,base.state_co_01,base.co
+base.res_city_co_68152,Carcasí,681521,base.state_co_21,base.co
+base.res_city_co_5147,Carepa,57850,base.state_co_01,base.co
+base.res_city_co_73148,Carmen De Apicalá,733590,base.state_co_23,base.co
+base.res_city_co_25154,Carmen De Carupa,250420,base.state_co_11,base.co
+base.res_city_co_27150,Carmen Del Darién,277030,base.state_co_12,base.co
+base.res_city_co_5150,Carolina,51840,base.state_co_01,base.co
+base.res_city_co_13001,Cartagena De Indias,130001,base.state_co_04,base.co
+base.res_city_co_18150,Cartagena Del Chairá,183010,base.state_co_07,base.co
+base.res_city_co_76147,Cartago,762021,base.state_co_24,base.co
+base.res_city_co_97161,Carurú,973001,base.state_co_32,base.co
+base.res_city_co_73152,Casabianca,731520,base.state_co_23,base.co
+base.res_city_co_50150,Castilla La Nueva,507041,base.state_co_16,base.co
+base.res_city_co_5154,Caucasia,52410,base.state_co_01,base.co
+base.res_city_co_68160,Cepitá,682061,base.state_co_21,base.co
+base.res_city_co_23162,Cereté,230550,base.state_co_10,base.co
+base.res_city_co_15162,Cerinza,150620,base.state_co_05,base.co
+base.res_city_co_68162,Cerrito,681501,base.state_co_21,base.co
+base.res_city_co_47161,Cerro De San Antonio,476020,base.state_co_15,base.co
+base.res_city_co_27160,Cértegui,272020,base.state_co_12,base.co
+base.res_city_co_52240,Chachagüí,522001,base.state_co_17,base.co
+base.res_city_co_25168,Chaguaní,253240,base.state_co_11,base.co
+base.res_city_co_70230,Chalán,701010,base.state_co_22,base.co
+base.res_city_co_85015,Chámeza,856030,base.state_co_26,base.co
+base.res_city_co_73168,Chaparral,735560,base.state_co_23,base.co
+base.res_city_co_68167,Charalá,682551,base.state_co_21,base.co
+base.res_city_co_68169,Charta,680551,base.state_co_21,base.co
+base.res_city_co_25175,Chía,250001,base.state_co_11,base.co
+base.res_city_co_47170,Chivolo,476060,base.state_co_15,base.co
+base.res_city_co_5172,Chigorodó,57410,base.state_co_01,base.co
+base.res_city_co_68176,Chima,683001,base.state_co_21,base.co
+base.res_city_co_23168,Chimá,232010,base.state_co_10,base.co
+base.res_city_co_20175,Chimichagua,201050,base.state_co_09,base.co
+base.res_city_co_54172,Chinácota,541070,base.state_co_18,base.co
+base.res_city_co_15172,Chinavita,153280,base.state_co_05,base.co
+base.res_city_co_17174,Chinchiná,176020,base.state_co_06,base.co
+base.res_city_co_23182,Chinú,232050,base.state_co_10,base.co
+base.res_city_co_25178,Chipaque,251801,base.state_co_11,base.co
+base.res_city_co_68179,Chipatá,685551,base.state_co_21,base.co
+base.res_city_co_15176,Chiquinquirá,154640,base.state_co_05,base.co
+base.res_city_co_15232,Chíquiza,154020,base.state_co_05,base.co
+base.res_city_co_20178,Chiriguaná,203040,base.state_co_09,base.co
+base.res_city_co_15180,Chiscas,151401,base.state_co_05,base.co
+base.res_city_co_15183,Chita,151601,base.state_co_05,base.co
+base.res_city_co_54174,Chitagá,544030,base.state_co_18,base.co
+base.res_city_co_15185,Chitaraque,154420,base.state_co_05,base.co
+base.res_city_co_15187,Chivatá,150240,base.state_co_05,base.co
+base.res_city_co_15236,Chivor,153001,base.state_co_05,base.co
+base.res_city_co_25181,Choachí,251620,base.state_co_11,base.co
+base.res_city_co_25183,Chocontá,250801,base.state_co_11,base.co
+base.res_city_co_13188,Cicuco,132550,base.state_co_04,base.co
+base.res_city_co_47189,Ciénaga,478001,base.state_co_15,base.co
+base.res_city_co_23189,Ciénaga De Oro,232520,base.state_co_10,base.co
+base.res_city_co_15189,Ciénega,153440,base.state_co_05,base.co
+base.res_city_co_68190,Cimitarra,686041,base.state_co_21,base.co
+base.res_city_co_63190,Circasia,631001,base.state_co_19,base.co
+base.res_city_co_5190,Cisneros,53050,base.state_co_01,base.co
+base.res_city_co_5101,Ciudad Bolívar,56460,base.state_co_01,base.co
+base.res_city_co_13222,Clemencia,130510,base.state_co_04,base.co
+base.res_city_co_5197,Cocorná,54440,base.state_co_01,base.co
+base.res_city_co_73200,Coello,733501,base.state_co_23,base.co
+base.res_city_co_25200,Cogua,250401,base.state_co_11,base.co
+base.res_city_co_41206,Colombia,411080,base.state_co_13,base.co
+base.res_city_co_52203,Colón,521060,base.state_co_27,base.co
+base.res_city_co_86219,Colón (Génova),861040,base.state_co_17,base.co
+base.res_city_co_70204,Colosó,707030,base.state_co_22,base.co
+base.res_city_co_15204,Cómbita,150201,base.state_co_05,base.co
+base.res_city_co_5206,Concepción,53810,base.state_co_01,base.co
+base.res_city_co_68207,Concepción,681511,base.state_co_21,base.co
+base.res_city_co_5209,Concordia,56410,base.state_co_01,base.co
+base.res_city_co_47205,Concordia,476030,base.state_co_15,base.co
+base.res_city_co_27205,Condoto,273030,base.state_co_12,base.co
+base.res_city_co_68209,Confines,683531,base.state_co_21,base.co
+base.res_city_co_52207,Consacá,522540,base.state_co_17,base.co
+base.res_city_co_52210,Contadero,523080,base.state_co_17,base.co
+base.res_city_co_68211,Contratación,683071,base.state_co_21,base.co
+base.res_city_co_54206,Convención,547050,base.state_co_18,base.co
+base.res_city_co_5212,Copacabana,51040,base.state_co_01,base.co
+base.res_city_co_15212,Coper,154860,base.state_co_05,base.co
+base.res_city_co_13212,Córdoba,132501,base.state_co_04,base.co
+base.res_city_co_52215,Córdoba,524001,base.state_co_17,base.co
+base.res_city_co_63212,Córdoba,632020,base.state_co_19,base.co
+base.res_city_co_19212,Corinto,191560,base.state_co_08,base.co
+base.res_city_co_68217,Coromoro,682531,base.state_co_21,base.co
+base.res_city_co_70215,Corozal,705030,base.state_co_22,base.co
+base.res_city_co_15215,Corrales,152060,base.state_co_05,base.co
+base.res_city_co_25214,Cota,250010,base.state_co_11,base.co
+base.res_city_co_23300,Cotorra,230501,base.state_co_10,base.co
+base.res_city_co_15218,Covarachía,151040,base.state_co_05,base.co
+base.res_city_co_70221,Coveñas,706050,base.state_co_22,base.co
+base.res_city_co_73217,Coyaima,735020,base.state_co_23,base.co
+base.res_city_co_81220,Cravo Norte,812010,base.state_co_25,base.co
+base.res_city_co_52224,Cuaspúd,524560,base.state_co_17,base.co
+base.res_city_co_15223,Cubará,151420,base.state_co_05,base.co
+base.res_city_co_50223,Cubarral,506001,base.state_co_16,base.co
+base.res_city_co_15224,Cucaita,154060,base.state_co_05,base.co
+base.res_city_co_25224,Cucunubá,250450,base.state_co_11,base.co
+base.res_city_co_54001,Cúcuta,540001,base.state_co_18,base.co
+base.res_city_co_54223,Cucutilla,544520,base.state_co_18,base.co
+base.res_city_co_15226,Cuítiva,152230,base.state_co_05,base.co
+base.res_city_co_50226,Cumaral,501021,base.state_co_16,base.co
+base.res_city_co_99773,Cumaribo,991001,base.state_co_33,base.co
+base.res_city_co_52227,Cumbal,525001,base.state_co_17,base.co
+base.res_city_co_52233,Cumbitara,526560,base.state_co_17,base.co
+base.res_city_co_73226,Cunday,734040,base.state_co_23,base.co
+base.res_city_co_18205,Curillo,186050,base.state_co_07,base.co
+base.res_city_co_68229,Curití,682041,base.state_co_21,base.co
+base.res_city_co_20228,Curumaní,203060,base.state_co_09,base.co
+base.res_city_co_5234,Dabeiba,57430,base.state_co_01,base.co
+base.res_city_co_76233,Dagua,760520,base.state_co_24,base.co
+base.res_city_co_44090,Dibulla,446001,base.state_co_14,base.co
+base.res_city_co_44098,Distracción,444001,base.state_co_14,base.co
+base.res_city_co_73236,Dolores,734540,base.state_co_23,base.co
+base.res_city_co_5237,Donmatías,51850,base.state_co_01,base.co
+base.res_city_co_66170,Dosquebradas,661001,base.state_co_20,base.co
+base.res_city_co_15238,Duitama,150461,base.state_co_05,base.co
+base.res_city_co_54239,Durania,544510,base.state_co_18,base.co
+base.res_city_co_5240,Ebéjico,55810,base.state_co_01,base.co
+base.res_city_co_76243,El Águila,762001,base.state_co_24,base.co
+base.res_city_co_5250,El Bagre,52430,base.state_co_01,base.co
+base.res_city_co_47245,El Banco,473040,base.state_co_15,base.co
+base.res_city_co_76246,El Cairo,761501,base.state_co_24,base.co
+base.res_city_co_50245,El Calvario,501041,base.state_co_16,base.co
+base.res_city_co_27135,El Cantón Del San Pablo,272040,base.state_co_12,base.co
+base.res_city_co_54245,El Carmen,547070,base.state_co_18,base.co
+base.res_city_co_27245,El Carmen De Atrato,271010,base.state_co_12,base.co
+base.res_city_co_13244,El Carmen De Bolívar,132050,base.state_co_04,base.co
+base.res_city_co_68235,El Carmen De Chucurí,686561,base.state_co_21,base.co
+base.res_city_co_5148,El Carmen De Viboral,54030,base.state_co_01,base.co
+base.res_city_co_50251,El Castillo,506041,base.state_co_16,base.co
+base.res_city_co_76248,El Cerrito,763520,base.state_co_24,base.co
+base.res_city_co_52250,El Charco,527520,base.state_co_17,base.co
+base.res_city_co_15244,El Cocuy,151280,base.state_co_05,base.co
+base.res_city_co_25245,El Colegio,252630,base.state_co_11,base.co
+base.res_city_co_20238,El Copey,201010,base.state_co_09,base.co
+base.res_city_co_18247,El Doncello,181010,base.state_co_07,base.co
+base.res_city_co_50270,El Dorado,506021,base.state_co_16,base.co
+base.res_city_co_76250,El Dovio,761560,base.state_co_24,base.co
+base.res_city_co_91263,El Encanto,913010,base.state_co_29,base.co
+base.res_city_co_15248,El Espino,151240,base.state_co_05,base.co
+base.res_city_co_68245,El Guacamayo,683061,base.state_co_21,base.co
+base.res_city_co_13248,El Guamo,132001,base.state_co_04,base.co
+base.res_city_co_27250,El Litoral Del San Juan,275050,base.state_co_12,base.co
+base.res_city_co_44110,El Molino,444050,base.state_co_14,base.co
+base.res_city_co_20250,El Paso,201030,base.state_co_09,base.co
+base.res_city_co_18256,El Paujíl,181030,base.state_co_07,base.co
+base.res_city_co_52254,El Peñol,522080,base.state_co_17,base.co
+base.res_city_co_13268,El Peñón,133550,base.state_co_04,base.co
+base.res_city_co_25258,El Peñón,254020,base.state_co_11,base.co
+base.res_city_co_68250,El Peñón,685021,base.state_co_21,base.co
+base.res_city_co_47258,El Piñón,476001,base.state_co_15,base.co
+base.res_city_co_68255,El Playón,687501,base.state_co_21,base.co
+base.res_city_co_47268,El Retén,478060,base.state_co_15,base.co
+base.res_city_co_95025,El Retorno,951001,base.state_co_31,base.co
+base.res_city_co_70233,El Roble,705050,base.state_co_22,base.co
+base.res_city_co_25260,El Rosal,250210,base.state_co_11,base.co
+base.res_city_co_52256,El Rosario,527030,base.state_co_17,base.co
+base.res_city_co_5697,El Santuario,54450,base.state_co_01,base.co
+base.res_city_co_52258,El Tablón De Gómez,520530,base.state_co_17,base.co
+base.res_city_co_19256,El Tambo,193570,base.state_co_08,base.co
+base.res_city_co_52260,El Tambo,522060,base.state_co_17,base.co
+base.res_city_co_54250,El Tarra,548050,base.state_co_18,base.co
+base.res_city_co_54261,El Zulia,545510,base.state_co_18,base.co
+base.res_city_co_41244,Elías,417001,base.state_co_13,base.co
+base.res_city_co_68264,Encino,682541,base.state_co_21,base.co
+base.res_city_co_68266,Enciso,681561,base.state_co_21,base.co
+base.res_city_co_5264,Entrerríos,51430,base.state_co_01,base.co
+base.res_city_co_5266,Envigado,55420,base.state_co_01,base.co
+base.res_city_co_73268,Espinal,733520,base.state_co_23,base.co
+base.res_city_co_25269,Facatativá,253051,base.state_co_11,base.co
+base.res_city_co_73270,Falan,732001,base.state_co_23,base.co
+base.res_city_co_17272,Filadelfia,171020,base.state_co_06,base.co
+base.res_city_co_63272,Filandia,634001,base.state_co_19,base.co
+base.res_city_co_15272,Firavitoba,152250,base.state_co_05,base.co
+base.res_city_co_73275,Flandes,733510,base.state_co_23,base.co
+base.res_city_co_18001,Florencia,180001,base.state_co_07,base.co
+base.res_city_co_19290,Florencia,195040,base.state_co_08,base.co
+base.res_city_co_15276,Floresta,150601,base.state_co_05,base.co
+base.res_city_co_68271,Florián,684541,base.state_co_21,base.co
+base.res_city_co_76275,Florida,763560,base.state_co_24,base.co
+base.res_city_co_68276,Floridablanca,681001,base.state_co_21,base.co
+base.res_city_co_25279,Fómeque,251640,base.state_co_11,base.co
+base.res_city_co_44279,Fonseca,444010,base.state_co_14,base.co
+base.res_city_co_81300,Fortul,814050,base.state_co_25,base.co
+base.res_city_co_25281,Fosca,251830,base.state_co_11,base.co
+base.res_city_co_52520,Francisco Pizarro,528560,base.state_co_17,base.co
+base.res_city_co_5282,Fredonia,55070,base.state_co_01,base.co
+base.res_city_co_73283,Fresno,731560,base.state_co_23,base.co
+base.res_city_co_5284,Frontino,57450,base.state_co_01,base.co
+base.res_city_co_50287,Fuente de oro,504021,base.state_co_16,base.co
+base.res_city_co_47288,Fundación,472020,base.state_co_15,base.co
+base.res_city_co_52287,Funes,523520,base.state_co_17,base.co
+base.res_city_co_25286,Funza,250020,base.state_co_11,base.co
+base.res_city_co_25288,Fúquene,250620,base.state_co_11,base.co
+base.res_city_co_25290,Fusagasugá,252211,base.state_co_11,base.co
+base.res_city_co_25293,Gachalá,251250,base.state_co_11,base.co
+base.res_city_co_25295,Gachancipá,251020,base.state_co_11,base.co
+base.res_city_co_15293,Gachantivá,154220,base.state_co_05,base.co
+base.res_city_co_25297,Gachetá,251230,base.state_co_11,base.co
+base.res_city_co_68296,Galán,684051,base.state_co_21,base.co
+base.res_city_co_8296,Galapa,82001,base.state_co_02,base.co
+base.res_city_co_70235,Galeras,702050,base.state_co_22,base.co
+base.res_city_co_25299,Gama,251240,base.state_co_11,base.co
+base.res_city_co_20295,Gamarra,205001,base.state_co_09,base.co
+base.res_city_co_68298,Gámbita,683031,base.state_co_21,base.co
+base.res_city_co_15296,Gámeza,152020,base.state_co_05,base.co
+base.res_city_co_15299,Garagoa,152860,base.state_co_05,base.co
+base.res_city_co_41298,Garzón,414020,base.state_co_13,base.co
+base.res_city_co_63302,Génova,632080,base.state_co_19,base.co
+base.res_city_co_41306,Gigante,414001,base.state_co_13,base.co
+base.res_city_co_76306,Ginebra,763510,base.state_co_24,base.co
+base.res_city_co_5306,Giraldo,57040,base.state_co_01,base.co
+base.res_city_co_25307,Girardot,252431,base.state_co_11,base.co
+base.res_city_co_5308,Girardota,51030,base.state_co_01,base.co
+base.res_city_co_68307,Girón,687541,base.state_co_21,base.co
+base.res_city_co_5310,Gómez Plata,51830,base.state_co_01,base.co
+base.res_city_co_20310,González,205030,base.state_co_09,base.co
+base.res_city_co_54313,Gramalote,545050,base.state_co_18,base.co
+base.res_city_co_5313,Granada,54410,base.state_co_01,base.co
+base.res_city_co_25312,Granada,252250,base.state_co_11,base.co
+base.res_city_co_50313,Granada,504001,base.state_co_16,base.co
+base.res_city_co_68318,Guaca,681031,base.state_co_21,base.co
+base.res_city_co_15317,Guacamayas,151220,base.state_co_05,base.co
+base.res_city_co_76318,Guacarí,763501,base.state_co_24,base.co
+base.res_city_co_19300,Guachené,191087,base.state_co_08,base.co
+base.res_city_co_25317,Guachetá,250610,base.state_co_11,base.co
+base.res_city_co_52317,Guachucal,524580,base.state_co_17,base.co
+base.res_city_co_76111,Guadalajara De Buga,763041,base.state_co_24,base.co
+base.res_city_co_5315,Guadalupe,51820,base.state_co_01,base.co
+base.res_city_co_41319,Guadalupe,416040,base.state_co_13,base.co
+base.res_city_co_68320,Guadalupe,683051,base.state_co_21,base.co
+base.res_city_co_25320,Guaduas,253440,base.state_co_11,base.co
+base.res_city_co_52320,Guaitarilla,525501,base.state_co_17,base.co
+base.res_city_co_52323,Gualmatán,524501,base.state_co_17,base.co
+base.res_city_co_47318,Guamal,473020,base.state_co_15,base.co
+base.res_city_co_50318,Guamal,507051,base.state_co_16,base.co
+base.res_city_co_73319,Guamo,733540,base.state_co_23,base.co
+base.res_city_co_19318,Guapí,196001,base.state_co_08,base.co
+base.res_city_co_68322,Guapotá,683011,base.state_co_21,base.co
+base.res_city_co_70265,Guaranda,703070,base.state_co_22,base.co
+base.res_city_co_5318,Guarne,54050,base.state_co_01,base.co
+base.res_city_co_25322,Guasca,251210,base.state_co_11,base.co
+base.res_city_co_5321,Guatapé,53840,base.state_co_01,base.co
+base.res_city_co_25324,Guataquí,252820,base.state_co_11,base.co
+base.res_city_co_25326,Guatavita,251060,base.state_co_11,base.co
+base.res_city_co_15322,Guateque,153050,base.state_co_05,base.co
+base.res_city_co_66318,Guática,664010,base.state_co_20,base.co
+base.res_city_co_68324,Guavatá,684501,base.state_co_21,base.co
+base.res_city_co_25328,Guayabal De Síquima,253210,base.state_co_11,base.co
+base.res_city_co_25335,Guayabetal,251850,base.state_co_11,base.co
+base.res_city_co_15325,Guayatá,153040,base.state_co_05,base.co
+base.res_city_co_68327,Güepsa,685541,base.state_co_21,base.co
+base.res_city_co_15332,Güicán,151440,base.state_co_05,base.co
+base.res_city_co_25339,Gutiérrez,251860,base.state_co_11,base.co
+base.res_city_co_54344,Hacarí,546510,base.state_co_18,base.co
+base.res_city_co_13300,Hatillo De Loba,133040,base.state_co_04,base.co
+base.res_city_co_68344,Hato,683571,base.state_co_21,base.co
+base.res_city_co_85125,Hato Corozal,852010,base.state_co_26,base.co
+base.res_city_co_44378,Hatonuevo,443020,base.state_co_14,base.co
+base.res_city_co_5347,Heliconia,55820,base.state_co_01,base.co
+base.res_city_co_54347,Herrán,542010,base.state_co_18,base.co
+base.res_city_co_73347,Herveo,731540,base.state_co_23,base.co
+base.res_city_co_5353,Hispania,56450,base.state_co_01,base.co
+base.res_city_co_41349,Hobo,413060,base.state_co_13,base.co
+base.res_city_co_73349,Honda,732040,base.state_co_23,base.co
+base.res_city_co_73001,Ibagué,730001,base.state_co_23,base.co
+base.res_city_co_73352,Icononzo,734020,base.state_co_23,base.co
+base.res_city_co_52352,Iles,523060,base.state_co_17,base.co
+base.res_city_co_52354,Imués,523020,base.state_co_17,base.co
+base.res_city_co_94001,Inírida,940001,base.state_co_30,base.co
+base.res_city_co_19355,Inzá,192531,base.state_co_08,base.co
+base.res_city_co_52356,Ipiales,524060,base.state_co_17,base.co
+base.res_city_co_41357,Íquira,412060,base.state_co_13,base.co
+base.res_city_co_41359,Isnos,418040,base.state_co_13,base.co
+base.res_city_co_27361,Istmina,274010,base.state_co_12,base.co
+base.res_city_co_5360,Itagüí,55410,base.state_co_01,base.co
+base.res_city_co_5361,Ituango,52070,base.state_co_01,base.co
+base.res_city_co_15362,Iza,152240,base.state_co_05,base.co
+base.res_city_co_19364,Jambaló,192020,base.state_co_08,base.co
+base.res_city_co_76364,Jamundí,764001,base.state_co_24,base.co
+base.res_city_co_5364,Jardín,56050,base.state_co_01,base.co
+base.res_city_co_15367,Jenesano,153601,base.state_co_05,base.co
+base.res_city_co_5368,Jericó,56010,base.state_co_01,base.co
+base.res_city_co_15368,Jericó,150840,base.state_co_05,base.co
+base.res_city_co_25368,Jerusalén,252810,base.state_co_11,base.co
+base.res_city_co_68368,Jesús María,684551,base.state_co_21,base.co
+base.res_city_co_68370,Jordán,684011,base.state_co_21,base.co
+base.res_city_co_8372,Juan De Acosta,81040,base.state_co_02,base.co
+base.res_city_co_25372,Junín,251220,base.state_co_11,base.co
+base.res_city_co_27372,Juradó,276010,base.state_co_12,base.co
+base.res_city_co_23350,La Apartada,233501,base.state_co_10,base.co
+base.res_city_co_41378,La Argentina (La Plata Vieja),415080,base.state_co_13,base.co
+base.res_city_co_68377,La Belleza,685061,base.state_co_21,base.co
+base.res_city_co_25377,La Calera,251201,base.state_co_11,base.co
+base.res_city_co_15380,La Capilla,153220,base.state_co_05,base.co
+base.res_city_co_5376,La Ceja,55010,base.state_co_01,base.co
+base.res_city_co_66383,La Celia,662030,base.state_co_20,base.co
+base.res_city_co_91405,La Chorrera,914050,base.state_co_29,base.co
+base.res_city_co_52378,La Cruz,521020,base.state_co_17,base.co
+base.res_city_co_76377,La Cumbre,760510,base.state_co_24,base.co
+base.res_city_co_17380,La Dorada,175030,base.state_co_06,base.co
+base.res_city_co_54385,La Esperanza,546050,base.state_co_18,base.co
+base.res_city_co_5380,La Estrella,55460,base.state_co_01,base.co
+base.res_city_co_52381,La Florida,522040,base.state_co_17,base.co
+base.res_city_co_20383,La Gloria,204060,base.state_co_09,base.co
+base.res_city_co_94885,La Guadalupe,942057,base.state_co_30,base.co
+base.res_city_co_20400,La Jagua De Ibirico,203020,base.state_co_09,base.co
+base.res_city_co_44420,La Jagua Del Pilar,445040,base.state_co_14,base.co
+base.res_city_co_52385,La Llanada,526501,base.state_co_17,base.co
+base.res_city_co_50350,La Macarena,505021,base.state_co_16,base.co
+base.res_city_co_17388,La Merced,172060,base.state_co_06,base.co
+base.res_city_co_25386,La Mesa,252601,base.state_co_11,base.co
+base.res_city_co_18410,La Montañita,181050,base.state_co_07,base.co
+base.res_city_co_25394,La Palma,253801,base.state_co_11,base.co
+base.res_city_co_20621,La Paz,202010,base.state_co_09,base.co
+base.res_city_co_68397,La Paz,685511,base.state_co_21,base.co
+base.res_city_co_91407,La Pedrera,917010,base.state_co_29,base.co
+base.res_city_co_25398,La Peña,253640,base.state_co_11,base.co
+base.res_city_co_5390,La Pintada,55060,base.state_co_01,base.co
+base.res_city_co_41396,La Plata,415060,base.state_co_13,base.co
+base.res_city_co_54398,La Playa,546530,base.state_co_18,base.co
+base.res_city_co_99524,La Primavera,992001,base.state_co_33,base.co
+base.res_city_co_85136,La Salina,851010,base.state_co_26,base.co
+base.res_city_co_19392,La Sierra,194001,base.state_co_08,base.co
+base.res_city_co_63401,La Tebaida,633020,base.state_co_19,base.co
+base.res_city_co_52390,La Tola,527540,base.state_co_17,base.co
+base.res_city_co_5400,La Unión,55020,base.state_co_01,base.co
+base.res_city_co_52399,La Unión,521520,base.state_co_17,base.co
+base.res_city_co_70400,La Unión,704050,base.state_co_22,base.co
+base.res_city_co_76400,La Unión,761540,base.state_co_24,base.co
+base.res_city_co_15403,La Uvita,150860,base.state_co_05,base.co
+base.res_city_co_19397,La Vega,194020,base.state_co_08,base.co
+base.res_city_co_25402,La Vega,253610,base.state_co_11,base.co
+base.res_city_co_15401,La Victoria,155001,base.state_co_05,base.co
+base.res_city_co_76403,La Victoria,762510,base.state_co_24,base.co
+base.res_city_co_91430,La Victoria,916017,base.state_co_29,base.co
+base.res_city_co_66400,La Virginia,662001,base.state_co_20,base.co
+base.res_city_co_54377,Labateca,542050,base.state_co_18,base.co
+base.res_city_co_15377,Labranzagrande,151840,base.state_co_05,base.co
+base.res_city_co_68385,Landázuri,686021,base.state_co_21,base.co
+base.res_city_co_68406,Lebrija,687571,base.state_co_21,base.co
+base.res_city_co_52405,Leiva,527060,base.state_co_17,base.co
+base.res_city_co_50400,Lejanías,506061,base.state_co_16,base.co
+base.res_city_co_25407,Lenguazaque,250601,base.state_co_11,base.co
+base.res_city_co_73408,Lérida,731020,base.state_co_23,base.co
+base.res_city_co_91001,Leticia,910001,base.state_co_29,base.co
+base.res_city_co_73411,Líbano,731040,base.state_co_23,base.co
+base.res_city_co_5411,Liborina,51460,base.state_co_01,base.co
+base.res_city_co_52411,Linares,522501,base.state_co_17,base.co
+base.res_city_co_27413,Lloró,271030,base.state_co_12,base.co
+base.res_city_co_19418,López De Micay,196060,base.state_co_08,base.co
+base.res_city_co_23417,Lorica,231020,base.state_co_10,base.co
+base.res_city_co_52418,Los Andes (Sotomayor),526520,base.state_co_17,base.co
+base.res_city_co_23419,Los Córdobas,235020,base.state_co_10,base.co
+base.res_city_co_70418,Los Palmitos,701050,base.state_co_22,base.co
+base.res_city_co_54405,Los Patios,541010,base.state_co_18,base.co
+base.res_city_co_68418,Los Santos,684001,base.state_co_21,base.co
+base.res_city_co_54418,Lourdes,545070,base.state_co_18,base.co
+base.res_city_co_8421,Luruaco,85060,base.state_co_02,base.co
+base.res_city_co_15425,Macanal,152840,base.state_co_05,base.co
+base.res_city_co_68425,Macaravita,681531,base.state_co_21,base.co
+base.res_city_co_5425,Maceo,53460,base.state_co_01,base.co
+base.res_city_co_25426,Machetá,250840,base.state_co_11,base.co
+base.res_city_co_25430,Madrid,250030,base.state_co_11,base.co
+base.res_city_co_13430,Magangué,132511,base.state_co_04,base.co
+base.res_city_co_52427,Magüí,528001,base.state_co_17,base.co
+base.res_city_co_13433,Mahates,131040,base.state_co_04,base.co
+base.res_city_co_44430,Maicao,442001,base.state_co_14,base.co
+base.res_city_co_70429,Majagual,703050,base.state_co_22,base.co
+base.res_city_co_68432,Málaga,682011,base.state_co_21,base.co
+base.res_city_co_8433,Malambo,83020,base.state_co_02,base.co
+base.res_city_co_52435,Mallama,525060,base.state_co_17,base.co
+base.res_city_co_8436,Manatí,85020,base.state_co_02,base.co
+base.res_city_co_44560,Manaure,441001,base.state_co_14,base.co
+base.res_city_co_20443,Manaure Balcón Del Cesar,202001,base.state_co_09,base.co
+base.res_city_co_85139,Maní,854010,base.state_co_26,base.co
+base.res_city_co_17001,Manizales,170001,base.state_co_06,base.co
+base.res_city_co_25436,Manta,250830,base.state_co_11,base.co
+base.res_city_co_17433,Manzanares,173020,base.state_co_06,base.co
+base.res_city_co_50325,Mapiripán,503021,base.state_co_16,base.co
+base.res_city_co_94663,Mapiripana,944057,base.state_co_30,base.co
+base.res_city_co_13440,Margarita,133020,base.state_co_04,base.co
+base.res_city_co_13442,María La Baja,131060,base.state_co_04,base.co
+base.res_city_co_5440,Marinilla,54020,base.state_co_01,base.co
+base.res_city_co_15442,Maripí,154820,base.state_co_05,base.co
+base.res_city_co_17442,Marmato,178001,base.state_co_06,base.co
+base.res_city_co_17444,Marquetalia,173040,base.state_co_06,base.co
+base.res_city_co_66440,Marsella,661040,base.state_co_20,base.co
+base.res_city_co_17446,Marulanda,173001,base.state_co_06,base.co
+base.res_city_co_68444,Matanza,680561,base.state_co_21,base.co
+base.res_city_co_5001,Medellín,50001,base.state_co_01,base.co
+base.res_city_co_25438,Medina,251420,base.state_co_11,base.co
+base.res_city_co_27425,Medio Atrato,270070,base.state_co_12,base.co
+base.res_city_co_27430,Medio Baudó,275010,base.state_co_12,base.co
+base.res_city_co_27450,Medio San Juan,274030,base.state_co_12,base.co
+base.res_city_co_73449,Melgar,734001,base.state_co_23,base.co
+base.res_city_co_19450,Mercaderes,195060,base.state_co_08,base.co
+base.res_city_co_50330,Mesetas,505001,base.state_co_16,base.co
+base.res_city_co_18460,Milán,185030,base.state_co_07,base.co
+base.res_city_co_15455,Miraflores,152660,base.state_co_05,base.co
+base.res_city_co_95200,Miraflores,952001,base.state_co_31,base.co
+base.res_city_co_19455,Miranda,191520,base.state_co_08,base.co
+base.res_city_co_91460,Mirití - Paraná,916057,base.state_co_29,base.co
+base.res_city_co_66456,Mistrató,664020,base.state_co_20,base.co
+base.res_city_co_97001,Mitú,970001,base.state_co_32,base.co
+base.res_city_co_86001,Mocoa,860001,base.state_co_27,base.co
+base.res_city_co_68464,Mogotes,682501,base.state_co_21,base.co
+base.res_city_co_68468,Molagavita,682031,base.state_co_21,base.co
+base.res_city_co_23464,Momil,232001,base.state_co_10,base.co
+base.res_city_co_13468,Mompós,132560,base.state_co_04,base.co
+base.res_city_co_15464,Mongua,152001,base.state_co_05,base.co
+base.res_city_co_15466,Monguí,152201,base.state_co_05,base.co
+base.res_city_co_15469,Moniquirá,154260,base.state_co_05,base.co
+base.res_city_co_5467,Montebello,55040,base.state_co_01,base.co
+base.res_city_co_13458,Montecristo,134070,base.state_co_04,base.co
+base.res_city_co_23466,Montelíbano,234001,base.state_co_10,base.co
+base.res_city_co_63470,Montenegro,633001,base.state_co_19,base.co
+base.res_city_co_23001,Montería,230001,base.state_co_10,base.co
+base.res_city_co_85162,Monterrey,855010,base.state_co_26,base.co
+base.res_city_co_23500,Moñitos,231001,base.state_co_10,base.co
+base.res_city_co_13473,Morales,134540,base.state_co_04,base.co
+base.res_city_co_19473,Morales,190550,base.state_co_08,base.co
+base.res_city_co_18479,Morelia,185010,base.state_co_07,base.co
+base.res_city_co_94888,Morichal,943057,base.state_co_30,base.co
+base.res_city_co_70473,Morroa,701070,base.state_co_22,base.co
+base.res_city_co_25473,Mosquera,250040,base.state_co_11,base.co
+base.res_city_co_52473,Mosquera,527580,base.state_co_17,base.co
+base.res_city_co_15476,Motavita,154080,base.state_co_05,base.co
+base.res_city_co_73461,Murillo,731060,base.state_co_23,base.co
+base.res_city_co_5475,Murindó,56810,base.state_co_01,base.co
+base.res_city_co_5480,Mutatá,57420,base.state_co_01,base.co
+base.res_city_co_54480,Mutiscua,544070,base.state_co_18,base.co
+base.res_city_co_15480,Muzo,154880,base.state_co_05,base.co
+base.res_city_co_5483,Nariño,54840,base.state_co_01,base.co
+base.res_city_co_25483,Nariño,252830,base.state_co_11,base.co
+base.res_city_co_52480,Nariño,522020,base.state_co_17,base.co
+base.res_city_co_41483,Nátaga,415020,base.state_co_13,base.co
+base.res_city_co_73483,Natagaima,735001,base.state_co_23,base.co
+base.res_city_co_5495,Nechí,52420,base.state_co_01,base.co
+base.res_city_co_5490,Necoclí,57870,base.state_co_01,base.co
+base.res_city_co_17486,Neira,171001,base.state_co_06,base.co
+base.res_city_co_41001,Neiva,410001,base.state_co_13,base.co
+base.res_city_co_25486,Nemocón,251030,base.state_co_11,base.co
+base.res_city_co_25488,Nilo,252401,base.state_co_11,base.co
+base.res_city_co_25489,Nimaima,253630,base.state_co_11,base.co
+base.res_city_co_15491,Nobsa,152280,base.state_co_05,base.co
+base.res_city_co_25491,Nocaima,253620,base.state_co_11,base.co
+base.res_city_co_17495,Norcasia,175001,base.state_co_06,base.co
+base.res_city_co_13490,Norosí,134510,base.state_co_04,base.co
+base.res_city_co_27491,Nóvita,273050,base.state_co_12,base.co
+base.res_city_co_47460,Nueva Granada,475020,base.state_co_15,base.co
+base.res_city_co_15494,Nuevo Colón,153620,base.state_co_05,base.co
+base.res_city_co_85225,Nunchía,851070,base.state_co_26,base.co
+base.res_city_co_27495,Nuquí,276050,base.state_co_12,base.co
+base.res_city_co_76497,Obando,762501,base.state_co_24,base.co
+base.res_city_co_68498,Ocamonte,682561,base.state_co_21,base.co
+base.res_city_co_54498,Ocaña,546551,base.state_co_18,base.co
+base.res_city_co_68500,Oiba,683019,base.state_co_21,base.co
+base.res_city_co_15500,Oicatá,150220,base.state_co_05,base.co
+base.res_city_co_5501,Olaya,51450,base.state_co_01,base.co
+base.res_city_co_52490,Olaya Herrera,527560,base.state_co_17,base.co
+base.res_city_co_68502,Onzaga,682519,base.state_co_21,base.co
+base.res_city_co_41503,Oporapa,418001,base.state_co_13,base.co
+base.res_city_co_86320,Orito,862001,base.state_co_27,base.co
+base.res_city_co_85230,Orocué,853050,base.state_co_26,base.co
+base.res_city_co_73504,Ortega,735501,base.state_co_23,base.co
+base.res_city_co_52506,Ospina,523040,base.state_co_17,base.co
+base.res_city_co_15507,Otanche,155060,base.state_co_05,base.co
+base.res_city_co_70508,Ovejas,701030,base.state_co_22,base.co
+base.res_city_co_15511,Pachavita,153210,base.state_co_05,base.co
+base.res_city_co_25513,Pacho,254001,base.state_co_11,base.co
+base.res_city_co_97511,Pacoa,972007,base.state_co_32,base.co
+base.res_city_co_17513,Pácora,172040,base.state_co_06,base.co
+base.res_city_co_19513,Padilla,191540,base.state_co_08,base.co
+base.res_city_co_15514,Páez,152620,base.state_co_05,base.co
+base.res_city_co_19517,Páez,192501,base.state_co_08,base.co
+base.res_city_co_41518,Paicol,415040,base.state_co_13,base.co
+base.res_city_co_20517,Pailitas,204001,base.state_co_09,base.co
+base.res_city_co_25518,Paime,254040,base.state_co_11,base.co
+base.res_city_co_15516,Paipa,150440,base.state_co_05,base.co
+base.res_city_co_15518,Pajarito,152401,base.state_co_05,base.co
+base.res_city_co_41524,Palermo,412001,base.state_co_13,base.co
+base.res_city_co_17524,Palestina,176040,base.state_co_06,base.co
+base.res_city_co_41530,Palestina,417060,base.state_co_13,base.co
+base.res_city_co_68522,Palmar,683581,base.state_co_21,base.co
+base.res_city_co_8520,Palmar De Varela,83080,base.state_co_02,base.co
+base.res_city_co_68524,Palmas Del Socorro,683541,base.state_co_21,base.co
+base.res_city_co_76520,Palmira,763531,base.state_co_24,base.co
+base.res_city_co_70523,Palmito,706030,base.state_co_22,base.co
+base.res_city_co_73520,Palocabildo,731580,base.state_co_23,base.co
+base.res_city_co_54518,Pamplona,543050,base.state_co_18,base.co
+base.res_city_co_54520,Pamplonita,543030,base.state_co_18,base.co
+base.res_city_co_94887,Pana Pana,943017,base.state_co_30,base.co
+base.res_city_co_25524,Pandi,252010,base.state_co_11,base.co
+base.res_city_co_15522,Panqueba,151260,base.state_co_05,base.co
+base.res_city_co_97777,Papunaua,973047,base.state_co_32,base.co
+base.res_city_co_68533,Páramo,683521,base.state_co_21,base.co
+base.res_city_co_25530,Paratebueno,251401,base.state_co_11,base.co
+base.res_city_co_25535,Pasca,252201,base.state_co_11,base.co
+base.res_city_co_52001,Pasto,520001,base.state_co_17,base.co
+base.res_city_co_19532,Patía,195501,base.state_co_08,base.co
+base.res_city_co_15531,Pauna,154801,base.state_co_05,base.co
+base.res_city_co_15533,Paya,151820,base.state_co_05,base.co
+base.res_city_co_85250,Paz De Ariporo,852030,base.state_co_26,base.co
+base.res_city_co_15537,Paz De Río,150680,base.state_co_05,base.co
+base.res_city_co_47541,Pedraza,476040,base.state_co_15,base.co
+base.res_city_co_20550,Pelaya,204040,base.state_co_09,base.co
+base.res_city_co_17541,Pensilvania,173060,base.state_co_06,base.co
+base.res_city_co_5541,Peñol,53850,base.state_co_01,base.co
+base.res_city_co_5543,Peque,57010,base.state_co_01,base.co
+base.res_city_co_66001,Pereira,660001,base.state_co_20,base.co
+base.res_city_co_15542,Pesca,152460,base.state_co_05,base.co
+base.res_city_co_19533,Piamonte,194550,base.state_co_08,base.co
+base.res_city_co_68547,Piedecuesta,681011,base.state_co_21,base.co
+base.res_city_co_73547,Piedras,730501,base.state_co_23,base.co
+base.res_city_co_19548,Piendamó,190530,base.state_co_08,base.co
+base.res_city_co_63548,Pijao,632060,base.state_co_19,base.co
+base.res_city_co_47545,Pijiño Del Carmen,474040,base.state_co_15,base.co
+base.res_city_co_68549,Pinchote,683511,base.state_co_21,base.co
+base.res_city_co_13549,Pinillos,134001,base.state_co_04,base.co
+base.res_city_co_8549,Piojó,81060,base.state_co_02,base.co
+base.res_city_co_15550,Pisba,151801,base.state_co_05,base.co
+base.res_city_co_41548,Pital,414060,base.state_co_13,base.co
+base.res_city_co_41551,Pitalito,417030,base.state_co_13,base.co
+base.res_city_co_47551,Pivijay,477050,base.state_co_15,base.co
+base.res_city_co_73555,Planadas,735070,base.state_co_23,base.co
+base.res_city_co_23555,Planeta Rica,233040,base.state_co_10,base.co
+base.res_city_co_47555,Plato,475030,base.state_co_15,base.co
+base.res_city_co_52540,Policarpa,527001,base.state_co_17,base.co
+base.res_city_co_8558,Polonuevo,82040,base.state_co_02,base.co
+base.res_city_co_8560,Ponedera,84001,base.state_co_02,base.co
+base.res_city_co_19001,Popayán,190001,base.state_co_08,base.co
+base.res_city_co_85263,Pore,852050,base.state_co_26,base.co
+base.res_city_co_52560,Potosí,524030,base.state_co_17,base.co
+base.res_city_co_76563,Pradera,763550,base.state_co_24,base.co
+base.res_city_co_73563,Prado,734520,base.state_co_23,base.co
+base.res_city_co_52565,Providencia,526020,base.state_co_17,base.co
+base.res_city_co_88564,Providencia,880020,base.state_co_28,base.co
+base.res_city_co_20570,Pueblo Bello,201001,base.state_co_09,base.co
+base.res_city_co_23570,Pueblo Nuevo,233001,base.state_co_10,base.co
+base.res_city_co_66572,Pueblo Rico,663011,base.state_co_20,base.co
+base.res_city_co_5576,Pueblorrico,56440,base.state_co_01,base.co
+base.res_city_co_47570,Puebloviejo,478040,base.state_co_15,base.co
+base.res_city_co_68572,Puente Nacional,684521,base.state_co_21,base.co
+base.res_city_co_52573,Puerres,523540,base.state_co_17,base.co
+base.res_city_co_91530,Puerto Alegría,913050,base.state_co_29,base.co
+base.res_city_co_91536,Puerto Arica,912010,base.state_co_29,base.co
+base.res_city_co_86568,Puerto Asís,862060,base.state_co_27,base.co
+base.res_city_co_5579,Puerto Berrío,53420,base.state_co_01,base.co
+base.res_city_co_15572,Puerto Boyacá,155201,base.state_co_05,base.co
+base.res_city_co_86569,Puerto Caicedo,862080,base.state_co_27,base.co
+base.res_city_co_99001,Puerto Carreño,990001,base.state_co_33,base.co
+base.res_city_co_8573,Puerto Colombia,81001,base.state_co_02,base.co
+base.res_city_co_94884,Puerto Colombia,941037,base.state_co_30,base.co
+base.res_city_co_50450,Puerto Concordia,503041,base.state_co_16,base.co
+base.res_city_co_23574,Puerto Escondido,235001,base.state_co_10,base.co
+base.res_city_co_50568,Puerto Gaitán,502041,base.state_co_16,base.co
+base.res_city_co_86571,Puerto Guzmán,863001,base.state_co_27,base.co
+base.res_city_co_86573,Puerto Leguízamo,864001,base.state_co_27,base.co
+base.res_city_co_23580,Puerto Libertador,234030,base.state_co_10,base.co
+base.res_city_co_50577,Puerto Lleras,503001,base.state_co_16,base.co
+base.res_city_co_50573,Puerto López,502001,base.state_co_16,base.co
+base.res_city_co_5585,Puerto Nare,53430,base.state_co_01,base.co
+base.res_city_co_91540,Puerto Nariño,911010,base.state_co_29,base.co
+base.res_city_co_68573,Puerto Parra,686001,base.state_co_21,base.co
+base.res_city_co_18592,Puerto Rico,182050,base.state_co_07,base.co
+base.res_city_co_50590,Puerto Rico,503061,base.state_co_16,base.co
+base.res_city_co_81591,Puerto Rondón,813010,base.state_co_25,base.co
+base.res_city_co_25572,Puerto Salgar,253480,base.state_co_11,base.co
+base.res_city_co_54553,Puerto Santander,548030,base.state_co_18,base.co
+base.res_city_co_91669,Puerto Santander,915010,base.state_co_29,base.co
+base.res_city_co_19573,Puerto Tejada,191501,base.state_co_08,base.co
+base.res_city_co_5591,Puerto Triunfo,53440,base.state_co_01,base.co
+base.res_city_co_68575,Puerto Wilches,687061,base.state_co_21,base.co
+base.res_city_co_25580,Pulí,252801,base.state_co_11,base.co
+base.res_city_co_52585,Pupiales,524520,base.state_co_17,base.co
+base.res_city_co_19585,Puracé,193001,base.state_co_08,base.co
+base.res_city_co_73585,Purificación,734501,base.state_co_23,base.co
+base.res_city_co_23586,Purísima De La Concepción,231540,base.state_co_10,base.co
+base.res_city_co_25592,Quebradanegra,253420,base.state_co_11,base.co
+base.res_city_co_25594,Quetame,251840,base.state_co_11,base.co
+base.res_city_co_27001,Quibdó,270001,base.state_co_12,base.co
+base.res_city_co_63594,Quimbaya,634020,base.state_co_19,base.co
+base.res_city_co_66594,Quinchía,664001,base.state_co_20,base.co
+base.res_city_co_15580,Quípama,155020,base.state_co_05,base.co
+base.res_city_co_25596,Quipile,253030,base.state_co_11,base.co
+base.res_city_co_54599,Ragonvalia,541050,base.state_co_18,base.co
+base.res_city_co_15599,Ramiriquí,153401,base.state_co_05,base.co
+base.res_city_co_15600,Ráquira,153801,base.state_co_05,base.co
+base.res_city_co_85279,Recetor,856050,base.state_co_26,base.co
+base.res_city_co_13580,Regidor,133560,base.state_co_04,base.co
+base.res_city_co_5604,Remedios,52820,base.state_co_01,base.co
+base.res_city_co_47605,Remolino,477020,base.state_co_15,base.co
+base.res_city_co_8606,Repelón,85040,base.state_co_02,base.co
+base.res_city_co_50606,Restrepo,501031,base.state_co_16,base.co
+base.res_city_co_76606,Restrepo,760540,base.state_co_24,base.co
+base.res_city_co_5607,Retiro,55430,base.state_co_01,base.co
+base.res_city_co_25612,Ricaurte,252410,base.state_co_11,base.co
+base.res_city_co_52612,Ricaurte,525030,base.state_co_17,base.co
+base.res_city_co_20614,Río De Oro,205040,base.state_co_09,base.co
+base.res_city_co_27580,Río Iró,273010,base.state_co_12,base.co
+base.res_city_co_27600,Río Quito,272050,base.state_co_12,base.co
+base.res_city_co_13600,Río Viejo,134501,base.state_co_04,base.co
+base.res_city_co_73616,Rioblanco,735580,base.state_co_23,base.co
+base.res_city_co_76616,Riofrío,761030,base.state_co_24,base.co
+base.res_city_co_44001,Riohacha,440001,base.state_co_14,base.co
+base.res_city_co_5615,Rionegro,54040,base.state_co_01,base.co
+base.res_city_co_68615,Rionegro,687511,base.state_co_21,base.co
+base.res_city_co_17614,Riosucio,178040,base.state_co_06,base.co
+base.res_city_co_27615,Riosucio,277010,base.state_co_12,base.co
+base.res_city_co_17616,Risaralda,177060,base.state_co_06,base.co
+base.res_city_co_41615,Rivera,413001,base.state_co_13,base.co
+base.res_city_co_52621,Roberto Payán,528030,base.state_co_17,base.co
+base.res_city_co_76622,Roldanillo,761550,base.state_co_24,base.co
+base.res_city_co_73622,Roncesvalles,735550,base.state_co_23,base.co
+base.res_city_co_15621,Rondón,153420,base.state_co_05,base.co
+base.res_city_co_19622,Rosas,193550,base.state_co_08,base.co
+base.res_city_co_73624,Rovira,733040,base.state_co_23,base.co
+base.res_city_co_68655,Sabana De Torres,687001,base.state_co_21,base.co
+base.res_city_co_8634,Sabanagrande,83040,base.state_co_02,base.co
+base.res_city_co_5628,Sabanalarga,57020,base.state_co_01,base.co
+base.res_city_co_8638,Sabanalarga,85001,base.state_co_02,base.co
+base.res_city_co_85300,Sabanalarga,855050,base.state_co_26,base.co
+base.res_city_co_47660,Sabanas De San Ángel,475001,base.state_co_15,base.co
+base.res_city_co_5631,Sabaneta,55450,base.state_co_01,base.co
+base.res_city_co_15632,Saboyá,154601,base.state_co_05,base.co
+base.res_city_co_85315,Sácama,851030,base.state_co_26,base.co
+base.res_city_co_15638,Sáchica,153880,base.state_co_05,base.co
+base.res_city_co_23660,Sahagún,232540,base.state_co_10,base.co
+base.res_city_co_41660,Saladoblanco,418020,base.state_co_13,base.co
+base.res_city_co_17653,Salamina,172001,base.state_co_06,base.co
+base.res_city_co_47675,Salamina,477040,base.state_co_15,base.co
+base.res_city_co_54660,Salazar,544570,base.state_co_18,base.co
+base.res_city_co_73671,Saldaña,733570,base.state_co_23,base.co
+base.res_city_co_63690,Salento,631020,base.state_co_19,base.co
+base.res_city_co_5642,Salgar,56470,base.state_co_01,base.co
+base.res_city_co_15646,Samacá,153660,base.state_co_05,base.co
+base.res_city_co_17662,Samaná,174001,base.state_co_06,base.co
+base.res_city_co_52678,Samaniego,526040,base.state_co_17,base.co
+base.res_city_co_70670,Sampués,705070,base.state_co_22,base.co
+base.res_city_co_41668,San Agustín,418060,base.state_co_13,base.co
+base.res_city_co_20710,San Alberto,205070,base.state_co_09,base.co
+base.res_city_co_68669,San Andrés,682001,base.state_co_21,base.co
+base.res_city_co_88001,San Andrés,880001,base.state_co_28,base.co
+base.res_city_co_5647,San Andrés De Cuerquía,52040,base.state_co_01,base.co
+base.res_city_co_23670,San Andrés De Sotavento,232030,base.state_co_10,base.co
+base.res_city_co_52835,San Andrés De Tumaco,528501,base.state_co_17,base.co
+base.res_city_co_23672,San Antero,231520,base.state_co_10,base.co
+base.res_city_co_73675,San Antonio,735530,base.state_co_23,base.co
+base.res_city_co_25645,San Antonio Del Tequendama,252620,base.state_co_11,base.co
+base.res_city_co_68673,San Benito,685531,base.state_co_21,base.co
+base.res_city_co_70678,San Benito Abad,703010,base.state_co_22,base.co
+base.res_city_co_25649,San Bernardo,252020,base.state_co_11,base.co
+base.res_city_co_52685,San Bernardo,521001,base.state_co_17,base.co
+base.res_city_co_23675,San Bernardo Del Viento,231501,base.state_co_10,base.co
+base.res_city_co_54670,San Calixto,547010,base.state_co_18,base.co
+base.res_city_co_5649,San Carlos,54420,base.state_co_01,base.co
+base.res_city_co_23678,San Carlos,232501,base.state_co_10,base.co
+base.res_city_co_50680,San Carlos De Guaroa,507011,base.state_co_16,base.co
+base.res_city_co_25653,San Cayetano,254050,base.state_co_11,base.co
+base.res_city_co_54673,San Cayetano,545010,base.state_co_18,base.co
+base.res_city_co_13620,San Cristóbal,131520,base.state_co_04,base.co
+base.res_city_co_20750,San Diego,202030,base.state_co_09,base.co
+base.res_city_co_15660,San Eduardo,152601,base.state_co_05,base.co
+base.res_city_co_13647,San Estanislao,130540,base.state_co_04,base.co
+base.res_city_co_94883,San Felipe,942010,base.state_co_30,base.co
+base.res_city_co_13650,San Fernando,133001,base.state_co_04,base.co
+base.res_city_co_5652,San Francisco,54810,base.state_co_01,base.co
+base.res_city_co_25658,San Francisco,253601,base.state_co_11,base.co
+base.res_city_co_86755,San Francisco,861001,base.state_co_27,base.co
+base.res_city_co_68679,San Gil,684031,base.state_co_21,base.co
+base.res_city_co_13654,San Jacinto,132030,base.state_co_04,base.co
+base.res_city_co_13655,San Jacinto Del Cauca,134060,base.state_co_04,base.co
+base.res_city_co_5656,San Jerónimo,51070,base.state_co_01,base.co
+base.res_city_co_68682,San Joaquín,682511,base.state_co_21,base.co
+base.res_city_co_17665,San José,177040,base.state_co_06,base.co
+base.res_city_co_5658,San José De La Montaña,51410,base.state_co_01,base.co
+base.res_city_co_68684,San José De Miranda,682021,base.state_co_21,base.co
+base.res_city_co_15664,San José De Pare,154460,base.state_co_05,base.co
+base.res_city_co_23682,San José De Uré,234010,base.state_co_10,base.co
+base.res_city_co_18610,San José Del Fragua,186070,base.state_co_07,base.co
+base.res_city_co_95001,San José Del Guaviare,950001,base.state_co_31,base.co
+base.res_city_co_27660,San José Del Palmar,273070,base.state_co_12,base.co
+base.res_city_co_50683,San Juan De Arama,504041,base.state_co_16,base.co
+base.res_city_co_70702,San Juan De Betulia,705010,base.state_co_22,base.co
+base.res_city_co_25662,San Juan De Rioseco,253250,base.state_co_11,base.co
+base.res_city_co_5659,San Juan De Urabá,57810,base.state_co_01,base.co
+base.res_city_co_44650,San Juan Del Cesar,444030,base.state_co_14,base.co
+base.res_city_co_13657,San Juan Nepomuceno,132010,base.state_co_04,base.co
+base.res_city_co_50686,San Juanito,501051,base.state_co_16,base.co
+base.res_city_co_52687,San Lorenzo,521540,base.state_co_17,base.co
+base.res_city_co_5660,San Luis,54430,base.state_co_01,base.co
+base.res_city_co_73678,San Luis,733001,base.state_co_23,base.co
+base.res_city_co_15667,San Luis De Gaceno,152801,base.state_co_05,base.co
+base.res_city_co_85325,San Luis De Palenque,853030,base.state_co_26,base.co
+base.res_city_co_70742,San Luis De Sincé,702070,base.state_co_22,base.co
+base.res_city_co_70708,San Marcos,704030,base.state_co_22,base.co
+base.res_city_co_20770,San Martín,205050,base.state_co_09,base.co
+base.res_city_co_13667,San Martín De Loba,133530,base.state_co_04,base.co
+base.res_city_co_50689,San Martín,507021,base.state_co_16,base.co
+base.res_city_co_15673,San Mateo,151201,base.state_co_05,base.co
+base.res_city_co_68686,San Miguel,681551,base.state_co_21,base.co
+base.res_city_co_86757,San Miguel,862040,base.state_co_27,base.co
+base.res_city_co_15676,San Miguel De Sema,153820,base.state_co_05,base.co
+base.res_city_co_70713,San Onofre,707010,base.state_co_22,base.co
+base.res_city_co_52693,San Pablo,521040,base.state_co_17,base.co
+base.res_city_co_15681,San Pablo De Borbur,155040,base.state_co_05,base.co
+base.res_city_co_13670,San Pablo,135040,base.state_co_04,base.co
+base.res_city_co_70717,San Pedro,702010,base.state_co_22,base.co
+base.res_city_co_76670,San Pedro,763030,base.state_co_24,base.co
+base.res_city_co_52694,San Pedro De Cartago,521501,base.state_co_17,base.co
+base.res_city_co_5664,San Pedro De Los Milagros,51010,base.state_co_01,base.co
+base.res_city_co_5665,San Pedro De Urabá,57830,base.state_co_01,base.co
+base.res_city_co_23686,San Pelayo,230520,base.state_co_10,base.co
+base.res_city_co_5667,San Rafael,53830,base.state_co_01,base.co
+base.res_city_co_5670,San Roque,53030,base.state_co_01,base.co
+base.res_city_co_19693,San Sebastián,194501,base.state_co_08,base.co
+base.res_city_co_47692,San Sebastián De Buenavista,473001,base.state_co_15,base.co
+base.res_city_co_73443,San Sebastián De Mariquita,732020,base.state_co_23,base.co
+base.res_city_co_68689,San Vicente De Chucurí,686531,base.state_co_21,base.co
+base.res_city_co_18753,San Vicente Del Caguán,182010,base.state_co_07,base.co
+base.res_city_co_5674,San Vicente Ferrer,54010,base.state_co_01,base.co
+base.res_city_co_47703,San Zenón,474060,base.state_co_15,base.co
+base.res_city_co_52683,Sandoná,522520,base.state_co_17,base.co
+base.res_city_co_47707,Santa Ana,474020,base.state_co_15,base.co
+base.res_city_co_5679,Santa Bárbara,55050,base.state_co_01,base.co
+base.res_city_co_52696,Santa Bárbara,527501,base.state_co_17,base.co
+base.res_city_co_68705,Santa Bárbara,681021,base.state_co_21,base.co
+base.res_city_co_47720,Santa Bárbara De Pinto,474001,base.state_co_15,base.co
+base.res_city_co_13673,Santa Catalina,130501,base.state_co_04,base.co
+base.res_city_co_5042,Santa Fé De Antioquia,57050,base.state_co_01,base.co
+base.res_city_co_68720,Santa Helena Del Opón,685501,base.state_co_21,base.co
+base.res_city_co_73686,Santa Isabel,730560,base.state_co_23,base.co
+base.res_city_co_8675,Santa Lucía,84080,base.state_co_02,base.co
+base.res_city_co_15690,Santa María,152820,base.state_co_05,base.co
+base.res_city_co_41676,Santa María,412020,base.state_co_13,base.co
+base.res_city_co_47001,Santa Marta,470001,base.state_co_15,base.co
+base.res_city_co_19701,Santa Rosa,194520,base.state_co_08,base.co
+base.res_city_co_66682,Santa Rosa De Cabal,661020,base.state_co_20,base.co
+base.res_city_co_13683,Santa Rosa,130520,base.state_co_04,base.co
+base.res_city_co_5686,Santa Rosa De Osos,51860,base.state_co_01,base.co
+base.res_city_co_15693,Santa Rosa De Viterbo,150480,base.state_co_05,base.co
+base.res_city_co_13688,Santa Rosa Del Sur,135001,base.state_co_04,base.co
+base.res_city_co_99624,Santa Rosalía,992050,base.state_co_33,base.co
+base.res_city_co_15696,Santa Sofía,154240,base.state_co_05,base.co
+base.res_city_co_52699,Santacruz,525570,base.state_co_17,base.co
+base.res_city_co_15686,Santana,154440,base.state_co_05,base.co
+base.res_city_co_19698,Santander De Quilichao,191030,base.state_co_08,base.co
+base.res_city_co_54680,Santiago,545030,base.state_co_18,base.co
+base.res_city_co_86760,Santiago,861060,base.state_co_27,base.co
+base.res_city_co_70820,Santiago De Tolú,706010,base.state_co_22,base.co
+base.res_city_co_5690,Santo Domingo,53040,base.state_co_01,base.co
+base.res_city_co_54743,Silos,544050,base.state_co_18,base.co
+base.res_city_co_8685,Santo Tomás,83060,base.state_co_02,base.co
+base.res_city_co_66687,Santuario,663001,base.state_co_20,base.co
+base.res_city_co_52720,Sapuyes,525550,base.state_co_17,base.co
+base.res_city_co_81736,Saravena,815010,base.state_co_25,base.co
+base.res_city_co_54720,Sardinata,545530,base.state_co_18,base.co
+base.res_city_co_25718,Sasaima,253401,base.state_co_11,base.co
+base.res_city_co_15720,Sativanorte,150820,base.state_co_05,base.co
+base.res_city_co_15723,Sativasur,150801,base.state_co_05,base.co
+base.res_city_co_5736,Segovia,52810,base.state_co_01,base.co
+base.res_city_co_25736,Sesquilé,251050,base.state_co_11,base.co
+base.res_city_co_76736,Sevilla,762530,base.state_co_24,base.co
+base.res_city_co_15740,Siachoque,153460,base.state_co_05,base.co
+base.res_city_co_25740,Sibaté,250070,base.state_co_11,base.co
+base.res_city_co_86749,Sibundoy,861020,base.state_co_27,base.co
+base.res_city_co_25743,Silvania,252240,base.state_co_11,base.co
+base.res_city_co_19743,Silvia,192070,base.state_co_08,base.co
+base.res_city_co_68745,Simacota,683561,base.state_co_21,base.co
+base.res_city_co_25745,Simijaca,250640,base.state_co_11,base.co
+base.res_city_co_13744,Simití,135020,base.state_co_04,base.co
+base.res_city_co_70001,Sincelejo,700001,base.state_co_22,base.co
+base.res_city_co_27745,Sipí,274050,base.state_co_12,base.co
+base.res_city_co_47745,Sitionuevo,477001,base.state_co_15,base.co
+base.res_city_co_25754,Soacha,250051,base.state_co_11,base.co
+base.res_city_co_15753,Soatá,151001,base.state_co_05,base.co
+base.res_city_co_15757,Socha,151640,base.state_co_05,base.co
+base.res_city_co_68755,Socorro,683551,base.state_co_21,base.co
+base.res_city_co_15755,Socotá,151620,base.state_co_05,base.co
+base.res_city_co_15759,Sogamoso,152210,base.state_co_05,base.co
+base.res_city_co_18756,Solano,184010,base.state_co_07,base.co
+base.res_city_co_8758,Soledad,83001,base.state_co_02,base.co
+base.res_city_co_18785,Solita,185070,base.state_co_07,base.co
+base.res_city_co_15761,Somondoco,153030,base.state_co_05,base.co
+base.res_city_co_5756,Sonsón,54820,base.state_co_01,base.co
+base.res_city_co_5761,Sopetrán,51440,base.state_co_01,base.co
+base.res_city_co_13760,Soplaviento,131501,base.state_co_04,base.co
+base.res_city_co_25758,Sopó,251001,base.state_co_11,base.co
+base.res_city_co_15762,Sora,154040,base.state_co_05,base.co
+base.res_city_co_15764,Soracá,153480,base.state_co_05,base.co
+base.res_city_co_15763,Sotaquirá,150420,base.state_co_05,base.co
+base.res_city_co_19760,Sotara,193501,base.state_co_08,base.co
+base.res_city_co_68770,Suaita,683041,base.state_co_21,base.co
+base.res_city_co_8770,Suan,84060,base.state_co_02,base.co
+base.res_city_co_19780,Suárez,190580,base.state_co_08,base.co
+base.res_city_co_73770,Suárez,733580,base.state_co_23,base.co
+base.res_city_co_41770,Suaza,416080,base.state_co_13,base.co
+base.res_city_co_25769,Subachoque,250220,base.state_co_11,base.co
+base.res_city_co_19785,Sucre,194060,base.state_co_08,base.co
+base.res_city_co_68773,Sucre,685041,base.state_co_21,base.co
+base.res_city_co_70771,Sucre,703030,base.state_co_22,base.co
+base.res_city_co_25772,Suesca,251040,base.state_co_11,base.co
+base.res_city_co_25777,Supatá,253660,base.state_co_11,base.co
+base.res_city_co_17777,Supía,178020,base.state_co_06,base.co
+base.res_city_co_68780,Suratá,680501,base.state_co_21,base.co
+base.res_city_co_25779,Susa,250630,base.state_co_11,base.co
+base.res_city_co_15774,Susacón,150880,base.state_co_05,base.co
+base.res_city_co_15776,Sutamarchán,153860,base.state_co_05,base.co
+base.res_city_co_25781,Sutatausa,250440,base.state_co_11,base.co
+base.res_city_co_15778,Sutatenza,153060,base.state_co_05,base.co
+base.res_city_co_25785,Tabio,250230,base.state_co_11,base.co
+base.res_city_co_27787,Tadó,271070,base.state_co_12,base.co
+base.res_city_co_13780,Talaigua Nuevo,132540,base.state_co_04,base.co
+base.res_city_co_20787,Tamalameque,204020,base.state_co_09,base.co
+base.res_city_co_85400,Támara,851050,base.state_co_26,base.co
+base.res_city_co_81794,Tame,814010,base.state_co_25,base.co
+base.res_city_co_5789,Támesis,56020,base.state_co_01,base.co
+base.res_city_co_52786,Taminango,521560,base.state_co_17,base.co
+base.res_city_co_52788,Tangua,523501,base.state_co_17,base.co
+base.res_city_co_97666,Taraira,972040,base.state_co_32,base.co
+base.res_city_co_91798,Tarapacá,911030,base.state_co_29,base.co
+base.res_city_co_5790,Tarazá,52460,base.state_co_01,base.co
+base.res_city_co_41791,Tarqui,416001,base.state_co_13,base.co
+base.res_city_co_5792,Tarso,56430,base.state_co_01,base.co
+base.res_city_co_15790,Tasco,151660,base.state_co_05,base.co
+base.res_city_co_85410,Tauramena,854030,base.state_co_26,base.co
+base.res_city_co_25793,Tausa,250410,base.state_co_11,base.co
+base.res_city_co_41799,Tello,411040,base.state_co_13,base.co
+base.res_city_co_25797,Tena,252610,base.state_co_11,base.co
+base.res_city_co_47798,Tenerife,475050,base.state_co_15,base.co
+base.res_city_co_25799,Tenjo,250201,base.state_co_11,base.co
+base.res_city_co_15798,Tenza,153201,base.state_co_05,base.co
+base.res_city_co_54800,Teorama,547030,base.state_co_18,base.co
+base.res_city_co_41801,Teruel,412040,base.state_co_13,base.co
+base.res_city_co_41797,Tesalia,415001,base.state_co_13,base.co
+base.res_city_co_25805,Tibacuy,252230,base.state_co_11,base.co
+base.res_city_co_15804,Tibaná,153260,base.state_co_05,base.co
+base.res_city_co_15806,Tibasosa,152260,base.state_co_05,base.co
+base.res_city_co_25807,Tibirita,250820,base.state_co_11,base.co
+base.res_city_co_54810,Tibú,548010,base.state_co_18,base.co
+base.res_city_co_23807,Tierralta,234501,base.state_co_10,base.co
+base.res_city_co_41807,Timaná,417010,base.state_co_13,base.co
+base.res_city_co_19807,Timbío,193520,base.state_co_08,base.co
+base.res_city_co_19809,Timbiquí,196030,base.state_co_08,base.co
+base.res_city_co_15808,Tinjacá,153840,base.state_co_05,base.co
+base.res_city_co_15810,Tipacoque,151020,base.state_co_05,base.co
+base.res_city_co_13810,Tiquisio,134040,base.state_co_04,base.co
+base.res_city_co_5809,Titiribí,55850,base.state_co_01,base.co
+base.res_city_co_15814,Toca,150260,base.state_co_05,base.co
+base.res_city_co_25815,Tocaima,252840,base.state_co_11,base.co
+base.res_city_co_25817,Tocancipá,251010,base.state_co_11,base.co
+base.res_city_co_15816,Togüí,154401,base.state_co_05,base.co
+base.res_city_co_5819,Toledo,52050,base.state_co_01,base.co
+base.res_city_co_54820,Toledo,542030,base.state_co_18,base.co
+base.res_city_co_70823,Tolú Viejo,707050,base.state_co_22,base.co
+base.res_city_co_68820,Tona,680541,base.state_co_21,base.co
+base.res_city_co_15820,Tópaga,152040,base.state_co_05,base.co
+base.res_city_co_25823,Topaipí,253820,base.state_co_11,base.co
+base.res_city_co_19821,Toribío,192001,base.state_co_08,base.co
+base.res_city_co_76823,Toro,761520,base.state_co_24,base.co
+base.res_city_co_15822,Tota,152440,base.state_co_05,base.co
+base.res_city_co_19824,Totoró,192570,base.state_co_08,base.co
+base.res_city_co_85430,Trinidad,853010,base.state_co_26,base.co
+base.res_city_co_76828,Trujillo,761020,base.state_co_24,base.co
+base.res_city_co_8832,Tubará,81020,base.state_co_02,base.co
+base.res_city_co_23815,Tuchín,232020,base.state_co_10,base.co
+base.res_city_co_76834,Tuluá,763021,base.state_co_24,base.co
+base.res_city_co_15001,Tunja,150001,base.state_co_05,base.co
+base.res_city_co_15832,Tununguá,154680,base.state_co_05,base.co
+base.res_city_co_52838,Túquerres,525520,base.state_co_17,base.co
+base.res_city_co_13836,Turbaco,131001,base.state_co_04,base.co
+base.res_city_co_13838,Turbaná,131010,base.state_co_04,base.co
+base.res_city_co_5837,Turbo,57860,base.state_co_01,base.co
+base.res_city_co_15835,Turmequé,153630,base.state_co_05,base.co
+base.res_city_co_15837,Tuta,150401,base.state_co_05,base.co
+base.res_city_co_15839,Tutazá,150660,base.state_co_05,base.co
+base.res_city_co_25839,Ubalá,251260,base.state_co_11,base.co
+base.res_city_co_25841,Ubaque,251601,base.state_co_11,base.co
+base.res_city_co_76845,Ulloa,762030,base.state_co_24,base.co
+base.res_city_co_15842,Úmbita,153240,base.state_co_05,base.co
+base.res_city_co_25845,Une,251810,base.state_co_11,base.co
+base.res_city_co_27800,Unguía,278030,base.state_co_12,base.co
+base.res_city_co_27810,Unión Panamericana,272030,base.state_co_12,base.co
+base.res_city_co_5842,Uramita,57440,base.state_co_01,base.co
+base.res_city_co_50370,Uribe,505041,base.state_co_16,base.co
+base.res_city_co_44847,Uribia,441020,base.state_co_14,base.co
+base.res_city_co_5847,Urrao,56830,base.state_co_01,base.co
+base.res_city_co_44855,Urumita,445020,base.state_co_14,base.co
+base.res_city_co_8849,Usiacurí,82060,base.state_co_02,base.co
+base.res_city_co_25851,Útica,253430,base.state_co_11,base.co
+base.res_city_co_5854,Valdivia,52010,base.state_co_01,base.co
+base.res_city_co_23855,Valencia,234530,base.state_co_10,base.co
+base.res_city_co_68855,Valle De San José,682571,base.state_co_21,base.co
+base.res_city_co_73854,Valle De San Juan,733020,base.state_co_23,base.co
+base.res_city_co_86865,Valle Del Guamuez,862020,base.state_co_27,base.co
+base.res_city_co_20001,Valledupar,200001,base.state_co_09,base.co
+base.res_city_co_5856,Valparaíso,56030,base.state_co_01,base.co
+base.res_city_co_18860,Valparaíso,185050,base.state_co_07,base.co
+base.res_city_co_5858,Vegachí,52830,base.state_co_01,base.co
+base.res_city_co_68861,Vélez,685561,base.state_co_21,base.co
+base.res_city_co_73861,Venadillo,730580,base.state_co_23,base.co
+base.res_city_co_5861,Venecia,56420,base.state_co_01,base.co
+base.res_city_co_25506,Venecia,252030,base.state_co_11,base.co
+base.res_city_co_15861,Ventaquemada,153640,base.state_co_05,base.co
+base.res_city_co_25862,Vergara,253650,base.state_co_11,base.co
+base.res_city_co_76863,Versalles,761530,base.state_co_24,base.co
+base.res_city_co_68867,Vetas,680527,base.state_co_21,base.co
+base.res_city_co_25867,Vianí,253230,base.state_co_11,base.co
+base.res_city_co_17867,Victoria,174030,base.state_co_06,base.co
+base.res_city_co_5873,Vigía Del Fuerte,56820,base.state_co_01,base.co
+base.res_city_co_76869,Vijes,760550,base.state_co_24,base.co
+base.res_city_co_54871,Villa Caro,546010,base.state_co_18,base.co
+base.res_city_co_15407,Villa De Leyva,154001,base.state_co_05,base.co
+base.res_city_co_25843,Villa De San Diego De Ubaté,250430,base.state_co_11,base.co
+base.res_city_co_54874,Villa Del Rosario,541030,base.state_co_18,base.co
+base.res_city_co_19845,Villa Rica,191060,base.state_co_08,base.co
+base.res_city_co_86885,Villagarzón,861080,base.state_co_27,base.co
+base.res_city_co_25871,Villagómez,254030,base.state_co_11,base.co
+base.res_city_co_73870,Villahermosa,731501,base.state_co_23,base.co
+base.res_city_co_17873,Villamaría,176001,base.state_co_06,base.co
+base.res_city_co_13873,Villanueva,130530,base.state_co_04,base.co
+base.res_city_co_44874,Villanueva,445001,base.state_co_14,base.co
+base.res_city_co_68872,Villanueva,684021,base.state_co_21,base.co
+base.res_city_co_85440,Villanueva,855030,base.state_co_26,base.co
+base.res_city_co_25873,Villapinzón,250810,base.state_co_11,base.co
+base.res_city_co_73873,Villarrica,734060,base.state_co_23,base.co
+base.res_city_co_50001,Villavicencio,500001,base.state_co_16,base.co
+base.res_city_co_41872,Villavieja,411020,base.state_co_13,base.co
+base.res_city_co_25875,Villeta,253410,base.state_co_11,base.co
+base.res_city_co_25878,Viotá,252660,base.state_co_11,base.co
+base.res_city_co_15879,Viracachá,153450,base.state_co_05,base.co
+base.res_city_co_50711,Vistahermosa,504061,base.state_co_16,base.co
+base.res_city_co_17877,Viterbo,177020,base.state_co_06,base.co
+base.res_city_co_25885,Yacopí,253840,base.state_co_11,base.co
+base.res_city_co_52885,Yacuanquer,523001,base.state_co_17,base.co
+base.res_city_co_41885,Yaguará,412080,base.state_co_13,base.co
+base.res_city_co_5885,Yalí,53010,base.state_co_01,base.co
+base.res_city_co_5887,Yarumal,52030,base.state_co_01,base.co
+base.res_city_co_97889,Yavaraté,971007,base.state_co_32,base.co
+base.res_city_co_5890,Yolombó,53020,base.state_co_01,base.co
+base.res_city_co_5893,Yondó,53410,base.state_co_01,base.co
+base.res_city_co_85001,Yopal,850001,base.state_co_26,base.co
+base.res_city_co_76890,Yotoco,761040,base.state_co_24,base.co
+base.res_city_co_76892,Yumbo,760501,base.state_co_24,base.co
+base.res_city_co_13894,Zambrano,132040,base.state_co_04,base.co
+base.res_city_co_68895,Zapatoca,684061,base.state_co_21,base.co
+base.res_city_co_47960,Zapayán,476050,base.state_co_15,base.co
+base.res_city_co_5895,Zaragoza,52440,base.state_co_01,base.co
+base.res_city_co_76895,Zarzal,762520,base.state_co_24,base.co
+base.res_city_co_15897,Zetaquira,152680,base.state_co_05,base.co
+base.res_city_co_25898,Zipacón,253010,base.state_co_11,base.co
+base.res_city_co_25899,Zipaquirá,250251,base.state_co_11,base.co
+base.res_city_co_47980,Zona Bananera,478020,base.state_co_15,base.co

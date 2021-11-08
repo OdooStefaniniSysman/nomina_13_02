@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+       <record model="ir.ui.view" id="mrp_workorder_tree">
+            <field name="name">mrp.workorder.tree.prelimit</field>
+            <field name="model">mrp.workorder</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="prelimit_code" readonly="1"/>
+                    <field name="workcenter_id" readonly="1"/>
+                    <field name="production_id" readonly="1"/>
+                    <field name="hours" />
+                    <field name="distribution_percentage"/>
+                </tree>
+            </field>
+        </record>
+        <record id="mrp_workorder_tree_action" model="ir.actions.act_window">
+            <field name="name">Prelimit</field>
+            <field name="res_model">mrp.workorder</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="preliminares.mrp_workorder_tree"/>
+            <field name="domain">[('workcenter_id.bool_prelimit','=',True)]</field>
+            <!--
+            <field name="context">{'search_default_workcenter_id':1}</field>
+            <field name="help" type="html"/>-->
+        </record>
+        <menuitem id="preliminares" name="Preliminares" parent="account.menu_finance_reports" sequence="15"
+                  action="preliminares.mrp_workorder_tree_action"/>
+    </data>
+</odoo>

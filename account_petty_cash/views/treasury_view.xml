@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_treasury_config_kanban" model="ir.actions.act_window">
+        <field name="name">Cajas Menores</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">treasury.config</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain"></field>
+        <field name="search_view_id" ref="view_treasury_config_search" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crear nueva caja menor
+            </p><p>
+                Administrador de cajas menores
+            </p>
+        </field>
+    </record>
+    <menuitem
+        id="menu_treasury_root"
+        parent="account.menu_finance_entries"
+        name="Cajas Menores"
+        groups="group_treasury_manager,group_treasury_user"
+        action="action_treasury_config_kanban"
+        sequence="30"/>
+
+
+    <record id="action_treasury_config_treasury" model="ir.actions.act_window">
+        <field name="name">Cajas Menores</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">treasury.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_treasury_config_search" />
+    </record>
+
+    <menuitem
+        id="menu_treasury_config_treasury"
+        name="Cajas Menores"
+        parent="account.root_payment_menu"
+        sequence="10"
+        action="action_treasury_config_treasury"
+        groups="group_treasury_manager"/>
+    
+    
+    
+    
+    <record id="action_treasury_session" model="ir.actions.act_window">
+        <field name="name">Sesiones</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">treasury.session</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="search_view_id" ref="view_treasury_session_search" />
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                Sin Sesiones Creadas
+            </p><p>
+            Una Sesión es un periodo de tiempo, usualmente un día, 
+            durante el cual se producen movimientos de dinero de entrada y salida asociados
+            a un diario y cuentas específicas y manteniendo controles de caja menor.
+            </p>
+        </field>
+    </record>
+
+    <record id="mail_activity_old_session" model="mail.activity.type">
+        <field name="name">Sesiones abiertas con más de 7 días</field>
+        <field name="summary">note</field>
+        <field name="category">default</field>
+        <field name="res_model_id" ref="model_treasury_session"/>
+        <field name="icon">fa-tasks</field>
+        <field name="delay_count">0</field>
+    </record>
+
+    <record model="ir.ui.view" id="closing_balance_confirm">
+        <field name="name">Confirming balance closing</field>
+        <field name="model">closing.balance.confirm.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <span>
+                        Existe una diferencia entre el cierre esperado y real en efectivo. 
+                        ¿Está seguro de que desea cerrar la sesión y registrar el(los) asiento(s) contable(s) de cierre?
+                    </span>
+                </group>
+                <footer>
+                    <button name="confirm_closing_balance" string="Confirm" type="object" class="oe_highlight, btn-primary" />
+                    <button string="Descartar" special="cancel" class="oe_highlight, btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+    <menuitem
+        id="menu_treasury_session_all"
+        parent="account_petty_cash.menu_treasury_root"
+        name="Sesiones"
+        action="action_treasury_session"
+        sequence="2"
+        groups="group_treasury_manager"/>
+    
+    <menuitem
+        id="menu_treasury_dashboard"
+        name="Tablero"
+        parent="menu_treasury_root"
+        action="action_treasury_config_kanban"
+        sequence="1"
+        groups="group_treasury_manager"/>
+    
+</odoo>

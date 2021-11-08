@@ -1,0 +1,82 @@
+<odoo>
+    <data>
+            <record model="ir.ui.view" id="helpdesk_team_form">
+                <field name="name">helpdesk.helpdesk.form</field>
+                <field name="model">helpdesk.helpdesk</field>
+               <!-- <field name="groups_id" eval="[(4,ref('helpdesk.group_helpdesk_manager'))]" />-->
+                <field name="arch" type="xml">
+                    <form groups="helpdesk.group_helpdesk_manager">
+                        <sheet string="mesas de ayuda">
+                            <div class="oe_title">
+                                        <h1>
+                                            <field name="name" required="1"/>
+                                        </h1>
+                                    </div>
+                                <group colspan="2">
+                                    <group colspan="1" col="2">
+                                        <field name="team_id" string="Equipo de mesa de ayuda"/>
+                                    </group>
+                                    <group colspan="1" col="2">
+                                        <field name="helpdesk_team_tipology" string="Tipologia de mesa de ayuda"/>
+                                    </group>
+                                </group>
+                        </sheet>
+                    </form>
+
+                </field>
+            </record>
+        
+        <record model="ir.ui.view" id="helpdesk_team_kanban">
+                <field name="name">helpdesk.ticket.team.kanban</field>
+                <field name="model">helpdesk.helpdesk</field>
+                <field name="arch" type="xml">
+                    <kanban default_group_by="helpdesk_team_tipology" create="0">
+                    
+                    <field name="helpdesk_team_tipology"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                                <div t-attf-class="oe_kanban_content">
+                                    <field name="team_id"/>
+                                </div>
+                            <div
+                                    t-attf-class="oe_kanban_helpdesk_team_tipology_{{kanban_getcolor(record.helpdesk_team_tipology.raw_value)}}
+                                                  oe_kanban_global_click_edit oe_semantic_html_override
+                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                <div class="oe_dropdown_kanban">
+                                    <div class="oe_dropdown_toggle">
+                                        <i class="fa fa-bars fa-lg" title="Manage" aria-label="Manage"/>
+                                        <ul class="oe_dropdown_menu">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                            <li>
+                                                <ul class="oe_kanban_colorpicker"
+                                                    data-field="color"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                                <div t-attf-class="oe_kanban_content">
+                                    <button class="btn btn-primary" name="filter_helpdesk_name" type="object">INGRESAR</button>
+                                        <filter string="My Tickets" domain="[['team_id.name','ilike','tecnologia']]" name="my_ticket"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="helpdesk_team_action">
+            <field name="name">Mesas de Ayuda</field>
+            <field name="res_model">helpdesk.helpdesk</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <menuitem id="helpdesk_mesa_ayuda_menu_kanban" name="Mesas de Ayuda" action="helpdesk_thomas_ext.helpdesk_team_action" parent="helpdesk.menu_helpdesk_root" sequence="1"/>
+    </data>
+</odoo>
+
+
+

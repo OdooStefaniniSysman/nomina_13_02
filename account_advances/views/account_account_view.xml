@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_form_inherit_account_advances" model="ir.ui.view">
+            <field name="name">account.account.form.inherit.account.advances</field>
+            <field name="model">account.account</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="is_account_for_advance" widget="boolean"/>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

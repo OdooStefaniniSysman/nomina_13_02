@@ -1,0 +1,167 @@
+from odoo import api, fields, models
+from datetime import date
+
+
+class LaborRelation(models.Model):
+    _name = 'hr.labor.relation'
+    _description = 'Labor Relation'
+    _inherit = [
+        'mail.thread', 'mail.activity.mixin']
+    _rec_name = 'request_number'
+
+    name = fields.Char()
+
+    """Header"""
+    state = fields.Selection(
+        string='State',
+        selection=[('new', 'New'),
+                   ('validation', 'Validation'),
+                   ('citation', 'Citation'),
+                   ('download', 'Downloads'),
+                   ('sanction', 'Sanction'),
+                   ('closed', 'Closed'),
+                   ('rejected', 'Rejected')],
+        required=False, default='new')
+
+    request_number = fields.Char('Request number', default='New', copy=False)
+
+    # todo falta por sub_etapa pendiente por el cliente
+
+    """General data"""
+    create_date = fields.Date('Create date')
+    company_id = fields.Many2one('res.company')
+    request_type = fields.Many2one('request.type', string='Request type')
+    city_id = fields.Many2one('res.city', string='City')
+
+    """Data of the immediate boss and/or who reports"""
+    report_employee_id = fields.Many2one('hr.employee', string='Employee')
+    charge = fields.Char('Charge')
+    identification_number = fields.Char('No. identification')
+    email = fields.Char('Email')
+
+    """Worker's data"""
+    employee_id = fields.Many2one('hr.employee', string='Employee name')
+    employee_charge = fields.Char('Employee charge')
+    programming_discharges = fields.Char('Shift assigned for programming of discharges')
+    employee_identification_number = fields.Char('No. identification employee')
+    headquarters = fields.Char('Headquarters')
+
+    """Disciplinary Process Evaluation"""
+    filename_process_evaluation = fields.Char()
+    process_evaluation = fields.Binary(string="Disciplinary process evaluation")
+
+    # Pages
+    """Fault description"""
+    description = fields.Char('Description')
+    start_date_fault = fields.Date('Start date of the disciplinary offence')
+    end_date_fault = fields.Date('End date of the disciplinary offence')
+    fault_type = fields.Many2one('hr.disciplinary.offences', string='Fault type')
+    rule_violating_worker = fields.Char('Rule violating worker')
+    chapter = fields.Char('Chapter')
+    article = fields.Text('Article')
+    numeral = fields.Text('Numeral')
+    observation = fields.Text('Observations')
+    sanction_expected = fields.Selection(
+        string='Sanction expected by the Company',
+        selection=[('two_days', 'Penalty 2 days'),
+                   ('three_days', 'Penalty 3 days'),
+                   ('four_days', 'Penalty 4 days'),
+                   ('five_days', 'Penalty 5 days'),
+                   ('six_days', 'Penalty 6 days'),
+                   ('seven_days', 'Penalty 7 days'),
+                   ('eight_days', 'Penalty 8 days'),
+                   ('termination_contract', 'Termination of contract')],
+        required=False, )
+    disciplinary_process = fields.Selection(
+        string='Disciplinary Process Tests',
+        selection=[('report', 'Report'),
+                   ('mail', 'Mail'),
+                   ('dials', 'Dials'),
+                   ('direct_witnesses', 'Direct witnesses'),
+                   ('commentary', 'Commentary'),
+                   ('at3_report', 'AT 3 Report'),
+                   ('productivity_day', 'Productivity 1 day'),
+                   ('customer_complaint', 'Customer complaint'),
+                   ('not_provide', 'Does not provide'), ],
+        required=False, )
+
+    filename_support = fields.Char()
+    support = fields.Binary(string="Supports")
+
+    """Proceedings"""
+    date_and_time_minutes = fields.Datetime('Date and time of the minutes')
+    employee_taking_minutes = fields.Many2one('hr.employee', string='Employee taking the minutes')
+    date_time_signature_of_minutes = fields.Datetime('Date and time of signature of minutes')
+
+    question_1 = fields.Text('Question 1')
+    question_2 = fields.Text('Question 2')
+    question_3 = fields.Text('Question 3')
+    question_4 = fields.Text('Question 4')
+    answer_1 = fields.Text('Answer 1')
+    answer_2 = fields.Text('Answer 2')
+    answer_3 = fields.Text('Answer 3')
+    answer_4 = fields.Text('Answer 4')
+
+    """On change Methods"""
+
+    @api.onchange('report_employee_id')
+    def loading_data_report_employee(self):
+        self.charge = None
+        self.email = None
+        self.identification_number = None
+        if self.report_employee_id:
+            self.charge = self.report_employee_id.job_id.name
+            self.identification_number = self.report_employee_id.identification_id
+            self.email = self.report_employee_id.private_email
+
+    @api.onchange('employee_id')
+    def loading_data_employee(self):
+        if self.employee_id:
+            self.employee_charge = self.employee_id.job_id.name
+            self.employee_identification_number = self.employee_id.identification_id
+
+    @api.onchange('fault_type')
+    def loading_data_fault(self):
+        if self.fault_type:
+            self.description = self.fault_type.description
+            self.chapter = self.fault_type.chapter
+            self.rule_violating_worker = self.fault_type.norm
+            self.article = self.fault_type.article
+            self.numeral = self.fault_type.numeral
+
+    @api.model
+    def create(self, vals):
+        if vals.get('request_number', 'New') == 'New':
+            vals['request_number'] = self.env['ir.sequence'].next_by_code(
+                'labor.relation.seq') or 'New'
+
+        vals['create_date'] = date.today()
+        return super(LaborRelation, self).create(vals)
+
+
+class RequestType(models.Model):
+    _name = 'request.type'
+    _description = 'Request type for Labor relation'
+
+    name = fields.Char('Name')
+
+
+class DisciplinaryOffences(models.Model):
+    _name = 'hr.disciplinary.offences'
+    _description = 'Disciplinary Offences'
+    _inherit = [
+        'mail.thread', 'mail.activity.mixin']
+
+    name = fields.Char()
+
+    fault_type = fields.Char('Fault type')
+    chapter = fields.Char('Chapter')
+    article = fields.Text('Article')
+    numeral = fields.Text('Numeral')
+    description = fields.Char('Description')
+    norm = fields.Char('Norm')
+
+    @api.onchange('fault_type')
+    def change_name(self):
+        if self.fault_type:
+            self.name = self.fault_type

@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="account_move_aditional_info" model="ir.ui.view">
+            <field name="name">account.move.aditional.info</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='other_info']/group/group[@name='payments_info_group']/field[@name='invoice_partner_bank_id']" position="after">
+                    <field name="application_number"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

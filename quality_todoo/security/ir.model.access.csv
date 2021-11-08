@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+manager_model_quality_presser,user_model_quality_presser,model_quality_presser,quality.group_quality_manager,1,1,1,0
+manager_model_quality_type_find,user_model_quality_type_find,model_quality_type_find,quality.group_quality_manager,1,1,1,0
+manager_model_quality_process,manager_model_quality_process,model_quality_process,quality.group_quality_manager,1,1,1,0
+
+
+
+
+
+
+
+

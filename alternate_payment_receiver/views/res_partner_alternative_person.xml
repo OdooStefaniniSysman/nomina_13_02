@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+
+
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="alternative_contact_tree_view">
+            <field name="name">Alternative contact</field>
+            <field name="model">res.partner.alternative.person</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" string="Alternative Contact">
+                    <field name="name" required="True"/>
+                    <field name="partner_id" required="True"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="alternative_contact_action">
+            <field name="name">Alternative Contact</field>
+            <field name="res_model">res.partner.alternative.person</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- actions -->
+
+        <menuitem name="Alternative Contact" id="alternative_contact" parent="contacts.res_partner_menu_config" sequence="4" action="alternate_payment_receiver.alternative_contact_action" />
+
+    </data>
+</odoo>

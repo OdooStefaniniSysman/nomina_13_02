@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <record id="view_maintenance_request_form_inherit" model="ir.ui.view">
+            <field name="name">maintenance.request.form.thomas</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='archive_equipment_request']" position="after">
+                    <button name="action_create_wizard" type="object" string="Notify" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                </xpath>
+                <!--<xpath expr="//field[@name='stage_id']" position="replace" groups="maintenance_thomas.group_maintenance_thomas_production_user">
+                    <field name="stage_id"/>
+                </xpath>-->
+                <xpath expr="//field[@name='maintenance_type']" position="replace">
+                    <field name="maintenance_type" widget="radio" />
+                </xpath>
+                <xpath expr="//field[@name='maintenance_type']" position="after">
+                    <field name="metodology_control" widget="radio" attrs="{'invisible': [('bool_quantity','!=',True)]}" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                    <field name="bool_quantity" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="after">
+                    <notebook colspan="4">
+                        <page string='Metodology Control' attrs="{'invisible': [('bool_quantity','!=',True)]}" groups="maintenance_thomas.group_maintenance_thomas_production_user">
+                            <group>
+                                <group>
+                                    <field name="variable"/>
+                                    <field name="unit_measure" options="{'no_create': True, 'no_create_edit':True}" />
+                                    <field name="range_measure"/>
+                                    <field name="tolerance"/>
+                                </group>
+                                <group>
+                                    <field name="mistake_equipment"/>
+                                    <field name="uncertainty_measure"/>
+                                    <field name="fercuency"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="employee_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}" groups="maintenance_thomas.group_maintenance_thomas_production_user"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.module.category" id="module_category_maintenance_thomas_production">
+            <field name="name">Maintenance Production Thomas</field>
+            <field name="description">Helps you manage maintenance.</field>
+        </record>
+        <record id="group_maintenance_thomas_production_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_category_maintenance_thomas_production"/>
+        </record>
+    </data>
+</odoo>

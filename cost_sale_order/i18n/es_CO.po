@@ -1,0 +1,96 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cost_sale_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-13 15:12+0000\n"
+"PO-Revision-Date: 2020-10-13 15:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cost_sale_order
+#: model:ir.model,name:cost_sale_order.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: cost_sale_order
+#: model:ir.model.fields,field_description:cost_sale_order.field_sale_order__contribution_percentage
+msgid "Contribution Percentage"
+msgstr "Porcentaje Contribución"
+
+#. module: cost_sale_order
+#: model:ir.model.fields,field_description:cost_sale_order.field_sale_order__cost_total
+msgid "Cost Total"
+msgstr "Costo Total"
+
+#. module: cost_sale_order
+#: model_terms:ir.ui.view,arch_db:cost_sale_order.sale_order_form_inherit
+#: model_terms:ir.ui.view,arch_db:cost_sale_order.sale_order_tree_inherit
+msgid "Director"
+msgstr ""
+
+#. module: cost_sale_order
+#: model:ir.module.category,description:cost_sale_order.module_category_sale_order_thomas_production
+msgid "Helps you manage sale."
+msgstr "Ayuda a Manejar Ventas"
+
+#. module: cost_sale_order
+#: model:ir.model.fields,field_description:cost_sale_order.field_res_partner__invoice_condition
+#: model:ir.model.fields,field_description:cost_sale_order.field_res_users__invoice_condition
+#: model_terms:ir.ui.view,arch_db:cost_sale_order.res_partner_form_inherit
+msgid "Invoice Condition"
+msgstr "Condiciones de Facturación"
+
+#. module: cost_sale_order
+#: code:addons/cost_sale_order/models/sale_order.py:0
+#, python-format
+msgid "Invoice Condition!"
+msgstr "Condición de Facturación!"
+
+#. module: cost_sale_order
+#: code:addons/cost_sale_order/models/sale_order.py:0
+#, python-format
+msgid "Invoice Condition: %s"
+msgstr "Condición de Facturación"
+
+#. module: cost_sale_order
+#: model_terms:ir.ui.view,arch_db:cost_sale_order.res_partner_form_inherit
+msgid "Invoice Conditions"
+msgstr "Condiciones de Facturación"
+
+#. module: cost_sale_order
+#: model:ir.model.fields,field_description:cost_sale_order.field_sale_order__price_n_iva
+msgid "Price Unit without IVA"
+msgstr "Precio unitario sin IVA"
+
+#. module: cost_sale_order
+#: model:ir.model.fields,field_description:cost_sale_order.field_sale_order__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: cost_sale_order
+#: model:ir.model,name:cost_sale_order.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de Venta"
+
+#. module: cost_sale_order
+#: model:ir.model.fields,field_description:cost_sale_order.field_sale_order__unit_price
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: cost_sale_order
+#: model:res.groups,name:cost_sale_order.group_sale_order_thomas_production_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: cost_sale_order
+#: model:ir.module.category,name:cost_sale_order.module_category_sale_order_thomas_production
+msgid "sale Production Thomas"
+msgstr ""

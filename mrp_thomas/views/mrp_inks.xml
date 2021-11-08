@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record id="view_mrp_inks_form" model="ir.ui.view">
+      <field name="name">mrp.inks.form</field>
+      <field name="model">mrp.inks</field>
+      <field name="arch" type="xml">
+        <form string="Tintas">
+           <group>
+             <group>
+                 <field name="name" string="Nombre de la Tinta" required="True"/>
+                 <field name="inks_category"/>
+             </group>
+           </group>   
+        </form>
+      </field>
+    </record> 
+
+    <record id="view_mrp_ink_tree" model="ir.ui.view">
+      <field name="name">mrp.inks.tree</field>
+      <field name="model">mrp.inks</field>
+        <field name="arch" type="xml">
+            <tree string="Tintas">
+              <field name="name" string="Nombre de la Tinta" required="True"/>
+              <field name="inks_category"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_inks" model="ir.actions.act_window">
+        <field name="name">Tintas</field>
+        <field name="res_model">mrp.inks</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Tintas para cada componente o Documento - Thomas Producción
+          </p>
+        </field>
+    </record>
+
+    <menuitem name='Tintas'
+            action='action_inks'
+            id='inks_menu'
+            parent='sale.menu_sale_config'
+            sequence='82'/> 
+
+    </data>   
+
+</odoo>

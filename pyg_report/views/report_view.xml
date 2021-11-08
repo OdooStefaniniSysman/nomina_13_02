@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="zpp_report_view_tree" model="ir.ui.view">
+            <field name="name">zpp.report.product.line.view.tree</field>
+             <field name="type">tree</field>
+            <field name="model">report.zpp</field>
+            <field name="arch" type="xml">
+                <tree string="ZPP lines" create="0" edit="0">
+                    <field name="product_id"/>
+                    <field name="description"/>
+                    <field name="name"/>
+                    <field name="date_planned_start"/>
+                    <field name="date_planned_finished"/>
+                    <!--<field name="month"/>-->
+                    <field name="product_qty"/>
+                    <field name="product_delivery"/>
+                    <field name="sale"/>
+                    <field name="amount_total"/>
+                    <field name="analytic_account_id"/>
+                    <field name="code"/>
+                    <field name="product_requisition"/>
+                    <field name="standard_price"/>
+                    <field name="mod_real"/>
+                    <field name="cif_real"/>
+                    <field name="maq_real"/>
+                    <field name="total_cost"/>
+                    <field name="currency_id"/>
+                    <field name="value"/>
+                    <field name="liquidation_order"/>
+                    <field name="entry"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_report_zpp_tree">
+            <field name="name">PYG Report</field>
+            <field name="res_model">report.zpp</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<!-- model.name form view -->
+<odoo>
+    <data>
+
+        <report 
+            id="action_cost_struct_mrp_production_2"
+            model="mrp.production"
+            string="Cost Analysis"
+            report_type="qweb-html"
+            name="mrp_extended.mrp_cost_structure"
+            file="mrp_extended.mrp_cost_structure"
+            print_report_name="'Cost Analysis - %s ' % object.name"
+        />
+
+        <record id="mrp_production_variation_cost" model="ir.ui.view">
+            <field name="name">mrp.production.variation.cost</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                   <div name="button_box" position="inside">
+                            <button  type="action" name="%(mrp_extended.action_cost_struct_mrp_production_2)d" class="oe_stat_button" icon="fa-dollar" string="Cost Analysis 2" attrs="{'invisible': [('state', '!=', 'done')]}">
+                            </button>
+                        </div>
+            </field>
+        </record>
+    </data>
+</odoo>

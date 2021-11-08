@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* alternate_payment_receiver
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-18 21:15+0000\n"
+"PO-Revision-Date: 2020-10-18 21:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_account_payment__alternative_contact
+msgid "Alternate Receiver of Payment"
+msgstr "Contacto alternativo en factura"
+
+#. module: alternate_payment_receiver
+#: model:ir.actions.act_window,name:alternate_payment_receiver.alternative_contact_action
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner__alternative_contact
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_users__alternative_contact
+#: model:ir.ui.menu,name:alternate_payment_receiver.alternative_contact
+#: model_terms:ir.ui.view,arch_db:alternate_payment_receiver.alternative_contact_tree_view
+msgid "Alternative Contact"
+msgstr "Contacto alternativo en factura"
+
+#. module: alternate_payment_receiver
+#: model:ir.model,name:alternate_payment_receiver.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner_alternative_person__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner_alternative_person__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner_alternative_person__partner_id
+msgid "Customer"
+msgstr "Contacto"
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner_alternative_person__display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner_alternative_person__id
+msgid "ID"
+msgstr ""
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner_alternative_person____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner_alternative_person__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner_alternative_person__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_account_payment__activate_alternative_contact
+msgid "Need alternative Receiver?"
+msgstr "¿Necesita tercero en la impresion?"
+
+#. module: alternate_payment_receiver
+#: model:ir.model,name:alternate_payment_receiver.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: alternate_payment_receiver
+#: model:ir.model.fields,field_description:alternate_payment_receiver.field_res_partner_alternative_person__name
+msgid "name"
+msgstr "Nombre"
+
+#. module: alternate_payment_receiver
+#: model:ir.model,name:alternate_payment_receiver.model_res_partner_alternative_person
+msgid "res.partner.alternative.person"
+msgstr ""

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <template id="internal_layout">
+            <t t-if="not o" t-set="o" t-value="docs"/>
+
+                <t t-if="not company">
+                    <t t-if="company_id">
+                        <t t-set="company" t-value="company_id"/>
+                    </t>
+                    <t t-elif="o and 'company_id' in o">
+                        <t t-set="company" t-value="o.company_id.sudo()"/>
+                    </t>
+                    <t t-else="else">
+                        <t t-set="company" t-value="res_company"/>
+                    </t>
+                </t>
+            
+                <div class="header">
+                    <div class="row">
+                            <div class="col-3">
+                                <img src='/material_purchase_requisitions_report/static/description/logo_thomas.png' style="width:100%"/>
+                            </div>
+                            <div class="col-5 offset-1 text-center">
+                                <table class="table table-bordered">
+                                    <head>
+                                        <th colspan="2" align="center" style="border: 2px solid black;">SOLICITUD DE PEDIDO</th>
+                                    </head>
+                                    <tbody>
+                                        <th scope="col" align="center" style="border: 2px solid black;">VERSION 2<br></br>12-JUL-2010</th>
+                                        <th scope="col" align="center" style="border: 2px solid black; height: 50px; vertical-align:middle">ESTADO ORIGINAL</th>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-3 text-center">
+                                <table class="table table-bordered">
+                                    <head>
+                                        <th scope="col" align="center" style="border: 2px solid black;">MM-FOR-001</th>
+                                    </head>
+                                    <tbody>
+                                        <td scope="col" align="center" style="border: 2px solid black; height: 50px; vertical-align:middle">PAG. <span class="page"/> DE <span class="topage"/><br></br></td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="footer font-small" >
+                    <table class="table" style="border: 2px solid black; font-size: 12px;">
+                        <tr style="border: 2px solid black;">
+                            <th class="table table-bordered tg-c3ow" colspan="4"><b>OBSERVACIONES:</b> </th>
+                        </tr>
+                        <tr>
+                            <td align="center"><b>ELABORADO</b> <br></br>NOMBRE DE PRUEBA</td>
+                            <td align="center"><b>APROBADO</b><br></br>NOMBRE DE PRUEBA</td>
+                            <td align="center"><b>AUTORIZADO</b><br></br>NOMBRE DE PRUEBA</td>
+                            <td align="center"><b>RECIBIDO</b><br></br>NOMBRE DE PRUEBA</td>
+                        </tr>
+                    </table>
+                </div> 
+                
+
+                <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                    <t t-raw="0"/>
+                </div>
+
+        </template> 
+        
+        <template id="purchase_requisition">
+            <t t-call="web.html_container">   
+               <t t-foreach="docs" t-as="doc">
+                    <t t-call="material_purchase_requisitions_report.internal_layout">
+                        <div class="page">
+                            <div>
+                                <table class='table table-borderless table-sm' style="border: 2px solid black; font-size: 14px;" >
+                                    <tbody>
+                                        <tr>
+                                            <td><b>EMPRESA:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.name"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>NIT:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.vat"/></td>
+                                            <td><b>DOCUMENTO NÚMERO:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>DIRECCIÓN:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.street"/></td>
+                                            <td><b>FECHA:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.name"/></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td><b>CIUDAD:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.city"/></td>
+                                            <td><b>HORA:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>TELÉFONO:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.phone"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>FAX:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.phone"/></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <table class='table table-borderless table-sm' style="border: 2px solid black; font-size: 14px;" >
+                                    <tbody>
+                                        <tr>
+                                            <td><b>SOLICITANTE:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.name"/></td>
+                                            <td><b>DIRECCIÓN DE ENTREGA:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.name"/></td>
+                                        </tr>
+                                        <tr> 
+                                            <td><b>DEPENDENCIA:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.name"/></td>
+                                            <td><b>DETALLE:</b></td>
+                                            <td><span  align="left" t-field="doc.company_id.name"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <table class="table" style="font-size: 14px;">
+                                <thead class="thead-light" style="border: 2px solid grey;">
+                                    <tr>
+                                        <th scope="col" style="border: 2px solid black; color: black;">ITEM</th>
+                                        <th scope="col" style="border: 2px solid black; color: black;">DESCRIPCIÓN MATERIAL</th>
+                                        <th scope="col" style="border: 2px solid black; color: black;">UM</th>
+                                        <th scope="col" style="border: 2px solid black; color: black;">CANTIDAD</th>
+                                        <th scope="col" style="border: 2px solid black; color: black;">Vr UNITARIO</th>
+                                        <th scope="col" style="border: 2px solid black; color: black;">Vr TOTAL</th>
+                                        <th scope="col" style="border: 2px solid black; color: black;">CENTRO COSTO</th>
+                                        <th scope="col" style="border: 2px solid black; color: black;">CECO</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="border: 2px solid black;">
+                                    <tr>
+                                        <t t-foreach ="doc.requisition_line_ids" t-as="line">
+                                            <tr>
+                                                <td><span t-field="line.product_id"/></td>
+                                                <td><span t-field="line.description"/></td>
+                                                <td><span t-esc="line.uom.name"/></td>
+                                                <td class="text-right"><span t-esc="line.qty"/></td>
+                                                <td class="text-right"><span t-esc="line.product_id.standard_price"/></td>
+                                                <td class="text-right"><span t-esc="line.total_cost"/></td>
+                                                <td class="text-right"><span t-esc="line.total_cost"/></td>
+                                                <td class="text-right"><span t-esc="line.total_cost"/></td>
+                                                <!--<td><t t-foreach ="line.partner_id" t-as="vendore"><span t-field="vendore.name"/>,</t></td> -->
+                                            </tr>
+                                        </t>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table  width="100%">
+                                <tr>
+                                    
+                                    <td width="200" height="100"/>
+                                    <td width="200" height="100"/>
+                                    <td width="200" height="100"/>
+                                    <td width="200" height="100"/>
+                                    <td width="50" height="100"/>
+                                    <td>
+                                        <div><b>Total:</b></div>
+                                    </td>
+                                    <td width="50" height="50"/>
+                                    <td>
+                                
+                                        <div>
+                                            <t t-set="test_variable" t-value="0"/>
+                                                <p t-foreach="doc.requisition_line_ids" t-as="i"> 
+                                                    <t t-set="test_variable" t-value="test_variable + i.qty"/> 
+                                                </p>
+                                                <div><t t-esc="test_variable"/></div>
+                                        </div>
+                                    </td>
+                                    <td width="200" height="100">
+                                    </td>
+                                    <!--<td><t t-foreach ="line.partner_id" t-as="vendore"><span t-field="vendore.name"/>,</t></td> -->
+                                </tr>
+
+                            </table>
+                            
+                        </div>
+                    </t>
+               </t>
+           </t>
+        </template>
+</odoo>

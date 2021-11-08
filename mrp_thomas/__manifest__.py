@@ -1,0 +1,35 @@
+{
+	'name':'MRP Thomas',
+	'version': '13',
+	'author':'Todoo SAS - Luis Felipe Paternina',
+	'website': 'www.todoo.co',
+	'category': 'mrp',
+	'depends': [
+	    'base',
+	    'mrp',
+	    'sale_management',
+	    'base_address_city',
+      'stock_landed_costs',
+      'sale_order_financial_thomas',
+      'uom',
+	],
+    'data':[
+      'views/sale_order.xml',
+      'views/mrp_kind_of_paper.xml',
+      'views/mrp_document_size.xml',
+      'views/mrp_inks.xml',
+      'views/mrp_product_delivery.xml',
+      'views/mrp_costs.xml',
+      'views/mrp_production.xml',
+      'views/mrp_routing.xml',
+      'views/stock_landed_cost.xml',
+      'views/report_mrp_production.xml',
+      'reports/sale_order.xml',
+      'reports/inherit_production_order.xml',
+      'reports/production_order.xml',
+      'security/ir.model.access.csv',
+      'security/security.xml',
+
+    ],
+    'installable': True
+}

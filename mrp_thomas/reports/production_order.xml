@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <report
+                id="report_custom1"
+                string="Orden de Producción Thomas Producción"
+                model="mrp.production"
+                report_type="qweb-pdf"
+                name="mrp_thomas.report_custom1_template"
+        />
+
+        <record id="paperformat_production_order_report" model="report.paperformat">
+          <field name="name">Formato de Papel Orden de Producción Thomas Producción</field>
+          <field name="default" eval="True"/>
+          <field name="format">A4</field>
+          <field name="page_height">0</field>
+          <field name="page_width">0</field>
+          <field name="orientation">Portrait</field>
+          <field name="margin_top">10</field>
+          <field name="margin_bottom">15</field>
+          <field name="margin_left">7</field>
+          <field name="margin_right">7</field>
+          <field name="header_line" eval="False"/>
+          <field name="header_spacing">3</field>
+          <field name="dpi">90</field>
+        </record>
+
+        <template id="report_custom1_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">                    
+                        <div class="page">
+                             <head>
+                                  <style>
+                                             *{
+                                              margin:0px;
+                                              padding:0px;
+                                              }
+                                              div#b{
+                                              width:250px;
+                                              height:200px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 1px solid black;
+                                              }
+                                              div#c{
+                                              width:305px;
+                                              height:30px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 1px solid black;
+                                              }
+                                              div#d{
+                                              width:305px;
+                                              height:170px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 1px solid black;
+                                              }
+                                              div#e{
+                                              width:300px;
+                                              height:200px;
+                                              background-color:white;
+                                              float:right;
+                                              border: 1px solid black;
+                                              }
+                                              div#f{
+                                              width:187px;
+                                              height:30px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 1px solid black;
+                                              }
+                                              div#f1{
+                                              width:300px;
+                                              height:30px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 0px solid black;
+                                              }
+                                              div#g{
+                                              width:185px;
+                                              height:30px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 1px solid black;
+                                              }
+                                              div#1{
+                                              width:300px;
+                                              height:30px;
+                                              background-color:white;
+                                              float:right;
+                                              border: 1px solid black;
+                                              }
+                                              div#h{
+                                              width:150px;
+                                              height:30px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 1px solid black;
+                                              }
+                                              div#i{
+                                              width:180px;
+                                              height:30px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 1px solid black;
+                                              }
+                                              div#j{
+                                              width:170px;
+                                              height:25px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 1px solid black;
+                                              }
+                                              div#b2{
+                                              width:450px;
+                                              height:20px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 0px solid black;
+                                              }
+                                              div#b3{
+                                              width:400px;
+                                              height:20px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 0px solid black;
+                                              }
+                                              div#b4{
+                                              width:900px;
+                                              height:20px;
+                                              background-color:white;
+                                              float:left;
+                                              border: 1px solid black;
+                                              }
+                                              table {
+                                              border-collapse: collapse;
+                                              }
+                                              table, td, th {
+                                              border: 1px solid black;
+                                              }
+                                              th, td {
+                                              padding: 9px;
+                                              }
+                                      </style>
+                              </head>
+              <table width="100%">
+                <tr>
+                   <th><img t-att-src="'data:image/png;base64,%s' % to_text(o.logo_qweb)" width="240" height="100"/></th>
+                   <th><p style="font-size:24px">ORDEN DE PRODUCCIÓN</p></th>
+                   <th><span class="text-right">
+                                <span t-field="o.name"></span>
+                            </span></th>
+                   <th><p style="font-size:9px">PR-R-001<br></br>Versión 2<br></br>Uso Interno</p></th>
+                </tr>
+              </table>
+              <br></br>
+              
+              <table  width="100%">
+                <tr>
+                  <td colspan="2"><strong>ORDEN DE PRODUCCIÓN</strong></td>
+                  <td colspan="2"><strong>PEDIDO DE VENTA</strong></td>
+                  <td colspan="2"><strong>COTIZACIÓN</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>NUMERO:</strong></td>
+                  <td><span t-field="o.name"></span></td>
+                  <td><strong>NUMERO:</strong></td>
+                  <td><span t-field="o.sale_order_id"></span></td>
+                  <td><strong>NUMERO:</strong></td>
+                  <td><span t-field="o.number_of_quotation"></span></td>
+                </tr>
+                 <tr>
+                  <td><strong>FECHA:</strong> </td>
+                  <td><span t-field="o.date_of_elaboration"></span></td>
+                  <td><strong>FECHA:</strong></td>
+                  <td><span t-field="o.date_order_sale"></span></td>
+                  <td><strong>FECHA:</strong></td>
+                  <td><span t-field="o.date_of_quotation"></span></td>
+                </tr>
+                 <tr>
+                  <td><strong>TIPO:</strong> </td>
+                  <td><span t-field="o.order_type"></span></td>
+                  <td><strong>RESPONSABLE:</strong></td>
+                  <td><span t-field="o.user_id_sale"></span></td>
+                  <td><strong>OPCION:</strong></td>
+                  <td><span t-field="o.option"></span></td>
+                </tr>
+              </table>
+              <br></br>
+              <table width="100%">
+                <tr>
+                  <td colspan="2" align="left"><strong>CLIENTE:</strong><span> </span><span t-field="o.partner_client_id"></span> </td>
+                </tr>
+                <tr>
+                  <td><strong>TIPO DE CLIENTE:</strong><span> </span><span t-field="o.type_of_client"></span></td>
+                  <td><strong>SEDE:</strong><span> </span><span t-field="o.res_city_id"></span> </td>
+                </tr>
+              </table>
+             <br></br>
+             <table  width="100%">
+               <tr>
+                 <td><strong>PRODUCTO:<span> </span></strong><span t-field="o.product_id"></span></td>
+                 <td><strong>CANTIDAD:<span> </span></strong><span t-field="o.product_qty"></span></td>
+               </tr>
+               <tr>
+                 <td><strong>FECHA DE INICIO DE PRODUCCIÓN:</strong><br></br><span t-field="o.date_planned_start"></span></td>
+                 <td><strong>FECHA DE ENTREGA DEL PRODUCTO:</strong><br></br><span t-field="o.date_planned_finished"></span></td>
+               </tr>
+             </table>
+             <br></br>
+             <table width="100%">
+                <tr>
+                 <td><strong>TAMAÑO DEL PRODUCTO</strong></td>
+                 <td><strong>ANCHO:</strong><span> </span><span t-field="o.width"></span></td>
+                 <td><strong>LARGO:</strong><span> </span><span t-field="o.heigth"></span></td>
+               </tr>
+               <tr>
+                 <td><strong>PAPEL</strong></td>
+                 <td><strong>TIPO:</strong><span> </span><span t-field="o.kind_of_paper"></span></td>
+                 <td><strong>GRAMAJE:</strong><span> </span><span t-field="o.grammage"></span></td>
+               </tr>
+             </table>
+             <br></br>
+            <t t-if="o.is_test == True">
+             <table width="100%">
+               <tr>
+                 <td><strong>NOMBRE DE LA PRUEBA:</strong><span> </span></td>
+                 <td><strong>FECHA DE APLICACIÓN:</strong><span> </span></td>
+               </tr>
+               <tr>
+                 <td><span t-field="o.test_name"></span></td>
+                 <td><span t-field="o.date_of_application"></span></td>
+               </tr>
+             </table>
+           </t>
+             <br></br>
+             <t t-if="o.is_lottery == True">
+             <table width="100%">
+               <tr>
+                 <td><strong>SORTEO:</strong></td>
+                 <td><strong>FRACCIONES POR BILLETE:</strong></td>
+                 <td><strong>FECHA DE JUEGO:</strong></td>
+                 <td><strong>CANTIDAD DE TICKETS POR ROLLO:</strong></td>
+               </tr>
+               <tr>
+                 <td><span t-field="o.draw"></span></td>
+                 <td><span t-field="o.fractions_bills"></span></td>
+                 <td><span t-field="o.game_date"></span></td>
+                 <td><span t-field="o.number_tickets"></span></td>
+               </tr>
+             </table>
+             </t>
+             <br></br>
+              <t t-if="o.is_lottery == True">
+              <table class="egt" width="100%">
+                 <thead>
+                 <tr>
+                 <th colspan="2">TAMAÑO DE LA FRACCION</th>
+                 <th colspan="2">TAMAÑO DEL CABEZOTE</th>
+                 <th colspan="2">NUMERACIÓN DE CAJAS</th>
+                 </tr>
+                 <tr>
+                 <td><strong>ANCHO:</strong><span> </span><span t-field="o.width_fraction_size"></span></td>
+                 <td><strong>LARGO:</strong><span> </span><span t-field="o.heigth_fraction_size"></span></td>
+                 <td><strong>ANCHO:</strong><span> </span><span t-field="o.wide_head_size"></span></td>
+                 <td><strong>LARGO:</strong><span> </span><span t-field="o.heigth_head_size"></span></td>
+                 <td><strong>DESDE:</strong><span> </span><span t-field="o.rolls_since"></span></td>
+                 <td><strong>AL:</strong><span> </span><span t-field="o.rolls_until"></span></td>
+                </tr>
+               </thead>
+              </table>
+              </t>
+              <br></br>
+             <t t-if="o.numeration == True">
+             <table width="100%">
+               <tr>
+                 <th colspan="2"><strong>NUMERACIÓN PRODUCTOS</strong></th>
+               </tr>
+               <tr>
+                 <td><strong>DESDE:</strong><span> </span><span t-field="o.since"></span></td>
+                 <td><strong>AL:</strong><span> </span><span t-field="o.until"></span></td>
+               </tr>
+             </table>
+              </t>
+             <br></br>
+              <p align="justify">
+              	<strong>OBSERVACIONES:</strong><span> </span><span t-field="o.description_th"></span>
+              </p>
+              <p align="justify">
+                <strong>PRELIMINARES:</strong><span> </span><span t-field="o.general_description"></span>
+              </p>
+              <br></br>
+              <table class="table" width="100%">
+                      <tr>
+                            <tr>
+                              <td>
+                                <table class="table" width="100%">
+                                  <thread>
+                                  	<tr>
+                                  	   <th colspan="2">RUTA DE PRODUCCIÓN</th>
+                                       <th colspan="2">LINEA DE IMPRESIÓN:<span> </span><span t-field="o.printing_line"></span></th>	
+                                  	</tr>
+                                    <tr>
+                                      <th>Operación</th>
+                                      <th>Centro de Producción</th>
+                                      <th>Observaciones</th>
+                                      <th>Duración(Minutos)</th>
+                                    </tr>
+                                  </thread>
+                                    <tr t-foreach="o.workcenter_line_ids" t-as="p">
+                                      <th>
+                                        <span t-field="p.name"></span>
+                                      </th>
+                                      <th>
+                                        <span t-field="p.workcenter_id"></span>
+                                      </th>
+                                      <th>
+                                        <span t-field="p.description"></span>
+                                      </th>
+                                        <th>
+                                        <span t-field="p.time_cycle"></span>
+                                      </th>
+                                    </tr>
+                                </table>
+                              </td>
+                            </tr>
+                      </tr>
+              </table>
+             <br></br>
+             
+              <table class="table table-sm" t-if="o.move_raw_ids" width="100%">
+                        <t t-set="has_product_barcode" t-value="any(o.move_raw_ids.filtered(lambda x: x.product_id.barcode))"/>
+                        <thead>
+                        	<tr>
+                        		 <td colspan="2"><strong><p style="text-align:center;">LISTA DE MATERIALES</p></strong></td>
+                        		 <td colspan="2"><strong><p style="text-align:center;">RESERVA</p></strong></td>
+                        	</tr>
+                            <tr>
+                            	<th>Código</th>
+                                <th>Material</th>
+                                <th t-attf-class="{{ 'text-right' if not has_product_barcode else '' }}">Cantidad</th>
+                                <th>Unidad</th>
+                                <th t-if="has_product_barcode" width="15%" class="text-center">Barcode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-if="o.move_raw_ids">
+                                <tr t-foreach="o.move_raw_ids" t-as="raw_line">
+                                   <t t-foreach="raw_line.product_id" t-as="p">
+                                	<td><span t-field="p.default_code"></span></td>
+                                    <td>
+                                        <span t-field="raw_line.product_id"/>
+                                    </td>
+                                    <td t-attf-class="{{ 'text-right' if not has_product_barcode else '' }}">
+                                        <span t-esc="raw_line.product_uom_qty"/>
+                                        <span t-field="raw_line.product_uom" groups="uom.group_uom"/>
+                                    </td>
+                                    <td t-if="has_product_barcode" width="15%" class="text-center">
+                                        <t t-if="raw_line.product_id.barcode">
+                                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', raw_line.product_id.barcode, 600, 100)" style="width:100%;height:35px" alt="Barcode"/>
+                                        </t>
+                                    </td>
+                                    <td><span t-field="p.uom_id"></span></td>
+                                   </t>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <br></br>
+                    <strong><span>COORDINADOR RESPONSABLE:</span></strong><span> </span><span t-field="o.user_id"></span><br></br>
+                    <strong><span>AREA:</span></strong><span> </span><span t-field="o.area"></span>
+                </div>
+              </t>
+          </t>
+      </template>
+   </data>
+</odoo>                        

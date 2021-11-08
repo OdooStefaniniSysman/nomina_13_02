@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_move_form_inherit_account_exchange_rate" model="ir.ui.view">
+            <field name="name">account.move.form.inherit.account.exchange.rate</field>
+            <field name="model">account.move</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="account_extended.view_move_form_inherit_account_extended"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_has_exchange_rate']" position="after">
+                    <field name="purchase_order_id" invisible="True"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_has_exchange_rate']" position="attributes">
+                    <attribute name="groups">base.group_multi_currency</attribute>
+                    <attribute name="attrs">{'invisible': [('type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund'))], 'readonly': [('purchase_order_id','!=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='invoice_exchange_rate']" position="attributes">
+                    <attrinute name="groups">base.group_multi_currency</attrinute>
+                    <attrinute name="attrs">{'invisible': [('invoice_has_exchange_rate','=',False)],'readonly': [('purchase_order_id','!=', False)],}</attrinute>
+                </xpath>
+
+                <!-- <xpath expr="//field[@name='invoice_has_exchange_rate']" position="replace">
+                    <field name="sale_order_id" invisible="True"/>
+                    <field name="invoice_has_exchange_rate"
+                           groups="base.group_multi_currency"
+                           attrs="{
+                                'readonly': [('sale_order_id','not in', False)],
+                                'invisible': [
+                                    ('type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund'))
+                                ],
+                            }"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_exchange_rate']" position="replace">
+                    <field name="invoice_exchange_rate" groups="base.group_multi_currency"
+                        attrs = "{
+                            'invisible': [
+                                 ('invoice_has_exchange_rate','=',False)
+                            ],
+                            'readonly': [('sale_order_id','not in', False)],
+                        }"/>
+                </xpath> -->
+            </field>
+        </record>
+</odoo>

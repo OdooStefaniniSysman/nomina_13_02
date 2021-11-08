@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>     
+<odoo>
+    <data>
+        <record id="view_account_account_replace_tree_thomas" model="ir.ui.view">
+            <field name="name">account.account.replace.tree</field>
+            <field name="model">account.account.replace</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="account replace" editable="top">
+                    <field name="administrator_expense_account_id"/>
+                    <field name="admin_account_id"/>
+                	<field name="business_expense_account_id" />
+                    <field name="operating_expense_account_id" />
+                    <field name="services_expense_account_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_view_account_account_replace">
+            <field name="name">Sustitución de Cuentas</field>
+            <field name="res_model">account.account.replace</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crear un nuevo registro en Sustitución de Cuentas
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_account_account_replace" name="Sustitución de Cuentas" parent="account.menu_analytic_accounting"
+                  action="action_view_account_account_replace"  sequence="99"/>         
+    </data>
+</odoo>
+              
+       
+

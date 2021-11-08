@@ -1,0 +1,29 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * multi_company_email_alias
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-25 21:57+0000\n"
+"PO-Revision-Date: 2020-04-25 21:57+0000\n"
+"llc/teams/76080/es_CR/)\n"
+"Language: es_CR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+#. module: multi_company_email_alias
+#: model:ir.model.fields,field_description:multi_company_email_alias.field_res_company__alias_domain_inh
+#: model:ir.model.fields,field_description:multi_company_email_alias.field_res_config_settings__alias_domain
+msgid "Alias Domain"
+msgstr "Dominio de alias"
+
+#. module: multi_company_email_alias
+#: model:ir.model.fields,field_description:multi_company_email_alias.field_res_company__external_email_server_default_inh
+#: model:ir.model.fields,field_description:multi_company_email_alias.field_res_config_settings__external_email_server_default
+msgid "External Email Servers"
+msgstr "Servidores externos de correo electrónico"

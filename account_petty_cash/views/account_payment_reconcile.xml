@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <act_window
+            id="multi_payment_reconciliate_view"
+            name="Asiento de Conciliación"
+            domain="[('id','in',active_ids)]"
+            res_model="account.payment.multi.reconcile"
+            view_mode="form"
+            binding_model="account.payment"
+            groups="group_treasury_manager"
+            target="new"/>
+    </data>
+</odoo>

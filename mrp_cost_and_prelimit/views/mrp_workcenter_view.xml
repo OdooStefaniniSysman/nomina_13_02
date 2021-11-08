@@ -1,0 +1,102 @@
+<odoo>
+    <data>
+        <record id="mrp_workcenter_form" model="ir.ui.view">
+            <field name="name">mrp.workcenter.form</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='costs_hour']" position="after">
+                    <field name="costs_hour_mod"/>
+                    <field name="costs_hour_cif"/>
+                    <field name="costs_hour_maq"/>
+                </xpath>
+                <xpath expr="//notebook/page[1]/group[1]/group[2]" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[1]" position="after">
+                    <page string="Contabilidad" name="contabilidad">
+                        <group colspan="1" col="2">
+                            <group string="Costing Information Standar" name="costing">
+                                <field name="costs_hour"/>
+                                <field name="costs_hour_mod"/>
+                                <field name="costs_hour_cif"/>
+                                <field name="costs_hour_maq"/>
+                                <field name="account_analytic"/>
+                            </group>
+                            <group string="Costing Information Real">
+                                <field name="costs_hour_real"/>
+                                <field name="costs_hour_mod_real"/>
+                                <field name="costs_hour_cif_real"/>
+                                <field name="costs_hour_maq_real"/>
+                                <field name="account_analytic_real"/>
+                            </group>
+                        </group>
+                        <group colspan="1" col="2">
+                            <group>
+                            <!-- MOD -->
+                                <field name="mod_account_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_mod','!=',0.00)]}"/>
+                                <field name="account_mod_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_mod','!=',0.00)]}"/>
+                                <!-- CIF -->
+                                <field name="cif_account_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_cif','!=',0.00)]}"/>
+                                <field name="account_cif_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_cif','!=',0.00)]}"/>
+                                <!-- MAQ -->
+                                <field name="maq_account_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_maq','!=',0.00)]}"/>
+                                <field name="account_maq_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_maq','!=',0.00)]}"/>
+                                <!--<field name="process_account_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': ['|','|',('costs_hour_mod','!=',0.00),('costs_hour_cif','!=',0.00),('costs_hour_maq','!=',0.00)]}"/>-->
+                            </group>
+                            <group>
+                                <!-- MOD -->
+                                <field name="mod_account_id_real" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_mod','!=',0.00)]}"/>
+                                <field name="account_mod_id_real" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_mod','!=',0.00)]}"/>
+                                <!-- CIF -->
+                                <field name="cif_account_id_real" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_cif','!=',0.00)]}"/>
+                                <field name="account_cif_id_real" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_cif','!=',0.00)]}"/>
+                                <!-- MAQ -->
+                                <field name="maq_account_id_real" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_maq','!=',0.00)]}"/>
+                                <field name="account_maq_id_real" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': [('costs_hour_maq','!=',0.00)]}"/>
+                                <!--<field name="process_account_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" 
+                                attrs="{'required': ['|','|',('costs_hour_mod','!=',0.00),('costs_hour_cif','!=',0.00),('costs_hour_maq','!=',0.00)]}"/>-->
+                            </group>
+                        </group>
+                        <group colspan="1" col="2">
+                            <group string="Cuenta Variacion" name="variation">
+                                <field name="account_variation"/>
+                                <field name="account_close_variation"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- model.name inherit tree view -->
+        <record id="mrp_workcenter_tree_view" model="ir.ui.view">
+            <field name="name">mrp.workcenter.inherit.tree.view</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="costs_hour_mod"/>
+                    <field name="costs_hour_cif"/>
+                    <field name="costs_hour_maq"/>
+                    <field name="costs_hour_mod_real"/>
+                    <field name="costs_hour_cif_real"/>
+                    <field name="costs_hour_maq_real"/>
+                </xpath>   
+            </field>
+        </record>
+    </data>
+</odoo>

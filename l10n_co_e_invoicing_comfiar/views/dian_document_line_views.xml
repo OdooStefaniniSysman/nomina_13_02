@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="dian_document_line_view_form" model="ir.ui.view">
+            <field name="name">dian.document.line.view.form</field>
+            <field name="model">dian.document.line</field>
+            <field name="arch" type="xml">
+                <form string="Dian line" create="0" delete="0" edit="0">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="dian_document_id" invisible="1"/>
+                                <field name="invoice_id"/>
+                                <field name="partner_id"/>
+                            </group>
+                            <group>
+                                <field name="create_date"/>
+                                <label for="start_state" string="Status change"/>
+                                <div>
+                                    <field name="start_state" class="oe_inline"/> --> 
+                                    <field name="end_state" class="oe_inline"/>
+                                </div>
+                                <field name="state_comfiar"/>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="dian_document_line_view_tree" model="ir.ui.view">
+            <field name="name">dian.document.line.view.tree</field>
+            <field name="model">dian.document.line</field>
+            <field name="arch" type="xml">
+                <tree create="0" delete="0" edit="0" default_order="id asc">
+                    <field name="invoice_id"/>
+                    <field name="partner_id"/>
+                    <field name="create_date"/>
+                    <field name="start_state"/>
+                    <field name="end_state"/>
+                    <field name="state_comfiar"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dian_document_line_view_search" model="ir.ui.view">
+            <field name="name">dian.document.line.view.search</field>
+            <field name="model">dian.document.line</field>
+            <field name="arch" type="xml">
+                <search string="dian_line">
+                    <field name="invoice_id"/>
+                    <field name="partner_id"/>
+
+                    <group string="Group By" name="groupby">
+                        <filter name="group_invoice" string="Invoices" context="{'group_by': 'invoice_id'}"/>
+                        <filter name="group_partner" string="Customers" context="{'group_by': 'partner_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="dian_document_line_action" model="ir.actions.act_window">
+            <field name="name">dian.document.line.action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dian.document.line</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_group_invoice': 1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="menu_act_dian_document_line" name="DIAN status history" parent="account.menu_finance_receivables" action="dian_document_line_action" sequence="2"/>
+    </data>
+</odoo>

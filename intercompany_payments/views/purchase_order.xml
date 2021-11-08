@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="purchase_order_intercompany_view_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.intercompany.view.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="currency_rate_raw" />
+                    <field name="so_has_exchange_rate" />
+                    <field name="res_city_id" />
+                    <field name="ticket" />
+                    <field name="additional_document_reference" />
+                    <field name="additional_document" />
+                    <field name="ref1_comfiar" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record id="view_mrp_costs_form" model="ir.ui.view">
+      <field name="name">mrp.costs.form</field>
+      <field name="model">mrp.costs</field>
+      <field name="arch" type="xml">
+        <form string="Costos">
+           <group>
+             <group>
+                 <field name="name" string="Nombre" required="True"/>
+                 <field name="total_cost" string="Costo Total" required="True"/>
+             </group>
+           </group>   
+        </form>
+      </field>
+    </record> 
+
+    <record id="view_mrp_costs_tree" model="ir.ui.view">
+      <field name="name">mrp.costs.tree</field>
+      <field name="model">mrp.costs</field>
+        <field name="arch" type="xml">
+            <tree string="Costos">
+               <field name="name" string="Nombre" required="True"/>
+               <field name="total_cost" string="Costo Total"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_costs" model="ir.actions.act_window">
+        <field name="name">Costos</field>
+        <field name="res_model">mrp.costs</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Costos - Thomas Producción
+          </p>
+        </field>
+    </record>
+
+    <menuitem name='Costos'
+            action='action_costs'
+            id='costs_menu'
+            parent='sale.menu_sale_config'
+            sequence='86'/> 
+
+    </data>   
+
+</odoo>
+

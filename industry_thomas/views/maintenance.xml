@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_maintenance_request_inherit" model="ir.ui.view">
+        <field name="name">maintenance.request.form.inherit</field>
+        <field name="model">maintenance.request</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+        <field name="arch" type="xml">
+
+        <header>
+           <button name="button_finalizada" type="object" string="Finalizar" class="oe_highlight" invisible="True"/>
+        </header>      
+
+            <field name="maintenance_type" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="name" position="attributes" >
+                <attribute name="required">0</attribute>
+            </field>
+
+            <field name="name" position="attributes" >
+                <attribute name="readonly">1</attribute>
+            </field>
+
+            <field name="description" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="equipment_id" position="attributes" >
+                <attribute name="required">1</attribute>
+            </field>
+
+            <field name="employee_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="category_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <xpath expr="//field[@name='equipment_id']" position="attributes">
+                <attribute name="domain">[('partner_client_id','=',customer)]</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('is_technical','=',True)]</attribute>
+            </xpath>
+            
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <xpath expr="//field[@name='equipment_id']" position="move"/>
+            </xpath>
+
+            <xpath expr="//field[@name='equipment_id']" position="attributes">
+               <attribute name="string">Máquina</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='schedule_date']" position="attributes">
+               <attribute name="string">Fecha Programada</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='user_id']" position="attributes">
+               <attribute name="string">Técnico</attribute>
+            </xpath>
+
+            <xpath expr="//field[(@name='employee_id')]" position="after">  
+                 <field name="customer" required="True"/>                                         
+            </xpath>
+
+            <xpath expr="//field[(@name='equipment_id')]" position="after">                
+                 <field name="service_order" invisible="True"/>
+                 <field name="machine_rental" groups="industry_thomas.group_access_tst"/>
+                 <field name="department_add" groups="industry_thomas.group_access_tst"/>
+                 <field name="city_machine" groups="industry_thomas.group_access_tst"/>
+                 <field name="branch_machine_tst" groups="industry_thomas.group_access_tst"/>
+                 <field name="branch_address" groups="industry_thomas.group_access_tst"/>
+                 <field name="machine_location" groups="industry_thomas.group_access_tst"/>
+                 <field name="office_code_tst" groups="industry_thomas.group_access_tst"/> 
+                 <field name="contract_code" groups="industry_thomas.group_access_tst"/>
+                 <field name="end_date_contract" groups="industry_thomas.group_access_tst"/>
+                 <field name="mantenimientos_proces" invisible="True"/>
+                 <field name="approver_type_contract" groups="industry_thomas.group_access_tst"/>                
+                 <field name="datetime_now" invisible="True"/> 
+                 <field name="total_days" invisible="True"/>                               
+            </xpath>
+            <xpath expr="//field[(@name='category_id')]" position="after">
+                 <field name="serie" string="Serie del Equipo"/>
+                 <field name="brand_machine" groups="industry_thomas.group_access_tst"/>
+                 <field name="model_machine" groups="industry_thomas.group_access_tst"/>
+                 <field name="plate" groups="industry_thomas.group_access_tst"/>                                                            
+                 <field name="task_id" readonly="True" invisible="True"/> 
+                 <field name="sequence_machine" invisible="True"/>               
+            </xpath>
+
+            <xpath expr="//field[(@name='user_id')]" position="after">
+                 <field name="approver_name" groups="industry_thomas.group_access_tst"/>
+                 <field name="approver_email" groups="industry_thomas.group_access_tst"/>
+                 <field name="stage_id_related" groups="industry_thomas.group_access_tst"/>           
+            </xpath>
+        
+            <xpath expr="//field[(@name='email_cc')]" position="after">
+            	 <field name="type_of_maintenance" widget="radio" required="True" groups="industry_thomas.group_access_tst"/>
+                 <field name="type_of_guarantee" attrs="{'invisible': [('type_of_maintenance', '!=', 'garantia')], 'required': [('type_of_maintenance', '=', 'garantia')]}" groups="industry_thomas.group_access_tst"/>
+                 <field name="maintenance_worksheet" attrs="{'invisible': [('type_of_guarantee', '!=', 'mantenimiento')], 'required': [('type_of_guarantee', '=', 'mantenimiento')]}" groups="industry_thomas.group_access_tst"/>
+                 <field name="attachment_id" readonly="True" groups="industry_thomas.group_access_tst"/>
+                 <field name="check_mant_day" invisible="True"/>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+               <div class="alert alert-danger" role="alert" style="margin-bottom:2px;" attrs="{'invisible':[('check_mant_day', '=', False)]}" >
+                   <h2>Ya existe un Mantenimiento para esta máquina para los proximos 15 días. Nombre de la máquina:</h2>
+                   <bold>
+                      <a class="alert-link" role="button">
+                        <field name="equipment_id" readonly="True"/><br></br>                         
+                      </a>
+                    </bold>
+                    <h3>En lo(s) siguiente(s) mantenimiento(s): </h3>
+                    <bold>
+                      <a class="alert-link" role="button">
+                        <field name="mantenimientos_proces" readonly="True"/><br></br>                   
+                      </a>
+                    </bold>
+               </div>
+             </xpath>
+             <sheet>
+                 <notebook>
+                     <page string="Descripción del Mantenimiento" groups="industry_thomas.group_access_tst">
+                         <field name="description_of_maintenance" placeholder="Descripción"/>
+                     </page>
+                 </notebook>
+             </sheet>
+        </field>
+    </record>
+    <record id="seq_maintenance" model="ir.sequence">
+            <field name="name">Mantenimiento</field>
+            <field name="code">maintenance.request</field>
+            <field name="prefix"></field>
+            <field name="suffix"></field> 
+            <field name="padding">8</field>
+            <field name="company_id" eval="False"/>
+    </record>
+</odoo>         

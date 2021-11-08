@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+        <act_window
+            id="action_treasury_box_out"
+            name="Entradas y Salidas de Dinero"
+            res_model="cash.box.out"
+            view_mode="form"
+            target="new"/>
+</odoo>

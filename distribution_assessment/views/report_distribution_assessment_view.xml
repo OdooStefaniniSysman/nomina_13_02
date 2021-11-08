@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <record id="distribution_assessment_report_view_tree" model="ir.ui.view">
+            <field name="name">distribution.assessment.report.view.tree</field>
+             <field name="type">tree</field>
+            <field name="model">report.distribution.assessment</field>
+            <field name="arch" type="xml">
+                <tree string="Distribution Assessment" create="0" edit="0">
+                   <field name="code"/>
+                   <field name="name"/>
+                   <field name="date_end"/>
+                   <field name="hours"/>
+                   <field name="percentage"/>
+                   <field name="management"/>
+                   <field name="laboratory"/>
+                   <field name="dispatch"/>
+                   <field name="maintenance"/>
+                   <field name="disused_assets"/>
+                   <field name="alternative_center"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_report_distribution_assessment_tree">
+            <field name="name">Distribution Assessment Report</field>
+            <field name="res_model">report.distribution.assessment</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

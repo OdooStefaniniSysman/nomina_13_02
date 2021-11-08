@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <!-- crm.lead.tag -->
+        <record id="view_crm_lead_tag_tree" model="ir.ui.view">
+            <field name="name">view.crm.lead.tag.tree</field>
+            <field name="model">crm.lead.tag</field>
+            <field name="inherit_id" ref="crm.crm_lead_tag_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="company_id" groups="base.group_multi_company" 
+                        options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- crm.lost.reason -->
+        <record id="view_crm_lost_reason_tree" model="ir.ui.view">
+            <field name="name">view.crm.lost.reason.tree</field>
+            <field name="model">crm.lost.reason</field>
+            <field name="inherit_id" ref="crm.crm_lost_reason_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="company_id" groups="base.group_multi_company" 
+                        options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- crm.stage -->
+        <record id="view_crm_stage_tree" model="ir.ui.view">
+            <field name="name">view.crm.stage.tree</field>
+            <field name="model">crm.stage</field>
+            <field name="inherit_id" ref="crm.crm_stage_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='team_id']" position="after">
+                    <field name="company_id" groups="base.group_multi_company" 
+                        options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_crm_stage_form" model="ir.ui.view">
+            <field name="name">view.crm.stage.form</field>
+            <field name="model">crm.stage</field>
+            <field name="inherit_id" ref="crm.crm_stage_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='team_id']" position="after">
+                    <field name="company_id" groups="base.group_multi_company" 
+                        options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+

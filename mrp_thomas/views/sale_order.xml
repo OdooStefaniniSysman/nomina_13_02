@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sale_order_inherit_thomas_produccion" model="ir.ui.view">
+        <field name="name">sale.orderform.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml"> 
+            <xpath expr="//notebook"  position="inside">
+                <page string="Características" attrs="{'invisible': [('check_thomas_colombia', '!=', True)]}">
+                    <group>
+                        <group string="CARACTERISTICAS TÉCNICAS">
+                            <field name="apply_thomas"/> 
+                            <field name="mrp_kind_of_paper_id" attrs="{'invisible': [('apply_thomas', '!=', True)], 'required': [('apply_thomas', '=', True)]}"/>
+                            <field name="grammage" invisible="True"/>
+                            <field name="mrp_document_size_id" attrs="{'invisible': [('apply_thomas', '!=', True)], 'required': [('apply_thomas', '=', True)]}"/>
+                            <field name="width" invisible="True"/>
+                            <field name="heigth" invisible="True"/>
+                            <field name="number_of_parts" attrs="{'invisible': [('apply_thomas', '!=', True)], 'required': [('apply_thomas', '=', True)]}"/>
+                            <field name="design_type" attrs="{'invisible': [('apply_thomas', '!=', True)], 'required': [('apply_thomas', '=', True)]}"/>
+                            <field name="art_supply" attrs="{'invisible': [('apply_thomas', '!=', True)], 'required': [('apply_thomas', '=', True)]}"/>
+                            <field name="number_of_pages" attrs="{'invisible': [('apply_thomas', '!=', True)], 'required': [('apply_thomas', '=', True)]}"/>
+                        </group>
+                        <group string="IMPRESIÓN LITOGRÁFICA">
+                           <field name="il_apply"/>
+                           <field name="mrp_inks_id" attrs="{'invisible': [('il_apply', '!=', True)], 'required': [('il_apply', '=', True)]}"/>
+                           <field name="mrp_adverse_id" attrs="{'invisible': [('il_apply', '!=', True)], 'required': [('il_apply', '=', True)]}"/>
+                           <field name="mrp_reverse_id" attrs="{'invisible': [('il_apply', '!=', True)], 'required': [('il_apply', '=', True)]}"/>
+                        </group>
+                        <group string="IMPRESIÓN INTAGLIO">
+                           <field name="ii_apply"/>
+                           <field name="mrp_inks_1_id" attrs="{'invisible': [('ii_apply', '!=', True)], 'required': [('ii_apply', '=', True)]}"/>
+                           <field name="mrp_adverse_1_id" attrs="{'invisible': [('ii_apply', '!=', True)], 'required': [('ii_apply', '=', True)]}"/>
+                           <filed name="mrp_reverse_1_id" attrs="{'invisible': [('ii_apply', '!=', True)], 'required': [('ii_apply', '=', True)]}"/>
+                        </group>
+                        <group string="PROCESOS TIPOGRAFÍA">
+                           <field name="process_apply"/>
+                           <field name="mrp_inks_1_id" attrs="{'invisible': [('process_apply', '!=', True)], 'required': [('process_apply', '=', True)]}"/>
+                           <field name="mrp_adverse_id" attrs="{'invisible': [('process_apply', '!=', True)], 'required': [('process_apply', '=', True)]}"/>
+                           <field name="mrp_reverse_id" attrs="{'invisible': [('process_apply', '!=', True)], 'required': [('process_apply', '=', True)]}"/>
+                           <field name="pt_apply"/>
+                           <field name="numeration" attrs="{'invisible': [('pt_apply', '!=', True)]}"/>
+                           <field name="since" attrs="{'invisible': [('numeration', '!=', True)]}"/>
+                           <field name="until" attrs="{'invisible': [('numeration', '!=', True)]}"/>
+                           <field name="mrp_kind_of_inks_id" attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                           <field name="number_of_digits" attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                           <field name="position" attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                           <field name="prefix_type" attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                           <field name="half_cut_type" attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                           <field name="security_die_type" attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                           <field name="stamping_type" attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                           <field name="ribbon_color" attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                           <field name="design_to_print"  attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                           <field name="perforated_type" attrs="{'invisible': [('pt_apply', '!=', True)], 'required': [('pt_apply', '=', True)]}"/>
+                        </group>
+                        <group string="PERSONALIZACIÓN">
+                           <field name="per_apply"/>
+                           <field name="personalization" attrs="{'invisible': [('per_apply', '!=', True)], 'required': [('per_apply', '=', True)]}"/>
+                           <field name="customization_location" attrs="{'invisible': [('per_apply', '!=', True)], 'required': [('per_apply', '=', True)]}"/>
+                           <field name="type_of_information" attrs="{'invisible': [('per_apply', '!=', True)], 'required': [('per_apply', '=', True)]}"/>
+                           <field name="information_processing" attrs="{'invisible': [('per_apply', '!=', True)], 'required': [('per_apply', '=', True)]}"/>
+                           <field name="type_of_customization" attrs="{'invisible': [('per_apply', '!=', True)], 'required': [('per_apply', '=', True)]}"/>
+                           <field name="customization_numbering" attrs="{'invisible': [('per_apply', '!=', True)], 'required': [('per_apply', '=', True)]}"/>
+                        </group>
+                        <group string="PROCESO DE ACABADOS">
+                           <field name="finishing_processes_apply"/>
+                           <field name="final_presentation" attrs="{'invisible': [('finishing_processes_apply', '!=', True)], 'required': [('finishing_processes_apply', '=', True)]}"/>
+                           <field name="packing_form" attrs="{'invisible': [('finishing_processes_apply', '!=', True)], 'required': [('finishing_processes_apply', '=', True)]}"/>
+                           <field name="quantity_package" attrs="{'invisible': [('finishing_processes_apply', '!=', True)], 'required': [('finishing_processes_apply', '=', True)]}"/>
+                           <field name="custody" attrs="{'invisible': [('finishing_processes_apply', '!=', True)], 'required': [('finishing_processes_apply', '=', True)]}"/>
+                           <field name="packaging_label" attrs="{'invisible': [('finishing_processes_apply', '!=', True)], 'required': [('finishing_processes_apply', '=', True)]}"/>
+                        </group>
+                        <group string="DESCRIPCION FACTURACIÓN">
+                           <field name="billing_description_apply"/>
+                           <field name="customer_to_bill" attrs="{'invisible': [('billing_description_apply', '!=', True)], 'required': [('billing_description_apply', '=', True)]}"/>
+                           <field name="billable" attrs="{'invisible': [('billing_description_apply', '!=', True)], 'required': [('billing_description_apply', '=', True)]}"/>
+                           <field name="attached_documents" attrs="{'invisible': [('billing_description_apply', '!=', True)], 'required': [('billing_description_apply', '=', True)]}"/>
+                           <field name="billing_management" attrs="{'invisible': [('billing_description_apply', '!=', True)], 'required': [('billing_description_apply', '=', True)]}"/>
+                        </group>
+                        <group string="ENTREGA DE PRODUCTO">
+                           <field name="product_delivery"/>
+                        </group>
+                        <group string="COSTOS">
+                           <field name="costs"/>
+                        </group>
+                        <group string="SI EL PEDIDO DE VENTA ES UNA PRUEBA (SERVICIO)">
+                           <field name="is_a_test"/>
+                           <field name="test_name" attrs="{'invisible': [('is_a_test', '!=', True)], 'required': [('is_a_test', '=', True)]}"/>
+                           <field name="date_of_application" attrs="{'invisible': [('is_a_test', '!=', True)], 'required': [('is_a_test', '=', True)]}"/>
+                           <field name="components" attrs="{'invisible': [('is_a_test', '!=', True)], 'required': [('is_a_test', '=', True)]}"/>
+                           <field name="impressions" attrs="{'invisible': [('is_a_test', '!=', True)], 'required': [('is_a_test', '=', True)]}"/>
+                           <field name="type_of_service" attrs="{'invisible': [('is_a_test', '!=', True)], 'required': [('is_a_test', '=', True)]}"/>
+                           <field name="application_sites" attrs="{'invisible': [('is_a_test', '!=', True)], 'required': [('is_a_test', '=', True)]}"/>
+                           <field name="quantity_type_service" attrs="{'invisible': [('is_a_test', '!=', True)], 'required': [('is_a_test', '=', True)]}"/>
+                        </group>
+                        <group string="OTROS">
+                           <field name="product_apply"/>
+                           <field name="budgeted_product"  attrs="{'invisible': [('product_apply', '!=', True)], 'required': [('product_apply', '=', True)]}"/>
+                           <field name="new_product"  attrs="{'invisible': [('product_apply', '!=', True)], 'required': [('product_apply', '=', True)]}"/>
+                           <field name="contract_product" attrs="{'invisible': [('product_apply', '!=', True)], 'required': [('product_apply', '=', True)]}"/>
+                           <field name="start_date_thomas" attrs="{'invisible': [('contract_product', '!=', 'si')]}"/>
+                           <field name="finish_date" attrs="{'invisible': [('contract_product', '!=', 'si')]}"/>
+                           <field name="supply_contract" attrs="{'invisible': [('contract_product', '!=', 'si')]}"/>
+                        </group>
+                        <group string="Si es Loteria">
+                           <field name="is_lottery"/>
+                           <field name="draw" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                           <field name="fractions_bills" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                           <field name="game_date" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                           <field name="number_tickets" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                        </group>
+                        <group>
+                          
+                        </group>
+                        <group string="Tamaño de la Fracción" attrs="{'invisible': [('is_lottery', '!=', True)]}">
+                           <field name="width_fraction_size" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                           <field name="heigth_fraction_size" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                        </group>
+                        <group>
+                          
+                        </group>
+                        <group string="Tamaño del Cabezote" attrs="{'invisible': [('is_lottery', '!=', True)]}">
+                           <field name="wide_head_size" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                           <field name="heigth_head_size" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                        </group>
+                        <group>
+                          
+                        </group>
+                        <group string="Numeración de Cajas" attrs="{'invisible': [('is_lottery', '!=', True)]}">
+                           <field name="rolls_since" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                           <field name="rolls_until" attrs="{'invisible': [('is_lottery', '!=', True)]}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[(@name='partner_id')]" position="after">
+               <field name="nit" /> <!--attrs="{'invisible': [('check_thomas_colombia', '!=', True)]}"-->
+               <field name="customer_phone" /> <!--attrs="{'invisible': [('check_thomas_colombia', '!=', True)]}"-->
+               <field name="res_city_id"/> <!--, 'invisible': [('check_thomas_colombia', '!=', True)]}-->
+               <field name="check_manufactured_product" attrs="{'invisible': [('check_thomas_colombia', '!=', True)]}"/>
+               <field name="logo" invisible="True"/>
+               <field name="check_thomas_colombia" invisible="True"/>
+            </xpath>
+            <xpath expr="//field[(@name='payment_term_id')]" position="after">
+               <field name="sale_type" required="True"/>
+               <field name="elaboration_art_type" attrs="{'invisible': [('check_thomas_colombia', '!=', True)], 'required': [('check_manufactured_product', '=', True)]}"/>
+               <field name="image_elaboration_art" attrs="{'invisible': [('elaboration_art_type', '!=', 'si')]}"/>
+               <field name="prev_order" attrs="{'invisible': [('check_thomas_colombia', '!=', True)]}"/>
+               <field name="printing_line_type" attrs="{'invisible': [('check_thomas_colombia', '!=', True)], 'required': [('check_manufactured_product', '=', True)]}"/>
+            </xpath>
+            <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='order_lines']/field[@name='order_line']/tree[1]/field[@name='tax_id']" position="after">
+              <field name="total_margen" invisible="True"/>
+              <field name="margen" widget="progressbar"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>     

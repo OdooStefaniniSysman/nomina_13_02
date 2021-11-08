@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="helpdesk_type_form">
+                <field name="name">helpdesk.type.form</field>
+                <field name="model">helpdesk.type</field>
+                <field name="arch" type="xml">
+                    <form>
+                        <sheet>
+                            <group>
+                                <div class="oe_title">
+                                    <h1>
+                                        <field name="name" required="1"/>
+                                    </h1>
+                                </div>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="helpdesk_type_tree">
+            <field name="name">helpdesk.type.tree</field>
+            <field name="model">helpdesk.type</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo de Ticket">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="helpdesk_tipo_ticket_action">
+            <field name="name">Tipo de Ticket</field>
+            <field name="res_model">helpdesk.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem id="helpdesk_tipo_ticket_menu" parent="helpdesk.helpdesk_menu_config" action='helpdesk_thomas_ext.helpdesk_tipo_ticket_action' name="Tipo de Ticket"   sequence="130"/>
+
+    </data>
+</odoo>

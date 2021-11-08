@@ -1,0 +1,12 @@
+<odoo>
+    <record id="view_mrp_stock_landed_cost_thomas_produccion" model="ir.ui.view">
+        <field name="name">stock.landed.cost.inherit</field>
+        <field name="model">stock.landed.cost</field>
+        <field name="inherit_id" ref="stock_landed_costs.view_stock_landed_cost_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='picking_ids']" position="attributes">
+                  <attribute name="domain">[]</attribute>
+            </xpath>
+        </field> 
+    </record>
+</odoo>   

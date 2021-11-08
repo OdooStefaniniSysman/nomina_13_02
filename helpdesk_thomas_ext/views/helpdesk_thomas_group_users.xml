@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="helpdesk_group_users_form">
+                <field name="name">helpdesk.groupusers.form</field>
+                <field name="model">helpdesk.groupusers</field>
+                <field name="arch" type="xml">
+                    <form>
+                        <sheet string="grupodeusuario">
+                            <div class="oe_title">
+                                        <h1>
+                                            <field name="name" required="1"/>
+                                        </h1>
+                                    </div>
+                            <group name="group_63be5b">
+                                <group name="group_63be5b_left" string='Usuarios'/>
+                                    <field name="user_id">
+                                        <tree string="Users" decoration-info="state == 'new'">
+                                            <field name="name"/>
+                                            <field name="login" attrs="{}" invisible="1"/>
+                                            <field name="lang" attrs="{}" invisible="1"/>
+                                            <field name="login_date" attrs="{}" invisible="1"/>
+                                            <field name="state" invisible="1"/>
+                                            <field name="company_id" groups="base.group_multi_company"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group name="group_63be5b_right"/>                  
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="helpdesk_group_users_tree">
+            <field name="name">helpdesk.groupusers.tree</field>
+            <field name="model">helpdesk.groupusers</field>
+            <field name="arch" type="xml">
+                <tree string="Servicio">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="helpdesk_grupo_usuarios_action">
+            <field name="name">Grupo de Usuarios</field>
+            <field name="res_model">helpdesk.groupusers</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem id="helpdesk_grupo_usuarios_menu" parent="helpdesk.helpdesk_menu_config" action='helpdesk_thomas_ext.helpdesk_grupo_usuarios_action' name="Grupos de Usuarios"   sequence="120"/>
+
+    </data>
+</odoo>

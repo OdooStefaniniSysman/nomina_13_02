@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+        <record id="view_account_payment_form_inherit" model="ir.ui.view">
+            <field name="name">account.payment.form.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header//button[@name='post']" position="after">
+                    <button name="approve_transfer" string="Analyst Approve" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('is_approver', '=', False),('state', '!=', 'posted')]}"/>
+                    <button name="reject_transfer" string="Reject" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('is_approver', '=', False),('state', '!=', 'posted')]}"/>
+                    
+                    <button name="approve2_transfer" string="Coordinator Approve" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('is_approver2', '=', False),('state', '!=', 'approved')]}"/>
+                    <button name="reject2_transfer" string="Coordinator Reject" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('is_approver2', '=', False),('state', '!=', 'approved')]}"/>
+                    
+                    <button name="approve3_transfer" string="Director Approve" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('is_approver3', '=', False),('state', '!=', 'approved2')]}"/>
+                    <button name="reject3_transfer" string="Director Reject" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('is_approver3', '=', False),('state', '!=', 'approved2')]}"/>
+                </xpath>
+		<!--<xpath expr="//header//button[@name='post']" position="attributes">
+                    <attribute name="states">draft,approved3</attribute>
+		</xpath>-->
+                <xpath expr="//header//button[@name='cancel']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state', 'in', ('cancelled', 'posted', 'rejected', 'rejected2', 'rejected3'))]}
+                    </attribute>
+                </xpath>
+                <field name="partner_id" position="after">
+                    <field name="is_approver" invisible="1"/>
+                    <field name="is_approver2" invisible="1"/>
+                    <field name="is_approver3" invisible="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_payment_search_inherit" model="ir.ui.view">
+            <field name="name">account.payment.search.inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/filter[@name='state_draft']" position="after">
+                    <filter string="Waiting For Analyst Approval" name="state_waiting_approval"
+                            domain="[('state', '=', 'waiting_approval')]"/>
+                    <filter string="Analyst Approved" name="state_approved"
+                            domain="[('state', '=', 'approved')]"/>
+                    <filter string="Analyst Rejected" name="state_rejected"
+                            domain="[('state', '=', 'rejected')]"/>
+                    
+                    <filter string="Waiting For Coordinator Approval" name="state_waiting_approval2"
+                            domain="[('state', '=', 'waiting_approval2')]"/>
+                    <filter string="Coordinator Approved" name="state_approved2"
+                            domain="[('state', '=', 'approved2')]"/>
+                    <filter string="Coordinator Rejected" name="state_rejected2"
+                            domain="[('state', '=', 'rejected2')]"/>
+                    
+                    <filter string="Waiting For Director Approval" name="state_waiting_approval3"
+                            domain="[('state', '=', 'waiting_approval3')]"/>
+                    <filter string="Director Approved" name="state_approved3"
+                            domain="[('state', '=', 'approved3')]"/>
+                    <filter string="Director Rejected" name="state_rejected3"
+                            domain="[('state', '=', 'rejected3')]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+

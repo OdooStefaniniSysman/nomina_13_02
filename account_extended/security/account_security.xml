@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record model="ir.module.category" id="category_account_bank_statement">
+            <field name="name">Bank statement</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="group_account_bank_statement_accounting" model="res.groups">
+            <field name="name">Accounting</field>
+            <field name="category_id" ref="account_extended.category_account_bank_statement"/>
+        </record>
+
+        <record id="group_account_bank_statement_treasury" model="res.groups">
+            <field name="name">Treasury</field>
+            <field name="category_id" ref="account_extended.category_account_bank_statement"/>
+        </record>
+
+        <record id="group_account_bank_statement_payroll" model="res.groups">
+            <field name="name">Payroll</field>
+            <field name="category_id" ref="account_extended.category_account_bank_statement"/>
+        </record>
+
+        <record id="group_account_bank_statement_portfolio" model="res.groups">
+            <field name="name">Portfolio</field>
+            <field name="category_id" ref="account_extended.category_account_bank_statement"/>
+        </record>
+
+        <record id="group_account_bank_statement_receivable" model="res.groups">
+            <field name="name">Receivable</field>
+            <field name="category_id" ref="account_extended.category_account_bank_statement"/>
+        </record>
+
+        <record id="account_bank_statement_accounting_rule" model="ir.rule">
+            <field name="name">Statement Line: Assigned to accounting</field>
+            <field name="model_id" ref="model_account_bank_statement_line"/>
+            <field name="global" eval="False"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">['|', ('assigned_to', '=' , 'accounting'), '&amp;', ('assigned_to', '=' , False), ('create_uid', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('account_extended.group_account_bank_statement_accounting'))]"/>
+        </record>
+
+        <record id="account_bank_statement_treasury_rule" model="ir.rule">
+            <field name="name">Statement Line: Assigned to treasury</field>
+            <field name="model_id" ref="model_account_bank_statement_line"/>
+            <field name="global" eval="False"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">['|', ('assigned_to', '=' , 'treasury'), '&amp;', ('assigned_to', '=' , False), ('create_uid', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('account_extended.group_account_bank_statement_treasury'))]"/>
+        </record>
+
+        <record id="account_bank_statement_payroll_rule" model="ir.rule">
+            <field name="name">Statement Line: Assigned to payroll</field>
+            <field name="model_id" ref="model_account_bank_statement_line"/>
+            <field name="global" eval="False"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">['|', ('assigned_to', '=' , 'payroll'), '&amp;', ('assigned_to', '=' , False), ('create_uid', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('account_extended.group_account_bank_statement_payroll'))]"/>
+        </record>
+
+        <record id="account_bank_statement_portfolio_rule" model="ir.rule">
+            <field name="name">Statement Line: Assigned to portfolio</field>
+            <field name="model_id" ref="model_account_bank_statement_line"/>
+            <field name="global" eval="False"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">['|', ('assigned_to', '=' , 'portfolio'), '&amp;', ('assigned_to', '=' , False), ('create_uid', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('account_extended.group_account_bank_statement_portfolio'))]"/>
+        </record>
+
+        <record id="account_bank_statement_receivable_rule" model="ir.rule">
+            <field name="name">Statement Line: Assigned to receivable</field>
+            <field name="model_id" ref="model_account_bank_statement_line"/>
+            <field name="global" eval="False"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">['|', ('assigned_to', '=' , 'receivable'), '&amp;', ('assigned_to', '=' , False), ('create_uid', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('account_extended.group_account_bank_statement_receivable'))]"/>
+        </record>
+
+    </data>
+</odoo>

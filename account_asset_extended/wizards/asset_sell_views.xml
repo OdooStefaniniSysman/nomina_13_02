@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_asset_sell_inherited" model="ir.ui.view">
+        <field name="name">account.asset.sell.inherited</field>
+        <field name="model">account.asset.sell</field>
+        <field name="inherit_id" ref="account_asset.asset_sell_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='loss_account_id']" position="after">
+                <!-- <field name="asset_type" invisible="True"/> -->
+                <field name="model_id" string="Asset Model" help="Category of asset" 
+                    domain="[('state', '=', 'model'), ('asset_type', '=', asset_type)]"
+                    attrs="{'invisible': [('action', 'not in', ('propiedad_inversion', 'mantenido_venta'))],
+                            'required': [('action', 'in', ('propiedad_inversion', 'mantenido_venta'))]}"/>
+                
+                <field name="asset_account_id" attrs="{'invisible': [('action', 'not in', ('mantenido_venta','propiedad_inversion'))]}"/>
+                <field name="depreciation_account_id" attrs="{'invisible': [('action', 'not in', ('mantenido_venta','propiedad_inversion'))]}"/>
+            </xpath>
+            <xpath expr="//button[@name='do_action']" position="after">
+                <button name="do_action_niff" string="Mantenido para la venta" type="object" class="btn-primary" attrs="{'invisible': [('action', '!=', 'mantenido_venta')]}"/>
+                <button name="do_action_niff" string="Propiedad de inversion" type="object" class="btn-primary" attrs="{'invisible': [('action', '!=', 'propiedad_inversion')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='gain_account_id']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',('gain_or_loss', '!=', 'gain'), ('action', 'in', ('propiedad_inversion', 'mantenido_venta'))], 'required': [('gain_or_loss', '=', 'gain'), ('action', '!=', ('propiedad_inversion', 'mantenido_venta'))]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='loss_account_id']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',('gain_or_loss', '!=', 'loss'), ('action', 'in', ('propiedad_inversion', 'mantenido_venta'))], 'required': [('gain_or_loss', '=', 'gain'), ('action', '!=', ('propiedad_inversion', 'mantenido_venta'))]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

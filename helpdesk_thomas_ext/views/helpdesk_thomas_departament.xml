@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="helpdesk_departament_user_form" model="ir.ui.view">
+            <field name="name">res.departament.users.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lang']" position="before">
+                    <field name="departament" string="DEPARTAMENTO"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

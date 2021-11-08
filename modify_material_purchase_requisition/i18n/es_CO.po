@@ -1,0 +1,368 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* modify_material_purchase_requisition
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-12 19:17+0000\n"
+"PO-Revision-Date: 2020-11-12 19:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "<b>APROBADO</b><br/>NOMBRE DE PRUEBA"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "<b>AUTORIZADO</b><br/>NOMBRE DE PRUEBA"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>CIUDAD:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>DEPENDENCIA:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>DETALLE:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>DIRECCIÓN DE ENTREGA:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>DIRECCIÓN:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>DOCUMENTO NÚMERO:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "<b>ELABORADO</b> <br/>NOMBRE DE PRUEBA"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>EMPRESA:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>FAX:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>FECHA:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>HORA:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>NIT:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "<b>OBSERVACIONES:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "<b>RECIBIDO</b><br/>NOMBRE DE PRUEBA"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>SOLICITANTE:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>TELÉFONO:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "<b>Total:</b>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields.selection,name:modify_material_purchase_requisition.selection__stock_move__inspection_state__according
+msgid "According"
+msgstr "Conforme"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition_line__bool_state
+msgid "Bool State"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "CANTIDAD"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "CECO"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "CENTRO COSTO"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.view_material_purchase_requisition_form_inherit
+msgid "Charge"
+msgstr "Cargar"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition__charge_to
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_stock_picking__charge_to
+msgid "Charge To"
+msgstr "Cargar a"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition__cost_center_id
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition_line__analytic_account_id
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_stock_picking__cost_center_id
+#: model:ir.model.fields.selection,name:modify_material_purchase_requisition.selection__material_purchase_requisition__charge_to__center
+msgid "Cost Center"
+msgstr "Centro de Costo"
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.view_material_purchase_requisition_form_inherit
+msgid "Create Picking and PO"
+msgstr "Crear Picking y Orden de Compra"
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "DESCRIPCIÓN MATERIAL"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_stock_picking__recieved_id
+msgid "Decieved By"
+msgstr "Recibido por"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,help:modify_material_purchase_requisition.field_material_purchase_requisition_line__uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr "Unidad de medida usada para todas las operaciones de inventario"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition__delivery_by
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_stock_picking__delivery_id
+msgid "Delivery By"
+msgstr "Entregado Por"
+
+#. module: modify_material_purchase_requisition
+#: code:addons/modify_material_purchase_requisition/models/.ipynb_checkpoints/material_purchase_requisition-checkpoint.py:0
+#: code:addons/modify_material_purchase_requisition/models/material_purchase_requisition.py:0
+#, python-format
+msgid "Do not Use negative values"
+msgstr "No puede usar Valores negativos"
+
+#. module: modify_material_purchase_requisition
+#: code:addons/modify_material_purchase_requisition/models/.ipynb_checkpoints/material_purchase_requisition-checkpoint.py:0
+#: code:addons/modify_material_purchase_requisition/models/material_purchase_requisition.py:0
+#, python-format
+msgid "Do not charge to production order and select cost center"
+msgstr "No seleccione centro de costos si carga la requisición a una Orden de Produccion"
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "ESTADO ORIGINAL"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "ITEM"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition_line__inspection_state
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_stock_move__inspection_state
+msgid "Inspection State"
+msgstr "Estado de Inspección"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition_line__lot
+msgid "Lots and Serial Number"
+msgstr "Lotes y Numeros de Serie"
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "MM-FOR-001"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model,name:modify_material_purchase_requisition.model_material_purchase_requisition_line
+msgid "Material Purchase Requisition Lines"
+msgstr "Lineas de requisición de compra"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_stock_picking__owner_id
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "PAG. <span class=\"page\"/> DE <span class=\"topage\"/><br/>"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: code:addons/modify_material_purchase_requisition/models/.ipynb_checkpoints/material_purchase_requisition-checkpoint.py:0
+#: code:addons/modify_material_purchase_requisition/models/material_purchase_requisition.py:0
+#, python-format
+msgid "Please create some requisition lines."
+msgstr "Por favor crea más lineas de Requisición"
+
+#. module: modify_material_purchase_requisition
+#: code:addons/modify_material_purchase_requisition/models/.ipynb_checkpoints/material_purchase_requisition-checkpoint.py:0
+#: code:addons/modify_material_purchase_requisition/models/material_purchase_requisition.py:0
+#, python-format
+msgid ""
+"Please enter atleast one vendor on Requisition Lines for Requisition Action "
+"Purchase"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition__production_id
+#: model:ir.model.fields.selection,name:modify_material_purchase_requisition.selection__material_purchase_requisition__charge_to__order
+msgid "Production Order"
+msgstr "Order de Producción"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.actions.report,name:modify_material_purchase_requisition.report_purchase_requisition
+#: model:ir.model,name:modify_material_purchase_requisition.model_material_purchase_requisition
+msgid "Purchase Requisition"
+msgstr "Requicisión de Compra"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields.selection,name:modify_material_purchase_requisition.selection__stock_move__inspection_state__released
+msgid "Released"
+msgstr "Relacionado"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_stock_picking__responsable
+msgid "Responsable"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition__responsable_area
+msgid "Responsable Area"
+msgstr "Responsable del Area"
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "SOLICITUD DE PEDIDO"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition__security_aux
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_stock_picking__security_aux_id
+msgid "Security Auxiliar"
+msgstr "Nombre Auxiliar de Seguridad"
+
+#. module: modify_material_purchase_requisition
+#: code:addons/modify_material_purchase_requisition/models/.ipynb_checkpoints/material_purchase_requisition-checkpoint.py:0
+#: code:addons/modify_material_purchase_requisition/models/material_purchase_requisition.py:0
+#, python-format
+msgid "Select Destination location under the picking details."
+msgstr "Seleccione Locación de destino dentro de los detalles de picking"
+
+#. module: modify_material_purchase_requisition
+#: code:addons/modify_material_purchase_requisition/models/.ipynb_checkpoints/material_purchase_requisition-checkpoint.py:0
+#: code:addons/modify_material_purchase_requisition/models/material_purchase_requisition.py:0
+#, python-format
+msgid "Select Picking Type under the picking details."
+msgstr "Selecciona el tipo de picking dentro the los detalles de picking"
+
+#. module: modify_material_purchase_requisition
+#: code:addons/modify_material_purchase_requisition/models/.ipynb_checkpoints/material_purchase_requisition-checkpoint.py:0
+#: code:addons/modify_material_purchase_requisition/models/material_purchase_requisition.py:0
+#, python-format
+msgid "Select Source location under the picking details."
+msgstr "Selecciona la locación de origen dentro de los detalles de picking"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_stock_picking__area
+msgid "Solicitant Area"
+msgstr "Area Solicitante"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model,name:modify_material_purchase_requisition.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de Existencias"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model,name:modify_material_purchase_requisition.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "UM"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition_line__uom_id
+msgid "Unit of Measure"
+msgstr "Unidad de medida"
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.internal_layout
+msgid "VERSION 2<br/>12-JUL-2010"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "Vr TOTAL"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model_terms:ir.ui.view,arch_db:modify_material_purchase_requisition.purchase_requisition
+msgid "Vr UNITARIO"
+msgstr ""
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,help:modify_material_purchase_requisition.field_stock_picking__owner_id
+msgid ""
+"When validating the transfer, the products will be assigned to this owner."
+msgstr ""
+"Al validar la transferencia, los productos se asignarán a este propietario."
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields.selection,name:modify_material_purchase_requisition.selection__stock_move__inspection_state__inspection
+msgid "Without Inspection"
+msgstr "Sin inspección"
+
+#. module: modify_material_purchase_requisition
+#: model:ir.model.fields,field_description:modify_material_purchase_requisition.field_material_purchase_requisition__recieved_by
+msgid "recieved By"
+msgstr "Recibido por"

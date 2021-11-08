@@ -1,0 +1,4 @@
+[submodule "infotodoo/thomasgregandsons"]
+	path = infotodoo/thomasgregandsons
+	url = git@github.com:infotodoo/thomasgregandsons.git
+	branch = master

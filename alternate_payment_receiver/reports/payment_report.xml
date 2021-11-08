@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_alternatuve_contact_payment" inherit_id="account.report_payment_receipt_document">
+            <xpath expr="//span[@t-field='o.partner_id']" position="replace">
+                <span t-if="o.activate_alternative_contact" t-field="o.alternative_contact" />
+                <span t-else="" t-field="o.partner_id" />
+            </xpath>
+        </template>
+    </data>
+</odoo>

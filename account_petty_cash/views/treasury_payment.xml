@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+  
+        <record id="view_treasury_payment_tree" model="ir.ui.view">
+            <field name="name">treasury.payment.tree</field>
+            <field name="model">treasury.payment</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" edit="false">
+                    <field name="payment_date"/>
+                    <field name="name"/>
+                    <field name="journal_id"/>
+                    <field name="partner_id" string="Tecero"/>
+                    <field name="amount" sum="Cantidad"/>
+                    <field name="state"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="currency_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_treasury_payment_kanban" model="ir.ui.view">
+            <field name="name">treasury.payment.kanban</field>
+            <field name="model">treasury.payment</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" create="0" group_create="0" >
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="payment_date"/>
+                    <field name="state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row mb4">
+                                    <div class="col-6">
+                                        <strong><span><field name="name"/></span></strong>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <strong><i class="fa fa-clock-o" role="img" aria-label="Date" title="Date"/> <t t-esc="record.payment_date.value"/></strong>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span><field name="partner_id"/></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <field name="amount" widget='monetary'/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="float-right">
+                                            <field name="state" widget="label_selection" options="{'classes': {'draft': 'secondary', 'sent': 'success'}}"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_treasury_payment_search" model="ir.ui.view">
+            <field name="name">treasury.payment.search</field>
+            <field name="model">treasury.payment</field>
+            <field name="arch" type="xml">
+                <search string="Payments">
+                    <field name="name" string="Transacciones"
+                        filter_domain="['|', '|', ('name', 'ilike', self), ('partner_id', 'ilike', self), ('payment_reference', 'ilike', self)]"/>
+                    <field name="partner_id" string="Tercero"/>
+                    <field name="journal_id"/>
+                    <separator/>
+                    <filter string="Entradas" name="inbound_filter" domain="[('partner_type', '=', 'customer')]"/>
+                    <filter string="Salidas" name="outbound_filter" domain="[('partner_type', '=', 'supplier')]"/>
+                    <filter string="Aumento de Fondos" name="infunding_filter" domain="[('partner_type', '=', 'infunding')]"/>
+                    <filter string="Disminucion de Fondos" name="outfunding_filter" domain="[('partner_type', '=', 'outfunding')]"/>
+                    <separator/>
+                    <filter string="Borrador" name="state_draft" domain="[('state', '=', 'draft')]"/>
+                    <filter string="Validados" name="state_posted" domain="[('state', '=', 'posted')]"/>
+                    <separator/>
+                    <filter string="Fecha del Pago" name="payment_date" date="payment_date"/>
+                    <separator/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <filter string="Tercero" name="partner" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Diario" name="journal" domain="[]" context="{'group_by': 'journal_id'}"/>
+                    <filter string="Estado" name="state" domain="[]" context="{'group_by': 'state'}"/>
+                    <filter string="Fecha de Pago" name="groupby_payment_date" domain="[]" context="{'group_by': 'payment_date'}"/>
+                    <filter string="Moneda" name="currency" domain="[]" context="{'group_by': 'currency_id'}" groups="base.group_multi_currency"/>
+                    <filter string="Empresa" name="company" domain="[]" context="{'group_by': 'company_id'}" groups="base.group_multi_company" invisible="1"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_treasury_payment_form" model="ir.ui.view">
+            <field name="name">treasury.payment.form</field>
+            <field name="model">treasury.payment</field>
+            <field name="arch" type="xml">
+                <form string="Register Payment">
+                    <header>
+                        <button name="post" class="oe_highlight" states="draft" string="Confirm" type="object"/>
+                        <button name="action_draft" class="btn btn-secondary" attrs="{'invisible': [('state', '=', 'draft')]}" string="Convertir a Borrador" type="object"/>
+                        <button name="cancel" states="draft" string="Cancel" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,posted,cancelled"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" name="button_journal_entries"
+                                    string="Apuntes Contables" type="object"
+                                    groups="account.group_account_user"
+                                    attrs="{'invisible':[('move_line_ids','=',[])]}" icon="fa-bars"/>
+                            <field name="move_line_ids" invisible="1"/>
+                        </div>
+                        <field name="id" invisible="1"/>
+                        <div class="oe_title" attrs="{'invisible': [('state', '=', 'draft')]}">
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <group>
+                            <group name="partner_group" invisible="context.get('active_model') == 'account.move'">
+                                <field name="payment_type" widget="radio"/>
+                                <field name="payment_date"/>
+                                <field name="partner_id" context="{'default_is_company': True}" required="True"/>
+                                <field name="account_id" required="False" attrs="{
+                                                        'invisible': [('payment_type', 'in', ('infunding','outfunding'))],
+                                                        'required': [('payment_type', 'not in', ('infunding','outfunding'))],
+                                                    }"/>
+                            </group>
+                            <group>
+                                <field name="payment_method_id" required="True"/>
+                                <field name="journal_id"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="session_id"/>
+                                <field name="config_id"/>
+                                <field name="account_analytic_id"/>
+                            </group>
+                            <group name="right_column">
+                                <label for="amount"/>
+                                <div name="amount_div" class="o_row">
+                                    <field name="amount"/>
+                                    <field name="currency_id" options="{'no_create': True, 'no_open': True}" groups="base.group_multi_currency"/>
+                                </div>
+                            </group>
+                            
+                        </group>
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

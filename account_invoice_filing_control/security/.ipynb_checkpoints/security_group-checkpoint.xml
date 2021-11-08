@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        <record id="group_invoice_field_internally" model="res.groups">
+			<field name="name">Marcar como facturas radicadas en Cartera</field>
+			<field name="category_id" ref="base.module_category_hidden"/>
+		</record>
+		<record id="group_invoice_field_customer" model="res.groups">
+			<field name="name">Marcar como facturas radicadas en Cliente</field>
+			<field name="category_id" ref="base.module_category_hidden"/>
+		</record>
+        <record id="group_invoice_field_supplier" model="res.groups">
+			<field name="name">Marcar como facturas radicadas en Cuentas por Pagar</field>
+			<field name="category_id" ref="base.module_category_hidden"/>
+		</record>
+		<record id="group_invoice_field_treasury" model="res.groups">
+			<field name="name">Marcar como facturas radicadas en Tesoreria</field>
+			<field name="category_id" ref="base.module_category_hidden"/>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+         <act_window
+            id="treasury_payment_multi_validate_view"
+            name="Multiple Validación de Gastos"
+            domain="[('id','in',active_ids)]"
+            res_model="treasury.payment.multi.validate"
+            view_mode="form"
+            binding_model="treasury.payment"
+            groups="account_petty_cash.group_treasury_manager"
+            target="new"/>
+
+    	<record id="treasury_payment_multi_validate_view" model="ir.ui.view">
+	    <field name="name">Multiple Validación de Gastos</field>
+	    <field name="model">treasury.payment.multi.validate</field>
+	    <field name="arch" type="xml">
+	    <form string="Multiple Validacion de Gastos">
+                <group>
+                    <h5>Validar los Gastos</h5>
+                </group>
+                <group>
+                    <field name="payment_ids">
+                        <tree create="false" delete="false">
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="amount"/>
+			    <field name="journal_id"/>
+			</tree>
+                    </field>
+                </group>
+                <footer>
+                    <button name="register_treasury_payment_multi_validate" 
+                        string="Validar Gastos" 
+                        type="object" 
+                        class="btn-primary"/>
+                    <button string="Cancelar" class="btn-default" special="cancel"/>
+                </footer>
+	    </form>
+	</field>
+    </record>
+        
+        
+       
+
+    </data>
+</odoo>

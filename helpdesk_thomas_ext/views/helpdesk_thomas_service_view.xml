@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="helpdesk_service_form">
+                <field name="name">helpdesk.service.form</field>
+                <field name="model">helpdesk.service</field>
+                <field name="arch" type="xml">
+                    <form>
+                        <sheet string="servicio">
+                            <div class="oe_title">
+                                        <h1>
+                                            <field name="name" required="1"/>
+                                        </h1>
+                                    </div>
+                            <group name="studio_group_4869a4">
+                            <group name="studio_group_4869a4_left"/>
+                            <group name="studio_group_4869a4_right"/>
+                                <group>
+                                    <field name="team_id" string='Mesa de ayuda relacionada'/>
+                                    <field name="group_users_id" string='Grupos relacionados'/>
+                                    <field name="user_id" string='Usuario relacionado'/> 
+                                </group>
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="helpdesk_service_tree">
+            <field name="name">helpdesk.service.tree</field>
+            <field name="model">helpdesk.service</field>
+            <field name="arch" type="xml">
+                <tree string="Servicio">
+                    <field name="name"/>
+                    <field name="team_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="helpdesk_servicio_action" model="ir.actions.act_window">
+            <field name="name">Servicio</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">helpdesk.service</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="helpdesk_service_tree"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="helpdesk_servicio_menu" name="Servicio" parent="helpdesk.helpdesk_menu_config" action='helpdesk_thomas_ext.helpdesk_servicio_action' sequence="15"/>
+    </data>
+</odoo>

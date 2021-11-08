@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_account_journal_form_inherit">
+        <field name="name">account.journal.form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="partner_id" />
+                <field name="petty_cash_ok" />
+            </xpath>
+            <!--<xpath expr="//page[@name='journal_entries']" position="inside">
+                <group string="Gastos Bancarios" attr="{'invisible': [('type', '!=', 'bank')]}">
+                	<field name="bank_base_tax_id" />
+                	<field name="bank_tax_ids" domain="[('type_tax_use','=','sale')]"/>
+                    <field name="bank_commission_ids" string="Comisiones">
+                        <tree editable="bottom" create="true" edit="true" delete="true">
+                            <field name="journal_payment_method_id"/>
+                            <field name="amount_percent"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>-->
+        </field>
+    </record>
+
+    <!--<record model="ir.ui.view" id="view_account_journal_bank_commission_form">
+        <field name="name">account.journal.bank.commission.form</field>
+        <field name="model">account.journal.bank.commission</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Comisión por Método de Pago">
+                    <field name="journal_payment_method_id"/>
+                    <field name="amount_percent"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_account_journal_bank_commission_tree" model="ir.ui.view">
+        <field name="name">account.journal.bank.commission.tree</field>
+        <field name="model">account.journal.bank.commission</field>
+        <field name="arch" type="xml">
+            <tree string="Comisión por Método de Pago">
+                <field name="journal_payment_method_id"/>
+                <field name="amount_percent"/>
+            </tree>
+        </field>
+    </record>-->
+
+</odoo>

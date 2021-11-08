@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <record id="view_account_move_financial_custom" model="ir.ui.view">
+     <field name="name">account.move.inherit</field>
+     <field name="model">account.move</field>
+     <field name="inherit_id" ref="account.view_move_form"/>
+     <field name="arch" type="xml">
+         <field name="ref" position="after">
+            <field name="dian_resolution" readonly="True"/>
+            <!-- <field name="additional_document_reference"/>
+               <field name="purchase_order_date"/>
+               <field name="additional_document"/> -->
+         </field>
+         <xpath expr="//sheet/group/group[@id='header_right_group']" position="after">
+            <group>
+               <field name="ticket"/>
+               <field name="period_of_service"/>
+               <field name="cost_description"/>
+               <field name="info_to_invoice"/>
+            </group>
+            <group>
+               <field name="approver_date"/>
+               <field name="delivery_plan"/>
+               <field name="ref_consiliation" attrs="{'invisible': [('is_ut','!=',True)]}"/>
+            </group>
+         </xpath>
+         <field name="partner_id" position="after">
+            <field name="nit"/>
+            <field name="customer_phone"/>
+            <field name="res_city_id" attrs="{'required': [('company_country','=','CO'),('type','in',('out_invoice','out_refund'))]}"/>
+            <field name="company_country" invisible="1"/>
+         </field>
+         <field name="currency_id" position="after">
+            <field name="invoice_state"/>
+         </field>
+     </field>
+  </record>
+
+  <record id="view_account_move_tree_financial_thomas" model="ir.ui.view">
+     <field name="name">account.move.tree.inherit</field>
+     <field name="model">account.move</field>
+     <field name="inherit_id" ref="account.view_invoice_tree"/>
+     <field name="arch" type="xml">
+         <field name="state" position="after">
+            <field name="invoice_state" attrs="{'invisible': [('type','not in',('out_invoice','out_refund'))]}"/>
+         </field>
+      </field>
+   </record>
+</odoo>
+
+              
+       
+

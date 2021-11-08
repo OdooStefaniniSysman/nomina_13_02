@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_mrp_workcenter_productivity">
+            <field name="name">Workcenter</field>
+            <field name="res_model">mrp.workcenter.productivity</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_mrp_workcenter_productivity" parent="mrp.menu_mrp_manufacturing" action="action_mrp_workcenter_productivity"/>
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="view_base_model_import_form" model="ir.ui.view">
+            <field name="name">Workcenter Import</field>
+            <field name="model">base.model.import</field>
+            <field name="arch" type="xml">
+                <form string="Workcenter Import">
+                    <field invisible="1" name="state"/>
+                    <field name="name" invisible="True"/>
+                    <field name="filename" invisible="True"/>
+                    <group states="choose" string="Import">
+                        <field name="model_id" readonly="True" contect="{'create': False}"/>
+                        <field name="data" filename="name" required="True"/>
+                    </group>
+                    <div states="get">
+                        <h2>Import Complete</h2>
+                        <p>Here is the exported file: <field name="filedata" readonly="1" filename="filename"/></p>
+                    </div>
+                    <footer states="choose">
+                        <button name="action_import" string="Import" type="object" class="btn-primary"/>
+                        <button special="cancel" string="Cancel" type="object" class="btn-secondary"/>
+                    </footer>
+                    <footer states="get">
+                        <button special="cancel" string="Close" type="object" class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_base_model_import" model="ir.actions.act_window">
+            <field name="name">Workcenter Import</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">base.model.import</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="action_base_model_import" id="menu_base_model_import" parent="mrp.menu_mrp_manufacturing"/>
+    </data>
+</odoo>

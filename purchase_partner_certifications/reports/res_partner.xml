@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <report
+                id="report_custom_partner_certifications"
+                string="Certificación de Proveedor"
+                model="res.partner"
+                report_type="qweb-pdf"
+                name="purchase_partner_certifications.report_custom_partner_certifications"
+        />
+
+         <record id="paperformat_purchase_partner_certificate_report" model="report.paperformat">
+          <field name="name">Certificación de Proveedores</field>
+          <field name="default" eval="True"/>
+          <field name="format">A4</field>
+          <field name="page_height">0</field>
+          <field name="page_width">0</field>
+          <field name="orientation">Portrait</field>
+          <field name="margin_top">10</field>
+          <field name="margin_bottom">15</field>
+          <field name="margin_left">7</field>
+          <field name="margin_right">7</field>
+          <field name="header_line" eval="False"/>
+          <field name="header_spacing">3</field>
+          <field name="dpi">90</field>
+        </record>
+
+        <template id="report_custom_partner_certifications">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">                    
+                        <div class="page">
+                            <head>
+                            	<style>
+									 div#b{          
+                                     width:50px;
+                                     height:270px;
+                                     background-color:white;
+                                     float:left;         
+                                     }
+                                </style>
+                            </head>
+                            <table style="width:100%">
+                              <tr>
+                                <th>
+                                  <img t-att-src="'data:image/png;base64,%s' % to_text(doc.logo_csc)" width="240" height="100"/>
+                                </th>
+                                <th></th> 
+                                <th><strong><p>1000-COM-COM85-20</p></strong></th>
+                              </tr>
+                            </table>
+                            <strong><p align="center">THOMAS GREG SONS LIMITED GUERNSEY S.A<br></br>
+                                              NIT:830012157-0
+                            </p></strong>
+                            <br></br>
+                            <strong><p align="center">CERTIFICA QUE:</p></strong>
+                            <br></br><br></br>
+                            <p align="justify"><strong>OFFICE CLASS SAS,</strong>con <strong> nit 900452504,</strong> nos han prestado el servicio de suministro de papelería aseo y cafeteria</p>
+                            <p>Durante este tiempo se ha caracterizado por su responsabilidad y cumplimiento en el desarrollo de la actividad</p>
+                            <br></br><br></br>
+                            <table style="width:100%">
+                              <tr>
+                                <td>Estado del acuerdo:</td>
+                                <td><strong>ACTIVO</strong></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>Fecha primera compra:</td>
+                                <td><strong>4 marzo 2020</strong></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>Fecha última compra:</td>
+                                <td><strong>7 septiembre 2020</strong></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                               <tr>
+                                <td>Monto de ordenes de compra a la fecha:</td>
+                                <td><strong>$ 5.000.000</strong></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </table>
+                            <br></br>
+                            <p align="justify">La presente certificación se expide por solicitud del interesado a los 1 días del mes de septiembre de 2020,</p><br></br>
+                            <p>Cordialmente,</p>
+                            <br></br><br></br>
+                            <table style="width:100%">
+                              <tr>
+                                <td>Firma</td>
+                              </tr>
+                              <tr>
+                                <td><strong>Andre Riveros Castillo</strong></td>
+                              </tr>
+                              <tr>
+                                <td>Director de compras y cuentas por pagar</td>
+                              </tr>
+                               <tr>
+                                <td><strong>CENTRO DE SERVICIOS COMPARTIDOS</strong></td>
+                              </tr>
+                               <tr>
+                                <td>PBX: 3693720 Ext: 16122/16123</td>
+                              </tr>
+                              <tr>
+                                <td>andrea.riveros@thomasgreg.com</td>
+                              </tr>
+                             </table>
+                             <br></br><br></br>
+                             <p style="font-size:10px">Elaboró: YENNY LILIANA YARA RODRIGUEZ</p>
+                             <div id="b"></div>
+                        </div>    
+                </t>
+            </t>
+        </template>                    
+    </data>
+</odoo>        

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            string="Comprobante de Egreso Thomas" 
+            id="action_report_payment_print_thomas" 
+            model="account.payment" 
+            report_type="qweb-pdf"
+            name="account_payment_print.action_report_payment_print_thomas" 
+            file="account_payment_print.action_report_payment_print_thomas"
+        />
+    </data>
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- res.company inherit form view -->
+        <record id="res_company_cosortium_members" model="ir.ui.view">
+            <field name="name">res.company.consortium.members.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Member companies" name="">
+                        <group>
+                            <field name="is_ut"/>
+                        </group>
+                        <field name="members_ids" attrs="{'invisible': [('is_ut','=',False)]}">
+                            <tree editable="bottom">
+                                <field name="partner_id" options="{'mo_create_edit': True}"/>
+                                <field name="percent_part" sum="total"/>
+                                <field name="note1"/>
+                                <field name="note2"/>
+                                <field name="note3"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

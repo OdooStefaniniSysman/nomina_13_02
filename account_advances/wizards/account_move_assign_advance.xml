@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wizard_account_invoice_assign_advance_form" model="ir.ui.view">
+		<field name="name">wizard.account.invoice.assign.advance.form</field>
+		<field name="model">wizard.account.invoice.assign.advance</field>
+		<field name="arch" type="xml">
+			<form string="Allocation of Advances">
+				<group>	
+					<group>
+						<field name="invoice_id"/>
+						<field name="partner_id"/>
+					</group>
+					<group>
+                        <field name="journal_id"/>
+						<field name="date"/>
+					</group>
+				</group>
+                <group>	
+					<group>
+						<field name="amount_total"/>
+					</group>
+					<group>
+                        <field name="amount_total_advances"/>
+					</group>
+				</group>
+				<group>
+					<field name="advance_ids" readonly="0" string="">
+						<tree create="false" delete="true" editable="bottom">
+                            <field name="assign_ok"/>
+							<field name="name" readonly="1"/>
+							<field name="payment_date" readonly="1"/>
+							<field name="payment_account_id" invisible="1"/>
+							<field name="amount" sum="total_amount" readonly="1"/>
+						</tree>
+						<form>
+							<script>
+						        $(document).ready(function(){
+						        $(".btn-primary").hide();
+						        $(".btn-primary").hide();
+						        });
+						    </script>
+						    <group>
+								<group>
+                                    <field name="assign_ok"/>
+									<field name="name" readonly="1"/>
+									<field name="payment_date" readonly="1"/>
+									<field name="amount" readonly="1"/>
+								</group>
+							</group>
+						</form>
+					</field>
+				</group>
+				<group>
+					<group>
+						<field name="amount_total_assigned" help="Total Advances Allocated"/>
+					</group>
+				</group>
+				<footer>
+					<button name="register_assign_advances" 
+						string="Apply Advances" 
+						type="object" 
+						class="btn-primary"/>
+					<button string="Cancel" class="btn-default" special="cancel"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+        
+    </data>
+</odoo>

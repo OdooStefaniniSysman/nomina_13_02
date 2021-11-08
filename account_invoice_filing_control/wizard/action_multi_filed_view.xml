@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+    <record id="multi_filed_internally_view" model="ir.ui.view">
+		<field name="name">Multiple Radicado de Facturas en Cartera</field>
+		<field name="model">account.move.multi.filed.internally</field>
+		<field name="arch" type="xml">
+			<form string="Multiple Radicado de Facturas en Cartera">
+                <group>
+                    <h5>Marcar como facturas radicadas en Cartera</h5>
+                </group>
+                <group>
+                    <field name="invoice_ids"/>
+                </group>
+				<footer>
+					<button name="register_multi_filed_internally" 
+						string="Aplicar Radicados" 
+						type="object" 
+						class="btn-primary"/>
+					<button string="Cancelar" class="btn-default" special="cancel"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+    
+    <record id="multi_filed_customer_view" model="ir.ui.view">
+		<field name="name">Multiple Radicado de Facturas en Cliente</field>
+		<field name="model">account.move.multi.filed.customer</field>
+		<field name="arch" type="xml">
+			<form string="Multiple Radicado de Facturas en Cliente">
+                <group>
+                    <h5>Marcar como facturas radicadas en Cliente</h5>
+                </group>
+                <group>
+                    <field name="invoice_ids"/>
+                </group>
+				<footer>
+					<button name="register_multi_filed_customer" 
+						string="Aplicar Radicados" 
+						type="object" 
+						class="btn-primary"/>
+					<button string="Cancelar" class="btn-default" special="cancel"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+
+    <record id="multi_filed_supplier_view" model="ir.ui.view">
+		<field name="name">Multiple Radicado de Facturas en Cuentas por Pagar</field>
+		<field name="model">account.move.multi.filed.supplier</field>
+		<field name="arch" type="xml">
+			<form string="Multiple Radicado de Facturas en Cuentas por Pagar">
+                <group>
+                    <h5>Marcar como facturas radicadas en Cuentas por Pagar</h5>
+                </group>
+                <group>
+                    <field name="invoice_ids"/>
+                </group>
+				<footer>
+					<button name="register_multi_filed_supplier" 
+						string="Aplicar Radicados" 
+						type="object" 
+						class="btn-primary"/>
+					<button string="Cancelar" class="btn-default" special="cancel"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+        
+    <record id="multi_filed_treasury_view" model="ir.ui.view">
+		<field name="name">Multiple Radicado de Facturas en Cuentas por Tesoreria</field>
+		<field name="model">account.move.multi.filed.treasury</field>
+		<field name="arch" type="xml">
+			<form string="Multiple Radicado de Facturas en Cuentas por Tesoreria">
+                <group>    
+                    <h5>Marcar como facturas radicadas en Tesoreria</h5>
+                </group>
+                <group>
+                    <field name="invoice_ids"/>
+                </group>
+				<footer>
+					<button name="register_multi_filed_treasury" 
+						string="Aplicar Radicados" 
+						type="object" 
+						class="btn-primary"/>
+					<button string="Cancelar" class="btn-default" special="cancel"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	</data>
+</odoo>

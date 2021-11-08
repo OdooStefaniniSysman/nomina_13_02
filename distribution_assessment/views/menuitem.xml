@@ -1,0 +1,6 @@
+<odoo>
+    <data>
+        <menuitem id="distribution_assessment_report" name="Distribution Assessment report" parent="account.menu_finance_reports" sequence="30" />
+        <menuitem id="distribution_assessment_report_action" name="Distribution Assessment Report" parent="distribution_assessment_report" action="action_report_distribution_assessment_tree" sequence="5"/>
+    </data>
+</odoo>

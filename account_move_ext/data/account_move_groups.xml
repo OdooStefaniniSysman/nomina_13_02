@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="blocked_invoices" model="res.groups">
+            <field name="name">Bloqueo de factura</field>
+        </record>
+        <record id="acept_service_invoice_purchase" model="res.groups">
+            <field name="name">Aceptación de servicio Compras</field>
+        </record>
+    </data>
+</odoo>

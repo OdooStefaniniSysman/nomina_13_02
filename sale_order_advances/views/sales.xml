@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_order_form_inherit_advances">
+	<field name="name">sale.order.form</field>
+	<field name="model">sale.order</field>
+	<field name="inherit_id" ref="sale.view_order_form" />
+	<field name="arch" type="xml">
+	    <xpath expr="//field[@name='partner_id']" position="after">
+		<field 
+		    name="authorize_without_advance" 
+		    attrs="{'invisible': [('state', '=', 'sale')]}"/>
+	    </xpath>
+	</field>
+    </record>
+
+    <record model="ir.ui.view" id="view_order_form_inherit_sale_stock_inherit_advances">
+	<field name="name">sale.order.form</field>
+	<field name="model">sale.order</field>
+	<field name="inherit_id" ref="sale_stock.view_order_form_inherit_sale_stock" />
+	<field name="arch" type="xml">
+	    <xpath expr="//notebook" position="inside">
+            <field name="partner_id" invisible="1"/>
+            <page string="Advances" name="advances">
+                <group>
+                <field name="payment_ids"
+                    widget="many2many"
+                    nolabel="1"
+                    context="{
+                        'default_partner_id': partner_id,
+                        'default_payment_type': 'inbound',
+                        'default_partner_type': 'customer',
+                        'default_payment_method_id': 1,
+                        'advance_percentage': True,
+                        'sale_order_amount_total': amount_total,
+                        'sale_order_id': id,
+                        'advance_authorized': True,
+                    }"
+                    domain="[('sale_order_id','=',False),('partner_id','=',partner_id),('payment_type','=','inbound')]">
+                    <tree>
+                        <field name="payment_date"/>
+                        <field name="journal_id"/>
+                        <field name="amount"/>
+                        <field name="communication"/>
+                        <field name="state"/>
+                    </tree>
+                    <form>
+                    <header>
+                        <button name="post" class="oe_highlight" states="draft" string="Confirmar" type="object"/>
+                        <button name="action_draft" class="btn btn-secondary" attrs="{'invisible': [('state', '=', 'draft')]}" string="Reset To Draft" type="object"/>
+                        <button name="cancel" states="draft" string="Anular" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,posted,reconciled,cancelled"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="payment_date"/>
+                            <field name="journal_id"/>
+                            <field name="payment_type" widget="radio" invisible="1"/>
+                            <field name="amount"/>
+                            </group>
+                        <group>
+                        <field name="communication"/>
+                        <!--<field name="payment_method_id" widget="radio" attrs="{'invisible': [('hide_payment_method', '=', True)]}"/>-->
+                        <field name="payment_method_id" widget="radio" invisible="0"/>
+                        <field name="partner_type" invisible="1"/>
+                        <field name="partner_id" readonly="1"/>
+                        <field name="company_id" invisible="1"/>
+                        <field name="state"/>
+                        </group>
+                    </sheet>
+                    </form>
+                </field>
+                </group>
+            </page>
+	    </xpath>
+	</field>
+    </record>
+</odoo>

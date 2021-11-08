@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+        <record id="view_res_partner_filter_inherited" model="ir.ui.view">
+            <field name="name">view.res.partner.search.inherited</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="type">search</field>
+            <field name="priority" eval="16" />
+            <field name="active" eval="True" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="followup_status_id"/>
+                    <separator/>
+                    <filter string="Without portfolio contacts" name="portfolio_contact" domain="[('portfolio_contact', '=', False)]"/>
+                    <filter string="Send follow-up report" name="send_followup" domain="[('send_followup', '=', True)]"/>
+                    <filter string="Payment tracking" name="payment_tracking" domain="[('payment_tracking', '=', True)]"/>
+                </xpath>
+                <xpath expr="//filter[@name='group_country']" position="after">
+                    <filter name="followup_status" string="Followup status" context="{'group_by': 'followup_status_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="partner_account_followup_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="15" />
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='child_ids']/form/sheet/group/group/field[@name='email']" position="attributes">
+                    <attribute name="attrs">{'required': [('type', '=', 'portfolio')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/form/sheet/group/group/field[@name='phone']" position="attributes">
+                    <attribute name="attrs">{'required': [('type', '=', 'portfolio')]}</attribute>
+                </xpath>
+                <xpath expr="//notebook/page[@name='sales_purchases']/group/group[@name='sale']/field[@name='user_id']" position="before">
+                    <field name="followup_status_id" widget="selection"/>
+                    <field name="portfolio_contact" invisible="1"/>
+                    <field name="payment_tracking"/>
+                    <field name="send_followup"/>
+                    <field name="followup_date"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

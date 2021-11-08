@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="helpdesk_activity_form">
+                <field name="name">helpdesk.activity.form</field>
+                <field name="model">helpdesk.activity</field>
+                <field name="arch" type="xml">
+                    <form>
+                        <sheet string="Actividades">
+                            <div class="oe_title">
+                                        <h1>
+                                            <field name="name" required="1"/>
+                                        </h1>
+                                    </div>
+                            
+                            <group name="studio_group_2L08r">
+                                <group name="studio_group_2L08r_left">
+                                    <field name="subservice_id"/>
+                                    <field name="ticket_type" string="tipo de ticket" widget="radio" required="1" options="{&quot;horizontal&quot;:true}"/>
+                                    <field name="priority" widget="priority" string='Prioridad'/>
+                                    <field name="team_id" string='Mesa de ayuda relacionada' required="1"/>
+                                </group>
+                            </group>
+                            <group colspan="2">
+                                    <group colspan="1" col="2" string='Grupos'>
+                                        <field name="group_users_id" string="Grupos" attrs="{'required':[('users_id', '=', False)],'invisible':[('users_id', '!=', False)]}"/>
+                                        <field name="info_security" string="Seguridad  de la  info"/>
+                                        <field name="file_request" string="Requiere adjunto"/>
+                                        <field name="asn_date" string="ANS CON FECHA"/>
+                                    </group>
+                                    <group colspan="1" col="2" string='Usuario'>
+                                        <field name="users_id" attrs="{'required':[('group_users_id', '=', False)],'invisible':[('group_users_id', '!=', False)]}"/>
+                                    </group>
+                            </group>
+                            <group colspan="2">
+                                 <!--    <group string="ANS EN HORAS" attrs="{'invisible':[('asn_date', '=', True)]}">
+                                        <field name="asn_high" string="ALTA" attrs="{'invisible':[('asn_date', '=', True)]}"/>
+                                        <field name="asn_medium" string="MEDIA" attrs="{'invisible':[('asn_date', '=', True)]}"/>
+                                        <field name="asn_low" string="BAJA" attrs="{'invisible':[('asn_date', '=', True)]}"/>
+                                     </group>-->
+                                    <group colspan="1" col="2" string='Usuarios relacionados'>
+                                        <field name="users_ids" required='True'/>
+                                    </group>       
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+
+        <record model="ir.ui.view" id="helpdesk_activity_tree">
+            <field name="name">helpdesk.activity.tree</field>
+            <field name="model">helpdesk.activity</field>
+            <field name="arch" type="xml">
+                <tree string="Tipo de Ticket">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="helpdesk_actividad_action">
+            <field name="name">Actividad</field>
+            <field name="res_model">helpdesk.activity</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <menuitem id="helpdesk_actividad_menu" parent="helpdesk.helpdesk_menu_config" action='helpdesk_thomas_ext.helpdesk_actividad_action' name="Actividad"  sequence="140"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* manufacture_masive_block
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-25 22:32+0000\n"
+"PO-Revision-Date: 2020-11-25 22:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields.selection,name:manufacture_masive_block.selection__mrp_production__state_block__block
+msgid "Block"
+msgstr ""
+
+#. module: manufacture_masive_block
+#: model:ir.actions.server,name:manufacture_masive_block.action_server_blocked
+msgid "Blocked"
+msgstr "Bloquear"
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields,field_description:manufacture_masive_block.field_mrp_production__bool_state
+#: model:ir.model.fields,field_description:manufacture_masive_block.field_mrp_workorder__bool_state
+msgid "Bool State"
+msgstr ""
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields.selection,name:manufacture_masive_block.selection__mrp_production__state_block__cancel
+msgid "Cancelled"
+msgstr ""
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields.selection,name:manufacture_masive_block.selection__mrp_production__state_block__confirmed
+msgid "Confirmed"
+msgstr ""
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields.selection,name:manufacture_masive_block.selection__mrp_production__state_block__done
+msgid "Done"
+msgstr ""
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields.selection,name:manufacture_masive_block.selection__mrp_production__state_block__draft
+msgid "Draft"
+msgstr ""
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields.selection,name:manufacture_masive_block.selection__mrp_production__state_block__progress
+msgid "In Progress"
+msgstr ""
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields.selection,name:manufacture_masive_block.selection__mrp_production__state_block__planned
+msgid "Planned"
+msgstr ""
+
+#. module: manufacture_masive_block
+#: model:ir.model,name:manufacture_masive_block.model_mrp_production
+msgid "Production Order"
+msgstr "Orden de producción"
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields,field_description:manufacture_masive_block.field_mrp_production__state_block
+msgid "State Block"
+msgstr "Estado Bloqueo"
+
+#. module: manufacture_masive_block
+#: model:ir.model.fields.selection,name:manufacture_masive_block.selection__mrp_production__state_block__to_close
+msgid "To Close"
+msgstr ""
+
+#. module: manufacture_masive_block
+#: model:ir.actions.server,name:manufacture_masive_block.action_server_unblocked
+msgid "Unblocked"
+msgstr "Desbloquear"
+
+#. module: manufacture_masive_block
+#: model:ir.model,name:manufacture_masive_block.model_mrp_workorder
+msgid "Work Order"
+msgstr "Orden de trabajo"

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="view_material_purchase_requisition_form_inherit" model="ir.ui.view">
+            <field name="name">material.purchase.requisition.form.inherit</field>
+            <field name="model">material.purchase.requisition</field>
+            <field name="inherit_id" ref="material_purchase_requisitions.material_purchase_requisition_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//button[@name='request_stock']" position="replace">
+                        <button name="request_stock_modify" type="object" string="Create Picking and PO" states="approve" class="btn-primary" groups="material_purchase_requisitions.group_purchase_requisition_user"/>
+                    </xpath>
+                    <xpath expr="//field[@name='requisiton_responsible_id']" position="after">
+                        <field name="charge_to" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        <field name="production_id" options="{'no_create': True, 'no_create_edit':True}" attrs="{'invisible':[('charge_to', '!=', 'order')],'readonly':[('state','!=','draft')]}"/>
+                        <button name="cargar" string="Charge" type="object"/>
+                    </xpath>
+                    <xpath expr="//field[@name='uom']" position="after">
+                        <field name="uom_id"/>
+                    </xpath>
+                    <xpath expr="//field[@name='employee_id']" position="after">
+                        <field name="responsable_area" />
+                    </xpath>
+                    <xpath expr="//field[@name='product_id']" position="after">
+                        <field name="analytic_account_id" options="{'no_create': True, 'no_create_edit':True}" optional="hide" attrs="{'readonly':[('bool_state','=',True)]}"/>
+                    </xpath>
+                    <xpath expr="//field[@name='partner_id']" position="after">
+                        <field name="inspection_state" optional="hide"/>
+                        <field name="lot" optional="hide"/>
+                    </xpath>
+                    <xpath expr="//field[@name='date_end']" position="after">
+                        <field name="delivery_by"/>
+                        <field name="recieved_by"/>
+                        <field name="security_aux"/>
+                    </xpath>
+                    <xpath expr="//field[@name='employee_id']" position="replace">
+                        <field name="employee_id" readonly="1"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+
+

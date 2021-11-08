@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_payment_print_thomas_report" model="report.paperformat">
+          <field name="name">Comprobante de Egreso Thomas</field>
+          <field name="default" eval="True"/>
+          <field name="format">A4</field>
+          <field name="page_height">0</field>
+          <field name="page_width">0</field>
+          <field name="orientation">Portrait</field>
+          <field name="margin_top">25</field>
+          <field name="margin_bottom">15</field>
+          <field name="margin_left">7</field>
+          <field name="margin_right">7</field>
+          <field name="header_line" eval="False"/>
+          <field name="header_spacing">20</field>
+          <field name="dpi">90</field>
+    </record>
+
+    <template id="action_report_payment_print_thomas">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="header">
+                    <p align="center" style="font-size:14px">Thomas Greg and Sons LIMITED (Guersey)S.A<br></br>
+                                      NIT:830012157-0<br></br>
+                                      5713693720<br></br>
+                                      KR 42 BIS  17A 75
+                    </p>
+                </div>
+                <br></br>    
+                <div class="page">
+                	<style>
+                		th, td {
+                                padding: 4px;
+                                }
+                	</style>
+                	<t t-foreach="doc.partner_id" t-as="p">
+	                     <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+	                            <tr>
+	                                <th style="background-color:#CBCBCB">DATOS DEL TERCERO</th>
+	                                <th style="background-color:#CBCBCB"><p>COMPROBANTE DE EGRESO</p></th>
+	                            </tr>
+	                            <tr>
+	                                <td rowspan="2" valign="middle" align="left">
+	                                   <p>Razón Social:<span> </span><span t-field="doc.partner_id"></span><br></br>
+	                                      NIT:<span> </span><span t-field="p.vat"></span><br></br>
+	                                      Dirección:<span> </span><span t-field="p.street"></span><br></br>
+	                                      Ciudad:<span> </span><span t-field="p.city_id"></span><br></br>
+	                                      Télefono:<span> </span><span t-field="p.phone"></span>
+	                               </p> 
+	                                </td>
+	                                <td><strong><p align="center"><span t-field="doc.name"></span></p></strong></td>
+	                            </tr>
+	                            <tr>
+	                                <td colspan="2"><p align="center">Codigo de Barras</p></td>
+	                            </tr>
+	                     </table>
+                    </t>
+                    <br></br>
+                    <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+                            <tr>
+                                <th style="background-color:#CBCBCB">DATOS DEL PAGO</th>
+                                <th style="background-color:#CBCBCB">FECHA CONTABLE</th>
+                                <th style="background-color:#CBCBCB">FECHA DE DOCUMENTO</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" valign="middle" align="left">
+                                   <p>Concepto:<span> </span>202428575-l573<br></br>
+                                   Cheque:<br></br>
+                                   Moneda:<span> </span>COP<br></br>
+                                   Tasa de Cambio:
+                               </p>  
+                                </td>
+                                <td><p align="center"><span t-field="doc.payment_date"></span></p></td>
+                                <td><p align="center"><span t-field="doc.payment_date"></span></p></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong><p align="center" style="background-color:#CBCBCB">REFERENCIA DE FACTURA</p></strong></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" ><p align="center">43647475</p></td>
+                            </tr>
+                    </table>
+                    <br></br>
+                    <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+                          <tr>
+                            <th colspan="8" style="background-color:#CBCBCB">POSICIONES DOCUMENTO CONTABLE</th>
+                          </tr>
+                          <tr>
+                            <td style="background-color:#CBCBCB"><strong><p>Cuenta</p></strong></td>
+                            <td style="background-color:#CBCBCB"><strong>Descripción</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>IVA</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>Cod SAP</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>NIT</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>ORDICECO</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>IMP.MON.DOC</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>IMP.MON.LOC</strong></td>
+                          </tr>
+                          <tr>
+                            <td>127475</td>
+                            <td>Cajas menores</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                    </table>
+                    <br></br>
+                    <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+                          <tr>
+                            <th colspan="7" style="background-color:#CBCBCB">RELACION DOCUMENTOS COMPENSADOS</th>
+                          </tr>
+                          <tr>
+                            <td style="background-color:#CBCBCB"><strong><p>Cuenta</p></strong></td>
+                            <td style="background-color:#CBCBCB"><strong>Descripción</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>IVA</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>DOC COMPEN.</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>REFERENCIA</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>IMP.MON.DOC</strong></td>
+                            <td style="background-color:#CBCBCB"><strong>IMP.MON.LOC</strong></td>
+                          </tr>
+                          <tr>
+                            <td>127475</td>
+                            <td>Cajas menores</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                    </table>
+                </div>  
+            </t>
+        </t> 
+    </template>
+</odoo>
+
+

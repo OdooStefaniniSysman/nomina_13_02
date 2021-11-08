@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_quality_alert_view_form" model="ir.ui.view">
+        <field name="name">quality.alert.form.inherit</field>
+        <field name="model">quality.alert</field>
+        <field name="inherit_id" ref="quality_control.quality_alert_view_form"/>
+        <field name="arch" type="xml">
+        	
+            <field name="reason_id" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="tag_ids" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="product_id" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="title" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </field>
+            <xpath expr="//field[@name='lot_id']" position="attributes">
+                 <attribute name="attrs">{"invisible": [["check_inspection","!=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='workcenter_id']" position="attributes">
+                 <attribute name="attrs">{"invisible": [["check","!=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_tmpl_id']" position="attributes">
+              <attribute name="attrs">{"invisible": ["&amp;",["check","!=",True],["check_handle_mp","!=",True],["check_inspection","!=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='priority']" position="attributes">
+                  <attribute name="attrs">{"invisible": ["&amp;",["check","!=",True],["check_material","!=",True],["check_handle_mp","!=",True],["check_inspection","!=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                 <attribute name="attrs">{"invisible": ["&amp;",["check","!=",True],["check_material","!=",True],["check_handle_mp","!=",True],["check_inspection","!=",True]]}</attribute>
+            </xpath>
+            <xpath expr="//field[(@name='priority')]" position="after">
+               <field name="type_find" attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="not_compliant"/>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="before">
+               <field name="picking_id"/>
+            </xpath>
+            <xpath expr="//field[@name='workcenter_id']" position="before">
+               <field name="approver" attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+            </xpath>
+            <xpath expr="//field[(@name='team_id')]" position="after">
+               <field name="sampling_datetime"   attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="total_quantity"   attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="level_inspection"  attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="key_letter"  attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="amount_of_letter"  attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="check" invisible="True"/>
+               <field name="check_material" invisible="True"/>
+               <field name="check_handle_mp" invisible="True"/>
+               <field name="check_inspection" invisible="True"/>
+            </xpath>
+            <xpath expr="//field[(@name='product_tmpl_id')]" position="after">
+               <field name="datetime_alert" attrs="{'invisible': [('check', '!=', True)]}"/>
+               <field name="product_text" attrs="{'invisible': [('check_material', '!=', True)]}"/>
+               <field name="programing_date_datetime" invisible="True"/>
+               <field name="reception_datetime"  attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="approved_type" attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="purchase_order_material_id" invisible="True"/>
+               <field name="workcenter_mpr_id" invisible="True" />
+               <field name="supplier_rating" attrs="{'invisible': [('check_inspection', '!=', True)]}" />
+               <field name="quality_certificate" attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="acceptance_number"  attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="rejection_number"  attrs="{'invisible': [('check_inspection', '!=', True)]}"/>
+               <field name="client" attrs="{'invisible': [('check', '!=', True)]}"/>
+               <field name="turn_type" attrs="{'invisible': [('check', '!=', True)]}"/>
+               <field name="contract_id" attrs="{'invisible': [('check', '!=', True)]}"/>
+               <field name="process" attrs="{'invisible': [('check', '!=', True)]}"/>
+               <field name="sale_order_id" invisible="True"/>
+               <field name="production_order_id" attrs="{'invisible': [('check', '!=', True)]}"/>
+            </xpath> 
+            <xpath expr="//notebook"  position="inside">
+                <page string="Control de Producto No Conforme CC-R-093" attrs="{'invisible': [('not_compliant', '!=', True)]}">
+                    <group>
+                       <group>
+                          <field name="consecutive" readonly="True"/>
+                          <field name="not_conformity_type"/>
+                       </group>
+                       <group>
+                         
+                       </group>
+                       <group string="No conformidad materia prima" attrs="{'invisible': [('not_conformity_type', '!=', 'mp')]}">
+                          <field name="identification_type" attrs="{'invisible': [('not_conformity_type', '!=', 'mp')]}"/>
+                          <field name="purchase_order_id" attrs="{'invisible': [('not_conformity_type', '!=', 'mp')]}"/>
+                          <field name="partner_id" attrs="{'invisible': [('not_conformity_type', '!=', 'mp')]}"/>
+                          <field name="quantity_po" attrs="{'invisible': [('not_conformity_type', '!=', 'mp')]}"/>
+                          <field name="unit_of_mesure_po" attrs="{'invisible': [('not_conformity_type', '!=', 'mp')]}"/>
+                       </group>
+                       <group string="No conformidad en producto terminado" attrs="{'invisible': [('not_conformity_type', '!=', 'pt')]}">
+                         <field name="partner_id_not_conformity_product" attrs="{'invisible': [('not_conformity_type', '!=', 'pt')]}"/>
+                         <field name="production_order_id" attrs="{'invisible': [('not_conformity_type', '!=', 'pt')]}"/>
+                         <field name="quantity_not_conformity_product" attrs="{'invisible': [('not_conformity_type', '!=', 'pt')]}"/>
+                         <field name="unit_of_mesure" attrs="{'invisible': [('not_conformity_type', '!=', 'pt')]}"/>
+                       </group>
+                       <group>
+                          <field name="description_not_conformity"/>
+                          <field name="evaluation_results"/>
+                          <field name="material_arrangement_type"/>
+                          <field name="disposition_comments"/>
+                          <field name="user_id_responsable"/>
+                       </group>
+                       <group>
+                         
+                       </group>
+                    </group>
+                    <group string="PARA NO CONFORMES DE PRODUCTO EN PROCESO O TERMINADO: El producto después de ser reparado o reprocesado fue revisado y cumple con las especificaciones requeridas por el cliente por tal razón debe ser liberado para el despacho.">
+                       <field name="user_id_admin"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+   
+</odoo>     

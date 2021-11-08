@@ -1,0 +1,149 @@
+<odoo>
+    <data>
+        <report id="report_custom" string="CV Equipment" model="maintenance.equipment" report_type="qweb-pdf" name="maintenance_thomas.report_custom_template"/>
+        <record id="report_thomas" model="report.paperformat">
+            <field name="name">CV Equipment</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">2</field>
+            <field name="margin_bottom">2</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">20</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">3</field>
+            <field name="dpi">90</field>
+        </record>
+        <template id="report_custom_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <style>
+                    #margen{ width:1000px; height:1450; background-color:white; float:left; border-style: double;border-width: 5px;padding:25px;}
+                    .container {height: 60px;width: 800;}
+                    #caja_logo{ width:100%; height:60px;float:left;}
+                    #caja_nombre{ width:50%; height:60px; background-color:white; float:left; border: 1px solid black; }
+                    #nombre{ width:40%; height:20px; background-color:white; float:left; border: 1px solid black; }
+                    #cod_interno{ width:30%; height:20px; background-color:white; float:left; border: 1px solid black; }
+                    #nombre1{ width:40%; height:60px; background-color:white; float:left; border: 1px solid black; }
+                    #cod_interno1{ width:30%; height:20px; background-color:white; float:left; border: 1px solid black; }
+                    #description1{ width:40%; height:600px; background-color:white; float:left; border: 1px solid black; }
+                    #description2{ width:30%; height:200px; background-color:white; float:left; border: 1px solid black; }
+                    #velocidad{ width:20%; height:25px; background-color:white; float:left; border: 1px solid black; }
+                    #conexion{ width:40%; height:20px; background-color:white; float:left; border: 1px solid black; }
+                    table {border-collapse: collapse;}
+                    table, th, td {border: 1px solid black;text-align: center;}
+                    #logo{ width:80px; height:60px;align:center;}
+                    </style><!---->
+                    <div id="margen">
+                        <table width="100%">
+                            <th><img id="logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)"/></th>
+                            <th>TARJETA DE INFORMACION BASICA DE <br/>
+                            MAQUINARIA</th>
+                            <th style="text-align: center;"><h5>MT-R011<br/>Pagina 1 de 1<br/>Actualizacion 2</h5></th>
+                            </table>
+                            <br/>
+                        <table width="100%">
+                            <tr>
+                                <th>NOMBRE</th>
+                                <th>CODIGO INTERNO</th>
+                                <th>UBICACION</th>
+                            </tr>
+                            <tr>
+                                <td id="nombre1"><span style="text-align: center;" t-field="o.name"/></td>
+                                <td id="cod_interno1"><span style="text-align: center;" t-field="o.internal_code"/></td>
+                                <td id="cod_interno1"><span style="text-align: center;" t-field="o.location"/></td>
+                            </tr>
+                        </table>
+                            <br/>
+                        <table width="100%">
+                            <tr>
+                                <th colspan="2">DESCRIPCION GENERAL</th>
+                            </tr>
+                            <tr>
+                                <td id="description1"><img style="align:center;" t-att-src="'data:image/png;base64,%s' % to_text(o.image)"/></td>
+                                <td id="description2"><span style="text-align: center;" t-field="o.note"/></td>
+                            </tr>
+                        </table>
+                            <br/>
+                        <table width="100%">
+                            <tr>
+                                <th colspan="4">INFORMACION TECNICA</th>
+                            </tr>
+                            <tr>
+                                <td id="velocidad"><p style="text-align: center;">Capacidad</p></td>
+                                <td id="velocidad"><span style="text-align: center;" t-field="o.capacity"/></td>
+                                <td id="velocidad"><p style="text-align: center;">Velocidad</p></td>
+                                <td id="velocidad"><p style="text-align: center;" t-field="o.velocity"/></td>
+                            </tr>
+                            <tr>
+                                <td id="nombre1">Descripción</td>
+                                <td id="cod_interno1" colspan="3"><span style="text-align: center;" t-field="o.note"/></td>
+                            </tr>
+                            <tr>
+                                <td>Insumos</td>
+                                <td colspan="3"/>
+                            </tr>
+                            <tr>
+                                <td id="velocidad" style="text-align: center;">Tipo de maquina</td>
+                                <td id="velocidad"><p t-field="o.machine_type"/></td>
+                                <td id="velocidad" style="text-align: center;">Fabricante</td>
+                                <td id="velocidad"><p t-field="o.maker"/></td>
+                            </tr>
+                            <tr>
+                                <td id="velocidad">Modelo</td>
+                                <td id="velocidad"><p t-field="o.model"/></td>
+                                <td id="velocidad">Proveedor</td>
+                                <td id="velocidad"><p t-field="o.partner_id.name"/></td>
+                            </tr>
+                            <tr>
+                                <td id="velocidad">N° Serie</td>
+                                <td id="velocidad"><p t-field="o.serial_no"/></td>
+                                <td id="velocidad">Teléfono</td>
+                                <td id="velocidad"><p t-field="o.phone"/></td>
+                            </tr>
+                            <tr>
+                                <td id="velocidad">Año de fabricación</td>
+                                <td id="velocidad"><p t-field="o.fabrication_date"/></td>
+                                <td id="velocidad">Pais Origen</td>
+                                <td id="velocidad"><p t-field="o.origin"/></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CONEXIÓN</strong></td>
+                                <td colspan="3"><strong>REQUERIMIENTOS</strong></td>
+                            </tr>
+                                <tr>
+                                <td id="velocidad">Voltaje de conexión</td>
+                                <td id="velocidad"><p t-field="o.voltage_connection"/></td>
+                                <td id="velocidad">Aire Comprimido</td>
+                                <td id="velocidad"><p t-field="o.compressed_air"/></td>
+                            </tr>
+                                <tr>
+                                <td id="velocidad">Consumo</td>
+                                <td id="velocidad"><p t-field="o.intake"/></td>
+                                <td id="velocidad">Agua</td>
+                                <td id="velocidad"><p t-field="o.water"/></td>
+                            </tr>
+                                <tr>
+                                <td id="velocidad">Potencia</td>
+                                <td id="velocidad"><p t-field="o.power"/></td>
+                                <td id="velocidad">Aire Acondicionado</td>
+                                <td id="velocidad"><p t-field="o.conditioning_air"/></td>
+                            </tr>
+                        </table>
+                            <br/>
+                        <table width="100%">
+                            <tr>
+                            <td colspan="4"><strong>OBSERVACIONES</strong></td>
+                            </tr>
+                            <tr>
+                            <td style="width:40%; height:200px;" colspan="4"><p style="text-align: center;" t-field="o.observation"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
